@@ -1,0 +1,70 @@
+/* slider */
+.slider {
+	clear:both;
+	overflow:hidden;
+	width:990px;
+	height:208px;
+	padding-bottom:28px;
+	background:url(../../public/images/slider_bg_bot.jpg) bottom center no-repeat #fff;
+	margin-bottom:-35px;
+}
+#slider1 {
+    width: 990px; /* important to be same as image width */
+    height: 208px; /* important to be same as image height */
+    position: relative; /* important */
+	overflow: hidden; /* important */
+}
+
+#slider1Content {
+    width: 990px; /* important to be same as image width or wider */
+    height: 208px;
+    position: absolute;
+	top: 0;
+	margin-left: 0;
+}
+.slider1Image {
+    float: left;
+    position: relative;
+	display: none;
+}
+.slider1Image span {
+    position: absolute;
+	font: 12px/17px Arial, Helvetica, sans-serif;
+    padding: 15px 15px;
+    width: 100%;
+    background-color: #000;
+    filter: alpha(opacity=20);
+    -moz-opacity: 0.7;
+	-khtml-opacity: 0.7;
+    opacity: 0.7;
+    color: #fff;
+    display: none;
+}
+.slider1Image span strong {
+    font-size: 17px;
+}
+.left {
+	top: 0;
+    left: 0;
+	width: 140px !important;
+	height: 1px;
+}
+.right {
+	right: 0;
+	bottom: 0;
+	width: 140px !important;
+	height:1px;
+}
+.top {
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	height:1px;
+}
+.bottom {
+	bottom: 0;
+    left: 0;
+	width: 100% !important;
+	height:0px;
+}
+

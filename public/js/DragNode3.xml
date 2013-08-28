@@ -1,0 +1,39 @@
+<chart xAxisMinValue='0' xAxisMaxValue='100' yAxisMinValue='0' yAxisMaxValue='100' bubbleScale='3' is3D='1' numDivLines='0' showFormBtn='0'>
+<dataset plotborderAlpha='100' >
+<set x='50' y='80' width='110' height='40' color='FFFFFF' name='KEMENDIKNAS' alpha='100' toolText='Kementrian Pendidikan Nasional' id='CEO' imageNode='1' imageAlign='bottom' labelAlign='top' />
+
+<set x='50' y='60' width='110' height='40' name='BPSDMPPMP' toolText='Badan Pengembangan Sumber Daya Manusia Pendidikan dan Penjaminan Mutu Pendidikan'  color='FFFFFF' id='BPSDM' />
+
+<set x='50' y='48' width='2' height='1' name='' color='000000' id='pb1'/>
+<set x='10' y='48' width='2' height='1' name='' color='000000' id='pb2'/>
+<set x='35' y='48' width='2' height='1' name='' color='000000' id='pb3'/>
+<set x='65' y='48' width='2' height='1' name='' color='000000' id='pb4'/>
+<set x='90' y='48' width='2' height='1' name='' color='000000' id='pb5'/>
+
+<set x='10' y='33' width='90' height='40' name='SEKRETARIAT' color='FFFFFF' toolText='Sekretariat Badan' id='SKR'/>
+<set x='35' y='33' width='90' height='40' name='PPPP' color='FFFFFF' toolText='Pusat Pengembangan Profesi Pendidik' id='PPPP'/>
+<set x='65' y='33' width='90' height='40' name='PPTK' color='FFFFFF' toolText='Pusat Pengembangan Tenaga Kependidikan' id='PPTK'/>
+<set x='90' y='33' width='90' height='40' name='PPMP' color='FFFFFF' toolText='Pusat Penjaminan Mutu Pendidikan' id='PPMP'/>
+
+</dataset>
+<connectors color='000000' stdThickness='8'>
+	<connector strength='0.45' from='CEO' to='BPSDM' color='000000' arrowAtStart='0' arrowAtEnd='0'/>
+	<connector strength='0.45' from='BPSDM' to='pb1' color='000000' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.45' from='pb1' to='pb2' color='000000' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.45' from='pb1' to='pb5' color='000000' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.45' from='pb2' to='SKR' color='000000' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.45' from='pb3' to='PPPP' color='000000' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.45' from='pb4' to='PPTK' color='000000' arrowAtStart='0' arrowAtEnd='0' />
+	<connector strength='0.45' from='pb5' to='PPMP' color='000000' arrowAtStart='0' arrowAtEnd='0' />
+	
+</connectors>
+  <styles>
+      <definition>
+         <style name='myHTMLFont' type='font' isHTML='1' />
+      </definition>
+      <application>
+         <apply toObject='DATALABELS' styles='myHTMLFont' />
+         <apply toObject='TOOLTIP' styles='myHTMLFont' />
+      </application>
+   </styles>
+</chart>
