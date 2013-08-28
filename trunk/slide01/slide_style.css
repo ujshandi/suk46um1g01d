@@ -1,0 +1,109 @@
+#feature { 
+  	float:left;
+	width: 650px;
+	height:230px;
+	position:relative;
+}
+#navi ul {	
+ 	width:650px;
+ 	position:absolute;
+ 	top:170px;
+	margin-left:-47px;
+}
+
+#navi li {	
+ 	float:right;
+ 	list-style-type:none;
+	text-align:center;
+	display:inline;
+	margin-left:12px;
+}
+
+#navi a {
+	color:#333333;
+	display:block;
+	position:relative;
+	word-spacing:-2px;
+	font-size:11px;		
+	text-decoration:none;
+	opacity:0.5;
+}	
+
+#navi a.current {
+	 opacity:1;
+ }
+ 
+ #navi a:hover {
+	opacity:1;
+}
+
+#navi img {
+	margin: 0px;
+	display:block;
+	width: 66px;
+	height: 48px;
+}
+
+#navi strong {
+	display:block;		
+	font-size:14px;
+}
+
+/* panes */
+#panes {
+	height:500px;
+}
+
+/* crossfading effect needs absolute positioning from the elements */
+#panes div {
+	display:none;		
+	position:absolute;
+	font-size:14px;
+	color:#ede9e9;	
+	line-height:1.5;
+	overflow:hidden;
+	padding:0px 0px 0px 0px;
+  }
+#panes #imgBerita {
+	position:relative;
+	float:left;
+	width:250px;
+	height:152.5px;
+	margin:0 20px 0 0 ;
+	background:url(../../public/images/box_berita.jpg) bottom center no-repeat #fff;
+} 
+#panes #imgBerita img {
+	float:left;
+	margin:0px 25px 0 0px;	
+	width: 260px;
+	height:140px;
+}
+
+#panes p strong {
+font-size: 16px;
+padding:0px;
+color:#0077B0;
+display: block;
+}
+ 
+#panes p {
+padding: 0px 25px 0px 0px;
+margin: 0px;
+color:#333333;
+font-size: 12px;
+}
+.more_slider:link, .more_slider:visited {
+	width: 101px;
+	height: 30px;
+	padding: 5px 10px 0px 18px;
+	font-size: 13px;
+	color: #727F89;
+	text-decoration: none;
+	float: right;
+	margin-top: 5px;
+}
+.more_slider:hover {
+	color:#000033;
+}
+
+
