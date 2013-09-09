@@ -63,7 +63,7 @@ body {
 =====================================================================*/
 #container {
 	width:100%;
-	background: url(../images/footer.png) repeat-x 0 100%;
+	/* background: url(../images/footer.png) repeat-x 0 100%; */
 }
 #wrapper {
 	width:990px;
@@ -77,7 +77,7 @@ body {
 }
 #headertop {
 	width: 990px;
-	height: 64px;
+	height: 34px;
 }
 #logo{
 	width:747px;
@@ -434,6 +434,7 @@ div#placemainmenu li li:hover ul
 #content {
 	width: 990px;
 	padding: 20px 0 0 0;
+	margin:0 auto;
 }
 #maincontent {
 	width: 647px;
@@ -452,10 +453,11 @@ div#placemainmenu li li:hover ul
 	padding: 9px 15px 0 15px;
 }
 .boxbigcontent {
-	width: 617px;
+	width: 960px;
 	border-left: 1px solid #d5d5d5;
 	border-right: 1px solid #d5d5d5;
 	padding: 12px 14px 7px 14px;
+	/* border: 1px solid #ff0000; */
 }
 .boxbigcontent p, .boxsmallcontent p, .tabscontent p {
 	font-size: 1.2em;
@@ -489,13 +491,14 @@ div#placemainmenu li li:hover ul
 	font-size: 1.0em;
 }
 .boxbigcontentbottom {
-	width: 647px;
+	width: 990px;
 	height: 3px;
 	font-size: 0;
-	background: url(../images/boxbigcontent_bottom.png) no-repeat;
+	background: url(../images/boxbigbgtcontent_bottom.png) no-repeat;
+	/* border: 1px solid #ff0000; */
 }
 .contentleft {
-	width: 313px;
+	width: 500px;
 	float: left;
 	background:url(../images/bg_box.jpg) bottom center no-repeat #fff;
 }
@@ -505,7 +508,9 @@ div#placemainmenu li li:hover ul
 	background:url(../images/bg_box.jpg) bottom center no-repeat #fff;
 }
 .boxcontentsmall {
-	width: 313px;
+	width: 500px;
+	/* padding-left: 30px; */
+	/* border: 1px solid #ff0000; */
 }
 .titlesmall {
 	width: 283px;
