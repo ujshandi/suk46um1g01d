@@ -19,7 +19,7 @@
 /*---------------------------------
  *  Photos slider > Minimal
  *---------------------------------*/
-.photoslider-mini{width:500px;height:335px;}
+.photoslider-mini{width:500px;height:335px;padding-top:10px;}
 
 /* Panels buttons */
 .photoslider-mini .sliderkit-go-btn{position:absolute;top:0;z-index:10;width:50px;height:335px;}
@@ -309,10 +309,10 @@ background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
 
 
 /* Nav */
-.newslider-vertical .sliderkit-nav{width:200px;height:165px;left:610px}
-.newslider-vertical .sliderkit-nav-clip li{height:50px;width:190px;margin-bottom:5px;padding-right:10px;}
+.newslider-vertical .sliderkit-nav{width:200px;height:165px;left:760px}
+.newslider-vertical .sliderkit-nav-clip li{height:50px;width:190px;margin-bottom:5px;padding-left:10px;}
 .newslider-vertical .sliderkit-nav-clip li.sliderkit-selected{
- background:transparent url("../images/newslider-arrow.gif") no-repeat right center; 
+ background:transparent url("../images/newslider-arrow-left.gif") no-repeat left center; 
 
 
 }
@@ -321,8 +321,8 @@ background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
 .newslider-vertical .sliderkit-nav-clip li a:focus{color:#fff;}
 
 /* Panel */
-.newslider-vertical .sliderkit-panels{position:absolute;left:0px;width:600px;height:158px;overflow:hidden;border:1px solid #ccc;}
-.newslider-vertical .sliderkit-panel{left:0;top:0;width:600px;height:138px;padding:10px;background:#fff;}
+.newslider-vertical .sliderkit-panels{position:absolute;left:0px;width:750px;height:158px;overflow:hidden;border:1px solid #ccc;}
+.newslider-vertical .sliderkit-panel{left:0;top:0;width:730px;height:138px;padding:10px;background:#fff;}
 
 /* News block */
 .newslider-vertical .sliderkit-news h3,
@@ -753,10 +753,10 @@ background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
  *---------------------------------*/
 
 /* Example 01 */
-.transition-demo01{padding:0 36px 5px;}
+.transition-demo01{padding:0px -36px 5px;}
 
 .transition-demo01 .sliderkit-go-btn{top:45%;width:30px;height:30px;}
-.transition-demo01 .sliderkit-go-btn a{width:30px;height:30px;background:#fff url("../images/h-arrows-round.gif") no-repeat 0 0;}
+.transition-demo01 .sliderkit-go-btn a{width:30px;height:30px;background:/* #fff */ url("../images/h-arrows-round.png") no-repeat 0 0;}
 .transition-demo01 .sliderkit-go-prev{left:0px;}
 .transition-demo01 .sliderkit-go-prev a{background-position:0 0;}
 .transition-demo01 .sliderkit-go-prev a:hover{background-position:-60px 0;}

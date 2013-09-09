@@ -1,38 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Beranda <?=COMPANY_NAME?></title>
-	<?=$include?>
-</head>
-<body>
-<div id="container">
-	
-	<?=$header?>
-	
-	<?=""//$sliderTop?>
-	
-	<ul id="js-news" class="js-hidden">
-				<?php foreach($agenda as $b){ ?>
-		<li class="news-item"><?=$b->tgl." : ".$b->kegiatan?></li>
-		<?} ?>
-	</ul>
-	<!-- Start newslider-minimal -->
-				<div class="sliderkit newslider-minimal">						
-					<div class="sliderkit-legend">Agenda:</div>
-					<div class="sliderkit-panels">
-					<?php foreach($agenda as $b){ ?>
-						<div class="sliderkit-panel">
-							<a href="#" title="[link title]"><?=$b->tgl." : ".$b->kegiatan?></a>
-						</div>
-					
-						<?} ?>
-					</div>
-				</div>				
-				<!-- // end of newslider-minimal -->
 	<!-- Start newslider-vertical -->
 				<div class="sliderkit newslider-vertical">
-					
+					<h1 class="titlesmall">Berita</h1>
 					<div class="sliderkit-panels">
 					  	<?php foreach($berita as $b){ ?>
 						<div class="sliderkit-panel">
@@ -50,7 +18,9 @@
 						<div class="sliderkit-nav-clip">
 							<ul>
 							  	<?php foreach($berita as $b){ ?>
-								<li><a href="#" title="[link title]"><?=$b->judul_berita?></a></li>
+								<li><a href="#" title="[link title]"><?=$b->judul_berita?><br><?=$b->tanggal?></a>
+								
+								</li>
 								<? }?>
 							</ul>
 						</div>
@@ -58,40 +28,7 @@
 				</div>
 				<!-- // end of newslider-vertical -->
 				
-				
-			  
-		<div id="content">
-			
-			<div id="maincontent">
-			
-				<div class="contentleft">
-					<div class="boxcontentsmall">
-						<h1 class="titlesmall">Program Kerja</h1>
-					<?php foreach($program as $dProgram): ?>
-					
-						<div class="boxsmallcontent">
-							<a href="#"><h3><?=$dProgram->nama_program?></h3>
-							<p><?=$dProgram->deskripsi_singkat?></p></a>
-						</div>
-					<?php endforeach; ?>
-						<div class="boxsmcontentbottom"></div>
-					</div>
-					
-					<div class="boxcontentsmall">
-						<h1 class="titlesmall">Pedoman / Panduan</h1>
-						<?php $i=0; foreach($panduan as $dPanduan): ?>
-						<?php $i=$i+1; ?>
-						<div class="boxsmallcontent">
-							<h3><a href="<?=base_url()?>panduan/detail/<?=$dPanduan->id_panduan?>"><?=$dPanduan->judul?></a></h3>
-							<p><?=$dPanduan->deskripsi_singkat?>
-							<br /><a href="<?=base_url()?>panduan/detail/<?=$dPanduan->id_panduan?>" class="more_slider">Selengkapnya &#187;</a></p>
-							<br /><br /><?php if($i!=count($panduan)){ echo "<hr />"; }else{ echo "<br>"; } ?>
-						</div>
-						<?php endforeach; ?>
-						<div class="boxsmcontentbottom"></div>
-					</div>
-					
-					<!-- pengumuman -->
+				<!-- pengumuman -->
 					<div class="boxcontentsmall">
 					<h1 class="titlesmall">Pengumuman</h1>
 						<div class="sliderkit photoslider-mini transition-demo01">						
@@ -120,25 +57,4 @@
 					</div>
 					</div>
 					<!-- end pengumuman -->
-				</div>
-				
 		
-				
-				<?=$polling?>
-				<?="";//tutup hula $pengumuman?>
-								
-			</div>
-			
-			</div>
-			
-			<div id="nav">
-				<?=$mainmenu?>
-				<?=$login?>
-				<?=$linkterkait?>
-				<?="";//$testimonial?>	
-				<?=$footer?>
-			</div>
-			
-</div>
-</body>
-</html>

@@ -34,7 +34,11 @@ class main extends CI_Controller {
 		$data['linkterkait']= $this->temp_model->linkterkait();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
-		$this->load->view('main',$data);
+		$data['title_page']		= "Beranda ".COMPANY_NAME;
+		//$this->load->view('main',$data);
+		$this->template->write_view('header','templates/header',$data);
+		$this->template->write_view('wrapper','main',$data);
+		$this->template->render();
 	}
 	function search()
 	{
