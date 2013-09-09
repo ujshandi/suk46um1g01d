@@ -14,11 +14,13 @@ class main extends CI_Controller {
 		$this->load->model('belajarmodel','',TRUE);
 		$this->load->model('statistikmodel','',TRUE);
 		$this->load->model('downloadmodel','',TRUE);
+		$this->load->model('agendamodel','',TRUE);
 		$this->load->library('form_validation');
 	}
 	public function index()
 	{
 		$data['berita']		= $this->berita_model->getBeritaBaru();
+		$data['agenda']		= $this->agendamodel->get_All();
 		$data['program']	= $this->programkerjamodel->getProgramBaru();
 		$data['belajar']	= $this->belajarmodel->getProgramBaru();
 		$data['panduan']	= $this->panduanmodel->getProgramBaru();

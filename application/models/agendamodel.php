@@ -17,6 +17,8 @@ class agendaModel extends CI_Model
   		$query =$this->db->query("select * from agenda ORDER BY id_agenda DESC LIMIT $offset,$limit");
 		return $query->result();
   	}
+	
+	
 	function search($tipe,$key)
 	{
 		$this->db->like($tipe,$key);
