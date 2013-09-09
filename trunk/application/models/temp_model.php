@@ -8,8 +8,8 @@ class temp_model extends CI_Model
 	}
 	function includeFile()
 	{
-		$data='<meta name="description" content="Badan Pengembangan Sumber Daya Manusia Pendidikan dan Penjaminan Mutu Pendidikan" />';
-		$data.='<meta name="keywords" content="bpsdmppmp,pptk,ppmp,pppp,kemendiknas" />';
+		$data='<meta name="description" content="Pemerintah Kota Sukabumi" />';
+		$data.='<meta name="keywords" content="sukabumi kota" />';
 		$data.='<link href="'.base_url().'favicon.ico" rel="shortcut icon" type="image/x-icon" />';
 		$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/css/style.css" />';
 		//$data.='<script src="'.base_url().'public/js/jquery.js" type="text/javascript"></script>';
@@ -17,13 +17,15 @@ class temp_model extends CI_Model
 		$data.='<script src="'.base_url().'public/js/ui_core.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/ui_tabs.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/lightbox.js" type="text/javascript"></script>';
+		
 			//news sticker
+			//$data.='<script src="'.base_url().'public/js/gistfile1.js" type="text/javascript"></script>';
 		//$data.='<link href="'.base_url().'public/jquery_news_ticker/styles/style.css?v=2011-04-25" rel="stylesheet" type="text/css" />';
-	//	$data.='<link href="'.base_url().'public/jquery_news_ticker/styles/ticker-style.css" rel="stylesheet" type="text/css" />';		
-		//$data.='<script src="'.base_url().'public/jquery_news_ticker/includes/jquery.ticker.js" type="text/javascript"></script>';
+		$data.='<link href="'.base_url().'public/jquery_news_ticker/styles/ticker-style.css" rel="stylesheet" type="text/css" />';		
+		$data.='<script src="'.base_url().'public/jquery_news_ticker/includes/jquery.ticker.js" type="text/javascript"></script>';
 				
 		/* Jquery Slider script */
-		$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'slideshows/slide01/slide_style.css" />';
+		/* $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'slideshows/slide01/slide_style.css" />';
 		$data.='<script type="text/javascript" src="'.base_url().'slideshows/slide01/slider.js"></script>';
 		$data.="<script type='text/javascript'>
 				$(function() {
@@ -37,10 +39,10 @@ class temp_model extends CI_Model
 						 interval: 4000 
 					}); 
 				 });  
-				</script>"; 
+				</script>";  */
 	
 		/*<!-- slider -->*/
-		$data.='<script type="text/javascript" src="'.base_url().'slideshows/slide02/s3slider.js"></script>';
+		/* $data.='<script type="text/javascript" src="'.base_url().'slideshows/slide02/s3slider.js"></script>';
 		$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'slideshows/slide02/slider.css" />';
 		$data.="<script type='text/javascript'>
 					$(document).ready(function() {
@@ -62,11 +64,96 @@ class temp_model extends CI_Model
 							$('.sub').hide();
 						}
 					}
-				</script>";
+				</script>"; */
 			
-		$data.='<script src="'.base_url().'slideshows/slide02/jquery-easing.1.2.pack.js" type="text/javascript"></script>';
+	/* 	$data.='<script src="'.base_url().'slideshows/slide02/jquery-easing.1.2.pack.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'slideshows/slide02/jquery-easing-compatibility.1.2.pack.js" type="text/javascript"></script>';
-		$data.='<script src="'.base_url().'slideshows/slide02/coda-slider.1.1.1.pack.js" type="text/javascript"></script>';
+		$data.='<script src="'.base_url().'slideshows/slide02/coda-slider.1.1.1.pack.js" type="text/javascript"></script>'; */
+		
+		///news slider
+		$data.='<!-- jQuery Plugin scripts -->';
+		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/external/jquery.easing.1.3.min.js"></script>';
+		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/external/jquery.mousewheel.min.js"></script>';
+		
+		$data.='<!-- Slider Kit scripts -->';
+		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/sliderkit/jquery.sliderkit.1.9.2.pack.js"></script>';
+		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/sliderkit/addons/sliderkit.timer.1.0.pack.js"></script>';
+		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/sliderkit/addons/sliderkit.imagefx.1.0.pack.js"></script>';
+		
+		$data.='<!-- Slider Kit launch -->';
+		$data.='<script type="text/javascript">';
+		$data.='$(window).load(function(){ 
+				$("#js-news").ticker({titleText:"Agenda",controls:false});
+				//$(window).load() must be used instead of $(document).ready() because of Webkit compatibility		
+				// News slider > Vertical
+				$(".newslider-vertical").sliderkit({
+					shownavitems:3,
+					verticalnav:true,
+					navitemshover:true,
+					circular:true
+				});
+				
+				// News slider > Horizontal
+				$(".newslider-horizontal").sliderkit({
+					auto:false,
+					shownavitems:5,
+					panelfx:"sliding",
+					panelfxspeed:1000,
+					panelfxeasing:"easeInOutExpo", //"easeOutExpo", "easeOutCirc", etc.
+					mousewheel:true,
+					keyboard:true,
+					fastchange:false
+				});
+				
+				// News slider > Minimal
+				$(".newslider-minimal").sliderkit({
+					auto:true,
+					circular:true,
+					shownavitems:1,
+					panelfx:"sliding",
+					panelfxspeed:400,
+					panelfxeasing:"easeOutCirc",
+					mousewheel:false,
+					verticalnav:true,
+					verticalslide:true
+				});
+				
+				
+				//pengumuman
+				$(".transition-demo01").sliderkit({
+					auto:1,
+					autostill:true,
+					timer:true,
+					circular:true,
+					panelfx:"fancy",
+					imagefx:{
+						fxType: "random", // curtain, zipper, wave, fountain, random
+						fxDelay: 150, // delay between strips in ms
+						fxDuration: 800, // delay between strips in ms
+					},
+					debug:1
+					
+				});
+				
+				
+	
+			});	
+		</script>';
+
+		$data.='<!-- Slider Kit styles -->';
+		$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-core.css" media="screen, projection" />';
+		$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-demos.css" media="screen, projection" />';
+		
+		$data.='<!-- Slider Kit compatibility -->	';
+		$data.='<!--[if IE 6]><link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-demos-ie6.css" /><![endif]-->';
+		$data.='<!--[if IE 7]><link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-demos-ie7.css" /><![endif]-->';
+		$data.='<!--[if IE 8]><link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-demos-ie8.css" /><![endif]-->';
+
+		$data.='<!-- Site styles -->';
+	//	$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-site.css" media="screen, projection" />	';
+		///end news slider
+		
+		
 		
 		//-- google analitycs --
 		$data.='<script type="text/javascript">';

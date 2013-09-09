@@ -10,47 +10,60 @@
 	
 	<?=$header?>
 	
-	<?=$sliderTop?>
+	<?=""//$sliderTop?>
+	
+	<ul id="js-news" class="js-hidden">
+				<?php foreach($agenda as $b){ ?>
+		<li class="news-item"><?=$b->tgl." : ".$b->kegiatan?></li>
+		<?} ?>
+	</ul>
+	<!-- Start newslider-minimal -->
+				<div class="sliderkit newslider-minimal">						
+					<div class="sliderkit-legend">Agenda:</div>
+					<div class="sliderkit-panels">
+					<?php foreach($agenda as $b){ ?>
+						<div class="sliderkit-panel">
+							<a href="#" title="[link title]"><?=$b->tgl." : ".$b->kegiatan?></a>
+						</div>
+					
+						<?} ?>
+					</div>
+				</div>				
+				<!-- // end of newslider-minimal -->
+	<!-- Start newslider-vertical -->
+				<div class="sliderkit newslider-vertical">
+					
+					<div class="sliderkit-panels">
+					  	<?php foreach($berita as $b){ ?>
+						<div class="sliderkit-panel">
+							<div class="sliderkit-news">
+								<a href="#" title="[Titre de l'article]"><img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/small/sample-03.jpg" alt="[alternative text]" /></a>
+								<h3><a href="#"><?=$b->judul_berita?></a></h3>
+								<p><?=$b->deskripsi_singkat?></p>
+								<a class="sliderkit-news-readmore" href="#">Read more</a>
+							</div>
+						</div>
+						<?}?>
+					
+					</div>
+					<div class="sliderkit-nav">
+						<div class="sliderkit-nav-clip">
+							<ul>
+							  	<?php foreach($berita as $b){ ?>
+								<li><a href="#" title="[link title]"><?=$b->judul_berita?></a></li>
+								<? }?>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- // end of newslider-vertical -->
+				
+				
 			  
 		<div id="content">
 			
 			<div id="maincontent">
-	
-				<div class="boxbig">
-					<h1 class="titlebig">Berita</h1>
-					<div class="boxbigcontent" style="height:225px">
-						
-					<div id="feature">
-					  <div id="panes">
-					  	<?php foreach($berita as $b): ?>
-						<div style="display: none;">
-							<fieldset id="imgBerita">
-								<a href="<?=base_url()?>berita/detail/<?=$b->id_berita?>"><img src="<?=base_url()?>uploads/img/medium/<?=$b->gambar?>"  alt="" /></a>
-							</fieldset> 
-							<p><strong><a href="<?=base_url()?>berita/detail/<?=$b->id_berita?>"><?=$b->judul_berita?></a></strong><br />   
-							<?=$b->deskripsi_singkat?>
-							</p>
-						</div>
-						<?php endforeach; ?>
-					</div><!-- /# end panes -->
-					
-					<div id="navi">
-					<ul>
-					<?php foreach($berita as $b2): ?>
-					<li><a class="" href="#">
-						<img src="<?=base_url()?>uploads/img/thumbnail/<?=$b2->gambar?>" alt="" />
-						</a>
-					</li>
-					<?php endforeach; ?>
-					</ul>	 
-					</div><!-- /# end navigator -->	  
-					
-						</div>	
-
-					</div>
-					<div class="boxbigcontentbottom"></div>
-				</div>
-				
+			
 				<div class="contentleft">
 					<div class="boxcontentsmall">
 						<h1 class="titlesmall">Program Kerja</h1>
@@ -77,22 +90,39 @@
 						<?php endforeach; ?>
 						<div class="boxsmcontentbottom"></div>
 					</div>
-				</div>
-				
-				<div class="contentright">
-				<h1 class="titlesmall">Substansi Pembelajaran</h1>
-					<?php foreach($belajar as $dBelajar): ?>
+					
+					<!-- pengumuman -->
 					<div class="boxcontentsmall">
-						
-						<div class="boxsmallcontent">
-							<a href="#"><h3><?=$dBelajar->judul?></h3>
-							<p><?=$dBelajar->deskripsi_singkat?></p></a>
+					<h1 class="titlesmall">Pengumuman</h1>
+						<div class="sliderkit photoslider-mini transition-demo01">						
+						<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-prev"><a rel="nofollow" href="#" title="Previous"><span>Previous</span></a></div>
+						<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-next"><a rel="nofollow" href="#" title="Next"><span>Next</span></a></div>
+						<div class="sliderkit-panels">
+							<div class="sliderkit-panel">
+								<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-01.jpg" alt="[Alternative text]" />
+							</div>
+							<div class="sliderkit-panel">
+								<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-02.jpg" alt="[Alternative text]" />
+							</div>
+							<div class="sliderkit-panel">
+								<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-03.jpg" alt="[Alternative text]" />
+							</div>
+							<div class="sliderkit-panel">
+								<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-04.jpg" alt="[Alternative text]" />
+							</div>
+							<div class="sliderkit-panel">
+								<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-05.jpg" alt="[Alternative text]" />
+							</div>
+						</div>
+						<div class="sliderkit-timer-wrapper">
+							<div class="sliderkit-timer"></div>
 						</div>
 					</div>
-					<?php endforeach; ?>
-						<div class="boxsmcontentbottom"></div>
-					
+					</div>
+					<!-- end pengumuman -->
 				</div>
+				
+		
 				
 				<?=$polling?>
 				<?="";//tutup hula $pengumuman?>
@@ -105,18 +135,10 @@
 				<?=$mainmenu?>
 				<?=$login?>
 				<?=$linkterkait?>
-				<?=$testimonial?>	
+				<?="";//$testimonial?>	
 				<?=$footer?>
 			</div>
-			<ul id="js-news" class="js-hidden">
-				<li class="news-item">jQuery News Ticker now has support for multiple tickers per page!</li>
-				<li class="news-item">jQuery News Ticker now has support for right-to-left languages!</li>
-				<li class="news-item">jQuery News Ticker now has support for loading content via an RSS feed!</li>
-				<li class="news-item">jQuery News Ticker now has an optional fade effect between items!</li>
-				<li class="news-item">New updates have been made to jQuery News Ticker! Check below for more details!</li>
-				<li class="news-item">jQuery News Ticker is now compatible with jQuery 1.3.2! See below for further details and for latest download.</li>
-				<li class="news-item">Further updates to jQuery News Ticker are coming soon!</li>
-			</ul>
+			
 </div>
 </body>
 </html>
