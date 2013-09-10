@@ -5,9 +5,9 @@
 	width: 780px;
 	height: 32px;
 	display: block;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 	background-color: #f8f0db;
 	font-size: 1.25em;
 	/* border: 1px solid #ff0000; */

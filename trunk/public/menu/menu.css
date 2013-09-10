@@ -27,7 +27,7 @@ div#menu {
     _background-image: url(images/left.gif);
     width:100%;
 	margin:0 auto;
-	border:1px solid #ff0000;
+	/* border:1px solid #ff0000; */
 }
 
 div#menu ul {
