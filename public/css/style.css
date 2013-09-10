@@ -71,7 +71,7 @@ body {
 }
 #header {
 	width:990px;
-	height:104px;
+	height:110px;
 	background: url(../images/back_header.png) no-repeat;
 	position: relative;
 }
@@ -433,7 +433,7 @@ div#placemainmenu li li:hover ul
 }
 #content {
 	width: 990px;
-	padding: 20px 0 0 0;
+	padding: 2px 0 0 0;
 	margin:0 auto;
 }
 #maincontent {
@@ -454,6 +454,7 @@ div#placemainmenu li li:hover ul
 }
 .boxbigcontent {
 	width: 960px;
+	border-top: 1px solid #d5d5d5;
 	border-left: 1px solid #d5d5d5;
 	border-right: 1px solid #d5d5d5;
 	padding: 12px 14px 7px 14px;

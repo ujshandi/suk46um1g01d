@@ -6,7 +6,7 @@
 <style type="text/css">
  div#menu {
     margin:30px auto;
-    width:90%;
+    width:85%;
 } 
 
 
