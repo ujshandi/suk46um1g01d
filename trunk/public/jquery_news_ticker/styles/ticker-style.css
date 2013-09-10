@@ -2,12 +2,12 @@
 .ticker-wrapper.has-js {
 	margin: 0 auto;
 	padding: 0px 20px;
-	width: 780px;
+	width: 917px;
 	height: 32px;
 	display: block;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
 	background-color: #f8f0db;
 	font-size: 1.25em;
 	/* border: 1px solid #ff0000; */

@@ -35,10 +35,23 @@ class direktori extends CI_Controller {
 	function edit()
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array('js/tiny_mce/tiny_mce.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
+		//var_dump($data);die;		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['data']		= $this->informasimodel->getbykategori('direktori');
 		$data['mainmenu']	= $this->backend_model->mainmenu("1.1");
-		$this->load->view('menubar/direktori',$data);
+		/* $this->load->view('menubar/direktori',$data); */
+		$this->template->set_template("admin");
+		//$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','menubar/direktori',$data);
+		$this->template->render();
 	}
 	function update()
 	{
