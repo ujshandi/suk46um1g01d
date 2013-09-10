@@ -87,6 +87,14 @@ class program_kerja extends CI_Controller {
 	function data($offset=0)
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+						'js'=>array('js/tiny_mce/tiny_mce.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$uri_segment = 3;
 		$offset = $this->uri->segment($uri_segment);
 		$config['base_url'] = site_url('program_kerja/data/');
@@ -96,16 +104,32 @@ class program_kerja extends CI_Controller {
 		$data['pagination'] = $this->pagination->create_links();
 		
 		$data['data']		= $this->programkerjamodel->get_All($this->limit,$offset);
-		$data['headermenu']	= $this->backend_model->headermenu();
+		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("3");
-		$this->load->view('program_kerja/program_data',$data);
+		$this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','program_kerja/program_data',$data);
+		$this->template->render();
+	//	$this->load->view('program_kerja/program_data',$data);
 	}
 	function add()
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+						'js'=>array('js/tiny_mce/tiny_mce.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("3");
-		$this->load->view('program_kerja/program_add',$data);
+		$this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','program_kerja/program_add',$data);
+		$this->template->render();
+		///$this->load->view('program_kerja/program_add',$data);
 	}
 	function simpan()
 	{

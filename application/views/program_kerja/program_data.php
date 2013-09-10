@@ -1,17 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Admin Page</title>
-	<meta name="description" content="Website Description" />
-	<meta name="keywords" content="Website Kwywords" />
-	<link rel="stylesheet" type="text/css" href="<?=base_url()?>public/css/backend.css" />
-	<link rel="stylesheet" type="text/css" href="<?=base_url()?>public/media/jquery/ui.css" />
-	<script src="<?=base_url()?>public/js/jquery.js" type="text/javascript"></script>
-	<script src="<?=base_url()?>public/js/ui_core.js" type="text/javascript"></script>
-	<script src="<?=base_url()?>public/js/ui_tabs.js" type="text/javascript"></script>
-	<script src="<?=base_url()?>public/js/ui.dialog.js" type="text/javascript"></script>
-	<script src="<?=base_url()?>public/js/lightbox.js" type="text/javascript"></script>
+
 	<script type="text/javascript" src="<?=base_url()?>public/js/nicEdit.js"></script>
 	<script type="text/javascript">
 	bkLib.onDomLoaded(function() {
@@ -59,15 +46,6 @@
 		});
 	}
 	</script>
-</head>
-<body>
-<div id="container">
-	
-	<?=$headermenu?>
-	
-		<div id="content">
-			<div id="maincontent">
-				<div class="boxbig">
 				<h1 class="titlebig">Daftar Program Kerja</h1>
 					<div class="boxbigcontent">
 					<a href="<?=base_url()?>program_kerja/add" class="button" >Tambah</a>
@@ -109,26 +87,3 @@
 					<div class="boxbigcontentbottom"></div>
 				</div>
 				
-			</div>
-			
-			<?=$mainmenu?>
-			
-			<div class="clear"></div>
-		</div>
-		<div id="footer">
-			<p id="texttwitter"></p>
-			<ul id="menufooterright">
-				<li><?=COPYRIGHT?></li>
-				<li class="last"><a href="#">Back to top</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<?php $i=0; foreach($data as $row): ?>
-	<?php $i=$i+1; ?>
-	<div id="dialog<?=$i?>" title="<?=$row->nama_program?>" style="display:none"> 
-		<?=$row->deskripsi?>
-	</div>
-<?php endforeach; ?>
-</body>
-</html>

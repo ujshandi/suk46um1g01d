@@ -95,11 +95,24 @@ class profil extends CI_Controller {
 	function visimisi()
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
+		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['visi']		= $this->informasimodel->getbykategori('visi');
 		$data['misi']		= $this->informasimodel->getbykategori('misi');
 		$data['mainmenu']	= $this->backend_model->mainmenu("2.1");
-		$this->load->view('profil/visimisi_edit',$data);
+		$this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','profil/visimisi_edit',$data);
+		$this->template->render();
+		//$this->load->view('profil/visimisi_edit',$data);
 	}
 	function updatevisimisi()
 	{
@@ -117,10 +130,22 @@ class profil extends CI_Controller {
 	function sejarahview()
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['sejarah']	= $this->informasimodel->getbykategori('sejarah');
 		$data['mainmenu']	= $this->backend_model->mainmenu("2.2");
-		$this->load->view('profil/sejarah_edit',$data);
+		$this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','profil/sejarah_edit',$data);
+		$this->template->render();
+		//$this->load->view('profil/sejarah_edit',$data);
 	}
 	function updatesejarah()
 	{
@@ -134,10 +159,22 @@ class profil extends CI_Controller {
 	function sarprasview()
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['sarpras']	= $this->informasimodel->getbykategori('sarpras');
 		$data['mainmenu']	= $this->backend_model->mainmenu("2.4");
-		$this->load->view('profil/sarpras_edit',$data);
+		$this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','profil/sarpras_edit',$data);
+		$this->template->render();
+		//$this->load->view('profil/sarpras_edit',$data);
 	}
 	function updatesarpras()
 	{
@@ -151,10 +188,22 @@ class profil extends CI_Controller {
 	function prestasiview()
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['prestasi']	= $this->informasimodel->getbykategori('prestasi');
 		$data['mainmenu']	= $this->backend_model->mainmenu("2.5");
-		$this->load->view('profil/prestasi_edit',$data);
+		$this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','profil/prestasi_edit',$data);
+		$this->template->render();
+		//$this->load->view('profil/prestasi_edit',$data);
 	}
 	function updateprestasi()
 	{

@@ -82,9 +82,23 @@ class backend extends CI_Controller {
 	function main()
 	{
 		$this->cekLogin();
+		/* $data['headmenu']=$this->backend_model->headermenu("1");
+		$data['mainmenu']=$this->backend_model->mainmenu("0");
+		$this->load->view('backend',$data); */
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$data['headmenu']=$this->backend_model->headermenu("1");
 		$data['mainmenu']=$this->backend_model->mainmenu("0");
-		$this->load->view('backend',$data);
+		$this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','backend',$data);
+		$this->template->render();
 	}
 	function logout()
 	{
