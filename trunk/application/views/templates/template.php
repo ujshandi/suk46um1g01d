@@ -29,7 +29,7 @@
 			<div id="maincontent">
 				<div class="boxbig">
 					<div class="boxbigcontent">
-					<?=$wrapper;?>
+						<?=$wrapper;?>
 					</div>
 					<div class="boxbigcontentbottom"></div>
 				</div>

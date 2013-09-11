@@ -41,6 +41,17 @@ body {
 	line-height: 1.6em;
 	font:62.5% arial, verdana, serif;
 }
+
+.datetime{
+	/* border:1px solid #ff0000; */
+	width:320px;
+	right:0;
+	bottom:50;
+	margin:0 auto;
+	/* position:absolute; */
+	font:1.2em arial, verdana, serif;
+	color: #fff;
+}
 .replace{
 	position:relative;
 	margin:0;
@@ -450,7 +461,7 @@ div#placemainmenu li li:hover ul
 	background: url(../images/title_big.png) no-repeat;
 	font-size: 1.4em;
 	color: #fff;
-	padding: 9px 15px 0 15px;
+	padding: 9px 15px 1px 15px;
 }
 .boxbigcontent {
 	width: 960px;
@@ -518,6 +529,13 @@ div#placemainmenu li li:hover ul
 	border: 1px solid #ff0000;
 	*/
 }
+.boxcontentsmall2 {
+	width: 648px;
+	/* 
+	padding-left: 30px; 
+	border: 1px solid #ff0000;
+	*/
+}
 .titlesmall {
 	width: 283px;
 	height: 25px;
@@ -525,6 +543,7 @@ div#placemainmenu li li:hover ul
 	font-size: 1.4em;
 	color: #fff;
 	padding: 9px 15px 0 15px;
+	border: 1px solid #ff0000;
 }
 .boxsmallcontent {
 	width: 283px;
