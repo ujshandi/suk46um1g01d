@@ -21,6 +21,16 @@
  *---------------------------------*/
 .photoslider-mini{width:957px;height:335px;/* padding-top:10px; */}
 
+/* Panel > Textbox */
+.photoslider-mini .sliderkit-panel .sliderkit-panel-textbox{bottom:0;left:0;height:85px;width:957px;color:#fff;}
+.photoslider-mini .sliderkit-panel .sliderkit-panel-text{height:65px;padding:10px 15px 10px 115px;font-size:0.9em;color:#fff;}
+.photoslider-mini .sliderkit-panel .sliderkit-panel-text h4{height:auto;margin:0 0 7px;line-height:1.1em;font-size:1.1em;font-weight:bold;border:none;color:#fff;}
+.photoslider-mini .sliderkit-panel .sliderkit-panel-text p{height:auto;margin:0 0 7px;line-height:1.1em;font-size:1.1em;font-weight:bold;border:none;color:#fff;}
+.photoslider-mini .sliderkit-panel .sliderkit-panel-overlay{height:85px;width:957px;background:#000;opacity:0.6;}
+
+
+
+
 /* Panels buttons */
 .photoslider-mini .sliderkit-go-btn{position:absolute;top:0;z-index:10;width:50px;height:335px;}
 .photoslider-mini .sliderkit-go-prev{left:0;}
@@ -34,6 +44,32 @@ background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
 .photoslider-mini .sliderkit-btn-disable a{opacity:0/*can be set to any value until 1*/;cursor:default;}
 .photoslider-mini .sliderkit-btn-disable a:hover{cursor:default;}
 .photoslider-mini .sliderkit-go-btn span{display:none;}
+
+/*---------------------------------
+ *  Photos slider > Minimal2
+ *---------------------------------*/
+.photoslider-mini2{width:957px;height:335px;/* padding-top:10px; */}
+
+/* Panel > Textbox */
+.photoslider-mini2 .sliderkit-panel .sliderkit-panel-textbox{bottom:0;left:0;height:85px;width:648px;color:#fff;}
+.photoslider-mini2 .sliderkit-panel .sliderkit-panel-text{height:65px;padding:10px 15px 10px 115px;font-size:0.9em;color:#fff;}
+.photoslider-mini2 .sliderkit-panel .sliderkit-panel-text h4{height:auto;margin:0 0 7px;line-height:1.1em;font-size:1.1em;font-weight:bold;border:none;color:#fff;}
+.photoslider-mini2 .sliderkit-panel .sliderkit-panel-text p{height:auto;margin:0 0 7px;line-height:1.1em;font-size:1.1em;font-weight:bold;border:none;color:#fff;}
+.photoslider-mini2 .sliderkit-panel .sliderkit-panel-overlay{height:85px;width:648px;background:#000;opacity:0.6;}
+
+/* Panels buttons */
+.photoslider-mini2 .sliderkit-go-btn{position:absolute;top:0;z-index:10;width:50px;height:335px;}
+.photoslider-mini2 .sliderkit-go-prev{left:0;}
+.photoslider-mini2 .sliderkit-go-next{right:0;}
+.photoslider-mini2 .sliderkit-go-btn a{display:block;width:50px;height:335px;opacity:0.6;cursor:pointer;background-color:#fff;background-repeat:no-repeat;background-position:center center;}
+.photoslider-mini2 .sliderkit-go-prev a{
+/* background-image:url("../images/slider-arrow-left.gif"); */
+background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
+}
+.photoslider-mini2 .sliderkit-go-next a{background-image:url("../images/slider-arrow-right.gif");}
+.photoslider-mini2 .sliderkit-btn-disable a{opacity:0/*can be set to any value until 1*/;cursor:default;}
+.photoslider-mini2 .sliderkit-btn-disable a:hover{cursor:default;}
+.photoslider-mini2 .sliderkit-go-btn span{display:none;}
 
 /*---------------------------------
  *  Photos slider > With nav bullets
@@ -302,27 +338,27 @@ background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
 .newslider-vertical{
 	clear:both;
 	overflow:hidden;
-	width:990px;
-	height:208px;
+	width:647px;
+	height:175px;
 	padding-bottom:28px;
-	margin-bottom:-35px;}
+	margin-bottom:0px;}
 
 
 /* Nav */
-.newslider-vertical .sliderkit-nav{width:200px;height:165px;left:760px}
+.newslider-vertical .sliderkit-nav{width:200px;height:165px;left:447px}
 .newslider-vertical .sliderkit-nav-clip li{height:50px;width:190px;margin-bottom:5px;padding-left:10px;}
 .newslider-vertical .sliderkit-nav-clip li.sliderkit-selected{
  background:transparent url("../images/newslider-arrow-left.gif") no-repeat left center; 
 
 
 }
-.newslider-vertical .sliderkit-nav-clip li a{height:37px;width:180px;padding:13px 0 0 10px;text-align:left;font-size:1.3em;color:#fff;text-decoration:none;background:#00668d;}
+.newslider-vertical .sliderkit-nav-clip li a{height:37px;width:180px;padding:5px 0 10px 10px;text-align:left;font-size:1.3em;color:#fff;text-decoration:none;background:#00668d;}
 .newslider-vertical .sliderkit-nav-clip li a:hover,
 .newslider-vertical .sliderkit-nav-clip li a:focus{color:#fff;}
 
 /* Panel */
-.newslider-vertical .sliderkit-panels{position:absolute;left:0px;width:750px;height:158px;overflow:hidden;border:1px solid #ccc;}
-.newslider-vertical .sliderkit-panel{left:0;top:0;width:730px;height:138px;padding:10px;background:#fff;}
+.newslider-vertical .sliderkit-panels{position:absolute;left:0px;width:440px;height:165px;overflow:hidden;border:1px solid #ccc;}
+.newslider-vertical .sliderkit-panel{left:0;top:0;width:420px;height:150px;padding:10px;background:#fff;}
 
 /* News block */
 .newslider-vertical .sliderkit-news h3,

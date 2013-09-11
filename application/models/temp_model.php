@@ -77,8 +77,9 @@ class temp_model extends CI_Model
 		
 		$data.='<!-- Slider Kit scripts -->';
 		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/sliderkit/jquery.sliderkit.1.9.2.pack.js"></script>';
-		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/sliderkit/addons/sliderkit.timer.1.0.pack.js"></script>';
+		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/sliderkit/addons/sliderkit.timer.1.0.pack.js"></script>';		
 		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/sliderkit/addons/sliderkit.imagefx.1.0.pack.js"></script>';
+		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/sliderkit/addons/sliderkit.delaycaptions.1.1.pack.js"></script>';
 		
 		$data.='<!-- Slider Kit launch -->';
 		$data.='<script type="text/javascript">';
@@ -118,18 +119,33 @@ class temp_model extends CI_Model
 					verticalslide:true
 				});
 				
+					//pengumuman
+				$(".photoslider-mini2").sliderkit({
+					auto:true,
+					autospeed:3000,
+					panelbtnshover:true,
+					circular:true,
+					fastchange:false
+				});
 				
-				//pengumuman
+				//slideshow
 				$(".transition-demo01").sliderkit({
 					auto:1,
 					autostill:true,
 					timer:true,
 					circular:true,
 					panelfx:"fancy",
+					delaycaptions:{
+						delay:00,
+						position:"bottom",
+						transition:"fading",//sliding
+						duration:150
+					//	easing:"easeOutExpo"
+					},
 					imagefx:{
 						fxType: "random", // curtain, zipper, wave, fountain, random
 						fxDelay: 150, // delay between strips in ms
-						fxDuration: 800, // delay between strips in ms
+						fxDuration: 1500 // delay between strips in ms
 					},
 					debug:1
 					
