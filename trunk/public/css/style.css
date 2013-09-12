@@ -464,12 +464,12 @@ div#placemainmenu li li:hover ul
 	padding: 9px 15px 1px 15px;
 }
 .boxbigcontent {
-	width: 960px;
+	width: 988px;
+	/* 
 	border-top: 1px solid #d5d5d5;
 	border-left: 1px solid #d5d5d5;
 	border-right: 1px solid #d5d5d5;
-	padding: 12px 14px 7px 14px;
-	/* 
+	padding: 0 0 0 0;
 	border: 1px solid #ff0000; 
 	padding: 12px 14px 7px 14px;
 	*/
@@ -509,8 +509,10 @@ div#placemainmenu li li:hover ul
 	width: 990px;
 	height: 3px;
 	font-size: 0;
+	/* 
 	background: url(../images/boxbigbgtcontent_bottom.png) no-repeat;
-	/* border: 1px solid #ff0000; */
+	border: 1px solid #ff0000; 
+	*/
 }
 .contentleft {
 	width: 500px;
