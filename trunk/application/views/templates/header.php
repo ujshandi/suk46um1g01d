@@ -1,6 +1,3 @@
-<?=''//$header?>
-
-
 <script type="text/javascript">
 	window.setTimeout("waktu()",1000);  
 function waktu() {   
@@ -39,25 +36,33 @@ function waktu() {
 				<p class="notlogin" style="margin-left:-10px;"><span style="margin-right:5px;">|</span> <a href="'.base_url().'sitemap">Peta Situs</a></p>
 				<div class="datetime">
 					<div style="float:right; /* padding: 5px 10px; display: block; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;	background-color: #f1f1f1;border:1px solid #a5a5a5; opacity:0.9; filter:alpha(opacity=90); */">
-						<? echo date("D").", ".date('d M Y');?>
+						<? 
+					//	setlocale(LC_ALL, 'id_ID.UTF8', 'id_ID.UTF-8', 'id_ID.8859-1', 'id_ID', 'IND.UTF8', 'IND.UTF-8', 'IND.8859-1', 'IND', 'Indonesian.UTF8', 'Indonesian.UTF-8', 'Indonesian.8859-1', 'Indonesian', 'Indonesia', 'id', 'ID', 'en_US.UTF8', 'en_US.UTF-8', 'en_US.8859-1', 'en_US', 'American', 'ENG', 'English');
+					setlocale (LC_TIME, 'id_ID');
+
+
+echo strftime("%A, %d %B %Y") ;
+						//echo date("l").", ".date('d M Y');
+						
+						?>
 					<span id="output">14:44:51</span>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--<div id="placemainmenu">-->
+		
 		<div id="menu">
 		    <ul class="menu">
-		        <li><a href="#" class="parent"><span>Home</span></a></li>
+		        <li><a href="<?=base_url()?>" class="parent"><span>Home</span></a></li>
 		        <li><a href="#" class="parent"><span>Kota Sukabumi</span></a>
 		            <div><ul>
-		                <li><a href="#"><span>Profil</span></a></li>
-		                <li><a href="#"><span>Visi dan Misi</span></a></li>
-		                <li><a href="#"><span>Sejarah</span></a></li>
-		                <li><a href="#"><span>Lambang</span></a></li>
-		                <li><a href="#"><span>Geografis</span></a></li>
-		                <li><a href="#"><span>Sosial Ekonomi</span></a></li>
-		                <li><a href="#"><span>Sukabumi Dalam Angka</span></a></li>
+		               <!-- <li><a href="#"><span>Profil</span></a></li> -->
+		                <li><a href="<?=base_url()?>profil/sejarah"><span>Sejarah</span></a></li>
+						<li><a href="<?=base_url()?>profil/visi_misi"><span>Visi dan Misi</span></a></li>		                
+		                <li><a href="<?=base_url()?>profil/lambang"><span>Lambang</span></a></li>
+		                <li><a href="<?=base_url()?>profil/geografis"><span>Geografis</span></a></li>
+		                <li><a href="<?=base_url()?>profil/sosial"><span>Sosial Ekonomi</span></a></li>
+		                <li><a href="<?=base_url()?>profil/angka"><span>Sukabumi Dalam Angka</span></a></li>
 		                <!-- <li><a href="#" class="parent"><span>Sub Item 2</span></a>
 		                    <div><ul>
 		                        <li><a href="#"><span>Sub Item 2.1</span></a></li>
@@ -153,5 +158,6 @@ function waktu() {
 		</div>
 	</div>
 	<div class="clear"></div>
+</div>
 </div>
 <div id="copyright" style="display:none">Menu by <a href="http://apycom.com/">Apycom jQuery Menus</a></div>

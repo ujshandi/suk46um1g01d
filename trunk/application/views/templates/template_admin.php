@@ -5,7 +5,7 @@
 	<title>Admin Page</title>
 	<meta name="description" content="Website Description" />
 	<meta name="keywords" content="Website Kwywords" />
-	<link rel="stylesheet" type="text/css" href="<?=base_url()?>public/css/backend.css" />
+	<link rel="stylesheet" type="text/css" href="<?=base_url()?>public/css/backend.css" /> 
 	<script src="<?=base_url()?>public/js/jquery.js" type="text/javascript"></script>
 	<script src="<?=base_url()?>public/js/ui_core.js" type="text/javascript"></script>
 	<script src="<?=base_url()?>public/js/ui_tabs.js" type="text/javascript"></script>

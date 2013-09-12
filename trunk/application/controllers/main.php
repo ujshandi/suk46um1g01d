@@ -33,6 +33,7 @@ class main extends CI_Controller {
 		$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
 		$data['testimonial']= $this->temp_model->testimonial();
+		$data['download']= $this->temp_model->download();
 		$data['footer']		= $this->temp_model->footer();
 		$data['title_page']		= "Beranda ".COMPANY_NAME;
 		//$this->load->view('main',$data);

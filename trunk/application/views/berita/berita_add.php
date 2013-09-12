@@ -1,7 +1,7 @@
 
-	<script type="text/javascript" src="<?=base_url()?>public/js/tiny_mce/tiny_mce.js"></script>
+	<script type="text/javascript" src="<?=base_url()?>public/js/tiny_mce/tiny_mce.js"></script> 
 	<script type="text/javascript">
-	tinyMCE.init({
+	  tinyMCE.init({
 		// General options
 		mode : "exact",
 		elements : "editor1",
@@ -32,7 +32,7 @@
 		staffid : "991234"
 		}
 
-	});
+	}); 
 
 	$(function() {
 		$("#butslide").click(function(){
@@ -86,10 +86,11 @@
 							<label>Upload Gambar</label> 
 						   <input type="file" name="gambar" size="20" class="textboxcontact" /><br /> <br /> 
 							<label>Isi Berita</label>
-							<textarea name="isi" id="editor1" rows="18" cols="83"\>isi</textarea><br />
+							<textarea name="isi" id="editor1" class="editor" cols="100" rows="200" >isi</textarea>
+								<?php //echo display_ckeditor($ckeditor); ?><br />
 							<div align="right">
-                            <a href="javascript:simpan();" class="buttons buttons-orange" ><span class="disk"></span>Simpan</a>
-							<a href="<?=base_url()?>berita" class="buttons buttons-orange" ><span class="cancel"></span>Batal</a>
+                            <a href="javascript:simpan();" class="button" ><span class="disk"></span>Simpan</a>
+							<a href="<?=base_url()?>berita" class="button" ><span class="cancel"></span>Batal</a>
 							
 							</div>
 						</form>

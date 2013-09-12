@@ -1,43 +1,49 @@
 /* Ticker Styling */
 .ticker-wrapper.has-js {
 	margin: 0 auto;
-	padding: 0px 20px;
-	width: 917px;
+	padding: 0px 0px;
+	width: 990px;
 	height: 32px;
 	display: block;
 	-webkit-border-radius: 1px;
 	-moz-border-radius: 1px;
 	border-radius: 1px;
-	background-color: #f8f0db;
+	background-color: #fff992;
 	font-size: 1.25em;
-	/* border: 1px solid #ff0000; */
+	border-top: 1px solid #909090; 
+	/* 
+	border: 1px solid #ff0000; 
+	*/
 }
 .ticker {
 	width: 710px;
-	height: 30px;
+	height: 32px;
 	display: block;
 	position: relative;
 	overflow: hidden;
-	background-color: #f8f0db;
-	/* border: 1px solid #ff0000; */
+	background-color: #fff992;
+	/* border: 1px solid #ff0000; f8f0db*/
 }
 .ticker-title {
-	padding-top: 8px;
-	color: #990000;
+	border-right: 1px solid #909090; 
+	padding: 8px 9px 11px 9px;
+	color: #ccff00;
 	font-weight: bold;
-	background-color: #f8f0db;
+	background-color: #4b5a11;
 	text-transform: uppercase;
+	font:0.95em Century Gothic, verdana, serif;
 }
 .ticker-content {
 	margin: 0px;
-	padding-top: 9px;
+	padding: 8px 9px 11px 9px;
 	position: absolute;
-	color: #1F527B;
+	color: #4b5a11;
 	font-weight: bold;
-	background-color: #f8f0db;
+	background-color: #fff992;
 	overflow: hidden;
 	white-space: nowrap;
 	line-height: 1.2em;
+	font:0.95em Century Gothic, verdana, serif;
 }
 .ticker-content:focus {
 	none;
@@ -54,14 +60,14 @@
 	padding-top: 9px;
 	position: absolute;
 	top: 0px;
-	background-color: #f8f0db;
+	background-color: #fff992;
 	display: block;
 	width: 800px;
 	height: 23px; 
 }
 .ticker-swipe span {
 	margin-left: 1px;
-	background-color: #f8f0db;
+	/* background-color: #f8f0db; */
 	border-bottom: 1px solid #1F527B;
 	height: 12px;
 	width: 7px;

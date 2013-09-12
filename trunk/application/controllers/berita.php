@@ -12,7 +12,9 @@ class Berita extends CI_Controller {
 		$this->load->model('backend_model');
 		$this->load->model('temp_model');
 		$this->load->model('Berita_model','',TRUE);
+		$this->load->helper('ckeditor');
 		$this->load->library('upload');
+		$this->load->library('utility');
 		//$this->load->library('image_lib') ;
 	}
 	function cekLogin()
@@ -112,9 +114,22 @@ class Berita extends CI_Controller {
 	function addData()
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("10");
-		$this->load->view('berita/berita_add',$data);
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
+		$this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','berita/berita_add',$data);
+		$this->template->render();
+		//$this->load->view('berita/berita_add',$data);
 	}
 	function saveData()
 	{
