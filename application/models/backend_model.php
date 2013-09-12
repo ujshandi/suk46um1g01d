@@ -131,12 +131,13 @@ class backend_model extends CI_Model
 				
 					$menu.='<div class="boxnavcontent">';
 						$menu.='<ul class="menunav">';
-							$menu.="<li><a href=\"javascript:dropdown('menubar');\">";
+							/* $menu.="<li><a href=\"javascript:dropdown('menubar');\">";
 							$menu.='<img src="'.$this->setBg("1","0",$id).'" align="left"/>Menubar</a></li>';
 								$menu.='<ul class="sub" id="menubar" style="'.$style1.'">';
 									$menu.='<li class="submenu"><a href="'.base_url().'direktori/edit">';
 										$menu.='<img src="'.$this->setBg("1","1.1",$id).'" align="left"/>'.COMPANY_NAME;
-									$menu.='</a></li>';
+									$menu.='</a></li>'; */
+									
 									/* $menu.='<li class="submenu"><a href="'.base_url().'nuptk/edit">';
 										$menu.='<img src="'.$this->setBg("1","1.2",$id).'" align="left"/>NUPTK';
 									$menu.='</a></li>';
@@ -152,24 +153,31 @@ class backend_model extends CI_Model
 									$menu.='<li class="submenu"><a href="'.base_url().'ppmp/edit">';
 										$menu.='<img src="'.$this->setBg("1","1.6",$id).'" align="left"/>PPMP';
 									$menu.='</a></li>'; */
-								$menu.='</ul></li>';
+							//	$menu.='</ul></li>';
 							$menu.="<li><a href=\"javascript:dropdown('profil');\">";
-							$menu.='<img src="'.$this->setBg("2","0",$id).'" align="left" />Profil</a></li>';
+							$menu.='<img src="'.$this->setBg("2","0",$id).'" align="left" />Kota Sukabumi</a></li>';
 								$menu.='<ul class="sub" id="profil" style="'.$style2.'">';
+								$menu.='<li class="submenu"><a href="'.base_url().'profil/sejarahview">';
+										$menu.='<img src="'.$this->setBg("2","2.2",$id).'" align="left"/>Sejarah';
+									$menu.='</a></li>';
 									$menu.='<li class="submenu"><a href="'.base_url().'profil/visimisi">';
 										$menu.='<img src="'.$this->setBg("2","2.1",$id).'" align="left"/>Visi dan Misi';
 									$menu.='</a></li>';
-									$menu.='<li class="submenu"><a href="'.base_url().'profil/sejarahview">';
-										$menu.='<img src="'.$this->setBg("2","2.2",$id).'" align="left"/>Sejarah';
-									$menu.='</a></li>';
+									
 									//$menu.='<li class="submenu"><a href="#">';
 										//$menu.='<img src="'.$this->setBg("2","2.3",$id).'" align="left"/>Struktur Organisasi';
 									//$menu.='</a></li>';
-									$menu.='<li class="submenu"><a href="'.base_url().'profil/sarprasview">';
-										$menu.='<img src="'.$this->setBg("2","2.4",$id).'" align="left"/>Sarana / Prasarana';
+									$menu.='<li class="submenu"><a href="'.base_url().'profil/lambangview">';
+										$menu.='<img src="'.$this->setBg("2","2.4",$id).'" align="left"/>Lambang';
 									$menu.='</a></li>';
-									$menu.='<li class="submenu"><a href="'.base_url().'profil/prestasiview">';
-										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Capaian dan Prestasi';
+									$menu.='<li class="submenu"><a href="'.base_url().'profil/geografiview">';
+										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Geografis';
+									$menu.='</a></li>';
+									$menu.='<li class="submenu"><a href="'.base_url().'profil/sosialview">';
+										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Sosial Ekonomi';
+									$menu.='</a></li>';
+									$menu.='<li class="submenu"><a href="'.base_url().'profil/angkaview">';
+										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Sukabumi Dalam Angka';
 									$menu.='</a></li>';
 								$menu.='</ul></li>';
 							$menu.='<li><a href="'.base_url().'program_kerja/data">';
@@ -184,9 +192,9 @@ class backend_model extends CI_Model
 							$menu.='<li><a href="'.base_url().'statistik/data">';
 								$menu.='<img src="'.$this->setBg("6","0",$id).'" align="left"  />Data dan Statistik';
 							$menu.='</a></li>';
-							$menu.='<li><a href="'.base_url().'belajar/data">';
+							/* $menu.='<li><a href="'.base_url().'belajar/data">';
 								$menu.='<img src="'.$this->setBg("7","0",$id).'" align="left" />Substansi Pembelajaran';
-							$menu.='</a></li>';
+							$menu.='</a></li>'; */
 							$menu.="<li><a href=\"javascript:dropdown('layanan');\">";
 							$menu.='<img src="'.$this->setBg("8","0",$id).'" align="left"/>Layanan</a></li>';
 								$menu.='<ul class="sub" id="layanan" style="'.$style8.'">';

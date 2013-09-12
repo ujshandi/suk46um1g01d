@@ -135,17 +135,17 @@ class temp_model extends CI_Model
 					timer:true,
 					circular:true,
 					panelfx:"fancy",
-					delaycaptions:{
+					/* delaycaptions:{
 						delay:00,
 						position:"bottom",
 						transition:"fading",//sliding
 						duration:150
 					//	easing:"easeOutExpo"
-					},
+					}, */
 					imagefx:{
 						fxType: "random", // curtain, zipper, wave, fountain, random
-						fxDelay: 150, // delay between strips in ms
-						fxDuration: 1500 // delay between strips in ms
+						fxDelay: 60, // delay between strips in ms
+						fxDuration: 800 // delay between strips in ms
 					},
 					debug:1
 					
@@ -307,12 +307,13 @@ class temp_model extends CI_Model
 						<img src="'.$this->setBg("1","0",$id).'" align="left" />Profil
 						<p align="right" style="margin-top:-15px;font-size:16px; color:#000000;"><b>+</b></p></a></li>';
 						$data.='<ul class="sub" id="profil" style="'.$style1.'">
+									<li class="submenu"><a href="'.base_url().'profil/sejarah">
+									<img src="'.$this->setBg("1","1.2",$id).'" align="left"/>Sejarah
+								</a></li>
 								<li class="submenu"><a href="'.base_url().'profil/visi_misi">
 									<img src="'.$this->setBg("1","1.1",$id).'" align="left"/>Visi dan Misi
 								</a></li>
-								<li class="submenu"><a href="'.base_url().'profil/sejarah">
-									<img src="'.$this->setBg("1","1.2",$id).'" align="left"/>Sejarah
-								</a></li>
+							
 								<li class="submenu"><a href="'.base_url().'profil/struktur">
 									<img src="'.$this->setBg("1","1.3",$id).'" align="left"/>Struktur Organisasi
 								</a></li>
@@ -449,10 +450,10 @@ class temp_model extends CI_Model
 	}
 	function polling()
 	{
-		$data='<div class="contentright">';
-			$data.='<div class="boxcontentsmall">';
-				$data.='<h1 class="titlesmall">Polling</h1>';
-				$data.='<div class="boxsmallcontent">';
+		$data='<div class="boxnav">';
+			//$data.='<div class="boxcontentsmall">';
+				$data.='<h1 class="titlenav">Polling</h1>';
+				$data.='<div class="boxnavcontent2">';
 				
 				$data.='<form method="post" action="'.base_url().'polling/simpanHasil">';
 				
@@ -462,11 +463,11 @@ class temp_model extends CI_Model
 					{
 						$data.='<input type="hidden" name="id" value="'.$row->id_polling.'" />';
 						
-						$data.='<li>'.$row->pertanyaan.'</li>';
-						$data.='<li><input type="radio" name="polling" value="1" /> '.$row->pilihan1.'</li>';
-						$data.='<li><input type="radio" name="polling" value="2" /> '.$row->pilihan2.'</li>';
-						$data.='<li><input type="radio" name="polling" value="3" /> '.$row->pilihan3.'</li>';
-						$data.='<li><input type="radio" name="polling" value="4" /> '.$row->pilihan4.'</li>';
+						$data.='<li style="padding:10px;">'.$row->pertanyaan.'</li>';
+						$data.='<li style="padding:5px;"><input type="radio" name="polling" value="1" /> '.$row->pilihan1.'</li>';
+						$data.='<li style="padding:5px;"><input type="radio" name="polling" value="2" /> '.$row->pilihan2.'</li>';
+						$data.='<li style="padding:5px;"><input type="radio" name="polling" value="3" /> '.$row->pilihan3.'</li>';
+						$data.='<li style="padding:5px;"><input type="radio" name="polling" value="4" /> '.$row->pilihan4.'</li>';
 					}
 					$data.='</ul>';
 					
@@ -475,11 +476,12 @@ class temp_model extends CI_Model
 					$data.='<input type="submit" class="button" value="Vote" />';
 					$data.='<input type="button" class="button" value="Lihat Hasil" />';
 					$data.='</center>';
+					$data.='<br />';
 					$data.='</form>';
 					
 				$data.='</div>';
-				$data.='<div class="boxsmcontentbottom"></div>';
-			$data.='</div>';
+				//$data.='<div class="boxsmcontentbottom"></div>';
+			//$data.='</div>';
 		$data.='</div>';
 		
 		return $data;
@@ -491,7 +493,7 @@ class temp_model extends CI_Model
 			
 			$data.='<ul id="menufooter">';
 				$data.='<li><a href="'.base_url().'">Beranda</a></li>';
-				$data.='<li><a href="'.base_url().'direktori">'.COMPANY_NAME.'</a></li>';
+			//	$data.='<li><a href="'.base_url().'direktori">'.COMPANY_NAME.'</a></li>';
 				/* $data.='<li><a href="'.base_url().'nuptk">NUPTK</a></li>';
 				$data.='<li><a href="'.base_url().'sekretariat" title="Sekretariat Badan">Sekretariat</a></li>';
 				$data.='<li><a href="'.base_url().'pppp" title="Pusat Pengembangan Profesi Pendidik">PPPP</a></li>';
@@ -572,6 +574,30 @@ class temp_model extends CI_Model
 		
 		return $data;
 	}
+	
+	function download()
+	{
+		$data='<div class="boxnav">';
+			$data.='<h3 class="titlenav">Download</h3>';
+			$data.='<div class="boxnavcontent2">';
+				
+				$data.='<ul id="listads">';
+				$query=$this->db->query("SELECT * FROM download ORDER BY id_download DESC LIMIT 6");
+				foreach ($query->result() as $row)
+				{
+					$data.='<li><a href="#" target="_blank"><p>'.$row->nama.'</p><span>'.$row->deskripsi.'</span></a></li>';
+				}
+				$data.='</ul>';
+				
+				$data.='<div class="clear"></div>';
+				$data.='<a href="'.base_url().'#" class="linkadv">More Link</a>';
+				$data.='<div class="clear"></div>';
+			$data.='</div>';
+		$data.='</div>';
+		
+		return $data;
+	}
+	
 	function testimonial()
 	{
 		$data='<div id="nav" style="margin-bottom:10px">';

@@ -39,6 +39,10 @@
 */
 
 $route['default_controller'] = "main";
+
+//add by chan
+//$route['profil/(:any)'] = "profil/";
+
 $route['404_override'] = '';
 
 

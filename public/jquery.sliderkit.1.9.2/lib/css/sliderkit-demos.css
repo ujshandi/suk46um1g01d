@@ -19,14 +19,14 @@
 /*---------------------------------
  *  Photos slider > Minimal
  *---------------------------------*/
-.photoslider-mini{width:957px;height:335px;/* padding-top:10px; */}
+.photoslider-mini{width:990px;height:335px;/* padding-top:10px; */}
 
 /* Panel > Textbox */
 .photoslider-mini .sliderkit-panel .sliderkit-panel-textbox{bottom:0;left:0;height:85px;width:957px;color:#fff;}
 .photoslider-mini .sliderkit-panel .sliderkit-panel-text{height:65px;padding:10px 15px 10px 115px;font-size:0.9em;color:#fff;}
 .photoslider-mini .sliderkit-panel .sliderkit-panel-text h4{height:auto;margin:0 0 7px;line-height:1.1em;font-size:1.1em;font-weight:bold;border:none;color:#fff;}
 .photoslider-mini .sliderkit-panel .sliderkit-panel-text p{height:auto;margin:0 0 7px;line-height:1.1em;font-size:1.1em;font-weight:bold;border:none;color:#fff;}
-.photoslider-mini .sliderkit-panel .sliderkit-panel-overlay{height:85px;width:957px;background:#000;opacity:0.6;}
+.photoslider-mini .sliderkit-panel .sliderkit-panel-overlay{height:85px;width:990px;background:#000;opacity:0.6;}
 
 
 
@@ -48,7 +48,7 @@ background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
 /*---------------------------------
  *  Photos slider > Minimal2
  *---------------------------------*/
-.photoslider-mini2{width:957px;height:335px;/* padding-top:10px; */}
+.photoslider-mini2{width:647px;height:335px;/* padding-top:10px; */}
 
 /* Panel > Textbox */
 .photoslider-mini2 .sliderkit-panel .sliderkit-panel-textbox{bottom:0;left:0;height:85px;width:648px;color:#fff;}
@@ -363,8 +363,8 @@ background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
 /* News block */
 .newslider-vertical .sliderkit-news h3,
 .newslider-vertical .sliderkit-news h3 a{color:#000;font-weight:bold;}
-.newslider-vertical .sliderkit-news h3{font-size:1.2em;margin:0 0 15px;}
-.newslider-vertical .sliderkit-news img{float:right;width:130px;height:auto;margin:0 0 0 10px;overflow:hidden;}
+.newslider-vertical .sliderkit-news h3{font-size:1.2em;margin:0 0 5px;}
+.newslider-vertical .sliderkit-news img{float:right;height:300px;width:130px;height:auto;margin:0 0 0 10px;overflow:hidden;}
 .newslider-vertical .sliderkit-news p{margin:0;}
 .newslider-vertical .sliderkit-news-readmore{position:absolute;right:10px;bottom:10px;}
 
@@ -803,7 +803,7 @@ background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
 .transition-demo01 .sliderkit-btn-disable a:hover{cursor:default;}
 
 /* Example 02 */
-.transition-demo01 .sliderkit-timer-wrapper{position:absolute;bottom:0;width:500px;height:5px;background:#000;}
+.transition-demo01 .sliderkit-timer-wrapper{position:absolute;bottom:0;width:990px;height:5px;background:#000;}
 .transition-demo01 .sliderkit-timer{top:0;height:5px;background:#0089BE url("../images/timer-img01.gif") repeat-x 0 center;}
 
 /* Example 02 > Buttons > Go buttons */
