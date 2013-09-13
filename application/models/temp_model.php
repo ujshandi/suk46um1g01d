@@ -144,7 +144,7 @@ class temp_model extends CI_Model
 					}, */
 					imagefx:{
 						fxType: "random", // curtain, zipper, wave, fountain, random
-						fxDelay: 60, // delay between strips in ms
+						fxDelay: 150, // delay between strips in ms
 						fxDuration: 800 // delay between strips in ms
 					},
 					debug:1
