@@ -17,6 +17,7 @@ class temp_model extends CI_Model
 		$data.='<script src="'.base_url().'public/js/ui_core.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/ui_tabs.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/lightbox.js" type="text/javascript"></script>';
+		$data.='<script src="'.base_url().'public/js/login.js" type="text/javascript"></script>';
 		
 			//news sticker
 			//$data.='<script src="'.base_url().'public/js/gistfile1.js" type="text/javascript"></script>';
@@ -88,7 +89,7 @@ class temp_model extends CI_Model
 				//$(window).load() must be used instead of $(document).ready() because of Webkit compatibility		
 				// News slider > Vertical
 				$(".newslider-vertical").sliderkit({
-					shownavitems:3,
+					shownavitems:5,
 					verticalnav:true,
 					navitemshover:true,
 					circular:true
