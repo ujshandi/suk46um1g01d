@@ -42,9 +42,152 @@ body {
 	font:62.5% arial, verdana, serif;
 }
 
+ 
+/* Login popup */  
+  
+a.login, a.logout{
+display: block;
+float: right;
+text-decoration:none;
+font-weight: bold;
+color: #266b5d;
+/*border:1px solid #bcd9cf;
+font-variant: small-caps;
+font-size:13px;
+font-family:"Trebuchet MS",Arial;
+padding: 6px 12px 6px 12px;
+border-top: none;
+background: #dfeee9;
+-moz-border-radius-bottomleft: 4px;
+-moz-border-radius-bottomright: 4px;
+-webkit-border-bottom-right-radius:4px;
+-webkit-border-bottom-left-radius:4px;*/
+}
+
+a.login:hover, a.logout:hover{
+/* background: #cae3db; */
+color: #1d2920;
+}
+
+.loginform{
+position: absolute;
+right:0;
+top:50px;
+width:305px;
+background: transparent url(../images/login_pop.png) no-repeat top center;
+_background: transparent url(../images/login_pop.gif) no-repeat top center !important;
+display: none;
+z-index: 999;
+}
+
+
+.loginform form{
+padding:23px;
+overflow: hidden;
+position:relative;
+*padding-top:33px;
+*padding-bottom:28px;
+*overflow: inherit;
+_padding-top:30px;
+_height:1%;
+}
+
+
+
+.loginform span.form-required{
+display: none;
+}
+
+.loginform .item-list ul{
+float: left;
+}
+
+.loginform .item-list{
+padding-top: 10px;
+overflow: hidden;
+_padding-top:15px;
+}
+
+.loginform .item-list li a{
+font-size: 14px;
+_letter-spacing:-1px;
+float:left;
+display: block;
+}
+
+.loginform .item-list li a.gi-user-register{
+padding-right: 8px;
+color: #d56206;
+}
+
+.loginform .item-list ul li{
+float: left;
+padding: 0px;
+margin: 0px;
+}
+
+.loginform .item-list ul li.last{
+width:119px;
+}
+
+.loginform .item-list li.first{
+display: none;
+}
+
+.loginform .form-item{
+overflow: hidden;
+margin: 5px 0px;
+clear: both;
+_padding:4px 0px;
+_margin:0px;
+}
+
+.loginform .form-item label{
+float: left;
+color: #5c7a72;
+font-size: 13px;
+font-weight: bold;
+padding-top: 6px;
+}
+
+.loginform .form-item input.form-text{
+border-width: 1px;
+background: #eff7f9;
+float: right;
+width:156px;
+}
+
+.loginform .form-item input.form-text:hover, .loginform .form-item input.form-text:focus{
+background: #FFF;
+}
+
+.loginform .form-submit{
+background:transparent url(../images/login_btn.gif) no-repeat center;
+padding: 3px 4px;
+float: right;
+/* 
+font-variant: small-caps;
+font-family: Arial, "Trebuchet MS", Helvetica; */
+color: #e5eae9;
+border: none;
+width:72px;
+height: 27px;
+_position:absolute;
+_right:22px;
+_top:106px;
+margin-top:5px;
+}
+
+.loginform .form-submit:hover{
+color: #FFF;
+background:url(../images/login_btn_o.gif);
+}
+
+/* Related Product Block */
+
 .datetime{
 	/* border:1px solid #ff0000; */
-	width:320px;
+	width:347px;
 	right:0;
 	bottom:50;
 	margin:0 auto;
@@ -82,7 +225,7 @@ body {
 }
 #header {
 	width:990px;
-	height:110px;
+	height:112px;
 	background: url(../images/back_header.png) no-repeat;
 	position: relative;
 }
@@ -107,7 +250,7 @@ body {
 	height:100%;
 }
 #loginarea {
-	width: 323px;
+	width: 365px;
 	height: 28px;
 	float: right;
 	background: url(../images/back_loginarea.png) no-repeat;
@@ -1302,7 +1445,7 @@ text-decoration:none;
 	height:22px;
 	border:1px solid #c4c4c4;
 	padding:3px 5px 0 5px;
-	margin:10px 0 0 0;
+	margin:0 0 0 0;
 }
 .textareacontact {
 	width:390px;
@@ -1328,6 +1471,10 @@ text-decoration:none;
 }
 /* Footer
 =====================================================================*/
+.footBg {
+	margin: 0 auto;
+	background: url(../images/footer.png) repeat-x 0 100%;
+}
 #footer {
 	width: 990px;
 	height: 78px;

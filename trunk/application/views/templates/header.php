@@ -33,7 +33,40 @@ function waktu() {
 						<input type="text" name="search" class="textboxsearch" value="Cari" onblur="if(this.value.length == 0) this.value=\'Cari\" onclick="if(this.value == \'Cari\') this.value=\'\" /> <input type="submit" name="submitsearch" class="submitsearch" value="Cari" />
 					</form> 
 				</p>
-				<p class="notlogin" style="margin-left:-10px;"><span style="margin-right:5px;">|</span> <a href="'.base_url().'sitemap">Peta Situs</a></p>
+				<p class="notlogin" style="margin-left:-3px;"><a href="'.base_url().'sitemap">Peta Situs</a></p>
+				<p class="notlogin" style="margin-left:-10px;">
+					<span style="margin-right:5px;">|</span> <a href="javascript:void(0)" class="login arrowup">LOGIN</a>
+				</p>               
+				<div style="display: block;" class="loginform">
+					<form action="/ideas?destination=ideas" accept-charset="UTF-8" method="post" id="user-login-form">
+						<div style="height:100px;">
+							<div class="login-error"></div><div class="form-item" id="edit-name-wrapper">
+								<label for="edit-name">Username : <span class="form-required" title="This field is required.">*</span></label>
+								<input maxlength="60" name="name" id="edit-name" size="15" class="form-text required" type="text">
+							</div>
+							<div class="form-item" id="edit-pass-wrapper">
+								<label for="edit-pass">Password : <span class="form-required" title="This field is required.">*</span></label>
+								<input name="pass" id="edit-pass" maxlength="60" size="15" class="form-text required" type="password">
+							</div>
+							<input name="op" id="edit-submit-1" value="Log in" class="form-submit" type="submit">
+							<div class="item-list">
+								<ul>
+									<li class="first"></li>
+									<li>
+										<a href="http://www.greenglobeideas.com/user/register" title="Create a new user account." class="gi-user-register">
+											Register
+										</a>
+									</li>
+									<li class="last">
+										<a href="http://www.greenglobeideas.com/user/password" title="Request new password via e-mail.">Forgot password?</a>
+									</li>
+								</ul>
+							</div>
+							<input name="form_build_id" id="form-2ae27b14231ea39ddf4acf9006aed4e9" value="form-2ae27b14231ea39ddf4acf9006aed4e9" type="hidden">
+							<input name="form_id" id="edit-user-login-block" value="user_login_block" type="hidden">
+						</div>
+					</form>
+		        </div>
 				<div class="datetime">
 					<div style="float:right; /* padding: 5px 10px; display: block; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;	background-color: #f1f1f1;border:1px solid #a5a5a5; opacity:0.9; filter:alpha(opacity=90); */">
 						<? 

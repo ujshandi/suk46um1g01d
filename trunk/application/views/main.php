@@ -27,7 +27,7 @@
 			<div class="sliderkit-nav-clip">
 				<ul>
 					<?php foreach($berita as $b){ ?>
-					<li>
+					<li style="height:70px;">
 						<a href="#" title="[link title]"><?=$b->judul_berita?></a>
 					</li>
 					<? }?>

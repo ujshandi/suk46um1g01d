@@ -13,6 +13,7 @@
 <body>
 	<div id="container">
 		<?=$header?>
+		
 		<div class="sliderkit photoslider-mini transition-demo01" style="margin:0 auto;">						
 			<!--<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-prev"><a rel="nofollow" href="#" title="Previous"><span>Previous</span></a></div>
 			<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-next"><a rel="nofollow" href="#" title="Next"><span>Next</span></a></div>-->
@@ -27,7 +28,7 @@
 					 End Place caption textbox here if needed -->
 			<div class="sliderkit-panels">
 				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-01.jpg" alt="[Alternative text]" />
+					<img style="width:990px;" src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-01.jpg" alt="[Alternative text]" />
 					
 				</div>
 				<div class="sliderkit-panel">
@@ -70,7 +71,7 @@
 							</div>
 						</div>
 						<div id="nav">
-						<?=$login?>
+						<!--?=$login?-->
 						<?=$linkterkait?>
 						<?=$download?>
 						<?=$polling?>
@@ -79,6 +80,8 @@
 				</tr>
 			</table>
 		</div>
+	</div>
+	<div class="footBg">
 		<?=$footer?>
 	</div>
 </body>
