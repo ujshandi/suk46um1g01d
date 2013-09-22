@@ -18,6 +18,7 @@ class temp_model extends CI_Model
 		$data.='<script src="'.base_url().'public/js/ui_tabs.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/lightbox.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/login.js" type="text/javascript"></script>';
+		$data.='<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
 		
 			//news sticker
 			//$data.='<script src="'.base_url().'public/js/gistfile1.js" type="text/javascript"></script>';
@@ -185,7 +186,77 @@ class temp_model extends CI_Model
 		$data.="</script>";
 		
 		
-	
+		
+		//rss google news
+		$data .= '<script type="text/javascript">
+			google.load("elements", "1", {packages : ["newsshow"]});
+
+			function onLoad() {
+			  // Change the News Show size format
+			  var options = {
+				"format" : "300x250",
+				"linkTarget" : "google.search.Search.LINK_TARGET_BLANK",
+				"hl" : "id",
+				"queryList" : [
+				 
+				{
+					"q" : "sukabumi"
+				  }
+				]
+			  }
+			  var content = document.getElementById("rsswidget");
+			  
+			  var newsShow = new google.elements.NewsShow(content, options);
+				$(".gns-qtitle").hide();
+			}
+
+			google.setOnLoadCallback(onLoad);
+			
+			</script>';
+		$dataCancel ='<script type="text/javascript">
+			 google.load("search", "1");
+			var newsSearch;
+
+			function searchComplete() {
+
+				// Check that we got results
+				document.getElementById("rsswidget").innerHTML = "";
+				alert(newsSearch.results.length);
+				if (newsSearch.results && newsSearch.results.length > 0) {
+				  for (var i = 0; i < newsSearch.results.length; i++) {
+
+					// Create HTML elements for search results
+					var p = document.createElement("p");
+					var a = document.createElement("a");
+					a.href="/news-search/v1/newsSearch.results[i].url;"
+					a.innerHTML = newsSearch.results[i].title+" - "+newsSearch.results[i].publisher;
+
+					// Append search results to the HTML nodes
+					p.appendChild(a);
+					document.getElementById("rsswidget").appendChild(p);
+				  }
+				}
+			  }
+
+			  function onLoad() {
+
+				// Create a News Search instance.
+				newsSearch = new google.search.NewsSearch();
+		  
+				// Set searchComplete as the callback function when a search is 
+				// complete.  The newsSearch object will have results in it.
+				newsSearch.setSearchCompleteCallback(this, searchComplete, null);
+				
+				// Specify search quer(ies)
+				newsSearch.execute("sukabumi");
+
+				// Include the required Google branding
+				//google.search.Search.getBranding("branding");
+			  }
+
+			  // Set a callback to call your code when the page loads
+			  google.setOnLoadCallback(onLoad);
+		</script>';
 	
 		
 		return $data;
@@ -634,5 +705,8 @@ class temp_model extends CI_Model
 		
 		return $data;
 	}
+	
+	
+	
 
 }
