@@ -72,7 +72,42 @@
 						</div>
 						<div id="nav">
 						<!--?=$login?-->
-						<?=$linkterkait?>
+						<!-- jadwal sholat -->
+						<div class="boxnav">
+							<h3 class="titlenav">Jadwal Sholat</h3>
+							<div class="boxnavcontent2">								
+								<p style="text-align: center;"><iframe src="http://www.jadwalsholat.org/adzan/ajax.row.php?id=257" frameborder="0" width="220" height="220"></iframe></p>								
+								<div class="clear"></div>							
+							</div>
+						</div>
+		
+						<!-- end jadwal sholat -->
+						
+						<!-- Ayat pilihan -->
+							<div class="boxnav">
+								<h3 class="titlenav">Ayat Pilihan</h3>
+								<div class="boxnavcontent2">									
+									<img src="http://www.mahesajenar.com/scripts/ayatimg.php?&text=000000&bg=D3D3D3&border=D3D3D3&sc=8B0000&c=51" />
+
+
+									<div class="clear"></div>									
+								</div>
+							</div>
+						<!-- end Ayat pilihan -->
+						
+						<!-- Sukabumi dalam Media -->
+							<div class="boxnav">
+								<h3 class="titlenav">Sukabumi Dalam Media</h3>
+								<div class="boxnavcontent2" id="rsswidget">									
+									 <div id="branding"  style="float: left;"></div><br />
+									
+
+									<div class="clear"></div>									
+								</div>
+							</div>
+						<!-- Sukabumi dalam Media -->
+						
+						
 						<?=$download?>
 						<?=$polling?>
 						</div>
@@ -82,7 +117,19 @@
 		</div>
 	</div>
 	<div class="footBg">
-		<?=$footer?>
+		<div id="footer">
+			<p id="texttwitter"></p>
+			
+			<ul id="menufooter">
+				<li><a href="'.base_url().'">Beranda</a></li>			
+				
+			</ul>
+			
+			<ul id="menufooterright">
+				<li><?=COPYRIGHT?></li>
+				<li class="last"><a href="#">Back to top</a></li>
+			</ul>
+		</div>
 	</div>
 </body>
 </html>
