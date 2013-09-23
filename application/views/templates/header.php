@@ -35,10 +35,10 @@ function waktu() {
 				</p>
 				<p class="notlogin" style="margin-left:-3px;"><a href="'.base_url().'sitemap">Peta Situs</a></p>
 				<p class="notlogin" style="margin-left:-10px;">
-					<span style="margin-right:5px;">|</span> <a href="javascript:void(0)" class="login arrowup">LOGIN</a>
+					<span style="margin-right:5px;float:left;">|</span> <a href="javascript:void(0)" class="login arrowup">LOGIN</a>
 				</p>               
 				<div style="display: block;" class="loginform">
-					<form action="/ideas?destination=ideas" accept-charset="UTF-8" method="post" id="user-login-form">
+					<form  accept-charset="UTF-8" method="post" id="user-login-form">
 						<div style="height:100px;">
 							<div class="login-error"></div><div class="form-item" id="edit-name-wrapper">
 								<label for="edit-name">Username : <span class="form-required" title="This field is required.">*</span></label>

@@ -42,7 +42,8 @@ body {
 	font:62.5% arial, verdana, serif;
 }
 
- 
+.ymHD {margin:0 auto;/* border:1px solid #ff0000; */width:139px;padding:10px;}
+
 /* Login popup */  
   
 a.login, a.logout{
