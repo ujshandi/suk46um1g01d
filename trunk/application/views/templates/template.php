@@ -107,8 +107,20 @@
 							</div>
 						<!-- Sukabumi dalam Media -->
 						
+						<!-- Sukabumi dalam Media -->
+							<div class="boxnav">
+								<h3 class="titlenav">Help Desk</h3>
+								<div class="boxnavcontent2">									
+									<div class="ymHD">
+									<a href="ymsgr:sendIM?ourvisi"> <img src="http://opi.yahoo.com/online?u=ourvisi&amp;m=g&amp;t=14&amp;l=us"/>
+									<div class="clear"></div>									
+									</div>
+								</div>
+							</div>
+						<!-- Sukabumi dalam Media -->
 						
-						<?=$download?>
+						
+						
 						<?=$polling?>
 						</div>
 					</td>
