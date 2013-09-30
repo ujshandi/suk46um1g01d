@@ -30,7 +30,7 @@ function waktu() {
 			<div id="loginarea">
 				<p class="notlogin"> 
 					<form method="post" action="'.base_url().'main/search" id="frmsearch" style="margin:-3px 0 0 -5px;">
-						<input type="text" name="search" class="textboxsearch" value="Cari" onblur="if(this.value.length == 0) this.value=\'Cari\" onclick="if(this.value == \'Cari\') this.value=\'\" /> <input type="submit" name="submitsearch" class="submitsearch" value="Cari" />
+						<input type="text" name="search" class="textboxsearch" value="Search Site" onblur="if(this.value.length == 0) this.value=\'Search Site\" onclick="if(this.value == \'Cari\') this.value=\'\" /> <input type="submit" name="submitsearch" class="submitsearch" value="Cari" />
 					</form> 
 				</p>
 				<p class="notlogin" style="margin-left:-3px;"><a href="'.base_url().'sitemap">Peta Situs</a></p>

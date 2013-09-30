@@ -48,7 +48,7 @@ background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
 /*---------------------------------
  *  Photos slider > Minimal2
  *---------------------------------*/
-.photoslider-mini2{width:647px;height:335px;/* padding-top:10px; */}
+.photoslider-mini2{width:647px;height:235px;/* padding-top:10px; */}
 
 /* Panel > Textbox */
 .photoslider-mini2 .sliderkit-panel .sliderkit-panel-textbox{bottom:0;left:0;height:85px;width:648px;color:#fff;}
@@ -339,26 +339,27 @@ background:transparent url("../images/arrows-h-big.png") no-repeat 0 0;
 	clear:both;
 	overflow:hidden;
 	width:647px;
-	height:175px;
+	height:355px;
 	padding-bottom:28px;
-	margin-bottom:0px;}
+	margin-bottom:0px;
+	}
 
 
 /* Nav */
-.newslider-vertical .sliderkit-nav{width:200px;height:165px;left:447px}
-.newslider-vertical .sliderkit-nav-clip li{height:50px;width:190px;margin-bottom:5px;padding-left:10px;}
+.newslider-vertical .sliderkit-nav{width:200px;height:344px;left:447px;}
+.newslider-vertical .sliderkit-nav-clip li{height:75px;width:190px;margin-bottom:0;padding-left:10px;}
 .newslider-vertical .sliderkit-nav-clip li.sliderkit-selected{
  background:transparent url("../images/newslider-arrow-left.gif") no-repeat left center; 
 
 
 }
-.newslider-vertical .sliderkit-nav-clip li a{height:37px;width:180px;padding:5px 0 10px 10px;text-align:left;font-size:1.3em;color:#fff;text-decoration:none;background:#00668d;}
+.newslider-vertical .sliderkit-nav-clip li a{height:50px;width:180px;padding:5px 0 10px 10px;text-align:left;font-size:1.3em;color:#fff;text-decoration:none;background:#00668d;}
 .newslider-vertical .sliderkit-nav-clip li a:hover,
 .newslider-vertical .sliderkit-nav-clip li a:focus{color:#fff;}
 
 /* Panel */
-.newslider-vertical .sliderkit-panels{position:absolute;left:0px;width:440px;height:165px;overflow:hidden;border:1px solid #ccc;}
-.newslider-vertical .sliderkit-panel{left:0;top:0;width:420px;height:150px;padding:10px;background:#fff;}
+.newslider-vertical .sliderkit-panels{position:absolute;left:0px;width:440px;height:344px;overflow:hidden;border:1px solid #ccc;}
+.newslider-vertical .sliderkit-panel{left:0;top:0;width:420px;height:328px;padding:10px;background:#fff;}
 
 /* News block */
 .newslider-vertical .sliderkit-news h3,
