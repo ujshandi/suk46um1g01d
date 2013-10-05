@@ -1008,14 +1008,14 @@ div#placemainmenu li li:hover ul
 	display: inline;
 	float: left;
 	margin: 10px 3px 0 3px;
-	background: url(../images/ads_2.png);
+	/* background: url(../images/ads_2.png); */
 	padding:15px 0 0 0;
 	font-family:Geneva, Arial, Helvetica, sans-serif;
 	text-align:center;
 	-moz-border-radius: 3px; -webkit-border-radius: 3px;
 }
 #listads li:hover {
-background: url(../images/ads_1.png);
+/* background: url(../images/ads_1.png); */
 }
 #listads li img {
 	width: 145px;

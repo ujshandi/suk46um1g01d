@@ -113,14 +113,14 @@
 								<div class="boxnavcontent2">									
 									<div class="ymHD">
 									<a href="ymsgr:sendIM?ourvisi"> <img src="http://opi.yahoo.com/online?u=ourvisi&amp;m=g&amp;t=14&amp;l=us"/>
+									</a>
 									<div class="clear"></div>									
 									</div>
 								</div>
 							</div>
 						<!-- Sukabumi dalam Media -->
 						
-						
-						
+						<?=$linkterkait?>
 						<?=$polling?>
 						</div>
 					</td>
