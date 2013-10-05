@@ -34,7 +34,7 @@ class layananModel extends CI_Model
 		
 		$userid	= $this->session->userdata('userid');
 		$level	= $this->session->userdata('id_level');
-		
+		$qt = "";
 		if($level=="5"){ $qt="AND author = '$userid'"; }
   		$query =$this->db->query("select * from layanan  WHERE kategori = '$tipe' $qt ORDER BY id_layanan DESC LIMIT $offset,$limit");
 		return $query->result();

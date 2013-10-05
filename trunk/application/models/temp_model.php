@@ -24,7 +24,9 @@ class temp_model extends CI_Model
 			//$data.='<script src="'.base_url().'public/js/gistfile1.js" type="text/javascript"></script>';
 		//$data.='<link href="'.base_url().'public/jquery_news_ticker/styles/style.css?v=2011-04-25" rel="stylesheet" type="text/css" />';
 		$data.='<link href="'.base_url().'public/jquery_news_ticker/styles/ticker-style.css" rel="stylesheet" type="text/css" />';		
+		$data.='<link href="'.base_url().'public/akordeon/css/jquery.akordeon.css" rel="stylesheet" type="text/css" />';		
 		$data.='<script src="'.base_url().'public/jquery_news_ticker/includes/jquery.ticker.js" type="text/javascript"></script>';
+		$data.='<script src="'.base_url().'public/akordeon/js/jquery.akordeon.js" type="text/javascript"></script>';
 				
 		/* Jquery Slider script */
 		/* $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'slideshows/slide01/slide_style.css" />';
@@ -153,7 +155,8 @@ class temp_model extends CI_Model
 					
 				});
 				
-				
+				//link terkait
+				 $("#divLinkTerkait").akordeon();
 	
 			});	
 		</script>';
@@ -630,8 +633,8 @@ class temp_model extends CI_Model
 			$data.='<h3 class="titlenav">Link terkait</h3>';
 			$data.='<div class="boxnavcontent2">';
 				
-				$data.='<ul id="listads">';
-				$query=$this->db->query("SELECT * FROM linkterkait ORDER BY id_link DESC LIMIT 6");
+				/*   $data.='<ul id="listads">';
+				$query=$this->db->query("SELECT * FROM linkterkait ORDER BY jenis,id_link DESC LIMIT 6");
 				foreach ($query->result() as $row)
 				{
 					$data.='<li><a href="'.$row->url.'" target="_blank"><p>'.$row->singkatan.'</p><span>'.$row->deskripsi.'</span></a></li>';
@@ -642,7 +645,53 @@ class temp_model extends CI_Model
 				$data.='<a href="'.base_url().'linkterkait/daftarlink" class="linkadv">More Link</a>';
 				$data.='<div class="clear"></div>';
 			$data.='</div>';
-		$data.='</div>';
+		$data.='</div>';   */
+		
+		$data.='<div class="akordeon" id="divLinkTerkait">';
+				$query=$this->db->query("SELECT distinct (jenis) FROM linkterkait ORDER BY jenis asc LIMIT 6");
+				
+				$oldJudul="";
+				foreach ($query->result() as $row){
+				 	switch ($row->jenis) {
+						case 1 : $judul = "Pemerintahan";break;
+						case 3 : $judul = "Elektronik";break;
+						default : $judul = $row->jenis;
+					}//expanded
+					$data .= '<div class="akordeon-item ">
+								<div class="akordeon-item-head">
+									<div class="akordeon-item-head-container">
+										<div class="akordeon-heading">
+											'.$judul.'
+										</div>
+									</div>
+								</div>';
+						
+					$query2=$this->db->query("SELECT * FROM linkterkait where jenis = ".$row->jenis." ORDER BY jenis,id_link DESC LIMIT 6");
+					
+					 $data .= '<div class="akordeon-item-body">
+							<div class="akordeon-item-content">';
+					foreach ($query2->result() as $row2){
+
+						$oldJudul = $judul;
+						$data .= '<div><a href="'.$row2->url.'" target="_blank">
+									<img src="'.$row2->img.'" width="100" />
+								</a></div>';
+					}
+					$data .= '</div>
+						</div>';
+					
+					
+					$data .= '</div>';	
+				}
+				$data .= '</div>';
+				
+				
+				$data.='<div class="clear"></div>';
+				$data.='<a href="'.base_url().'linkterkait/daftarlink" class="linkadv">More Link</a>';
+				$data.='<div class="clear"></div>';
+				
+			$data.='</div>';
+		$data.='</div>'; 
 		
 		return $data;
 	}

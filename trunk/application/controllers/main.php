@@ -15,12 +15,14 @@ class main extends CI_Controller {
 		$this->load->model('statistikmodel','',TRUE);
 		$this->load->model('downloadmodel','',TRUE);
 		$this->load->model('agendamodel','',TRUE);
+		$this->load->model('layananmodel','',TRUE);
 		$this->load->library('form_validation');
 	}
 	public function index()
 	{
 		$data['berita']		= $this->berita_model->getBeritaBaru();
 		$data['agenda']		= $this->agendamodel->get_All();
+		$data['layanan']		= $this->layananmodel->get_All2(1);
 		$data['program']	= $this->programkerjamodel->getProgramBaru();
 		$data['belajar']	= $this->belajarmodel->getProgramBaru();
 		$data['panduan']	= $this->panduanmodel->getProgramBaru();
@@ -31,6 +33,7 @@ class main extends CI_Controller {
 		$data['mainmenu']	= $this->temp_model->mainmenu("0");
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
+		
 		$data['linkterkait']= $this->temp_model->linkterkait();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['download']= $this->temp_model->download();
