@@ -2262,8 +2262,8 @@ div#placemainmenu li li:hover ul
 
 #frmcontact {
 
-	padding:20px 0 30px 0;
-
+	padding:60px 0 30px 0;
+	
 }
 
 #frmcontact label {
@@ -2281,7 +2281,7 @@ div#placemainmenu li li:hover ul
 	font-weight:bold;
 
 }
-
+/* 
 #frmcontact span {
 
 	color:#a50e0e;
@@ -2289,6 +2289,22 @@ div#placemainmenu li li:hover ul
 	font-size:1.2em;
 
 	font-weight:bold;
+
+} */
+
+
+.ckWow {
+
+	/* border:1px solid #ff0000; */
+	margin-left:165px;
+	width:;
+
+}
+
+.mand {
+
+	/* border:1px solid #ff0000; */
+	color:#ff0000;
 
 }
 

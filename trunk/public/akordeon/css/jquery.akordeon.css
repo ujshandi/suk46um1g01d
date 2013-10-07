@@ -16,7 +16,7 @@
 }
 .akordeon-item .akordeon-item-head
 {
-    height: 44px;
+    height: 14px;
     /* background: #4B4B4B; */ /* Old browsers *//* 
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4b4b4b), to(#303030));
     background-image: -moz-linear-gradient(#4b4b4b, #303030);
@@ -25,7 +25,8 @@
     background: -ms-linear-gradient(#4b4b4b, #303030);
     background: linear-gradient(#4b4b4b, #303030);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b4b4b', endColorstr='#303030',GradientType=0 ); */ /* IE6-9 */ /*position:relative;*/
-    padding-top: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .akordeon-item .akordeon-item-body
 {
@@ -85,7 +86,7 @@
 }
 .akordeon-item-head-container
 {
-    width: 100%;
+    width: auto;
     position: absolute;
     left: 8px;
     cursor: pointer;
