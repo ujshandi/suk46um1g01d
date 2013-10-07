@@ -19,15 +19,15 @@
 
 $_CONFIG = array(
 
-  //  'disabled' => true,
-	'disabled' => isset($_SESSION['kcfinder']) ? $_SESSION['kcfinder'] : TRUE,
+    'disabled' => false,
+	//'disabled' => isset($_SESSION['kcfinder']) ? $_SESSION['kcfinder'] : TRUE,
     'denyZipDownload' => false,
     'denyUpdateCheck' => false,
     'denyExtensionRename' => false,
 
     'theme' => "oxygen",
 
-   'uploadURL' => "../../../UPLOADED",
+   'uploadURL' => "../../uploads",
    // 'uploadURL' => "./UPLOADED",
     'uploadDir' => "",
 
