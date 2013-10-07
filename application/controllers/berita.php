@@ -27,6 +27,14 @@ class Berita extends CI_Controller {
 	public function index($offset=0)
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$uri_segment = 3;
 		$offset = $this->uri->segment($uri_segment);
 		$this->load->library('pagination');
@@ -41,7 +49,13 @@ class Berita extends CI_Controller {
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("10");
 		$data['jumlah']		= $this->Berita_model->count_data();
-		$this->load->view('berita/berita_data',$data);
+		
+		$data['headmenu']	= $this->backend_model->headermenu();
+		$data['mainmenu']	= $this->backend_model->mainmenu("10");
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','berita/berita_data',$data);
+		$this->template->render();
+		//$this->load->view('berita/berita_data',$data);
 	}
 	function detail($id)
 	{
@@ -127,7 +141,7 @@ class Berita extends CI_Controller {
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
 		$this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
-		$this->template->write_view('wrapper','berita/berita_add',$data);
+		$this->template->write_view('wrapper','berita/berita_rec',$data);
 		$this->template->render();
 		//$this->load->view('berita/berita_add',$data);
 	}

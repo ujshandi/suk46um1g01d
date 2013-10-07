@@ -6,10 +6,12 @@
 	<meta name="description" content="Website Description" />
 	<meta name="keywords" content="Website Kwywords" />
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>public/css/backend.css" /> 
+	<script type="text/javascript">var  base_url = "<?php echo base_url(); ?>"</script>
 	<script src="<?=base_url()?>public/js/jquery.js" type="text/javascript"></script>
 	<script src="<?=base_url()?>public/js/ui_core.js" type="text/javascript"></script>
 	<script src="<?=base_url()?>public/js/ui_tabs.js" type="text/javascript"></script>
 	<script src="<?=base_url()?>public/js/lightbox.js" type="text/javascript"></script>
+	<script src="<?=base_url()?>public/js/kcfinder.js" type="text/javascript"></script>
 	 <?php if(count($js) > 0) load_js($js);?>
 	<script type="text/javascript">
 	$(function() {
