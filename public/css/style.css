@@ -37,9 +37,10 @@ a img {
 /* Global Elements
 =====================================================================*/
 body {
-	background:#fff url(../images/header.png) repeat-x;
+	/* background:#fff url(../images/header.png) repeat-x; */
 	line-height: 1.6em;
 	font:62.5% arial, verdana, serif;
+	
 }
 
 .ymHD {margin:0 auto;/* border:1px solid #ff0000; */width:139px;padding:10px;}
@@ -81,6 +82,14 @@ display: none;
 z-index: 999;
 }
 
+.linkT {
+	/* 
+		border:1px solid #ff0000; 
+	*/
+	width:100px;
+	float:left;
+	margin-left:35px;
+}
 
 .loginform form{
 padding:23px;
@@ -217,8 +226,23 @@ background:url(../images/login_btn_o.gif);
 /* Start CSS Coding
 =====================================================================*/
 #container {
+	/* background: url(../images/footer.png) repeat-x 0 100%;
+		width:990px;
+	*/
 	width:100%;
-	/* background: url(../images/footer.png) repeat-x 0 100%; */
+	height:112px;
+/* 	background: url(../images/back_header.png) no-repeat; */
+	position: relative;
+
+background: #336699;
+background: -moz-linear-gradient(top, #336699 0%, #003366 58%, #022C56 51%, #02172C 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#336699), color-stop(58%,#003366), color-stop(51%,#022C56), color-stop(100%,#02172C));
+background: -webkit-linear-gradient(top, #336699 0%,#003366 58%,#022C56 51%,#02172C 100%);
+background: -o-linear-gradient(top, #336699 0%,#003366 58%,#b5c6d0 51%,#02172C 100%);
+background: -ms-linear-gradient(top, #336699 0%,#003366 58%,#022C56 51%,#02172C 100%);
+background: linear-gradient(to bottom, #336699 0%,#003366 58%,#022C56 51%,#02172C 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#336699', endColorstr='#02172C',GradientType=0 );
+border-bottom:solid 3px #4B5A11;
 }
 #wrapper {
 	width:990px;
@@ -227,8 +251,18 @@ background:url(../images/login_btn_o.gif);
 #header {
 	width:990px;
 	height:112px;
-	background: url(../images/back_header.png) no-repeat;
+/* 	background: url(../images/back_header.png) no-repeat; */
 	position: relative;
+
+background: #336699;
+background: -moz-linear-gradient(top, #336699 0%, #003366 58%, #022C56 51%, #02172C 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#336699), color-stop(58%,#003366), color-stop(51%,#022C56), color-stop(100%,#02172C));
+background: -webkit-linear-gradient(top, #336699 0%,#003366 58%,#022C56 51%,#02172C 100%);
+background: -o-linear-gradient(top, #336699 0%,#003366 58%,#b5c6d0 51%,#02172C 100%);
+background: -ms-linear-gradient(top, #336699 0%,#003366 58%,#022C56 51%,#02172C 100%);
+background: linear-gradient(to bottom, #336699 0%,#003366 58%,#022C56 51%,#02172C 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#336699', endColorstr='#02172C',GradientType=0 );
+border-bottom:solid 3px #4B5A11;
 }
 #headertop {
 	width: 990px;
@@ -1473,15 +1507,29 @@ text-decoration:none;
 /* Footer
 =====================================================================*/
 .footBg {
+	
 	margin: 0 auto;
+	/* 
 	background: url(../images/footer.png) repeat-x 0 100%;
+	 */
+	background: #336699;
+background: -moz-linear-gradient(top, #336699 0%, #003366 50%, #022C56 51%, #02172C 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#336699), color-stop(50%,#003366), color-stop(51%,#022C56), color-stop(100%,#02172C));
+background: -webkit-linear-gradient(top, #336699 0%,#003366 50%,#022C56 51%,#02172C 100%);
+background: -o-linear-gradient(top, #336699 0%,#003366 50%,#b5c6d0 51%,#02172C 100%);
+background: -ms-linear-gradient(top, #336699 0%,#003366 50%,#022C56 51%,#02172C 100%);
+background: linear-gradient(to bottom, #336699 0%,#003366 50%,#022C56 51%,#02172C 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#336699', endColorstr='#02172C',GradientType=0 );
+border-top:solid 3px #4B5A11;
 }
 #footer {
 	width: 990px;
-	height: 78px;
-	/* border: 1px solid #ff0000; */
+	height: 75px;
 	margin: 0 auto;
+	/* 
+	border: 1px solid #ff0000; 
 	background: url(../images/footer.png) repeat-x 0 100%;
+	*/
 }
 #texttwitter {
 	text-align: center;

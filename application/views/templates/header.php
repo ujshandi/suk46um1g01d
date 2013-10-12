@@ -19,7 +19,7 @@ function waktu() {
 <script type="text/javascript" src="<?=base_url()?>public/menu/menu.js"></script>
 <style type="text/css">
  div#menu {
-    margin:30px auto;
+    margin:33px auto;
     width:85%;
 }
 </style>

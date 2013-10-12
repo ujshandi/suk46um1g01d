@@ -673,7 +673,7 @@ class temp_model extends CI_Model
 					foreach ($query2->result() as $row2){
 
 						$oldJudul = $judul;
-						$data .= '<div style="border:1px solid #ff0000;width:100px;float:left;"><a href="'.$row2->url.'" target="_blank">
+						$data .= '<div class="linkT"><a href="'.$row2->url.'" target="_blank">
 									<img src="'.$row2->img.'" width="100" />
 								</a></div>';
 					}
