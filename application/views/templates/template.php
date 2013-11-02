@@ -71,17 +71,44 @@
 							</div>
 						</div>
 						<div id="nav">
-						<!--?=$login?-->
-						<!-- jadwal sholat -->
+						<!-- hot list -->
 						<div class="boxnav">
-							<h3 class="titlenav">Jadwal Sholat</h3>
+							<h3 class="titlenav">Hot List</h3>
 							<div class="boxnavcontent2">								
-								<p style="text-align: center;"><iframe src="http://www.jadwalsholat.org/adzan/ajax.row.php?id=257" frameborder="0" width="220" height="220"></iframe></p>								
+								<p style="text-align: center;">&nbsp;</p>
 								<div class="clear"></div>							
 							</div>
+						</div>		
+						<!-- end hot list -->
+						
+						<!-- Sukabumi tautan -->
+						<div class="boxnav">
+							<h3 class="titlenav">Tautan</h3>
+							<div class="boxnavcontent2">
+								<div style="padding:5px;">
+									<marquee width="300" height="auto" bgcolor="" direction="UP" behavior="SCROLL" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="3" style="font-size:12px;color:#000000;font-family:arial;"> 
+										<ul>
+											<li><a target="_blank" href="http://tapem.sukabumi.go.id/">Bagian Tata Pemerintahan Setda Kota Sukabumi</a></li>
+											<li><a target="_blank" href="http://kpu-sukabumikota.go.id/">Komisi Pemilihan Umum</a></li>
+											<li><a target="_blank" href="http://kotasukabumi.siap-ppdb.com/">Siap PPDB</a></li>
+											<li><a target="_blank" href="http://dprd-sukabumikota.go.id/">DPRD</a></li>
+											<li><a target="_blank" href="http://rspdkotasukabumi.com/">RSPD</a></li>
+											<li><a target="_blank" href="http://sukabumikota.siap.web.id/">Disdik</a></li>
+											<li><a target="_blank" href="http://pn-sukabumikota.go.id/">Pengadilan Negeri</a></li>
+											<li><a target="_blank" href="http://sukabumikota.kemenag.go.id/">Kementrian Agama RI Kota Sukabumi</a></li>
+											<li><a target="_blank" href="http://beji.sukabumi.go.id/">Kecamatan Gunung Puyuh</a></li>
+											<li><a target="_blank" href="http://cimanggis.sukabumi.go.id/">Kecamatan Cikole</a></li>
+											<li><a target="_blank" href="http://limo.sukabumi.go.id/">Kecamatan Citamiang</a></li>
+											<li><a target="_blank" href="http://panmas.sukabumi.go.id/">Kecamatan Waru Doyong</a></li>
+											<li><a target="_blank" href="http://cipayung.sukabumi.go.id/">Kecamatan Baros</a></li>
+											<li><a target="_blank" href="http://sukmajaya.sukabumi.go.id/">Kecamatan Lembursitu</a></li>
+											<li><a target="_blank" href="http://cilodong.sukabumi.go.id/">Kecamatan Cibeureum</a></li>
+										</ul>
+									</marquee>
+								</div>
+							</div>
 						</div>
-		
-						<!-- end jadwal sholat -->
+						<!-- Sukabumi tautan -->
 						
 						<!-- Ayat pilihan -->
 							<div class="boxnav">
@@ -108,7 +135,7 @@
 						<!-- Sukabumi dalam Media -->
 						
 						<!-- Sukabumi dalam Media -->
-							<div class="boxnav">
+							<!--div class="boxnav">
 								<h3 class="titlenav">Help Desk</h3>
 								<div class="boxnavcontent2">									
 									<div class="ymHD">
@@ -117,11 +144,37 @@
 									<div class="clear"></div>									
 									</div>
 								</div>
-							</div>
+							</div-->
 						<!-- Sukabumi dalam Media -->
 						
+						<!-- Sukabumi download -->
+							<div class="boxnav">
+								<h3 class="titlenav">Kotak Download</h3>
+								<div class="boxnavcontent2">
+									<div style="padding:5px;">
+										<p><a href="#">Kota Sukabumi Selayang Pandang</a></p>
+										<p><a href="#">Kota Sukabumi Bahan Pokok</a></p>
+										<p><a href="#">Kota Sukabumi Berita Kota</a></p>
+										<p><a href="#">Kota Sukabumi Kalender</a></p>
+									</div>
+								</div>
+							</div>
+						<!-- Sukabumi download -->
+						
 						<?=$linkterkait?>
-						<?=$polling?>
+						<!--?=$polling?-->
+						
+						<!--?=$login?-->
+						<!-- jadwal sholat -->
+						<div class="boxnav">
+							<h3 class="titlenav">Jadwal Sholat</h3>
+							<div class="boxnavcontent2">								
+								<p style="text-align: center;"><iframe src="http://www.jadwalsholat.org/adzan/ajax.row.php?id=257" frameborder="0" width="220" height="220"></iframe></p>								
+								<div class="clear"></div>							
+							</div>
+						</div>		
+						<!-- end jadwal sholat -->
+						
 						</div>
 					</td>
 				</tr>
