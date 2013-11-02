@@ -15,7 +15,7 @@
 					<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4ddf457554a5a461"></script>
 					<!-- AddThis Button END -->
 					<br/>
-						<?=$sejarah?>
+						<?=$pemerintahan->isi?>
 					</div>
 					<div class="boxbigcontentbottom"></div>
 				

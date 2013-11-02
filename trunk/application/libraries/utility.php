@@ -1181,7 +1181,7 @@ function prior_monday($fyear, $fmonth, $fday)
  
 	//CKEDITOR
 	//fulll
-	function ckeditor_full($id){
+	function ckeditor_full($id,$maxlength=350,$width=450,$height=100){
 		return array(
  
 			//ID of the textarea that will be replaced
@@ -1191,9 +1191,9 @@ function prior_monday($fyear, $fmonth, $fday)
 			//Optionnal values
 			'config' => array(
 				'toolbar' 	=> 	"Full", 	//Using the Full toolbar
-				'MaxLength' => 350,
-				'width' 	=> 	"450px",	//Setting a custom width
-				'height' 	=> 	'100px',	//Setting a custom height
+				'MaxLength' => $maxlength,
+				'width' 	=> 	$width,	//Setting a custom width
+				'height' 	=> 	$height,	//Setting a custom height
 				'filebrowserBrowseUrl'      => base_url().'public/kcfinder-2.51/browse.php?type=files',
                 'filebrowserImageBrowseUrl' => base_url().'public/kcfinder-2.51/browse.php?type=images',
                 'filebrowserFlashBrowseUrl' => base_url().'public/kcfinder-2.51/browse.php?type=flash',
