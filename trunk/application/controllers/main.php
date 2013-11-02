@@ -23,24 +23,26 @@ class main extends CI_Controller {
 		$data['berita']		= $this->berita_model->getBeritaBaru();
 		$data['agenda']		= $this->agendamodel->get_All();
 		$data['layanan']		= $this->layananmodel->get_All2(1);
-		$data['program']	= $this->programkerjamodel->getProgramBaru();
-		$data['belajar']	= $this->belajarmodel->getProgramBaru();
-		$data['panduan']	= $this->panduanmodel->getProgramBaru();
+		//$data['program']	= $this->programkerjamodel->getProgramBaru();
+		//$data['belajar']	= $this->belajarmodel->getProgramBaru();
+		//$data['panduan']	= $this->panduanmodel->getProgramBaru();
 		$data['include']	= $this->temp_model->includeFile();
 		$data['header']		= $this->temp_model->headerMenu('1');
 		$data['sliderTop']	= $this->temp_model->sliderTop();
 		$data['pengumuman']	= $this->temp_model->pengumuman('main');
 		$data['mainmenu']	= $this->temp_model->mainmenu("0");
-		$data['polling']	= $this->temp_model->polling();
+		//$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
 		
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['download']= $this->temp_model->download();
 		//$data['footer']		= $this->temp_model->footer();
 		
 		$data['title_page']		= "Beranda ".COMPANY_NAME;
 		//$this->load->view('main',$data);
+		$this->template->set_template("main");
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','main',$data);
 		$this->template->render();

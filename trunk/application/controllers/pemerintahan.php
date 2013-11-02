@@ -74,9 +74,8 @@ class Pemerintahan extends CI_Controller {
 		$this->load->view('berita/berita_detail',$data);
 	}
 	
-	function dprd()
-	{
-			$data = array(
+	private function loadDataFront(){
+		$data = array(
 					
 					'title_page'=>'DPRD',
 					'title'=>'CPanel',
@@ -87,24 +86,83 @@ class Pemerintahan extends CI_Controller {
 		$data['include']	= $this->temp_model->includeFile();
 		$data['header']		= $this->temp_model->headerMenu('0');
 		$data['sliderTop']	= $this->temp_model->sliderTop();
-		$data['pemerintahan']	= $this->Pemerintahan_model->get_by_kategori('dprd');
+		
 		$data['mainmenu']	= $this->temp_model->mainmenu("1.2");
 		$data['pengumuman']	= $this->temp_model->pengumuman();
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		//$data['agenda']		= $this->agendamodel->get_All();
 		$data['download']= $this->temp_model->download();
+		return $data;
+	}
+	
+	private function loadTemplateFront($data){
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','pemerintahan/pemerintahan_detail',$data);
 		$this->template->render();
-		//$this->load->view('profil/sejarah',$data);
 	}
 	
-	function dprdview()
-	{
+	function dprd()
+	{	$data = $this->loadDataFront();		
+		$data['pemerintahan']	= $this->Pemerintahan_model->get_by_kategori('dprd');	
+		$data['title_page']	= 'DPRD';	
+		
+		$this->loadTemplateFront($data);		
+	}
+	function walikota()
+	{	$data = $this->loadDataFront();		
+		$data['pemerintahan']	= $this->Pemerintahan_model->get_by_kategori('walikota');	
+		$data['title_page']	= 'Walikota';	
+		$this->loadTemplateFront($data);		
+	}
+	function sekda()
+	{	$data = $this->loadDataFront();		
+		$data['pemerintahan']	= $this->Pemerintahan_model->get_by_kategori('sekda');	
+		$data['title_page']	= 'Sekretariat Daerah';	
+		$this->loadTemplateFront($data);		
+	}	
+	function stafwalikota()
+	{	$data = $this->loadDataFront();		
+		$data['pemerintahan']	= $this->Pemerintahan_model->get_by_kategori('staf_walikota');	
+		$data['title_page']	= 'Staf Walikota';	
+		$this->loadTemplateFront($data);		
+	}
+	function skpd()
+	{	$data = $this->loadDataFront();		
+		$data['pemerintahan']	= $this->Pemerintahan_model->get_by_kategori('skpd');	
+		$data['title_page']	= 'SKPD';	
+		$this->loadTemplateFront($data);		
+	}
+	function kecamatan()
+	{	$data = $this->loadDataFront();		
+		$data['pemerintahan']	= $this->Pemerintahan_model->get_by_kategori('kecamatan');	
+		$data['title_page']	= 'Kecamatan';	
+		$this->loadTemplateFront($data);		
+	}
+	function kelurahan()
+	{	$data = $this->loadDataFront();		
+		$data['pemerintahan']	= $this->Pemerintahan_model->get_by_kategori('kelurahan');	
+		$data['title_page']	= 'Kelurahan';	
+		$this->loadTemplateFront($data);		
+	}
+	function rtrw()
+	{	$data = $this->loadDataFront();		
+		$data['pemerintahan']	= $this->Pemerintahan_model->get_by_kategori('rtrw');	
+		$data['title_page']	= 'RW/RT';	
+		$this->loadTemplateFront($data);		
+	}
+	function kim()
+	{	$data = $this->loadDataFront();		
+		$data['title_page']	= 'Kelompok Informasi Masyarakat (KIM)';	
+		$data['pemerintahan']	= $this->Pemerintahan_model->get_by_kategori('kim');	
+		$this->loadTemplateFront($data);		
+	}
+	
+	private function loadDataBack(){
 		$this->cekLogin();
 		$data = array(
 					
@@ -117,14 +175,94 @@ class Pemerintahan extends CI_Controller {
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("10");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,450,200);
-		$data['kategori'] = 'dprd';
-		//var_dump($this->Pemerintahan_model->get_by_kategori("dprd")->result());
-		$data['data'] = $this->Pemerintahan_model->get_by_kategori("dprd");
-		
+		return $data;
+	}
+	
+	private function loadTemplateBack($data){
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','pemerintahan/pemerintahan_rec',$data);
 		$this->template->render();
-
+	}
+	
+	function dprdview()
+	{
+		$data = $this->loadDataBack();
+		$data['kategori'] = 'dprd';		
+		$data['title_page']	= 'DPRD';	
+		$data['data'] = $this->Pemerintahan_model->get_by_kategori("dprd");
+		$this->loadTemplateBack($data);
+	}
+	
+	function walikotaview()
+	{
+		$data = $this->loadDataBack();
+		$data['kategori'] = 'walikota';
+		$data['title_page']	= 'Walikota';	
+		$data['data'] = $this->Pemerintahan_model->get_by_kategori("walikota");
+		$this->loadTemplateBack($data);
+	}
+	
+	function sekdaview()
+	{
+		$data = $this->loadDataBack();
+		$data['kategori'] = 'sekda';	
+		$data['title_page']	= 'Sekretariat Daerah';			
+		$data['data'] = $this->Pemerintahan_model->get_by_kategori("sekda");
+		$this->loadTemplateBack($data);
+	}
+	
+	function staf_walikotaview()
+	{
+		$data = $this->loadDataBack();
+		$data['kategori'] = 'staf_walikota';
+		$data['title_page']	= 'Staf Walikota';	
+		$data['data'] = $this->Pemerintahan_model->get_by_kategori("staf_walikota");
+		$this->loadTemplateBack($data);
+	}
+	
+	function skpdview()
+	{
+		$data = $this->loadDataBack();
+		$data['kategori'] = 'skpd';
+		$data['title_page']	= 'SKPD';	
+		$data['data'] = $this->Pemerintahan_model->get_by_kategori("skpd");
+		$this->loadTemplateBack($data);
+	}
+	
+	function kecamatanview()
+	{
+		$data = $this->loadDataBack();
+		$data['kategori'] = 'kecamatan';		
+		$data['title_page']	= 'Kecamatan';	
+		$data['data'] = $this->Pemerintahan_model->get_by_kategori("kecamatan");
+		$this->loadTemplateBack($data);
+	}
+	
+	function kelurahanview()
+	{
+		$data = $this->loadDataBack();
+		$data['kategori'] = 'kelurahan';
+		$data['title_page']	= 'Kelurahan';			
+		$data['data'] = $this->Pemerintahan_model->get_by_kategori("kelurahan");
+		$this->loadTemplateBack($data);
+	}
+	
+	function rtrwview()
+	{
+		$data = $this->loadDataBack();
+		$data['kategori'] = 'rtrw';
+		$data['title_page']	= 'RW/RT';	
+		$data['data'] = $this->Pemerintahan_model->get_by_kategori("rtrw");
+		$this->loadTemplateBack($data);
+	}
+	
+	function kimview()
+	{
+		$data = $this->loadDataBack();
+		$data['kategori'] = 'kim';
+		$data['title_page']	= 'Kelompok Informasi Masyarakat (KIM)';	
+		$data['data'] = $this->Pemerintahan_model->get_by_kategori("kim");
+		$this->loadTemplateBack($data);
 	}
 	
 	function saveData()

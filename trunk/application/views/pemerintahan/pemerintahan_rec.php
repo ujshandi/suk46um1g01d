@@ -42,7 +42,7 @@
 	</script>
 	
     
-				<h1 class="titlebig">Data <?=strtoupper($data->kategori)?></h1>
+				<h1 class="titlebig">Data <?=$title_page?></h1>
 					<div class="boxbigcontent">
 						<div style="margin:-60px 0 0 -15px;">
 						<?= validation_errors(); ?>
