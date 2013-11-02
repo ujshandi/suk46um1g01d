@@ -107,23 +107,26 @@ echo strftime("%A, %d %B %Y") ;
 		        </li>
 		        <li><a href="#" class="parent"><span>Pemerintahan</span></a>
 					<div><ul>
-		                        <li><a href="#"><span>DPRD</span></a></li>
-		                        <li><a href="#"><span>Walikota</span></a></li>
-		                        <li><a href="#"><span>Sekretariat Daerah</span></a></li>
-		                        <li><a href="#"><span>Staf Ahli Walikota</span></a></li>
-		                        <li><a href="#"><span>SKPD</span></a></li>
-		                        <li><a href="#"><span>Kecamatan</span></a></li>
-		                        <li><a href="#"><span>Kelurahan</span></a></li>
-		                        <li><a href="#"><span>Rekap RW RT</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/dprd"><span>DPRD</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/walikota"><span>Walikota</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/sekda"><span>Sekretariat Daerah</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/stafwalikota"><span>Staf Ahli Walikota</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/skpd"><span>SKPD</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/kecamatan"><span>Kecamatan</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/kelurahan"><span>Kelurahan</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/rtrw"><span>Rekap RW RT</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/kim"><span>Kelompok Informasi Masyarakat (KIM)</span></a></li>
 		                    </ul></div>
 				</li>
 				<li><a href="#" class="parent"><span>Industri</span></a>
 					<div><ul>
-		                        <li><a href="#"><span>Perencanaan Strategis</span></a></li>
-		                        <li><a href="#"><span>Daftar Perencanaan</span></a></li>
-		                        <li><a href="#"><span>Industri Per Komoditi</span></a></li>
-		                        <li><a href="#"><span>Perkembangan Industri</span></a></li>
-		                        <li><a href="#"><span>Daftar IUJK</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/rencana_strategis"><span>Perencanaan Strategis</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/daftar_rencana"><span>Daftar Perencanaan</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/komoditi"><span>Industri Per Komoditi</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/perkembangan"><span>Perkembangan Industri</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/iujk"><span>Daftar IUJK</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/koperasi"><span>Daftar Koperasi</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/ukm"><span>Daftar UKM</span></a></li>
 		                        
 		                    </ul></div>
 				</li>
@@ -184,9 +187,24 @@ echo strftime("%A, %d %B %Y") ;
 		                </ul>
 					</div>
 				</li>
-		        <li><a href="#"><span>Berita</span></a></li>
+		        <li><a href="#"><span>Berita</span></a>
+					<div>
+						<ul>
+							<li><a href="#"><span>Kota Sukabumi</span></a></li>
+							<li><a href="#"><span>Nasional</span></a></li>
+							<li><a href="#"><span>Internasional</span></a></li>
+						</ul>
+					</div>
+				</li>
 		        
-		        <li class="last"><a href="#"><span>Forum</span></a></li>
+		        <li class="last"><a href="#"><span>Forum</span></a>
+					<div>
+						<ul>
+							<li><a href="#"><span>Pemerintah Kota Sukabumi</span></a></li>							
+							<li><a href="#"><span>Umum</span></a></li>							
+						</ul>
+					</div>
+				</li>
 		    </ul>
 		</div>
 	</div>

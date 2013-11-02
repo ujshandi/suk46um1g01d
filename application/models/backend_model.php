@@ -155,25 +155,25 @@ class backend_model extends CI_Model
 									$menu.='</a></li>'; */
 							//	$menu.='</ul></li>';
 							$menu.="<li><a href=\"javascript:dropdown('profil');\">";
-							$menu.='<img src="'.$this->setBg("2","0",$id).'" align="left" />Kota Sukabumi</a></li>';
+							$menu.='<img src="'.$this->setBg("1","0",$id).'" align="left" />Kota Sukabumi</a></li>';
 								$menu.='<ul class="sub" id="profil" style="'.$style2.'">';
 								$menu.='<li class="submenu"><a href="'.base_url().'profil/sejarahview">';
-										$menu.='<img src="'.$this->setBg("2","2.2",$id).'" align="left"/>Sejarah';
+										$menu.='<img src="'.$this->setBg("1","1.1",$id).'" align="left"/>Sejarah';
 									$menu.='</a></li>';
 									$menu.='<li class="submenu"><a href="'.base_url().'profil/visimisi">';
-										$menu.='<img src="'.$this->setBg("2","2.1",$id).'" align="left"/>Visi dan Misi';
+										$menu.='<img src="'.$this->setBg("1","1.2",$id).'" align="left"/>Visi dan Misi';
 									$menu.='</a></li>';									
 									$menu.='<li class="submenu"><a href="'.base_url().'profil/lambangview">';
-										$menu.='<img src="'.$this->setBg("2","2.4",$id).'" align="left"/>Lambang';
+										$menu.='<img src="'.$this->setBg("1","1.3",$id).'" align="left"/>Lambang';
 									$menu.='</a></li>';
 									$menu.='<li class="submenu"><a href="'.base_url().'profil/geografiview">';
-										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Geografis';
+										$menu.='<img src="'.$this->setBg("1","1.4",$id).'" align="left"/>Geografis';
 									$menu.='</a></li>';
 									$menu.='<li class="submenu"><a href="'.base_url().'profil/sosialview">';
-										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Sosial Ekonomi';
+										$menu.='<img src="'.$this->setBg("1","1.5",$id).'" align="left"/>Sosial Ekonomi';
 									$menu.='</a></li>';
 									$menu.='<li class="submenu"><a href="'.base_url().'profil/angkaview">';
-										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Sukabumi Dalam Angka';
+										$menu.='<img src="'.$this->setBg("1","1.6",$id).'" align="left"/>Sukabumi Dalam Angka';
 									$menu.='</a></li>';
 								$menu.='</ul></li>';
 								
@@ -182,66 +182,85 @@ class backend_model extends CI_Model
 							$menu.='<img src="'.$this->setBg("2","0",$id).'" align="left" />Pemerintahan</a></li>';
 								$menu.='<ul class="sub" id="pemerintahan" style="'.$style2.'">';
 								$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/dprdview">';
-										$menu.='<img src="'.$this->setBg("2","2.2",$id).'" align="left"/>DPRD';
+										$menu.='<img src="'.$this->setBg("2","2.1",$id).'" align="left"/>DPRD';
 									$menu.='</a></li>';
 									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/walikotaview">';
-										$menu.='<img src="'.$this->setBg("2","2.1",$id).'" align="left"/>Walikota';
+										$menu.='<img src="'.$this->setBg("2","2.2",$id).'" align="left"/>Walikota';
 									$menu.='</a></li>';									
-									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/sekretariatdaerahview">';
-										$menu.='<img src="'.$this->setBg("2","2.4",$id).'" align="left"/>Sekretariat Daerah';
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/sekdaview">';
+										$menu.='<img src="'.$this->setBg("2","2.3",$id).'" align="left"/>Sekretariat Daerah';
 									$menu.='</a></li>';
-									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/stafwalikotaview">';
-										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Staf Ahli Walikota';
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/staf_walikotaview">';
+										$menu.='<img src="'.$this->setBg("2","2.4",$id).'" align="left"/>Staf Ahli Walikota';
 									$menu.='</a></li>';
 									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/skpdview">';
 										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>SKPD';
 									$menu.='</a></li>';
 									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/kecamatanview">';
-										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Kecamatan';
+										$menu.='<img src="'.$this->setBg("2","2.6",$id).'" align="left"/>Kecamatan';
 									$menu.='</a></li>';
 									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/kelurahanview">';
-										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Kelurahan';
+										$menu.='<img src="'.$this->setBg("2","2.7",$id).'" align="left"/>Kelurahan';
 									$menu.='</a></li>';
-									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/rekaprwrtview">';
-										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Rekap RW RT';
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/rtrwview">';
+										$menu.='<img src="'.$this->setBg("2","2.8",$id).'" align="left"/>Rekap RW RT';
+									$menu.='</a></li>';
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/kimview">';
+										$menu.='<img src="'.$this->setBg("2","2.9",$id).'" align="left"/>Kelompok Informasi Masyarakat (KIM)';
 									$menu.='</a></li>';
 								$menu.='</ul></li>';
 								
-									
-							$menu.='<li><a href="'.base_url().'program_kerja/data">';
-								$menu.='<img src="'.$this->setBg("3","0",$id).'" align="left" />Program Kerja';
-							$menu.='</a></li>';
-							$menu.='<li><a href="'.base_url().'peraturan/data">';
-								$menu.='<img src="'.$this->setBg("4","0",$id).'" align="left" />Peraturan';
-							$menu.='</a></li>';
-							$menu.='<li><a href="'.base_url().'panduan/data">';
-								$menu.='<img src="'.$this->setBg("5","0",$id).'" align="left" />Pedoman / Panduan';
-							$menu.='</a></li>';
-							$menu.='<li><a href="'.base_url().'statistik/data">';
-								$menu.='<img src="'.$this->setBg("6","0",$id).'" align="left"  />Data dan Statistik';
-							$menu.='</a></li>';
-							/* $menu.='<li><a href="'.base_url().'belajar/data">';
-								$menu.='<img src="'.$this->setBg("7","0",$id).'" align="left" />Substansi Pembelajaran';
-							$menu.='</a></li>'; */
-							$menu.="<li><a href=\"javascript:dropdown('layanan');\">";
-							$menu.='<img src="'.$this->setBg("8","0",$id).'" align="left"/>Layanan</a></li>';
-								$menu.='<ul class="sub" id="layanan" style="'.$style8.'">';
-									$menu.='<li class="submenu"><a href="'.base_url().'layanan/data/1">';
-										$menu.='<img src="'.$this->setBg("8","8.1",$id).'" align="left"/>Perijinan';
+							$menu.="<li><a href=\"javascript:dropdown('industri');\">";
+							$menu.='<img src="'.$this->setBg("3","0",$id).'" align="left" />Industri</a></li>';
+								$menu.='<ul class="sub" id="industri" style="'.$style2.'">';
+								$menu.='<li class="submenu"><a href="'.base_url().'industri/rencana_strategisview">';
+										$menu.='<img src="'.$this->setBg("3","3.1",$id).'" align="left"/>Perencanaan Strategis';
 									$menu.='</a></li>';
-									/* $menu.='<li class="submenu"><a href="'.base_url().'layanan/data/2">';
-										$menu.='<img src="'.$this->setBg("8","8.2",$id).'" align="left"/>Hibah';
+								$menu.='<li class="submenu"><a href="'.base_url().'industri/daftar_rencanaview">';
+										$menu.='<img src="'.$this->setBg("3","3.2",$id).'" align="left"/>Daftar Perencanaan';
 									$menu.='</a></li>';
-									$menu.='<li class="submenu"><a href="'.base_url().'layanan/data/3">';
-										$menu.='<img src="'.$this->setBg("8","8.3",$id).'" align="left"/>Akreditasi';
+								$menu.='<li class="submenu"><a href="'.base_url().'industri/komoditiview">';
+										$menu.='<img src="'.$this->setBg("3","3.3",$id).'" align="left"/>Industri Per Komoditi';
 									$menu.='</a></li>';
-									$menu.='<li class="submenu"><a href="'.base_url().'layanan/data/4">';
-										$menu.='<img src="'.$this->setBg("8","8.4",$id).'" align="left"/>Beasiswa';
-									$menu.='</a></li>'; */
+								$menu.='<li class="submenu"><a href="'.base_url().'industri/perkembanganview">';
+										$menu.='<img src="'.$this->setBg("3","3.4",$id).'" align="left"/>Perkembangan Industri';
+									$menu.='</a></li>';
+								$menu.='<li class="submenu"><a href="'.base_url().'industri/iujkview">';
+										$menu.='<img src="'.$this->setBg("3","3.5",$id).'" align="left"/>Daftar IUJK';
+									$menu.='</a></li>';
+								$menu.='<li class="submenu"><a href="'.base_url().'industri/koperasiview">';
+										$menu.='<img src="'.$this->setBg("3","3.6",$id).'" align="left"/>Daftar Koperasi';
+									$menu.='</a></li>';
+								$menu.='<li class="submenu"><a href="'.base_url().'industri/ukmview">';
+										$menu.='<img src="'.$this->setBg("3","3.7",$id).'" align="left"/>Daftar UKM';
+									$menu.='</a></li>';
 								$menu.='</ul></li>';
+								
+													
 							$menu.='<li><a href="'.base_url().'linkterkait">';
-								$menu.='<img src="'.$this->setBg("9","0",$id).'" align="left"/>Link Terkait';
+								$menu.='<img src="'.$this->setBg("4","0",$id).'" align="left"/>Link Terkait';
+							$menu.='</a></li>';	
+							
+							$menu.='<li><a href="'.base_url().'linkterkait/opd">';
+								$menu.='<img src="'.$this->setBg("5","0",$id).'" align="left"/>Tautan OPD';
 							$menu.='</a></li>';
+							
+/* 							$menu.="<li><a href=\"javascript:dropdown('informasi_umum');\">";
+							$menu.='<img src="'.$this->setBg("6","0",$id).'" align="left" />Informasi Umum</a></li>';
+								$menu.='<ul class="sub" id="informasi_umum" style="'.$style2.'">';
+									$menu.="<li><a href=\"javascript:dropdown('informasi_umum_pendidikan');\">";
+										$menu.='<img src="'.$this->setBg("6","6.1",$id).'" align="left"/>Pendidikan';
+									$menu.='</a></li>';
+									$menu.='<ul class="sub" id="informasi_umum_pendidikan" style="'.$style2.'">';
+										$menu.='<li class="submenu"><a href="'.base_url().'informasi/pendidikan">';
+											$menu.='<img src="'.$this->setBg("6","6.1",$id).'" align="left"/>Pendidikan';
+											$menu.='</a></li>';
+									
+									$menu.='</ul></li>';
+								
+							$menu.='</ul></li>'; */
+								
+							
 							$menu.='<li><a href="'.base_url().'berita">';
 								$menu.='<img src="'.$this->setBg("10","0",$id).'" align="left"/>Berita';
 							$menu.='</a></li>';

@@ -6,7 +6,7 @@
 	<!--/div>
 	<br />
 <!-- end slider -->
-						
+			
 <!-- Start newslider-vertical -->
 	<div class="sliderkit newslider-vertical">
 		<h1 class="titlebig">Berita</h1>
@@ -42,7 +42,6 @@
 	<br />
 	<h1 class="titlebig">Pengumuman</h1>
 		<div class="sliderkit photoslider-mini2">
-		
 			<div class="sliderkit-panels">
 				<!--<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-prev"><a href="#" title="Previous"><span>Previous</span></a></div>
 				<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-next"><a href="#" title="Next"><span>Next</span></a></div>
@@ -65,11 +64,11 @@
 			</div>
 			
 		</div>
-		<ul id="js-news" class="js-hidden">
-		<?php foreach($agenda as $b){ ?>
-			<li class="news-item"><?=$b->tgl." : ".$b->kegiatan?></li>
-		<?} ?>
-		</ul>
+		<!--ul id="js-news" class="js-hidden">
+		</?php foreach($agenda as $b){ ?>
+			<li class="news-item"></?=$b->tgl." : ".$b->kegiatan?></li>
+		</?} ?>
+		</ul-->
 	</div>
 	<br />
 <!-- end pengumuman -->

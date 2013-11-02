@@ -10,6 +10,7 @@ class linkterkait extends CI_Controller {
 		$this->load->model('backend_model','',TRUE);
 		$this->load->model('temp_model','',TRUE);
 		$this->load->model('linkmodel','',TRUE);
+		$this->load->library('utility');
 	}
 	function cekLogin()
 	{
@@ -69,6 +70,27 @@ class linkterkait extends CI_Controller {
 		$data['mainmenu']	= $this->backend_model->mainmenu("9");
 		$this->load->view('link/link_data',$data);
 	}
+	
+	
+	private function loadDataBack($jenis='terkait'){
+		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
+		$data['headmenu']	= $this->backend_model->headermenu();
+		
+		$data['mainmenu']	= $this->backend_model->mainmenu("9");
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,450,200);
+		return $data;
+	}
+	
+	
+	
 	function index($offset=0)
 	{
 		$uri_segment = 3;
@@ -76,31 +98,68 @@ class linkterkait extends CI_Controller {
 		$config['base_url'] = site_url('linkterkait/index/');
 		$config['total_rows'] = $this->linkmodel->count_link();
 		$config['per_page'] = $this->limit;
+		$data['title_page'] = 'Link Terkait';
 		$this->pagination->initialize($config);
+		$data = $this->loadDataBack();
+		$data['pagination'] = $this->pagination->create_links();
+		$data['link']		= $this->linkmodel->get_All($this->limit,$offset);
+		$data['jenis'] = 'terkait';
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','link/link_data',$data);
+		$this->template->render();
+	}
+	
+	function opd($offset=0)
+	{
+		$uri_segment = 3;
+		$offset = $this->uri->segment($uri_segment);
+		$config['base_url'] = site_url('linkterkait/opd/');
+		$config['total_rows'] = $this->linkmodel->count_link('opd');
+		$config['per_page'] = $this->limit;
+		$this->pagination->initialize($config);
+		$data = $this->loadDataBack();
+		$data['title_page'] = 'Tautan OPD';
+		$data['jenis'] = 'opd';
 		$data['pagination'] = $this->pagination->create_links();
 		
-		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['link']		= $this->linkmodel->get_All($this->limit,$offset);
-		$data['mainmenu']	= $this->backend_model->mainmenu("9");
-		$this->load->view('link/link_data',$data);
+		$data['link']		= $this->linkmodel->get_All($this->limit,$offset,'opd');
+	
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','link/link_data',$data);
+		$this->template->render();
 	}
+	
 	function add()
 	{
-		$this->cekLogin();
-		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("9");
-		$this->load->view('link/link_add',$data);
+		$data = $this->loadDataBack();
+		$data['title_page'] = 'Link Terkait';
+		$data['jenis'] = 'terkait';
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','link/link_add',$data);
+		$this->template->render();
+	
+	}
+	
+	function add_opd()
+	{
+		$data = $this->loadDataBack();
+		$data['title_page'] = 'Link OPD';
+		$data['jenis'] = 'opd';
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','link/link_add',$data);
+		$this->template->render();
 	}
 	function simpan()
 	{
 		$singkat	= $this->input->post('singkatan');
 		$deskripsi	= $this->input->post('deskripsi');
 		$url		= $this->input->post('url');
+		$jenis= $this->input->post('jenis');
 		
-			$data = array('singkatan'=>$singkat,'deskripsi'=>$deskripsi,'url'=>$url);
+			$data = array('singkatan'=>$singkat,'deskripsi'=>$deskripsi,'url'=>$url,'jenis'=>$jenis);
 			$this->linkmodel->save($data);
 		
-		redirect('linkterkait','refresh');
+		redirect('linkterkait'.($jenis=='opd'?'/opd':''),'refresh');
 	}
 	function edit($id)
 	{

@@ -7,14 +7,16 @@ class linkModel extends CI_Model
 	{
 		parent::__construct();
 	}
-	function count_link() 
+	function count_link($jenis='terkait') 
 	{   
-	  	return $this->db->count_all($this->tbl);
+		$this->db->where('jenis',$jenis);
+		$this->db->from($this->tbl);
+	  	return $this->db->count_all();
   	}
-	function get_All($limit = 10, $offset = 0) 
+	function get_All($limit = 10, $offset = 0,$jenis='terkait') 
   	{
 		if($offset==""){ $offset=0; }
-  		$query =$this->db->query("select * from linkterkait ORDER BY id_link DESC LIMIT $offset,$limit");
+  		$query =$this->db->query("select * from linkterkait where jenis ='$jenis' ORDER BY id_link DESC LIMIT $offset,$limit");
 		return $query->result();
   	}
 	function search($tipe,$tipe2,$key)

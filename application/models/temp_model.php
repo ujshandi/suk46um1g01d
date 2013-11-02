@@ -632,29 +632,15 @@ class temp_model extends CI_Model
 		$data='<div class="boxnav">';
 			$data.='<h3 class="titlenav">Link terkait</h3>';
 			$data.='<div class="boxnavcontent2">';
-				
-				/*   $data.='<ul id="listads">';
-				$query=$this->db->query("SELECT * FROM linkterkait ORDER BY jenis,id_link DESC LIMIT 6");
-				foreach ($query->result() as $row)
-				{
-					$data.='<li><a href="'.$row->url.'" target="_blank"><p>'.$row->singkatan.'</p><span>'.$row->deskripsi.'</span></a></li>';
-				}
-				$data.='</ul>';
-				
-				$data.='<div class="clear"></div>';
-				$data.='<a href="'.base_url().'linkterkait/daftarlink" class="linkadv">More Link</a>';
-				$data.='<div class="clear"></div>';
-			$data.='</div>';
-		$data.='</div>';   */
-		
+			
 		$data.='<div class="akordeon" id="divLinkTerkait">';
 				$query=$this->db->query("SELECT distinct (jenis) FROM linkterkait ORDER BY jenis asc LIMIT 6");
 				
 				$oldJudul="";
 				foreach ($query->result() as $row){
 				 	switch ($row->jenis) {
-						case 1 : $judul = "Pemerintahan";break;
-						case 3 : $judul = "Elektronik";break;
+						case 'terkait' : $judul = "Pemerintahan";break;
+						case 'opd' : $judul = "Tautan OPD";break;						
 						default : $judul = $row->jenis;
 					}//expanded
 					$data .= '<div class="akordeon-item ">
@@ -666,7 +652,7 @@ class temp_model extends CI_Model
 									</div>
 								</div>';
 						
-					$query2=$this->db->query("SELECT * FROM linkterkait where jenis = ".$row->jenis." ORDER BY jenis,id_link DESC LIMIT 6");
+					$query2=$this->db->query("SELECT * FROM linkterkait where jenis = '".$row->jenis."' ORDER BY jenis,id_link DESC LIMIT 6");
 					
 					 $data .= '<div class="akordeon-item-body">
 							<div class="akordeon-item-content">';
@@ -692,6 +678,39 @@ class temp_model extends CI_Model
 				
 			$data.='</div>';
 		$data.='</div>'; 
+		
+		return $data;
+	}
+	
+	function linkopd()
+	{
+		$data='<div class="boxnav">
+							<h3 class="titlenav">Tautan</h3>
+							<div class="boxnavcontent2">
+								<div style="padding:5px;">
+									<marquee width="300" height="auto" bgcolor="" direction="UP" behavior="SCROLL" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="3" style="font-size:12px;color:#000000;font-family:arial;">
+										<ul>';
+							$query2=$this->db->query("SELECT * FROM linkterkait where jenis = 'opd' ORDER BY jenis,id_link DESC");
+					
+					
+					foreach ($query2->result() as $row2){						
+						$data .= '<li><a target="_blank" href="'.$row2->url.'">'.$row2->deskripsi.'</a></li>';
+					}				
+										
+											
+										
+											
+							$data .='</ul>
+									</marquee>
+								</div>
+							</div>
+						</div>
+						';
+			
+						
+					
+					
+				
 		
 		return $data;
 	}
