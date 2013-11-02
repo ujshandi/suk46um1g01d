@@ -162,11 +162,7 @@ class backend_model extends CI_Model
 									$menu.='</a></li>';
 									$menu.='<li class="submenu"><a href="'.base_url().'profil/visimisi">';
 										$menu.='<img src="'.$this->setBg("2","2.1",$id).'" align="left"/>Visi dan Misi';
-									$menu.='</a></li>';
-									
-									//$menu.='<li class="submenu"><a href="#">';
-										//$menu.='<img src="'.$this->setBg("2","2.3",$id).'" align="left"/>Struktur Organisasi';
-									//$menu.='</a></li>';
+									$menu.='</a></li>';									
 									$menu.='<li class="submenu"><a href="'.base_url().'profil/lambangview">';
 										$menu.='<img src="'.$this->setBg("2","2.4",$id).'" align="left"/>Lambang';
 									$menu.='</a></li>';
@@ -180,6 +176,38 @@ class backend_model extends CI_Model
 										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Sukabumi Dalam Angka';
 									$menu.='</a></li>';
 								$menu.='</ul></li>';
+								
+								
+							$menu.="<li><a href=\"javascript:dropdown('pemerintahan');\">";
+							$menu.='<img src="'.$this->setBg("2","0",$id).'" align="left" />Pemerintahan</a></li>';
+								$menu.='<ul class="sub" id="pemerintahan" style="'.$style2.'">';
+								$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/dprdview">';
+										$menu.='<img src="'.$this->setBg("2","2.2",$id).'" align="left"/>DPRD';
+									$menu.='</a></li>';
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/walikotaview">';
+										$menu.='<img src="'.$this->setBg("2","2.1",$id).'" align="left"/>Walikota';
+									$menu.='</a></li>';									
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/sekretariatdaerahview">';
+										$menu.='<img src="'.$this->setBg("2","2.4",$id).'" align="left"/>Sekretariat Daerah';
+									$menu.='</a></li>';
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/stafwalikotaview">';
+										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Staf Ahli Walikota';
+									$menu.='</a></li>';
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/skpdview">';
+										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>SKPD';
+									$menu.='</a></li>';
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/kecamatanview">';
+										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Kecamatan';
+									$menu.='</a></li>';
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/kelurahanview">';
+										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Kelurahan';
+									$menu.='</a></li>';
+									$menu.='<li class="submenu"><a href="'.base_url().'pemerintahan/rekaprwrtview">';
+										$menu.='<img src="'.$this->setBg("2","2.5",$id).'" align="left"/>Rekap RW RT';
+									$menu.='</a></li>';
+								$menu.='</ul></li>';
+								
+									
 							$menu.='<li><a href="'.base_url().'program_kerja/data">';
 								$menu.='<img src="'.$this->setBg("3","0",$id).'" align="left" />Program Kerja';
 							$menu.='</a></li>';
