@@ -135,52 +135,52 @@ echo strftime("%A, %d %B %Y") ;
 							<li class="parent"><a href="#"><span>Pendidikan</span></a>
 									<div>
 									<ul>
-										<li><a href="#"><span>TK/RA</span></a></li>
-										<li><a href="#"><span>SD/MI</span></a></li>
-										<li><a href="#"><span>SMP/MTS</span></a></li>
-										<li><a href="#"><span>SMA/MA</span></a></li>
-										<li><a href="#"><span>SMK</span></a></li>
-										<li><a href="#"><span>Perguruan Tinggi</span></a></li>
-										<li><a href="#"><span>Kursus</span></a></li>
-										<li><a href="#"><span>Bimbingan Belajar</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/tk"><span>TK/RA</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/sd"><span>SD/MI</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/smp"><span>SMP/MTS</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/sma"><span>SMA/MA</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/smk"><span>SMK</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/pt"><span>Perguruan Tinggi</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/kursus"><span>Kursus</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/bimbel"><span>Bimbingan Belajar</span></a></li>
 									</ul>
 									</div>
 							</li>
 							<li class="parent"><a href="#"><span>Kesehatan</span></a>
 									<div>
 									<ul>
-										<li><a href="#"><span>Rumah Sakit</span></a></li>
-										<li><a href="#"><span>Puskesmas</span></a></li>
-										<li><a href="#"><span>Klinik</span></a></li>
-										<li><a href="#"><span>Apotek</span></a></li>
-										<li><a href="#"><span>Laboratorium</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/rs"><span>Rumah Sakit</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/puskesmas"><span>Puskesmas</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/klinik"><span>Klinik</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/apotek"><span>Apotek</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/lab"><span>Laboratorium</span></a></li>
 									</ul>
 									</div>
 							</li>
 							<li class="parent"><a href="#"><span>Pariwisata</span></a>
 									<div>
 									<ul>
-										<li><a href="#"><span>Rekreasi</span></a></li>
-										<li><a href="#"><span>Belanja</span></a></li>
-										<li><a href="#"><span>Olahraga</span></a></li>
-										<li><a href="#"><span>Hotel</span></a></li>
-										<li><a href="#"><span>Restoran</span></a></li>
-										<li><a href="#"><span>Radio/Televisi</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/rekreasi"><span>Rekreasi</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/belanja"><span>Belanja</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/olahraga"><span>Olahraga</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/hotel"><span>Hotel</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/restoran"><span>Restoran</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/radio"><span>Radio/Televisi</span></a></li>
 									</ul>
 									</div>
 							</li>    
-							<li class="parent"><a href="#"><span>BUMD</span></a></li>
+							<li class="parent"><a href="<?=base_url()?>informasi_umum/bumd"><span>BUMD</span></a></li>
 							<li class="parent"><a href="#"><span>Lainnya</span></a>
 									<div>
 									<ul>
-										<li><a href="#"><span>Sarana Ibadah</span></a></li>
-										<li><a href="#"><span>Perbankan</span></a></li>
-										<li><a href="#"><span>ATM</span></a></li>
-										<li><a href="#"><span>Transportasi</span></a></li>
-										<li><a href="#"><span>Panti Asuhan</span></a></li>
-										<li><a href="#"><span>Asuransi</span></a></li>
-										<li><a href="#"><span>Gedung Pertemuan</span></a></li>
-										<li><a href="#"><span>Terminal/Pom Bensin</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/ibadah"><span>Sarana Ibadah</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/bank"><span>Perbankan</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/atm"><span>ATM</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/transportasi"><span>Transportasi</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/panti"><span>Panti Asuhan</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/asuransi"><span>Asuransi</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/gedung"><span>Gedung Pertemuan</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/terminal"><span>Terminal/Pom Bensin</span></a></li>
 									</ul>
 									</div>
 							</li>

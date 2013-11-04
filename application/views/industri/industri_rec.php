@@ -29,7 +29,7 @@
 	//	var data2	= document.getElementById('txtkategori').value;
 		if(data1!="")
 		{
-			document.getElementById('frmcontact').submit();
+			document.getElementById('frmcontact2').submit();
 		}
 		else
 		{
@@ -46,9 +46,9 @@
 					<div class="boxbigcontent">
 						<div style="margin:-60px 0 0 -15px;">
 						<?= validation_errors(); ?>
-						<form method="post" action="<?= base_url() ?>industri/saveData" id="frmcontact" enctype="multipart/form-data">
+						<form method="post" action="<?= base_url() ?>industri/saveData" id="frmcontact2" enctype="multipart/form-data">
 						
-							<label>Isi</label>
+							
 							<div class="ckWow">
 							<input type="hidden" name="txtkategori" id="txtkategori" value="<?=$data->kategori?>"/>
 							<textarea name="isi" id="editor1" class="editor" cols="400" rows="600" ><?=$data->isi?></textarea>
