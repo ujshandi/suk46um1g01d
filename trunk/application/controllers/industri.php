@@ -155,7 +155,7 @@ class Industri extends CI_Controller {
 		$this->loadTemplateFront($data);		
 	}
 	
-	private function loadDataBack()
+	private function loadDataBack($menuId)
 	{
 		$this->cekLogin();
 		$data = array(
@@ -167,8 +167,8 @@ class Industri extends CI_Controller {
 					'css'=>array()
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("10");
-		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,450,200);
+		$data['mainmenu']	= $this->backend_model->mainmenu($menuId);
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		return $data;
 	}
 	
@@ -180,7 +180,7 @@ class Industri extends CI_Controller {
 	
 	function rencana_strategisview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("3.1");
 		$data['kategori'] = 'rencana_strategis';	
 		$data['title_page']	= 'Perencanaan Strategis';	
 		$data['data'] = $this->Industri_model->get_by_kategori("rencana_strategis");
@@ -189,7 +189,7 @@ class Industri extends CI_Controller {
 	
 	function daftar_rencanaview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("3.2");
 		$data['kategori'] = 'daftar_rencana';	
 		$data['title_page']	= 'Daftar Perencanaan';	
 		$data['data'] = $this->Industri_model->get_by_kategori("daftar_rencana");
@@ -198,7 +198,7 @@ class Industri extends CI_Controller {
 	
 	function komoditiview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("3.3");
 		$data['kategori'] = 'komoditi';	
 		$data['title_page']	= 'Industri Per Komoditi';	
 		$data['data'] = $this->Industri_model->get_by_kategori("komoditi");
@@ -207,7 +207,7 @@ class Industri extends CI_Controller {
 	
 	function perkembanganview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("3.4");
 		$data['kategori'] = 'perkembangan';	
 		$data['title_page']	= 'Perkembangan Industri';	
 		$data['data'] = $this->Industri_model->get_by_kategori("perkembangan");
@@ -215,7 +215,7 @@ class Industri extends CI_Controller {
 	}
 	function iujkview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("3.5");
 		$data['kategori'] = 'iujk';	
 		$data['title_page']	= 'Daftar IUJK';	
 		$data['data'] = $this->Industri_model->get_by_kategori("iujk");
@@ -223,7 +223,7 @@ class Industri extends CI_Controller {
 	}
 	function koperasiview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("3.6");
 		$data['kategori'] = 'koperasi';	
 		$data['title_page']	= 'Daftar Koperasi';	
 		$data['data'] = $this->Industri_model->get_by_kategori("koperasi");
@@ -231,7 +231,7 @@ class Industri extends CI_Controller {
 	}
 	function ukmview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("3.7");
 		$data['kategori'] = 'ukm';	
 		$data['title_page']	= 'Daftar UKM';	
 		$data['data'] = $this->Industri_model->get_by_kategori("ukm");

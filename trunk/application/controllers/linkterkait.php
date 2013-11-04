@@ -72,7 +72,7 @@ class linkterkait extends CI_Controller {
 	}
 	
 	
-	private function loadDataBack($jenis='terkait'){
+	private function loadDataBack($jenis='terkait',$menuId){
 		$this->cekLogin();
 		$data = array(
 					
@@ -84,7 +84,7 @@ class linkterkait extends CI_Controller {
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		
-		$data['mainmenu']	= $this->backend_model->mainmenu("9");
+		$data['mainmenu']	= $this->backend_model->mainmenu($menuId);
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,450,200);
 		return $data;
 	}
@@ -98,9 +98,10 @@ class linkterkait extends CI_Controller {
 		$config['base_url'] = site_url('linkterkait/index/');
 		$config['total_rows'] = $this->linkmodel->count_link();
 		$config['per_page'] = $this->limit;
-		$data['title_page'] = 'Link Terkait';
+		
 		$this->pagination->initialize($config);
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack('terkait',"4");
+		$data['title_page'] = 'Link Terkait';
 		$data['pagination'] = $this->pagination->create_links();
 		$data['link']		= $this->linkmodel->get_All($this->limit,$offset);
 		$data['jenis'] = 'terkait';
@@ -117,7 +118,7 @@ class linkterkait extends CI_Controller {
 		$config['total_rows'] = $this->linkmodel->count_link('opd');
 		$config['per_page'] = $this->limit;
 		$this->pagination->initialize($config);
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack('opd',"5");
 		$data['title_page'] = 'Tautan OPD';
 		$data['jenis'] = 'opd';
 		$data['pagination'] = $this->pagination->create_links();
@@ -131,7 +132,7 @@ class linkterkait extends CI_Controller {
 	
 	function add()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack('terkait',"4");
 		$data['title_page'] = 'Link Terkait';
 		$data['jenis'] = 'terkait';
 		$this->template->set_template("admin");
@@ -142,7 +143,7 @@ class linkterkait extends CI_Controller {
 	
 	function add_opd()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack('opd','5');
 		$data['title_page'] = 'Link OPD';
 		$data['jenis'] = 'opd';
 		$this->template->set_template("admin");

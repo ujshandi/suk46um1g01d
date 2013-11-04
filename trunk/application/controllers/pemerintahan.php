@@ -162,7 +162,7 @@ class Pemerintahan extends CI_Controller {
 		$this->loadTemplateFront($data);		
 	}
 	
-	private function loadDataBack(){
+	private function loadDataBack($menuId){
 		$this->cekLogin();
 		$data = array(
 					
@@ -173,8 +173,8 @@ class Pemerintahan extends CI_Controller {
 					'css'=>array()
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("10");
-		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,450,200);
+		$data['mainmenu']	= $this->backend_model->mainmenu($menuId);
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		return $data;
 	}
 	
@@ -186,7 +186,7 @@ class Pemerintahan extends CI_Controller {
 	
 	function dprdview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("2.1");
 		$data['kategori'] = 'dprd';		
 		$data['title_page']	= 'DPRD';	
 		$data['data'] = $this->Pemerintahan_model->get_by_kategori("dprd");
@@ -195,7 +195,7 @@ class Pemerintahan extends CI_Controller {
 	
 	function walikotaview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("2.2");
 		$data['kategori'] = 'walikota';
 		$data['title_page']	= 'Walikota';	
 		$data['data'] = $this->Pemerintahan_model->get_by_kategori("walikota");
@@ -204,7 +204,7 @@ class Pemerintahan extends CI_Controller {
 	
 	function sekdaview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("2.3");
 		$data['kategori'] = 'sekda';	
 		$data['title_page']	= 'Sekretariat Daerah';			
 		$data['data'] = $this->Pemerintahan_model->get_by_kategori("sekda");
@@ -213,7 +213,7 @@ class Pemerintahan extends CI_Controller {
 	
 	function staf_walikotaview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("2.4");
 		$data['kategori'] = 'staf_walikota';
 		$data['title_page']	= 'Staf Walikota';	
 		$data['data'] = $this->Pemerintahan_model->get_by_kategori("staf_walikota");
@@ -222,7 +222,7 @@ class Pemerintahan extends CI_Controller {
 	
 	function skpdview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("2.5");
 		$data['kategori'] = 'skpd';
 		$data['title_page']	= 'SKPD';	
 		$data['data'] = $this->Pemerintahan_model->get_by_kategori("skpd");
@@ -231,7 +231,7 @@ class Pemerintahan extends CI_Controller {
 	
 	function kecamatanview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("2.6");
 		$data['kategori'] = 'kecamatan';		
 		$data['title_page']	= 'Kecamatan';	
 		$data['data'] = $this->Pemerintahan_model->get_by_kategori("kecamatan");
@@ -240,7 +240,7 @@ class Pemerintahan extends CI_Controller {
 	
 	function kelurahanview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("2.7");
 		$data['kategori'] = 'kelurahan';
 		$data['title_page']	= 'Kelurahan';			
 		$data['data'] = $this->Pemerintahan_model->get_by_kategori("kelurahan");
@@ -249,7 +249,7 @@ class Pemerintahan extends CI_Controller {
 	
 	function rtrwview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("2.8");
 		$data['kategori'] = 'rtrw';
 		$data['title_page']	= 'RW/RT';	
 		$data['data'] = $this->Pemerintahan_model->get_by_kategori("rtrw");
@@ -258,7 +258,7 @@ class Pemerintahan extends CI_Controller {
 	
 	function kimview()
 	{
-		$data = $this->loadDataBack();
+		$data = $this->loadDataBack("2.9");
 		$data['kategori'] = 'kim';
 		$data['title_page']	= 'Kelompok Informasi Masyarakat (KIM)';	
 		$data['data'] = $this->Pemerintahan_model->get_by_kategori("kim");

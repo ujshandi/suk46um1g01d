@@ -1376,6 +1376,19 @@ div#placemainmenu li li:hover ul
 
 }
 
+.menunav .submenu2{
+
+	padding:0 0 0 15px;
+
+}
+
+.menunav .submenu3{
+
+	padding:0 0 0 30px;
+
+}
+
+
 .menunav li img {
 
 	width: 16px;
@@ -2262,7 +2275,12 @@ div#placemainmenu li li:hover ul
 
 #frmcontact {
 
-	padding:60px 0 30px 0;
+	padding:20px 0 30px 0;
+	
+}
+#frmcontact2 {
+
+	padding:70px 0 30px 0;
 	
 }
 
@@ -2296,7 +2314,7 @@ div#placemainmenu li li:hover ul
 .ckWow {
 
 	/* border:1px solid #ff0000; */
-	margin-left:165px;
+	margin:0 10px 0 20px;
 	width:;
 
 }

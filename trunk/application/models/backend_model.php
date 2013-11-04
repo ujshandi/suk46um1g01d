@@ -80,7 +80,7 @@ class backend_model extends CI_Model
 		
 		return $data;
 	}
-	function setBg($menu,$submenu,$id)
+	function setBg($menu,$submenu,$id,$class='submenu')
 	{
 		if($submenu!="0")
 		{
@@ -88,6 +88,8 @@ class backend_model extends CI_Model
 				$bg = base_url().'public/images/icon/bl2.png';
 			}else{
 				$bg = base_url().'public/images/icon/bl.png';
+				if ($class=='submenu2')
+					$bg = base_url().'public/images/icon/aturan.png';
 			}
 		}
 		else
@@ -95,6 +97,7 @@ class backend_model extends CI_Model
 			if($menu==$id){
 				$bg = base_url().'public/images/icon/bl2.png';
 			}else{
+				
 				$bg = base_url().'public/images/icon/aturan.png';
 			}
 		}
@@ -120,7 +123,36 @@ class backend_model extends CI_Model
 		//style dropdown menu 1
 		if($id=="1"||$id=="1.1"||$id=="1.2"||$id=="1.3"||$id=="1.4"||$id=="1.5"||$id=="1.6"){ $style1="display:block"; }else{ $style1="display:none"; }
 		//style dropdown menu 2
-		if($id=="2"||$id=="2.1"||$id=="2.2"||$id=="2.3"||$id=="2.4"||$id=="2.5"){ $style2="display:block"; }else{ $style2="display:none"; }
+		if($id=="2"||$id=="2.1"||$id=="2.2"||$id=="2.3"||$id=="2.4"||$id=="2.5"||$id=="2.6"||$id=="2.7"||$id=="2.8"||$id=="2.59"){ $style2="display:block"; }else{ $style2="display:none"; }
+		//style dropdown menu 3
+		if($id=="3"||$id=="3.1"||$id=="3.2"||$id=="3.3"||$id=="3.4"||$id=="3.5"||$id=="3.6"||$id=="3.7"){ $style3="display:block"; }else{ $style3="display:none"; }
+		
+		//style dropdown menu 6
+		$style6="display:none"; 
+		$style61="display:none";
+		$style62="display:none";
+		$style63="display:none";
+		$style65="display:none";	
+		
+		if($id=="6"||$id=="6.1"||$id=="6.1.1"||$id=="6.1.2"||$id=="6.1.3"||$id=="6.1.4"||$id=="6.1.5"||$id=="6.1.6"||$id=="6.1.7"||$id=="6.1.8"||$id=="6.2"||$id=="6.2.1"||$id=="6.2.2"||$id=="6.2.3"||$id=="6.2.4"||$id=="6.2.5"||$id=="6.2.6"||$id=="6.2.7"||$id=="6.2.8"||$id=="6.3"||$id=="6.3.1"||$id=="6.3.2"||$id=="6.3.3"||$id=="6.3.4"||$id=="6.3.5"||$id=="6.3.6"||$id=="6.3.7"||$id=="6.3.8"||$id=="6.4"||$id=="6.5"||$id=="6.5.1"||$id=="6.5.2"||$id=="6.5.3"||$id=="6.5.4"||$id=="6.5.5"||$id=="6.5.6"||$id=="6.5.7"||$id=="6.5.8"){ 
+			$style6="display:block"; 
+			if($id=="6.1"||$id=="6.1.1"||$id=="6.1.2"||$id=="6.1.3"||$id=="6.1.4"||$id=="6.1.5"||$id=="6.1.6"||$id=="6.1.7"||$id=="6.1.8"){ $style61="display:block"; }
+		
+			if($id=="6.2"||$id=="6.2.1"||$id=="6.2.2"||$id=="6.2.3"||$id=="6.2.4"||$id=="6.2.5"||$id=="6.2.6"||$id=="6.2.7"||$id=="6.2.8"){ $style62="display:block";}
+			
+			if($id=="6.3"||$id=="6.3.1"||$id=="6.3.2"||$id=="6.3.3"||$id=="6.3.4"||$id=="6.3.5"||$id=="6.3.6"||$id=="6.3.7"||$id=="6.3.8"){ $style63="display:block";}
+		
+			if($id=="6.5"||$id=="6.5.1"||$id=="6.5.2"||$id=="6.5.3"||$id=="6.5.4"||$id=="6.5.5"||$id=="6.5.6"||$id=="6.5.7"||$id=="6.5.8"){ $style65="display:block";}
+		
+		}
+		
+			
+		
+		
+		
+		
+		
+		
 		//style dropdown menu 8
 		if($id=="8"||$id=="8.1"||$id=="8.2"||$id=="8.3"||$id=="8.4"){ $style8="display:block"; }else{ $style8="display:none"; }
 		
@@ -156,7 +188,7 @@ class backend_model extends CI_Model
 							//	$menu.='</ul></li>';
 							$menu.="<li><a href=\"javascript:dropdown('profil');\">";
 							$menu.='<img src="'.$this->setBg("1","0",$id).'" align="left" />Kota Sukabumi</a></li>';
-								$menu.='<ul class="sub" id="profil" style="'.$style2.'">';
+								$menu.='<ul class="sub" id="profil" style="'.$style1.'">';
 								$menu.='<li class="submenu"><a href="'.base_url().'profil/sejarahview">';
 										$menu.='<img src="'.$this->setBg("1","1.1",$id).'" align="left"/>Sejarah';
 									$menu.='</a></li>';
@@ -212,7 +244,7 @@ class backend_model extends CI_Model
 								
 							$menu.="<li><a href=\"javascript:dropdown('industri');\">";
 							$menu.='<img src="'.$this->setBg("3","0",$id).'" align="left" />Industri</a></li>';
-								$menu.='<ul class="sub" id="industri" style="'.$style2.'">';
+								$menu.='<ul class="sub" id="industri" style="'.$style3.'">';
 								$menu.='<li class="submenu"><a href="'.base_url().'industri/rencana_strategisview">';
 										$menu.='<img src="'.$this->setBg("3","3.1",$id).'" align="left"/>Perencanaan Strategis';
 									$menu.='</a></li>';
@@ -245,20 +277,94 @@ class backend_model extends CI_Model
 								$menu.='<img src="'.$this->setBg("5","0",$id).'" align="left"/>Tautan OPD';
 							$menu.='</a></li>';
 							
-/* 							$menu.="<li><a href=\"javascript:dropdown('informasi_umum');\">";
+ 							$menu.="<li><a href=\"javascript:dropdown('informasi_umum');\">";
 							$menu.='<img src="'.$this->setBg("6","0",$id).'" align="left" />Informasi Umum</a></li>';
-								$menu.='<ul class="sub" id="informasi_umum" style="'.$style2.'">';
-									$menu.="<li><a href=\"javascript:dropdown('informasi_umum_pendidikan');\">";
-										$menu.='<img src="'.$this->setBg("6","6.1",$id).'" align="left"/>Pendidikan';
+								$menu.='<ul class="sub" id="informasi_umum" style="'.$style6.'">';
+									$menu.="<li class='submenu2'><a href=\"javascript:dropdown2('informasi_umum_pendidikan');\">";
+										$menu.='<img src="'.$this->setBg("6","6.1",$id,'submenu2').'" align="left"/>Pendidikan';
 									$menu.='</a></li>';
-									$menu.='<ul class="sub" id="informasi_umum_pendidikan" style="'.$style2.'">';
-										$menu.='<li class="submenu"><a href="'.base_url().'informasi/pendidikan">';
-											$menu.='<img src="'.$this->setBg("6","6.1",$id).'" align="left"/>Pendidikan';
-											$menu.='</a></li>';
+										$menu.='<ul  class="sub2"  id="informasi_umum_pendidikan" style="'.$style61.'">';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/tkview'>";
+											$menu.='<img src="'.$this->setBg("6.1","6.1.1",$id).'" align="left"/>TK/RA</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/sdview'>";
+											$menu.='<img src="'.$this->setBg("6.1","6.1.2",$id).'" align="left"/>SD/MI</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/smpview'>";
+											$menu.='<img src="'.$this->setBg("6.1","6.1.3",$id).'" align="left"/>SMP/MTS</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/smaview'>";
+											$menu.='<img src="'.$this->setBg("6.1","6.1.4",$id).'" align="left"/>SMA/MA</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/smkview'>";
+											$menu.='<img src="'.$this->setBg("6.1","6.1.5",$id).'" align="left"/>SMK</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/ptview'>";
+											$menu.='<img src="'.$this->setBg("6.1","6.1.6",$id).'" align="left"/>Perguruan Tinggi</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/kursusview'>";
+											$menu.='<img src="'.$this->setBg("6.1","6.1.7",$id).'" align="left"/>Kursus</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/bimbelview'>";
+											$menu.='<img src="'.$this->setBg("6.1","6.1.8",$id).'" align="left"/>Bimbingan Belajar</a></li>';
+										$menu.='</ul></li>'; 
+										
+									$menu.="<li class='submenu'><a href=\"javascript:dropdown2('informasi_umum_kesehatan');\">";
+										$menu.='<img src="'.$this->setBg("6","6.2",$id,'submenu2').'" align="left"/>Kesehatan';
+									$menu.='</a></li>';
+									$menu.='<ul  class="sub2"  id="informasi_umum_kesehatan" style="'.$style62.'">';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/rsview'>";
+											$menu.='<img src="'.$this->setBg("6.2","6.2.1",$id).'" align="left"/>Rumah Sakit</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/puskesmasview'>";
+											$menu.='<img src="'.$this->setBg("6.2","6.2.2",$id).'" align="left"/>Puskesmas</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/klinikview'>";
+											$menu.='<img src="'.$this->setBg("6.2","6.2.3",$id).'" align="left"/>Klinik</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/apotekview'>";
+											$menu.='<img src="'.$this->setBg("6.2","6.2.4",$id).'" align="left"/>Apotek</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/labview'>";
+											$menu.='<img src="'.$this->setBg("6.2","6.2.5",$id).'" align="left"/>Laboratorium</a></li>';
+										$menu.='</ul></li>'; 
 									
-									$menu.='</ul></li>';
+									$menu.="<li class='submenu'><a href=\"javascript:dropdown2('informasi_umum_pariwisata');\">";
+										$menu.='<img src="'.$this->setBg("6","6.3",$id,'submenu2').'" align="left"/>Pariwisata';
+									$menu.='</a></li>';
+										$menu.='<ul  class="sub2"  id="informasi_umum_pariwisata" style="'.$style63.'">';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/rekreasiview'>";
+											$menu.='<img src="'.$this->setBg("6.3","6.3.1",$id).'" align="left"/>Rekreasi</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/belanjaview'>";
+											$menu.='<img src="'.$this->setBg("6.3","6.3.2",$id).'" align="left"/>Belanja</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/olahragaview'>";
+											$menu.='<img src="'.$this->setBg("6.3","6.3.3",$id).'" align="left"/>Olahraga</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/hotelview'>";
+											$menu.='<img src="'.$this->setBg("6.3","6.3.4",$id).'" align="left"/>Hotel</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/restoranview'>";
+											$menu.='<img src="'.$this->setBg("6.3","6.3.5",$id).'" align="left"/>Restoran</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/radioview'>";
+											$menu.='<img src="'.$this->setBg("6.3","6.3.6",$id).'" align="left"/>Radio/Televisi</a></li>';
+											
+										$menu.='</ul></li>'; 
+									
+									$menu.="<li class='submenu'><a href=\"".base_url()."informasi_umum/bumdview\">";
+										$menu.='<img src="'.$this->setBg("6","6.4",$id,'submenu2').'" align="left"/>BUMD';
+									$menu.='</a></li>';
+									
+									$menu.="<li class='submenu'><a href=\"javascript:dropdown2('informasi_umum_lainnya');\">";
+										$menu.='<img src="'.$this->setBg("6","6.5",$id,'submenu2').'" align="left"/>Lainnya';
+									$menu.='</a></li>';
+										$menu.='<ul  class="sub2"  id="informasi_umum_lainnya" style="'.$style65.'">';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/ibadahview'>";
+											$menu.='<img src="'.$this->setBg("6.5","6.5.1",$id).'" align="left"/>Sarana Ibadah</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/bankview'>";
+											$menu.='<img src="'.$this->setBg("6.5","6.5.2",$id).'" align="left"/>Perbankan</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/atmview'>";
+											$menu.='<img src="'.$this->setBg("6.5","6.5.3",$id).'" align="left"/>ATM</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/transportasiview'>";
+											$menu.='<img src="'.$this->setBg("6.5","6.5.4",$id).'" align="left"/>Transportasi</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/pantiview'>";
+											$menu.='<img src="'.$this->setBg("6.5","6.5.5",$id).'" align="left"/>Panti Asuhan</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/asuransiview'>";
+											$menu.='<img src="'.$this->setBg("6.5","6.5.6",$id).'" align="left"/>Asuransi</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/gedungview'>";
+											$menu.='<img src="'.$this->setBg("6.5","6.5.7",$id).'" align="left"/>Gedung Pertemuan</a></li>';
+											$menu.="<li class='submenu3'><a href='".base_url()."informasi_umum/terminalview'>";
+											$menu.='<img src="'.$this->setBg("6.5","6.5.8",$id).'" align="left"/>Terminal/POM Bensin</a></li>';
+											
+										$menu.='</ul></li>'; 
 								
-							$menu.='</ul></li>'; */
+							$menu.='</ul></li>'; 
 								
 							
 							$menu.='<li><a href="'.base_url().'berita">';

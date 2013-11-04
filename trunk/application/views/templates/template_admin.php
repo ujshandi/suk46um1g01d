@@ -32,6 +32,17 @@
 			$('.sub').hide();
 		}
 	}
+	
+	function dropdown2(id)
+	{
+		var stat = document.getElementById(id).style.display;
+		if(stat=="none"){
+			$('.sub2').hide();
+			$('#'+id).show();
+		}else{
+			$('.sub2').hide();
+		}
+	}
 	</script>
 	
 </head>

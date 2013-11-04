@@ -10,6 +10,8 @@ class profil extends CI_Controller {
 		$this->load->model('backend_model','',TRUE);
 		$this->load->model('informasimodel','',TRUE);
 		$this->load->model('agendamodel','',TRUE);
+		$this->load->helper('ckeditor');
+		$this->load->library('utility');
 	}
 	function cekLogin()
 	{
@@ -270,7 +272,9 @@ class profil extends CI_Controller {
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['visi']		= $this->informasimodel->getbykategori('visi');
 		$data['misi']		= $this->informasimodel->getbykategori('misi');
-		$data['mainmenu']	= $this->backend_model->mainmenu("2.1");
+		$data['mainmenu']	= $this->backend_model->mainmenu("1.2");
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
+		$data['ckeditor2'] = $this->utility->ckeditor_full("editor2",100,"100%",200);
 		$this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
 		$this->template->write_view('wrapper','profil/visimisi_edit',$data);
@@ -303,7 +307,8 @@ class profil extends CI_Controller {
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['sejarah']	= $this->informasimodel->getbykategori('sejarah');
-		$data['mainmenu']	= $this->backend_model->mainmenu("2.2");
+		$data['mainmenu']	= $this->backend_model->mainmenu("1.1");
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		$this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
 		$this->template->write_view('wrapper','profil/sejarah_edit',$data);
@@ -324,7 +329,8 @@ class profil extends CI_Controller {
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['geografi']	= $this->informasimodel->getbykategori('geografi');
-		$data['mainmenu']	= $this->backend_model->mainmenu("2.2");
+		$data['mainmenu']	= $this->backend_model->mainmenu("1.4");
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		$this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
 		$this->template->write_view('wrapper','profil/geografi_edit',$data);
@@ -345,7 +351,8 @@ class profil extends CI_Controller {
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['angka']	= $this->informasimodel->getbykategori('angka');
-		$data['mainmenu']	= $this->backend_model->mainmenu("2.2");
+		$data['mainmenu']	= $this->backend_model->mainmenu("1.6");
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		$this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
 		$this->template->write_view('wrapper','profil/angka_edit',$data);
@@ -366,7 +373,8 @@ class profil extends CI_Controller {
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['lambang']	= $this->informasimodel->getbykategori('lambang');
-		$data['mainmenu']	= $this->backend_model->mainmenu("2.2");
+		$data['mainmenu']	= $this->backend_model->mainmenu("1.3");
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		$this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
 		$this->template->write_view('wrapper','profil/lambang_edit',$data);
@@ -387,7 +395,8 @@ class profil extends CI_Controller {
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['sosial']	= $this->informasimodel->getbykategori('sosial');
-		$data['mainmenu']	= $this->backend_model->mainmenu("2.2");
+		$data['mainmenu']	= $this->backend_model->mainmenu("1.5");
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		$this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
 		$this->template->write_view('wrapper','profil/sosial_edit',$data);
