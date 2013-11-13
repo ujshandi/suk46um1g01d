@@ -2284,6 +2284,25 @@ div#placemainmenu li li:hover ul
 	
 }
 
+#frmcontact2 label {
+
+	/* 
+	 border:1px solid #ff0000;
+	 */
+	float:left;
+	 
+	font-size:1.2em;
+	
+	width:150px;
+		
+	padding:3px 0 2px 16px;
+
+	margin:0 0 0 0;
+
+	font-weight:bold;
+	
+}
+
 #frmcontact label {
 
 	float:left;
@@ -2311,12 +2330,40 @@ div#placemainmenu li li:hover ul
 } */
 
 
+.boxess {
+
+	margin:-60px 0 0 -15px;
+
+}
+.boxBtn {
+
+	margin:0 3px 0 20px;
+	/* border:1px solid #ff0000; */
+
+}
 .ckWow {
 
 	/* border:1px solid #ff0000; */
 	margin:0 10px 0 20px;
-	width:;
 
+}
+
+.ckWow2 {
+
+	/* 
+	margin:0 10px 0 20px;
+	border:1px solid #ff0000; 
+	*/
+	float:left;
+	width:auto;
+	right:0;
+}
+
+.clearEnd {
+
+	border:1px solid #ff0000;
+	margin:0 0 0 0;
+	width:100%;
 }
 
 .mand {
@@ -2332,13 +2379,19 @@ div#placemainmenu li li:hover ul
 
 }
 
+#frmcontact2 br {
+
+	clear:left;
+
+}
+
 .textboxcontact {
 
 	border:1px solid #c4c4c4;
 
 	padding:3px 5px 0 5px;
 
-	margin:10px 0 0 0;
+	/* margin:10px 0 0 0; */
 
 }
 

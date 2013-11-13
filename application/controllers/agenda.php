@@ -20,6 +20,15 @@ class agenda extends CI_Controller {
 	}
 	function index($offset=0)
 	{
+		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array('media/jquery/ui.css')
+				);
 		$uri_segment = 3;
 		$offset = $this->uri->segment($uri_segment);
 		$config['base_url'] = site_url('agenda/index/');
@@ -39,11 +48,23 @@ class agenda extends CI_Controller {
 		$data['linkterkait']= $this->temp_model->linkterkait();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
-		$this->load->view('agenda/agenda',$data);
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','agenda/agenda',$data);
+		$this->template->render();
+		//$this->load->view('agenda/agenda',$data);
 	}
 	function data($offset=0)
 	{
+		
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array('media/jquery/ui.css')
+				);
 		$uri_segment = 3;
 		$offset = $this->uri->segment($uri_segment);
 		$config['base_url'] = site_url('agenda/data/');
@@ -55,7 +76,10 @@ class agenda extends CI_Controller {
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['agenda']		= $this->agendamodel->get_All($this->limit,$offset);
 		$data['mainmenu']	= $this->backend_model->mainmenu("13");
-		$this->load->view('agenda/agenda_data',$data);
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','agenda/agenda_data',$data);
+		$this->template->render();
+		//$this->load->view('agenda/agenda_data',$data);
 	}
 	function search()
 	{
@@ -70,27 +94,57 @@ class agenda extends CI_Controller {
 	function add()
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array('media/jquery/ui.css')
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("13");
-		$this->load->view('agenda/agenda_add',$data);
+		$agenda->kegiatan = '';
+		$agenda->id_agenda = '';
+		$agenda->tgl = '';
+		$data['agenda'] = $agenda;
+		//$this->load->view('agenda/agenda_add',$data);
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','agenda/agenda_rec',$data);
+		$this->template->render();
 	}
 	function simpan()
 	{
 		$tgl		= $this->input->post('tgl');
 		$author		= $this->input->post('author');
 		$kegiatan	= $this->input->post('kegiatan');
-		
+		$id			= $this->input->post('id');
 		$data = array('tgl'=>$tgl,'kegiatan'=>$kegiatan,'author'=>$author);
-		$this->agendamodel->save($data);
+		if ($id==""){
+			$this->agendamodel->save($data);
+		} else {
+			$this->agendamodel->update($id,$data);
+		}
 		redirect('agenda/data','refresh');
 	}
 	function edit($id)
 	{	
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array('media/jquery/ui.css')
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['agenda']		= $this->agendamodel->getbyid($id)->result();
+		$data['agenda']		= $this->agendamodel->getbyid($id);
 		$data['mainmenu']	= $this->backend_model->mainmenu("13");
-		$this->load->view('agenda/agenda_edit',$data);
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','agenda/agenda_rec',$data);
+		$this->template->render();
+		//$this->load->view('agenda/agenda_edit',$data);
 	}
 	function simpanedit()
 	{

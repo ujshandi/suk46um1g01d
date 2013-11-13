@@ -31,9 +31,9 @@ class Berita extends CI_Controller {
 					
 					'title_page'=>'Admin Page',
 					'title'=>'CPanel',
-					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
 					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
-					'css'=>array()
+					'css'=>array('media/jquery/ui.css')
 				);
 		$uri_segment = 3;
 		$offset = $this->uri->segment($uri_segment);
@@ -139,6 +139,15 @@ class Berita extends CI_Controller {
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("10");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
+		//$berita = new object;
+		$berita->id_berita="";
+		$berita->judul_berita="";
+		$berita->deskripsi_singkat="";
+		$berita->isi="";
+		$berita->author="";
+		$berita->klasifikasi="teks";
+		$berita->kategori="sukabumi";
+		$data['berita'] = $berita;
 		$this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
 		$this->template->write_view('wrapper','berita/berita_rec',$data);
@@ -147,32 +156,46 @@ class Berita extends CI_Controller {
 	}
 	function saveData()
 	{
+		$id			= $this->input->post('id');
 		$txtjudul	= $this->input->post('txtjudul');
 		$deskripsi	= $this->input->post('deskripsi');
 		$isi		= $this->input->post('isi');
 		$author		= $this->input->post('author');
 		$gambar		= $this->input->post('gambar');
+		$video		= $this->input->post('video');
+		$kategori		= $this->input->post('cmbKategori');
+		$klasifikasi		= $this->input->post('cmbKlasifikasi');
+		$status		= $this->input->post('publish');
 		
 		//$upload=$this->upload->do_upload();
 	//	var_dump($this->upload->display_errors());die;
 		//if($upload!="error")
-		if($this->upload->do_upload($gambar))
-		{
+		//if($this->upload->do_upload($gambar))
+		//{
 			$data = array(
 				'tanggal'		=> date('Y-m-d H:i:s'),
 				'judul_berita'	=>$txtjudul,
 				'deskripsi_singkat' => $deskripsi,
 				'isi'			=>$isi,
-				'gambar'		=>$upload,
+				'gambar'		=>$gambar,
+				'video'		=>$video,
+				'kategori'		=>$kategori,
+				'klasifikasi'		=>$klasifikasi,
+				'status'		=>$status,
 				'author'		=>$author					
 				);
-			$this->Berita_model->save($data);
+			if ($id==""){
+				$this->Berita_model->save($data);
+			} else {
+				$this->Berita_model->update($id,$data);
+			}
+			
 			redirect('berita/index/','refresh');
-		}
+		/* }
 		else
 		{
 			echo "Upload file Gagal!!,  ".$this->upload->display_errors();
-		}
+		} */
 	}
 	public function do_upload() {
 		//konfigurasi limit file gambar yang diupload
@@ -260,10 +283,27 @@ class Berita extends CI_Controller {
 	function edit($id)
 	{
 		$this->cekLogin();
-		$data['berita']		= $this->Berita_model->get_by_id($id)->result();
+	/* 	$data['berita']		= $this->Berita_model->get_by_id($id)->result();
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("10");
-		$this->load->view('berita/berita_edit',$data);
+		$this->load->view('berita/berita_rec',$data); */
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
+		$data['headmenu']	= $this->backend_model->headermenu();
+		$data['mainmenu']	= $this->backend_model->mainmenu("10");
+		$data['berita']		= $this->Berita_model->get_by_id($id);
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
+		//var_dump($data['berita']);
+		$this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','berita/berita_rec',$data);
+		$this->template->render();
 	}
 	function saveEdit()
 	{

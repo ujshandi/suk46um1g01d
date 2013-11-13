@@ -27,7 +27,7 @@
 
 		if(data1!="")
 		{
-			document.getElementById('frmcontact2').submit();
+			document.getElementById('frmcontact').submit();
 		}
 		else
 		{
@@ -38,13 +38,14 @@
 
 	<h1 class="titlebig">Tambah Agenda</h1>
 	<div class="boxbigcontent">
-		<form method="post" action="<?=base_url()?>agenda/simpan" id="frmcontact2" enctype="multipart/form-data">
+		<form method="post" action="<?=base_url()?>agenda/simpan" id="frmcontact" enctype="multipart/form-data">
 		<input type="hidden" name="author" value="superadmin" />
+		<input type="hidden" name="id" value="<?=$agenda->id_agenda?>" />
 		<div>
-			<label>Tgl Agenda</label>
-			<input type="text" name="tgl" id="f1" class="textboxcontact" size="15" /> <span class="mand">*</span>
-			<label>Deskripsi Kegiatan</label>
-			<textarea name="kegiatan" id="f2" style="margin-top:10px" cols="78" rows="3"></textarea> <span class="mand">*</span><br /><br />
+			<label style="margin-left:-15px;">Tgl Agenda</label>
+			<input type="text" name="tgl" id="f1" class="textboxcontact" size="15" value="<?=$agenda->tgl?>" /> <span class="mand">*</span><br />
+			<label style="margin-left:-15px;">Deskripsi Kegiatan</label>
+			<textarea name="kegiatan" id="f2" style="margin-top:10px" cols="78" rows="3"><?=$agenda->kegiatan?></textarea> <span class="mand">*</span><br /><br />
 			<div align="right">
 				<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
 				<a href="<?=base_url()?>agenda/data" class="button"><span class="cancel"></span>Batal</a>

@@ -10,6 +10,9 @@ class pengumuman extends CI_Controller {
 		$this->load->model('backend_model','',TRUE);
 		$this->load->model('temp_model','',TRUE);
 		$this->load->model('pengumumanmodel','',TRUE);
+		$this->load->helper('ckeditor');
+		$this->load->library('upload');
+		$this->load->library('utility');
 	}
 	function cekLogin()
 	{
@@ -20,6 +23,16 @@ class pengumuman extends CI_Controller {
 	}
 	function index($offset=0)
 	{
+		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array('media/jquery/ui.css')
+				);
+		
 		$uri_segment = 3;
 		$offset = $this->uri->segment($uri_segment);
 		$config['base_url'] = site_url('pengumuman/index/');
@@ -31,7 +44,11 @@ class pengumuman extends CI_Controller {
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['pengumuman']	= $this->pengumumanmodel->get_All($this->limit,$offset);
 		$data['mainmenu']	= $this->backend_model->mainmenu("11");
-		$this->load->view('pengumuman/pengumuman_data',$data);
+		
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','pengumuman/pengumuman_data',$data);
+		$this->template->render();
+		//$this->load->view('pengumuman/pengumuman_data',$data);
 	}
 	function search()
 	{
@@ -59,27 +76,63 @@ class pengumuman extends CI_Controller {
 	function add()
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array('media/jquery/ui.css')
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("11");
-		$this->load->view('pengumuman/pengumuman_add',$data);
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
+		$pengumuman->id_pengumuman="";
+		$pengumuman->judul="";		
+		$pengumuman->deskripsi="";
+		$pengumuman->tgl="";
+		
+		$data['pengumuman'] = $pengumuman;
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','pengumuman/pengumuman_rec',$data);
+		$this->template->render();
+		//$this->load->view('pengumuman/pengumuman_rec',$data);
 	}
 	function simpan()
 	{
 		$judul		= $this->input->post('judul');
 		$deskripsi	= $this->input->post('deskripsi');
-			
+		$id	= $this->input->post('id');
+			$id			= $this->input->post('id');
 			$data = array('tgl'=>date('Y-m-d H:i:s'),'judul'=>$judul,'deskripsi'=>$deskripsi);
-			$this->pengumumanmodel->save($data);
+			
+			if ($id==""){
+				$this->pengumumanmodel->save($data);
+			} else {
+				$this->pengumumanmodel->update($id,$data);
+			}
 		
 		redirect('pengumuman','refresh');
 	}
 	function edit($id)
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array('media/jquery/ui.css')
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['pengumuman']	= $this->pengumumanmodel->getbyid($id)->result();
+		$data['pengumuman']	= $this->pengumumanmodel->getbyid($id);
 		$data['mainmenu']	= $this->backend_model->mainmenu("11");
-		$this->load->view('pengumuman/pengumuman_edit',$data);
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','pengumuman/pengumuman_rec',$data);
+		$this->template->render();
+		//$this->load->view('pengumuman/pengumuman_rec',$data);
 	}
 	function simpanedit()
 	{

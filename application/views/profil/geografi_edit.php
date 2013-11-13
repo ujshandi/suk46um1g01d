@@ -1,7 +1,4 @@
-
-	
 	<script type="text/javascript">
-	
 	$(function() {
 		$("#butslide").click(function(){
 				$("#panellogin").slideToggle("fast");
@@ -22,25 +19,26 @@
 	}
 	</script>
 
-				<script>
-					function simpan()
-					{
-						document.getElementById('frmcontact2').submit();
-					}
-				</script>
-				<h1 class="titlebig">Geografi dan Demografi</h1>
-					<div class="boxbigcontent">
-						<div style="margin-top:-70px">
-							<form action="<?=base_url()?>profil/updategeografi" method="post"  id="frmcontact2">
-							
-							<textarea name="geografi" id="editor1" class="editor" cols="400" rows="600" ><?=$geografi?></textarea>
-								<?php echo display_ckeditor($ckeditor); ?><br />
-							<br />
-							<div>
-								<a href="javascript:simpan();" class="button" >Simpan</a>
-							</div>
-							</form>
-						</div>
-					</div>
-					<div class="boxbigcontentbottom"></div>
-				
+	<script>
+		function simpan()
+		{
+			document.getElementById('frmcontact2').submit();
+		}
+	</script>
+	
+	<h1 class="titlebig">Geografi dan Demografi</h1>
+	<div class="boxbigcontent">
+		<div class="boxess">
+			<form action="<?=base_url()?>profil/updategeografi" method="post" id="frmcontact2">
+				<div class="ckWow">
+					<textarea name="geografi" id="editor1" class="editor" cols="400" rows="600" ><?=$geografi?></textarea>
+					<?php echo display_ckeditor($ckeditor); ?>
+				</div>
+				<br />
+				<div class="boxBtn">
+					<a href="javascript:simpan();" class="button" >Simpan</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="boxbigcontentbottom"></div>

@@ -46,10 +46,10 @@
 				<h1 class="titlebig">Daftar Pengumuman</h1>
 					<div class="boxbigcontent">
 					<a href="<?=base_url()?>pengumuman/add" class="button" >Tambah</a>
-					<div align="left" style="margin-top:-13px;">
+					<div align="left" style="margin-bottom:10px;">
 					<form method="post" action="<?=base_url()?>pengumuman/search">
 					<input type="text" name="search" class="textboxcontact" value="Cari Pengumuman" onblur="if(this.value.length == 0) this.value='Cari Pengumuman';" onclick="if(this.value == 'Cari Pengumuman') this.value='';" style="width:150px;" />
-					</form><br />
+					</form>
 					</div>
 					<table class="data">
 					<thead>
