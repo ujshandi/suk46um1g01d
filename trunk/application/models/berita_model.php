@@ -86,7 +86,10 @@ class Berita_model extends CI_Model
 	function get_by_id($id){
 		
 		$this->db->where('id_berita',$id);
-		return $this->db->get($this->tbl);
+		$query=$this->db->get($this->tbl);
+		foreach ($query->result() as $row){
+			return $row;
+		}
 	}
 	
 	function save($varData){

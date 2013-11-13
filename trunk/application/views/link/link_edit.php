@@ -72,8 +72,8 @@
 						<label></label> <i>http://www.example.com</i><br />
 						<?php endforeach; ?>
 						<div align="right">
-                        <a href="javascript:simpan();" class="buttons buttons-orange"><span class="disk"></span>Simpan</a>
-						<a href="<?=base_url()?>linkterkait" class="buttons buttons-orange"><span class="cancel"></span>Batal</a>
+                        <a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
+						<a href="<?=base_url()?>linkterkait" class="button"><span class="cancel"></span>Batal</a>
 						
 						</div>
 					</div>

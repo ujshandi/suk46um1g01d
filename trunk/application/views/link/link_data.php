@@ -35,10 +35,10 @@
 				<h1 class="titlebig">Daftar <?=$title_page?> </h1>
 					<div class="boxbigcontent">
 					<a href="<?=base_url()?>linkterkait/<?=($jenis=='terkait'?'add':'add_opd')?>" class="button" >Tambah</a>
-					<div align="left" style="margin-top:-13px;">
-					<form method="post" action="<?=base_url()?>linkterkait/search2">
-					<input type="text" name="search" class="textboxcontact" value="Cari Link" onblur="if(this.value.length == 0) this.value='Cari Link';" onclick="if(this.value == 'Cari Link') this.value='';" style="width:150px;" />
-					</form><br />
+					<div align="left" style="margin-bottom:10px;">
+						<form method="post" action="<?=base_url()?>linkterkait/search2">
+							<input type="text" name="search" class="textboxcontact" value="Cari Link" onblur="if(this.value.length == 0) this.value='Cari Link';" onclick="if(this.value == 'Cari Link') this.value='';" style="width:150px;" />
+						</form>
 					</div>
 					<table class="data">
 					<thead>

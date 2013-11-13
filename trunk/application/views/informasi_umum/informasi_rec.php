@@ -1,7 +1,4 @@
-
-
 	<script type="text/javascript">
-
 	$(function() {
 		$("#butslide").click(function(){
 				$("#panellogin").slideToggle("fast");
@@ -35,33 +32,25 @@
 		{
 			alert('Harap Isi Semua Field (*) !!');
 		}
-
-	}
-
-	
+	}	
 	</script>
-	
     
-				<h1 class="titlebig">Data <?=$title_page?></h1>
-					<div class="boxbigcontent">
-						<div style="margin:-60px 0 0 -15px;">
-						<?= validation_errors(); ?>
-						<form method="post" action="<?= base_url() ?>informasi_umum/saveData" id="frmcontact2" enctype="multipart/form-data">
-						
-							
-							<div class="ckWow">
-							<input type="hidden" name="txtkategori" id="txtkategori" value="<?=$data->kategori?>"/>
-							<textarea name="isi" id="editor1" class="editor" cols="400" rows="600" ><?=$data->isi?></textarea>
-								<?php echo display_ckeditor($ckeditor); ?><br />
-							</div>
-							<br /> <br />
-							
-							<div style="/* border:1px solid #ff0000; */padding:5px;" align="right">
-								<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
-								<a href="<?=base_url()?>berita" class="button"><span class="cancel"></span>Batal</a>
-							</div>
-						</form>
-						</div>
-					</div>
-					<div class="boxbigcontentbottom"></div>
-				
+	<h1 class="titlebig">Data <?=$title_page?></h1>
+	<div class="boxbigcontent">
+		<div class="boxess">
+			<?= validation_errors(); ?>
+			<form method="post" action="<?= base_url() ?>informasi_umum/saveData" id="frmcontact2" enctype="multipart/form-data">
+				<div class="ckWow">
+					<input type="hidden" name="txtkategori" id="txtkategori" value="<?=$data->kategori?>"/>
+					<textarea name="isi" id="editor1" class="editor" cols="400" rows="600" ><?=$data->isi?></textarea>
+					<?php echo display_ckeditor($ckeditor); ?>
+				</div>
+				<br />
+				<div class="boxBtn">
+					<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
+					<a href="<?=base_url()?>berita" class="button"><span class="cancel"></span>Batal</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="boxbigcontentbottom"></div>

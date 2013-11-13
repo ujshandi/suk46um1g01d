@@ -13,6 +13,7 @@
 	<script src="<?=base_url()?>public/js/lightbox.js" type="text/javascript"></script>
 	<script src="<?=base_url()?>public/js/kcfinder.js" type="text/javascript"></script>
 	 <?php if(count($js) > 0) load_js($js);?>
+	 <?php if(count($css) > 0) load_css($css);?>
 	<script type="text/javascript">
 	$(function() {
 		$("#butslide").click(function(){

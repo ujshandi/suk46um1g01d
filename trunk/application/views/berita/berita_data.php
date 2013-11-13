@@ -88,11 +88,12 @@
 				<h1 class="titlebig">Arsip Berita</h1>
 					<div class="boxbigcontent">
 					<a href="<?= base_url() ?>berita/addData/" class="button" >Tambah</a>
-					<div align="left" style="margin-top:-13px;">
+					<div align="left" style="margin-bottom:-10px;">
 					<form method="post" action="<?=base_url()?>berita/search2">
 					<input type="text" name="search" class="textboxcontact" value="Cari Berita" onblur="if(this.value.length == 0) this.value='Cari Berita';" onclick="if(this.value == 'Cari Berita') this.value='';" style="width:150px;" />
-					</form><br />
+					</form>
 					</div>
+					<br />
 					<table class="data">
 <!-- =============== EDIT DIDIEU ===================== -->
 					<thead>
@@ -100,7 +101,9 @@
                         	<th width="50px">No.</th>
                             <th width="120px">Tanggal</th>
                             <th>Judul</th>
-                            <th>Deskripsi</th>
+                            <th>Kategori</th>
+                            <th>Klasifikasi</th>
+                            <!--<th>Deskripsi</th> -->
                             <th>Author</th>
 							<th>Status</th>
                             <th width="50px"></th>
@@ -112,7 +115,9 @@
                         	<td width="4%" align="center"><?=$i=$i+1?></td>
                         	<td><?= $m->tanggal ; ?></td>
                             <td><?= $m->judul_berita ; ?></td>
-                            <td><?= $m->deskripsi_singkat ; ?></td>
+                            <td><?= $m->kategori ; ?></td>
+                            <td><?= $m->klasifikasi ; ?></td>
+                            <!--<td><?='';// $m->deskripsi_singkat ; ?></td> -->
                             <td><?=$this->converterModel->getNama($m->author)?></td>
 							<td><?= $m->status ; ?></td>
                         	<td align="center" width="12%">

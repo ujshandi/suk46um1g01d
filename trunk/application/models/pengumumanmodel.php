@@ -26,7 +26,10 @@ class pengumumanModel extends CI_Model
 	function getbyid($id)
 	{
 		$this->db->where('id_pengumuman',$id);
-		return $this->db->get($this->tbl);
+		$query=$this->db->get($this->tbl);
+		foreach ($query->result() as $row){
+			return $row;
+		}
 	}
 	function save($varData){
 		$this->db->insert($this->tbl, $varData);
