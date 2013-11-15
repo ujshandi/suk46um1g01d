@@ -54,6 +54,11 @@
 				<h1 class="titlebig">Daftar Galeri</h1>
 					<div class="boxbigcontent">
 					<a href="<?=base_url()?>galeri/daftar_add" class="button" >Tambah</a>
+					<div align="left" style="margin-bottom:10px;">
+					<form>
+					
+					</form>
+					</div>
 					<table class="data">
 					<thead>
 						<tr>

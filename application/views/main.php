@@ -36,7 +36,10 @@
 		</div>
 	</div>
 <!-- // end of newslider-vertical -->
-
+	
+<!-- Start beritaFoto -->
+	
+<!-- // end of beritaFoto -->
 <!-- pengumuman -->
 	<div class="boxcontentsmall2">
 	<br />

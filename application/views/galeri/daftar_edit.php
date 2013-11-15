@@ -64,8 +64,8 @@
 						<input type="file" name="gambar" id="f3" class="textboxcontact" />
 						<br /><br />
 						<div align="right">
-                        <a href="javascript:simpan();" class="buttons buttons-orange"><span class="disk"></span>Simpan</a>
-						<a href="<?=base_url()?>galeri/daftar_galeri" class="buttons buttons-orange"><span class="cancel"></span>Batal</a>
+                        <a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
+						<a href="<?=base_url()?>galeri/daftar_galeri" class="button"><span class="cancel"></span>Batal</a>
 						
 						</div>
 					</div>

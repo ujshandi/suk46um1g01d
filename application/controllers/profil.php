@@ -76,6 +76,7 @@ class profil extends CI_Controller {
 		$data['download']= $this->temp_model->download();
 			$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']	= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['download']= $this->temp_model->download();
 		$data['polling']	= $this->temp_model->polling();
@@ -112,6 +113,7 @@ class profil extends CI_Controller {
 		$data['download']= $this->temp_model->download();
 			$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']	= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['download']= $this->temp_model->download();
 		$data['polling']	= $this->temp_model->polling();
@@ -146,6 +148,7 @@ class profil extends CI_Controller {
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		$data['agenda']		= $this->agendamodel->get_All();
@@ -175,6 +178,7 @@ class profil extends CI_Controller {
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']	= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		$data['agenda']		= $this->agendamodel->get_All();
@@ -223,6 +227,7 @@ class profil extends CI_Controller {
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']	= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		$this->load->view('profil/struktur_organisasi',$data);
@@ -238,6 +243,7 @@ class profil extends CI_Controller {
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']	= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		$this->load->view('profil/sarpras',$data);
@@ -253,6 +259,7 @@ class profil extends CI_Controller {
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']	= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		$this->load->view('profil/prestasi',$data);
