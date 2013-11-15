@@ -14,7 +14,7 @@ class forumsubkategori_model extends CI_Model
 
 	}
 	
-	function count_data($id) 
+	function count_data($id=null) 
 	{   
 		
 		return $this->db->count_all($this->tbl);
@@ -35,7 +35,7 @@ class forumsubkategori_model extends CI_Model
 		if($offset==""){ $offset=0; }
 		$userid	= $this->session->userdata('userid');
 		$level	= $this->session->userdata('id_level');
-		
+		$qt="";
 		if($level=="2" || $level=="3" || $level=="4"){ $qt="AND sistem_user.id_level >= '$level'"; }
 		elseif($level=="5"){ $qt="AND forum_subkategori.oleh='$userid'"; } 
 		

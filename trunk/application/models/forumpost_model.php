@@ -14,7 +14,7 @@ class forumpost_model extends CI_Model
 
 	}
 	
-	function count_data($id) 
+	function count_data($id=null) 
 	{   
 		
 		return $this->db->count_all($this->tbl);
@@ -34,7 +34,7 @@ class forumpost_model extends CI_Model
 		
 		$userid	= $this->session->userdata('userid');
 		$level	= $this->session->userdata('id_level');
-		
+		$qt = '';
 		if($level=="2" || $level=="3" || $level=="4" || $level=="5" ){ $qt="AND sistem_user.id_level >= '$level'"; }
 		elseif($level=="6"){ $qt="AND forum_post.id_user='$userid'"; } 
 		
