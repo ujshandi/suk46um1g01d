@@ -23,9 +23,9 @@
 	<h1 class="titlebig">Sejarah</h1>
 	<div class="boxbigcontent">
 		<div class="boxess">
-			<form action="<?=base_url()?>profil/updatesejarah" method="post"  id="frmcontact2">
+			<form action="<?=base_url()?>profil/updatesejarah" method="post" id="frmcontact2">
 				<div class="ckWow">
-					<textarea name="isi" id="editor1" class="editor" cols="400" rows="600" ><?=$sejarah?></textarea>
+					<textarea name="sejarah" id="editor1" class="editor" cols="400" rows="600" ><?=$sejarah?></textarea>
 					<?php echo display_ckeditor($ckeditor); ?>
 				</div>
 				<br />
