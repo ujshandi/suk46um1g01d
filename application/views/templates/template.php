@@ -145,8 +145,8 @@
 			<p id="texttwitter"></p>
 			
 			<ul id="menufooter">
-				<li><a href="'.base_url().'">Beranda</a></li>			
-				
+				<li><a href="<?=base_url()?>">Beranda</a></li>			
+					<li><a href="<?=base_url()?>faq/publik">FAQ</a></li>			
 			</ul>
 			
 			<ul id="menufooterright">

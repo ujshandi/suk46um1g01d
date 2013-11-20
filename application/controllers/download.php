@@ -10,6 +10,9 @@ class download extends CI_Controller {
 		$this->load->model('temp_model','',TRUE);
 		$this->load->model('backend_model','',TRUE);
 		$this->load->model('downloadmodel','',TRUE);
+		$this->load->helper('ckeditor');
+		$this->load->library('upload');
+		$this->load->library('utility');
 	}
 	function cekLogin()
 	{
@@ -20,6 +23,13 @@ class download extends CI_Controller {
 	}
 	function index($offset=0)
 	{
+			$data = array(					
+					'title_page'=>'Download',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$data['offset']=$offset;
 		$uri_segment = 3;
 		$offset = $this->uri->segment($uri_segment);
@@ -45,6 +55,13 @@ class download extends CI_Controller {
 	function data($offset=0)
 	{
 		$this->cekLogin();
+		$data = array(					
+					'title_page'=>'Download',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$uri_segment = 3;
 		$offset = $this->uri->segment($uri_segment);
 		$config['base_url'] = site_url('download/data/');
@@ -56,7 +73,10 @@ class download extends CI_Controller {
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['download']	= $this->downloadmodel->get_All($this->limit,$offset);
 		$data['mainmenu']	= $this->backend_model->mainmenu("17");
-		$this->load->view('download/download_data',$data);
+		//$this->load->view('download/download_data',$data);
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','download/download_data',$data);
+		$this->template->render();
 	}
 	function search()
 	{
@@ -86,9 +106,20 @@ class download extends CI_Controller {
 	function add()
 	{
 		$this->cekLogin();
+			$data = array(					
+					'title_page'=>'Download',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("17");
-		$this->load->view('download/download_add',$data);
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','download/download_add',$data);
+		$this->template->render();
+		//$this->load->view('download/download_add',$data);
 	}
 	function simpan()
 	{
@@ -118,10 +149,20 @@ class download extends CI_Controller {
 	function edit($id)
 	{
 		$this->cekLogin();
+		$data = array(					
+					'title_page'=>'Download',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['download']	= $this->downloadmodel->getbyid($id)->result();
 		$data['mainmenu']	= $this->backend_model->mainmenu("17");
-		$this->load->view('download/download_edit',$data);
+		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','download/download_edit',$data);
+		$this->template->render();
 	}
 	function simpanedit()
 	{

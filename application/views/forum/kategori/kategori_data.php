@@ -61,17 +61,17 @@
 
 					<h1 class="titlebig">Kategori Forum &nbsp;(<?= $jumlah ?>)</h1>
 
-					<div class="boxbigcontent">
-					<div align="right">
+					<div class="boxbigcontent"><br />
+					<div align="right" style="width:647px;">
                      <?php 
 					$level	= $this->session->userdata('id_level');
 					if($level=="1" || $level=="2" || $level=="3"){ 
 					?>
 					<p><a href="<?=base_url()?>forum_registered/kategori_add" class="buttons buttons-orange"><span class="add"></span>Tambah</a>
                    	<?php } ?>
-                    </p></div>
+                    </p></div><br />
 					
-					<table class="data">
+					<table class="data" border="0" style="width:647px;">
 
 					<thead>
 

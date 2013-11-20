@@ -22,10 +22,10 @@
 
 	function simpan(){
 		var data1	= document.getElementById('f1').value;
-		var data2	= document.getElementById('editor').value;
+		var data2	= document.getElementById('editor1').value;
 
 		if(data1!="" && data2!=""){
-			document.getElementById('frmcontact').submit();
+			document.getElementById('frmcontact2').submit();
 		}
 		else{
 			alert('Harap Isi Semua Field (*) !!');
@@ -40,12 +40,12 @@
     
     <script type="text/javascript">
 	$.validator.setDefaults({
-		submitHandler: function() { document.getElementById('frmcontact').submit(); }
+		submitHandler: function() { document.getElementById('frmcontact2').submit(); }
 	});
 
 $().ready(function() {
 	
-	$("#frmcontact").validate({
+	$("#frmcontact2").validate({
 			rules: {
 			
 			
@@ -53,7 +53,7 @@ $().ready(function() {
 				required: true,
 				minlength: 4
 			},
-			editor: {
+			editor1: {
 				required: true,
 				minlength: 10
 			}
@@ -66,48 +66,34 @@ $().ready(function() {
 				minlength: "* Minimal 4 karakter"
 			},
 									
-			editor: {
+			editor1: {
 				required: "* Isi tidak boleh kosong",
 				minlength: "* Minimal 10 karakter"
 			}
 		}
 	});
-	
-	
 });
 </script>
-	   
-<style type="text/css">
-#frmcontact { width: 500px; }
-#frmcontact label { width: 250px; }
-#frmcontact label.error, #frmcontact input.submit { margin-left: 20px; padding:2px ; color:#FF0000}
-
-</style>
-	
-
-				<h1 class="titlebig">Tambah FAQ</h1>
-					<div class="boxbigcontent">
-					<form method="post" action="<?= base_url() ?>faq/simpan"  id="frmcontact">
-					<label style="margin-left:-15px;">Pertanyaan</label><br /><br />
-					<input type="text" name="txtjudul" id="txtjudul" class="required" size="80"/> <span>*</span><br />
-					                                                    
-                    <label style="margin-left:-15px;">Jawab</label><br /><br />
-					
-                    <textarea name="editor" id="editor"></textarea><br />
-
-					<div align="right">
-						
-						<button type="submit" class="buttons buttons-orange"><span class="disk"></span>Simpan</button>
-                        <a href="<?=base_url()?>faq/" class="buttons buttons-orange"><span class="cancel"></span>Batal</a>
-
-						</div>
-						
-					
-
-					</form>
-
-					</div>
-
-					<div class="boxbigcontentbottom"></div>
-
-			
+	<h1 class="titlebig">Tambah FAQ</h1>
+	<div class="boxbigcontent">
+		<div class="boxess">
+			<form method="post" action="<?= base_url() ?>faq/simpan" id="frmcontact2">
+				<label>Pertanyaan</label>
+				<input type="text" name="txtjudul" id="txtjudul" class="required" size="80"/> <span class="mand">*</span>
+				<br />
+				<br />
+				<label>Jawab</label>
+				<div class="ckWow3">
+					<textarea name="editor" id="editor1" cols="100" rows="200"></textarea>
+					<?php echo display_ckeditor($ckeditor); ?>
+				</div>
+				<br />
+				<br />
+				<div class="boxBtn">
+					<button type="submit" class="button" style="height:20px;"><span class="disk"></span>Simpan</button>
+					<a href="<?=base_url()?>faq/" class="button"><span class="cancel"></span>Batal</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="boxbigcontentbottom"></div>

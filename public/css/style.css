@@ -82,6 +82,32 @@ display: none;
 z-index: 999;
 }
 
+div.img
+			{
+			  margin: 0px;
+			  padding: 2px;
+			  /* border: 1px solid #0000ff; */
+			  height: auto;
+			  width: auto;
+			  float: left;
+			  text-align: center;
+			}	
+			div.img img
+			{
+			  display: inline;
+			  margin: 0px;
+			  border: 1px solid #ffffff;
+			}
+			div.img a:hover img {border: 1px solid #f1f1f1;}
+			div.desc
+			{
+			  text-align: center;
+			  font-weight: normal;
+			  width: 120px;
+			  height: 50px;
+			  margin: 0px;
+			}
+
 .linkT {
 	/* 
 		border:1px solid #ff0000; 
