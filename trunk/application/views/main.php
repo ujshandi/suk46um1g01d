@@ -36,10 +36,50 @@
 		</div>
 	</div>
 <!-- // end of newslider-vertical -->
-	
+	<br />
 <!-- Start beritaFoto -->
-	
+	<div style="height:200px;">
+		<h1 class="titlebig">Berita Foto 
+			<div style="float:right;">
+				<a href="#" style="color:#fff;">Prev</a>
+				<a href="#" style="color:#fff;">Next</a>
+			</div>
+		</h1>
+		<!-- Start photoslider-bullets -->
+				<div class="sliderkit photoslider-bullets">
+					<div class="sliderkit-nav">
+						<div class="sliderkit-nav-clip">
+							<ul>
+								<li><a href="#" title="Photo sample 01"></a></li>
+								<li><a href="#" title="Photo sample 02"></a></li>
+								<li><a href="#" title="Photo sample 03"></a></li>
+								<li><a href="#" title="Photo sample 04"></a></li>
+								<li><a href="#" title="Photo sample 05"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="sliderkit-panels">
+						<div class="sliderkit-panel">
+							<img src="<?=base_url()?>public/images/img_1.jpg" alt="[Alternative text]" />
+						</div>
+						<div class="sliderkit-panel">
+							<img src="<?=base_url()?>public/images/img_2.jpg" alt="[Alternative text]" />
+						</div>
+						<div class="sliderkit-panel">
+							<img src="<?=base_url()?>public/images/img_gal.jpg" alt="[Alternative text]" />
+						</div>
+						<div class="sliderkit-panel">
+							<img src="<?=base_url()?>public/images/slide_1.jpg" alt="[Alternative text]" />
+						</div>
+						<div class="sliderkit-panel">
+							<img src="<?=base_url()?>public/images/img_1.jpg" alt="[Alternative text]" />
+						</div>
+					</div>
+				</div>
+		
+	</div>
 <!-- // end of beritaFoto -->
+
 <!-- pengumuman -->
 	<div class="boxcontentsmall2">
 	<br />
@@ -85,3 +125,17 @@
 		</div>
 	<br />
 <!-- endChanel -->
+
+
+<script type="text/javascript">
+// Photo slider > Bullets nav
+				$(".photoslider-bullets").sliderkit({
+					auto:false,
+					circular:true,
+					mousewheel:true,
+					shownavitems:5,
+					panelfx:"sliding",
+					panelfxspeed:1000,
+					panelfxeasing:"easeOutExpo" // "easeOutExpo", "easeInOutExpo", etc.
+				});
+</script>

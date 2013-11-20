@@ -2359,6 +2359,18 @@ div#placemainmenu li li:hover ul
 	right:0;
 }
 
+.ckWow3 {
+
+	/* 
+	margin:0 10px 0 20px;
+	border:1px solid #ff0000; 
+	*/
+	float:left;
+	width:auto;
+	right:0;
+	width:450px;
+}
+
 .clearEnd {
 
 	border:1px solid #ff0000;

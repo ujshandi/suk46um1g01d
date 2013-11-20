@@ -132,7 +132,7 @@
                     </div>
                     <br />
                    	                   
-                  	 <div align="right"><b><?= $nama_level ?></b></div>
+                  	 <div align="right"><b><?= '';//$nama_level ?></b></div>
                      <div align="right"><?= $tanggaltanggapi ?></div>
                      <br />
                      

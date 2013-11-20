@@ -39,11 +39,11 @@
 			<form method="post" action="<?=base_url()?>pengumuman/simpan" id="frmcontact2">
 				<label>Judul</label>
 				<input type="text" name="judul" id="f1" class="textboxcontact" value="<?=$pengumuman->judul?>" size="80" /> <span class="mand">*</span>
-				<input type="hidden" name="id_pengumuman" id="id_pengumuman" class="textboxcontact" value="<?=$pengumuman->id_pengumuman?>"  /> <span class="mand">*</span>
+				<input type="hidden" name="id_pengumuman" id="id_pengumuman" class="textboxcontact" value="<?=$pengumuman->id_pengumuman?>"/>
 				<br />
 				<br />
 				<label>Isi Pengumuman</label>
-				<div class="ckWow2">						
+				<div class="ckWow2">
 					<textarea name="deskripsi" id="editor1" class="editor" cols="100" rows="200" ><?=$pengumuman->deskripsi?></textarea>
 					<?php echo display_ckeditor($ckeditor); ?>
 				</div>
@@ -57,4 +57,3 @@
 		</div>
 	</div>
 	<div class="boxbigcontentbottom"></div>
-			

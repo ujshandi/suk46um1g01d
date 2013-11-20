@@ -59,7 +59,15 @@ class Berita extends CI_Controller {
 	}
 	function detail($id)
 	{
-		$data['data']		= $this->Berita_model->get_by_id($id)->result();
+			$data = array(
+					
+					'title_page'=>'Berita',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
+		$data['data']		= $this->Berita_model->get_by_id($id);
 		$data['include']	= $this->temp_model->includeFile();
 		$data['header']		= $this->temp_model->headerMenu('0');
 		$data['sliderTop']	= $this->temp_model->sliderTop();
@@ -70,7 +78,11 @@ class Berita extends CI_Controller {
 		$data['linkterkait']= $this->temp_model->linkterkait();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
-		$this->load->view('berita/berita_detail',$data);
+		$data['linkopd']= $this->temp_model->linkopd();
+		//$this->load->view('berita/berita_detail',$data);
+		$this->template->write_view('header','templates/header',$data);
+		$this->template->write_view('wrapper','berita/berita_detail',$data);
+		$this->template->render();
 	}
 	function arsip($offset=0)
 	{

@@ -50,11 +50,11 @@ class main extends CI_Controller {
 	function search()
 	{
 		$key	= $this->input->post('search');
-		
-		$data['programkerja']	= $this->programkerjamodel->search("deskripsi","deskripsi_singkat",$key)->result();
-		$data['panduan']		= $this->panduanmodel->search("deskripsi","deskripsi_singkat",$key)->result();
-		$data['statistik']		= $this->statistikmodel->search("kategori",$key)->result();
-		$data['belajar']		= $this->belajarmodel->search("deskripsi","deskripsi_singkat",$key)->result();
+		$data['title_page']		= 'Hasil Pencarian';
+		//$data['programkerja']	= $this->programkerjamodel->search("deskripsi","deskripsi_singkat",$key)->result();
+		//$data['panduan']		= $this->panduanmodel->search("deskripsi","deskripsi_singkat",$key)->result();
+		//$data['statistik']		= $this->statistikmodel->search("kategori",$key)->result();
+		//$data['belajar']		= $this->belajarmodel->search("deskripsi","deskripsi_singkat",$key)->result();
 		$data['berita']			= $this->berita_model->search("judul_berita","deskripsi_singkat","isi",$key)->result();
 		$data['download']		= $this->downloadmodel->search("deskripsi",$key)->result();
 		
@@ -67,8 +67,11 @@ class main extends CI_Controller {
 		$data['login']			= $this->temp_model->login();
 		$data['linkterkait']	= $this->temp_model->linkterkait();
 		$data['testimonial']	= $this->temp_model->testimonial();
+		$data['linkopd']= $this->temp_model->linkopd();
 		$data['footer']			= $this->temp_model->footer();
-		$this->load->view('search',$data);
+		$this->template->write_view('header','templates/header',$data);
+		$this->template->write_view('wrapper','search',$data);
+		$this->template->render();
 	}
 	function login()
 	{
