@@ -56,7 +56,7 @@ class user extends CI_Controller {
 	
 			$data['fields']	= $this->user_model->get_list_data($this->limit,$offset);
 			$data['headmenu']	= $this->backend_model->headermenu();
-			$data['mainmenu']	= $this->backend_model->mainmenu();
+			$data['mainmenu']	= $this->backend_model->mainmenu(18);
 	
 			$this->load->view('user/user_data',$data);	
 			
@@ -82,7 +82,7 @@ class user extends CI_Controller {
 	{
 		$this->cekLogin();
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu();
+		$data['mainmenu']	= $this->backend_model->mainmenu(18);
 		
 		$data['dlevel'] = $this->user_model->getlevel();
 
@@ -119,7 +119,7 @@ class user extends CI_Controller {
 		$this->cekLogin();
 		$data['fields']		= $this->user_model->getbyid($id)->result();
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu();
+		$data['mainmenu']	= $this->backend_model->mainmenu(18);
 		
 		$data['dlevel'] = $this->user_model->getlevel();
 
