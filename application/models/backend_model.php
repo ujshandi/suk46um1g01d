@@ -103,6 +103,7 @@ class backend_model extends CI_Model
 		}
 		return $bg;
 	}
+	
 	function mainmenu($id)
 	{
 		$level=$this->session->userdata('id_level');
