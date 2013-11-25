@@ -15,7 +15,7 @@ class agenda extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	function index($offset=0)
@@ -125,7 +125,7 @@ class agenda extends CI_Controller {
 		} else {
 			$this->agendamodel->update($id,$data);
 		}
-		redirect('agenda/data','refresh');
+		redirect(base_url().'agenda/data');
 	}
 	function edit($id)
 	{	
@@ -155,11 +155,11 @@ class agenda extends CI_Controller {
 		
 			$data = array('tgl'=>$tgl,'kegiatan'=>$kegiatan,'author'=>$author);
 			$this->agendamodel->update($id,$data);
-			redirect('agenda/data','refresh');
+			redirect(base_url().'agenda/data');
 	}
 	function hapus($id)
 	{
 		$this->agendamodel->delete($id);
-		redirect('agenda/data','refresh');
+		redirect(base_url().'agenda/data');
 	}
 }

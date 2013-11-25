@@ -43,7 +43,7 @@ class backend extends CI_Controller {
                );
 			endforeach;
 			$this->session->set_userdata($newdata);
-			redirect('backend/main','refresh');
+			redirect(base_url().'backend/main');
 		}
 		else
 		{

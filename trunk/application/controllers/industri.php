@@ -21,7 +21,7 @@ class Industri extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	public function index($offset=0)
@@ -249,7 +249,7 @@ class Industri extends CI_Controller {
 				);
 		
 			$this->Industri_model->update($kategori,$data);
-			redirect('industri/'.$kategori.'view','refresh');
+			redirect(base_url().'industri/'.$kategori.'view');
 	}
 	
 	

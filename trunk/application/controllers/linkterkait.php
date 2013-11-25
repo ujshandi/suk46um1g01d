@@ -16,7 +16,7 @@ class linkterkait extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	function daftarlink($offset=0)
@@ -160,7 +160,7 @@ class linkterkait extends CI_Controller {
 			$data = array('singkatan'=>$singkat,'deskripsi'=>$deskripsi,'url'=>$url,'jenis'=>$jenis);
 			$this->linkmodel->save($data);
 		
-		redirect('linkterkait'.($jenis=='opd'?'/opd':''),'refresh');
+		redirect(base_url().'linkterkait'.($jenis=='opd'?'/opd':''));
 	}
 	function edit($id)
 	{
@@ -180,11 +180,11 @@ class linkterkait extends CI_Controller {
 			$data	= array('singkatan'=>$singkat,'deskripsi'=>$deskripsi,'url'=>$url);
 			$this->linkmodel->update($id,$data);
 			
-		redirect('linkterkait','refresh');
+		redirect(base_url().'linkterkait');
 	}
 	function hapus($id)
 	{
 		$this->linkmodel->delete($id);
-		redirect('linkterkait','refresh');
+		redirect(base_url().'linkterkait');
 	}
 }

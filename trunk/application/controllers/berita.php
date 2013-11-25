@@ -21,7 +21,7 @@ class Berita extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	public function index($offset=0)
@@ -202,7 +202,7 @@ class Berita extends CI_Controller {
 				$this->Berita_model->update($id,$data);
 			}
 			
-			redirect('berita/index/','refresh');
+			redirect(base_url().'berita/index/');
 		/* }
 		else
 		{
@@ -348,13 +348,13 @@ class Berita extends CI_Controller {
 				'status'		=>$status					
 				);
 		$this->Berita_model->update($id,$data);
-		redirect('berita/index/','refresh');
+		redirect(base_url().'berita/index/');
 		
 	}
 	function hapus($id)
 	{
 		$this->Berita_model->delete($id);
-		redirect('berita','refresh');
+		redirect(base_url().'berita');
 	}
 	
 	

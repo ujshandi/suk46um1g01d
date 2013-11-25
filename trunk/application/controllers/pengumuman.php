@@ -18,7 +18,7 @@ class pengumuman extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	function index($offset=0)
@@ -112,7 +112,7 @@ class pengumuman extends CI_Controller {
 				$this->pengumumanmodel->update($id,$data);
 			}
 		
-		redirect('pengumuman','refresh');
+		redirect(base_url().'pengumuman');
 	}
 	function edit($id)
 	{
@@ -143,11 +143,11 @@ class pengumuman extends CI_Controller {
 			$data	= array('judul'=>$judul,'deskripsi'=>$deskripsi);
 			$this->pengumumanmodel->update($id,$data);
 			
-		redirect('pengumuman','refresh');
+		redirect(base_url().'pengumuman');
 	}
 	function hapus($id)
 	{
 		$this->pengumumanmodel->delete($id);
-		redirect('pengumuman','refresh');
+		redirect(base_url().'pengumuman');
 	}
 }

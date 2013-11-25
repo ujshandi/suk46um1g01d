@@ -42,7 +42,7 @@ class pesan extends CI_Controller {
 	
 	function cekLogin(){
 		if($this->session->userdata('userid')==""){
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	
@@ -138,7 +138,7 @@ level_user l WHERE p.id_pesan = t.id_pesan AND t.oleh = s.id_user AND s.id_level
 						'status'			=> '0'
 						);
 		$this->pesan_model->save($data);
-		redirect('pesan/publik','refresh');	
+		redirect(base_url().'pesan/publik');	
 	}	
 // ============== simpan tanggapi, tabel pesan_tanggapi ================
 
@@ -159,7 +159,7 @@ level_user l WHERE p.id_pesan = t.id_pesan AND t.oleh = s.id_user AND s.id_level
 					);					
 		$this->pesan_model->updates($id_pesan,$data2);
 		$this->pesan_model->savetanggapi($data);		
-		redirect ('pesan','refresh');		
+		redirect (base_url().'pesan');		
 	}
 
 // ============== tambah jawaban untuk pesan, target tabel pesan_tanggapi =============	
@@ -236,7 +236,7 @@ level_user l WHERE p.id_pesan = t.id_pesan AND t.oleh = s.id_user AND s.id_level
 			   );
 			   
 		$this->pesan_model->update($id_tanggapi,$data);	
-		redirect ('pesan','refresh');	
+		redirect (base_url().'pesan');	
 	}
 
 //=============== end ubah tanggapi ======================
@@ -255,12 +255,12 @@ level_user l WHERE p.id_pesan = t.id_pesan AND t.oleh = s.id_user AND s.id_level
 
 			$data	= array('judul'=>$judul,'deskripsi'=>$deskripsi);
 			$this->pesanmodel->update($id,$data);
-		redirect('pesan','refresh');
+		redirect(base_url().'pesan');
 	}
 
 	function hapus($id){
 		$this->pesan_model->delete($id);
-		redirect('pesan','refresh');
+		redirect(base_url().'pesan');
 	}
 
 }
