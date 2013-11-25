@@ -87,6 +87,14 @@ class Berita extends CI_Controller {
 	function arsip($offset=0)
 	{
 		$uri_segment = 3;
+			$data = array(
+					
+					'title_page'=>'Arsip Berita',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$offset = $this->uri->segment($uri_segment);
 		$this->load->library('pagination');
 		$config['base_url'] = site_url('Berita/arsip/');
@@ -105,9 +113,13 @@ class Berita extends CI_Controller {
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
-		$this->load->view('berita/arsip',$data);
+		$this->template->write_view('header','templates/header',$data);
+		$this->template->write_view('wrapper','berita/arsip',$data);
+		$this->template->render();
+		//$this->load->view('berita/arsip',$data);
 	}
 	function search()
 	{

@@ -18,7 +18,7 @@
 					<h3><a href="#"><?=$b->judul_berita?></a></h3>
 					<?=$b->tanggal?>
 					<p style="width:278px;"><?=$b->deskripsi_singkat?></p>
-					<a class="sliderkit-news-readmore" href="#">Read more</a>
+					<a class="sliderkit-news-readmore" href="<?=base_url()?>berita/detail/<?=$b->id_berita?>">Read more</a>
 				</div>
 			</div>
 			<?}?>
