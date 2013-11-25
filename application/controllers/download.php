@@ -18,7 +18,7 @@ class download extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	function index($offset=0)
@@ -143,7 +143,7 @@ class download extends CI_Controller {
 			$dataFile	= $this->upload->data();
 			$data = array('nama'=>$nama,'deskripsi'=>$deskripsi,'file'=>$dataFile['file_name']);
 			$this->downloadmodel->save($data);
-			redirect('download/data','refresh');
+			redirect(base_url().'download/data');
 		}
 	}
 	function edit($id)
@@ -202,7 +202,7 @@ class download extends CI_Controller {
 			
 			$data = array('nama'=>$nama,'deskripsi'=>$deskripsi,'file'=>$filename);
 			$this->downloadmodel->update($id,$data);
-			redirect('download/data','refresh');
+			redirect(base_url().'download/data');
 	}
 	function hapus($id)
 	{
@@ -212,6 +212,6 @@ class download extends CI_Controller {
 			unlink(realpath("./uploads/file/$row->file"));
 		}
 		$this->downloadmodel->delete($id);
-		redirect('download/data','refresh');
+		redirect(base_url().'download/data');
 	}
 }

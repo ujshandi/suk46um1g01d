@@ -21,7 +21,7 @@ class Pemerintahan extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	public function index($offset=0)
@@ -276,7 +276,7 @@ class Pemerintahan extends CI_Controller {
 				);
 		
 			$this->Pemerintahan_model->update($kategori,$data);
-			redirect('pemerintahan/'.$kategori.'view','refresh');
+			redirect(base_url().'pemerintahan/'.$kategori.'view');
 	}
 	
 	

@@ -21,7 +21,7 @@ private $limit = 10;
 	function cekLogin()
 	{
 		if($this->session->userdata('userid')==""){
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	
@@ -139,7 +139,7 @@ private $limit = 10;
 						'jawab'					=> $isi						
 						);
 		$this->faq_model->save($data);
-		redirect('faq/index','refresh');	
+		redirect(base_url().'faq/index');	
 	}
 	
 	function edit()	{
@@ -171,13 +171,13 @@ private $limit = 10;
 					'pertanyaan'	=>$pertanyaan,
 					'jawab'			=>$jawab);
 			$this->faq_model->update($id,$data);
-		redirect('faq','refresh');
+		redirect(base_url().'faq');
 	}
 	
 	function hapus($id){
 
 		$this->faq_model->delete($id);
-		redirect('faq','refresh');
+		redirect(base_url().'faq');
 
 	}
 

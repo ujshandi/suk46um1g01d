@@ -17,7 +17,7 @@ class profil extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	function visi_misi()
@@ -299,7 +299,7 @@ class profil extends CI_Controller {
 			$data2=array('isi'=>$misi);
 			$this->informasimodel->update('misi',$data2);
 			
-		redirect('profil/visimisi','refresh');
+		redirect(base_url().'profil/visimisi');
 	}
 	function sejarahview()
 	{
@@ -418,7 +418,7 @@ class profil extends CI_Controller {
 			$data1=array('isi'=>$sejarah);
 			$this->informasimodel->update('sejarah',$data1);
 			
-		redirect('profil/sejarahview','refresh');
+		redirect(base_url().'profil/sejarahview');
 	}
 	
 	function updateangka()
@@ -428,7 +428,7 @@ class profil extends CI_Controller {
 			$data1=array('isi'=>$angka);
 			$this->informasimodel->update('angka',$data1);
 			
-		redirect('profil/angkaview','refresh');
+		redirect(base_url().'profil/angkaview');
 	}
 	
 	function updatesosial()
@@ -438,7 +438,7 @@ class profil extends CI_Controller {
 			$data1=array('isi'=>$sosial);
 			$this->informasimodel->update('sosial',$data1);
 			
-		redirect('profil/sosialview','refresh');
+		redirect(base_url().'profil/sosialview');
 	}
 	
 	function updategeografi()
@@ -448,7 +448,7 @@ class profil extends CI_Controller {
 			$data1=array('isi'=>$geografi);
 			$this->informasimodel->update('geografi',$data1);
 			
-		redirect('profil/geografiview','refresh');
+		redirect(base_url().'profil/geografiview');
 	}
 	
 	function updatelambang()
@@ -458,7 +458,7 @@ class profil extends CI_Controller {
 			$data1=array('isi'=>$lambang);
 			$this->informasimodel->update('lambang',$data1);
 			
-		redirect('profil/lambangview','refresh');
+		redirect(base_url().'profil/lambangview');
 	}
 	
 	function sarprasview()
@@ -488,7 +488,7 @@ class profil extends CI_Controller {
 			$data1=array('isi'=>$sarpras);
 			$this->informasimodel->update('sarpras',$data1);
 			
-		redirect('profil/sarprasview','refresh');
+		redirect(base_url().'profil/sarprasview');
 	}
 	function prestasiview()
 	{
@@ -517,6 +517,6 @@ class profil extends CI_Controller {
 			$data1=array('isi'=>$prestasi);
 			$this->informasimodel->update('prestasi',$data1);
 			
-		redirect('profil/prestasiview','refresh');
+		redirect(base_url().'profil/prestasiview');
 	}
 }

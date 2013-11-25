@@ -27,7 +27,7 @@ class user extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	function index($offset=0)
@@ -109,7 +109,7 @@ class user extends CI_Controller {
 
 		
 
-		redirect('user','refresh');
+		redirect(base_url().'user');
 
 	}
 
@@ -144,7 +144,7 @@ class user extends CI_Controller {
 
 			
 
-		redirect('user','refresh');
+		redirect(base_url().'user');
 
 	}
 
@@ -154,7 +154,7 @@ class user extends CI_Controller {
 
 		$this->user_model->delete($id);
 
-		redirect('user','refresh');
+		redirect(base_url().'user');
 
 	}
 

@@ -21,7 +21,7 @@ class Informasi_umum extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	public function index($offset=0)
@@ -543,7 +543,7 @@ class Informasi_umum extends CI_Controller {
 				);
 		
 			$this->informasimodel->update($kategori,$data);
-			redirect('informasi_umum/'.$kategori.'view','refresh');
+			redirect(base_url().'informasi_umum/'.$kategori.'view');
 	}
 	
 	

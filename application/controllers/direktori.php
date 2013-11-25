@@ -14,7 +14,7 @@ class direktori extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	public function index()
@@ -60,6 +60,6 @@ class direktori extends CI_Controller {
 		$data=array('isi'=>$dir);
 		$this->informasimodel->update('direktori',$data);
 		
-		redirect('direktori/edit','refresh');
+		redirect(base_url().'direktori/edit');
 	}
 }
