@@ -111,137 +111,73 @@
 	}
 
 	</script>
-
-	
-
 </head>
-
 <body>
 <div id="container">
-
 	<?=$headmenu?>
-
 		<div id="content">
-
 			<div id="maincontent">
-
 				<div class="boxbig">
-
-				<h1 class="titlebig">Daftar user</h1>
-
+					<h1 class="titlebig">Daftar user</h1>
 					<div class="boxbigcontent">
-
-					<a href="<?=base_url()?>user/add" class="button" >Tambah</a>
-					<div align="left" style="margin-top:-13px;">
-					<form method="post" action="<?=base_url()?>user/search">
-					<input type="text" name="search" class="textboxcontact" value="Cari User" onblur="if(this.value.length == 0) this.value='Cari User';" onclick="if(this.value == 'Cari User') this.value='';" style="width:150px;" />
-					</form><br />
+						<a href="<?=base_url()?>user/add" class="button" >Tambah</a>
+						<div align="left" style="margin-top:-5px;">
+							<form method="post" action="<?=base_url()?>user/search">
+								<input type="text" name="search" class="textboxcontact" value="Cari User" onblur="if(this.value.length == 0) this.value='Cari User';" onclick="if(this.value == 'Cari User') this.value='';" style="width:150px;" />
+							</form>
+						</div>
+						<table class="data">
+						<thead>
+							<tr>
+	                        	<th>No</th>
+	                            <th>Nama</th>
+	                            <th>Username</th>
+	                            <th>Level</th>
+	                            <th></th>
+	                        </tr>
+						</thead>
+						<tbody>
+							<?php $i=0; foreach($fields as $row): ?>
+							<tr>
+								<td width="4%" align="center"><?=$i=$i+1?></td>
+								<td><a href="javascript:info('<?=$i?>');" title="Detail Data"><?=$row->nama_asli?></a></td>
+	                            <td><?=$row->username?></td>
+	                            <td><?=$row->nama_level?></td>
+								<td align="center" width="12%">
+	                                <a href="<?=base_url()?>user/edit/<?=$row->id_user?>" title="Edit"><img src="<?=base_url()?>public/images/icon/edit.png" /></a>
+									<a href="javascript:hapus('<?=$row->id_user?>');" title="Hapus"><img src="<?=base_url()?>public/images/icon/delete.png" /></a>
+								</td>
+							</tr>
+							<?php endforeach;?>
+						</tbody>
+						</table>
+						<?=$pagination?>
 					</div>
-
-					<table class="data">
-
-					<thead>
-
-						<tr>
-                        	<th>No</th>
-                            <th>Nama</th>
-                            <th>Username</th>
-                            <th>Level</th>
-                            <th></th>
-                        </tr>
-
-					</thead>
-
-					<tbody>
-
-						<?php $i=0; foreach($fields as $row): ?>
-
-						<tr>
-
-							<td width="4%" align="center"><?=$i=$i+1?></td>
-
-							<td><a href="javascript:info('<?=$i?>');" title="Detail Data"><?=$row->nama_asli?></a></td>
-                            
-                            <td><?=$row->username?></td>
-                            
-                            <td><?=$row->nama_level?></td>
-
-							<td align="center" width="12%">
-								            
-                                <a href="<?=base_url()?>user/edit/<?=$row->id_user?>" title="Edit"><img src="<?=base_url()?>public/images/icon/edit.png" /></a>
-
-								<a href="javascript:hapus('<?=$row->id_user?>');" title="Hapus"><img src="<?=base_url()?>public/images/icon/delete.png" /></a>
-
-							</td>
-
-						</tr>
-
-						<?php endforeach;?>
-
-					</tbody>
-
-					</table>
-
-					<?=$pagination?>
-
-					</div>
-
 					<div class="boxbigcontentbottom"></div>
-
 				</div>
-
-				
-
 			</div>
-
-			
-
 			<?=$mainmenu?>
-
-			
-
 			<div class="clear"></div>
-
 		</div>
-
 		<div id="footer">
-
 			<p id="texttwitter"></p>
-
 			<!--<ul id="menufooter">
-
 				<li><a href="#">Home</a></li>
-
 				<li><a href="#">News</a></li>
-
 				<li><a href="#">About Us</a></li>
-
 				<li><a href="#">Services</a></li>
-
 				<li><a href="#">Contact Us</a></li>
-
 				<li class="last"><a href="#">Follow us on Twitter</a></li>
-
 			</ul>-->
-
 			<ul id="menufooterright">
-
 				<li><?=COPYRIGHT?></li>
-
 				<li class="last"><a href="#">Back to top</a></li>
-
 			</ul>
-
 		</div>
-
 	</div>
-
 </div>
-
 <?php $i=0; foreach($fields as $row): ?>
-
-	<?=$i=$i+1?>
-	
+	<?=$i=$i+1?>	
 	<div id="dialog<?=$i?>" title="Detail Data User" style="display:none"> 
     	<br /><br />
 		<table class="data">
@@ -262,12 +198,7 @@
         <td><input type="text" disabled="disabled" size="60" value="<?= $row->nama_level; ?>" /><td>
         </tr>
         </tbody></table>
-        
-     
 	</div>
-
 <?php endforeach; ?>
-
 </body>
-
 </html>

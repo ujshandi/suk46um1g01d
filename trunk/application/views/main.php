@@ -21,7 +21,7 @@
 					<a class="sliderkit-news-readmore" href="<?=base_url()?>berita/detail/<?=$b->id_berita?>">Read more</a>
 				</div>
 			</div>
-			<?}?>
+			<?}?> 
 		</div>
 		<div class="sliderkit-nav">
 			<div class="sliderkit-nav-clip">
@@ -46,40 +46,41 @@
 			</div>
 		</h1>
 		<!-- Start photoslider-bullets -->
-				<div class="sliderkit photoslider-bullets">
-					<div class="sliderkit-nav">
-						<div class="sliderkit-nav-clip">
-							<ul>
-								<li><a href="#" title="Photo sample 01"></a></li>
-								<li><a href="#" title="Photo sample 02"></a></li>
-								<li><a href="#" title="Photo sample 03"></a></li>
-								<li><a href="#" title="Photo sample 04"></a></li>
-								<li><a href="#" title="Photo sample 05"></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="sliderkit-panels">
-						<div class="sliderkit-panel">
-							<img src="<?=base_url()?>public/images/img_1.jpg" alt="[Alternative text]" />
-						</div>
-						<div class="sliderkit-panel">
-							<img src="<?=base_url()?>public/images/img_2.jpg" alt="[Alternative text]" />
-						</div>
-						<div class="sliderkit-panel">
-							<img src="<?=base_url()?>public/images/img_gal.jpg" alt="[Alternative text]" />
-						</div>
-						<div class="sliderkit-panel">
-							<img src="<?=base_url()?>public/images/slide_1.jpg" alt="[Alternative text]" />
-						</div>
-						<div class="sliderkit-panel">
-							<img src="<?=base_url()?>public/images/img_1.jpg" alt="[Alternative text]" />
-						</div>
-					</div>
+		<div class="sliderkit photoslider-bullets" style="/* border:1px solid #ff0000; */width:100%;height:100%;">
+			<div class="sliderkit-nav">
+				<div class="sliderkit-nav-clip">
+					<ul>
+						<li><a href="#" title="Photo sample 01"></a></li>
+						<li><a href="#" title="Photo sample 02"></a></li>
+						<li><a href="#" title="Photo sample 03"></a></li>
+						<li><a href="#" title="Photo sample 04"></a></li>
+						<li><a href="#" title="Photo sample 05"></a></li>
+					</ul>
 				</div>
-		
+			</div>
+			<div class="sliderkit-panels">
+				<div class="sliderkit-panel">
+					<img src="<?=base_url()?>public/images/img_1.jpg" alt="[Alternative text]" />
+				</div>
+				<div class="sliderkit-panel">
+					<img src="<?=base_url()?>public/images/img_2.jpg" alt="[Alternative text]" />
+				</div>
+				<div class="sliderkit-panel">
+					<img src="<?=base_url()?>public/images/img_gal.jpg" alt="[Alternative text]" />
+				</div>
+				<div class="sliderkit-panel">
+					<img src="<?=base_url()?>public/images/slide_1.jpg" alt="[Alternative text]" />
+				</div>
+				<div class="sliderkit-panel">
+					<img src="<?=base_url()?>public/images/img_1.jpg" alt="[Alternative text]" />
+				</div>
+			</div>
+		</div>		
 	</div>
 <!-- // end of beritaFoto -->
-
+	<br />
+	<br />
+	<br />
 <!-- pengumuman -->
 	<div class="boxcontentsmall2">
 	<br />
