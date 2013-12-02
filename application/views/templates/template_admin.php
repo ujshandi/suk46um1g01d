@@ -2,7 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Admin Page</title>
+	<script type='text/javascript'>
+		var txt=" .:: <?=$title_page; ?> ::.";
+		var kecepatan=175;var segarkan=null;
+		function bergerak() { 
+			document.title=txt;
+			txt=txt.substring(1,txt.length)+txt.charAt(0);
+			segarkan=setTimeout("bergerak()",kecepatan);
+		}
+		
+		bergerak();
+	</script>
 	<meta name="description" content="Website Description" />
 	<meta name="keywords" content="Website Kwywords" />
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>public/css/backend.css" /> 

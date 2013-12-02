@@ -153,103 +153,59 @@
 	}
 
 	</script>
-	
-	
-
 </head>
-
 <body>
-
 <div id="container">
-
 	<?=$headmenu?>
-
 		<div id="content">
-
 			<div id="maincontent">
-
 				<div class="boxbig">
-
-				<h1 class="titlebig">Tambah User</h1>
-
+					<h1 class="titlebig">Tambah User</h1>
 					<div class="boxbigcontent">
-
-					<form method="post" action="<?=base_url()?>user/simpan"  id="frmcontact">
-
-					<div>
-
-						<label style="margin-left:-15px;">Nama Lengkap</label><br />
-
-						<input type="text" name="nama_asli" id="txtnama" class="textboxcontact" size="80"/> <span>*</span><br />
-                        <label style="margin-left:-15px;">Username</label><br />
-
-						<input type="text" name="username" id="txtusername" class="textboxcontact" size="80"/> <span>*</span><br />
-                        <label style="margin-left:-15px;">Password</label><br />
-
-						<input type="password" name="password" id="txtpassword" class="textboxcontact" size="80"/> <span>*</span><br />
-
-						<label style="margin-left:-15px;">Level User</label><br /><br />
-
-						<select name="id_level" id="txtlevel">
+						<form method="post" action="<?=base_url()?>user/simpan" id="frmcontact">
+							<div>
+								<label style="margin-left:-15px;">Nama Lengkap</label>
+								<br />
+								<input type="text" name="nama_asli" id="txtnama" class="textboxcontact" size="80"/> <span class="mand">*</span>
+								<br />
+		                        <label style="margin-left:-15px;">Username</label>
+								<br />
+								<input type="text" name="username" id="txtusername" class="textboxcontact" size="80"/> <span class="mand">*</span>
+								<br />
+		                        <label style="margin-left:-15px;">Password</label>
+								<br />
+								<input type="password" name="password" id="txtpassword" class="textboxcontact" size="80"/> <span class="mand">*</span>
+								<br />
+								<label style="margin-left:-15px;">Level User</label>
+								<br /><br />
+								<select name="id_level" id="txtlevel">
 									<option value="" selected="selected"> -- Level User --&nbsp;&nbsp;</option>
 									<?php foreach($dlevel as $s): ?>
 									<option value="<?=$s->id_level?>"><?=$s->nama_level?></option>
 									<?php endforeach; ?>
-						</select><span>*</span><br />
-
-						<br /><br />
-
-						<br /><br />
-
-						<div align="right">
-                        
-						<a href="javascript:simpan();" class="buttons buttons-orange"><span class="disk"></span>Simpan</a>
-						<a href="<?=base_url()?>user" class="buttons buttons-orange"><span class="cancel"></span>Batal</a>
-						
-						</div>
-
+								</select> <span class="mand">*</span>
+								<br /><br /><br /><br /><br />
+								<div class="boxBtn">                        
+									<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
+									<a href="<?=base_url()?>user" class="button"><span class="cancel"></span>Batal</a>
+								</div>
+							</div>
+						</form>
 					</div>
-
-					</form>
-
-					</div>
-
 					<div class="boxbigcontentbottom"></div>
-
 				</div>
-
-				
-
 			</div>
-
-			
-
 			<?=$mainmenu?>
-
-			
-
 			<div class="clear"></div>
-
 		</div>
-
 		<div id="footer">
-
 			<p id="texttwitter"></p>
-
 			<ul id="menufooterright">
-
 				<li><?=COPYRIGHT?></li>
-
 				<li class="last"><a href="#">Back to top</a></li>
-
 			</ul>
-
 		</div>
-
 	</div>
-
 </div>
-
 </body>
-
 </html>

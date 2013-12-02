@@ -1,7 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title><?php echo $title_page; ?></title>
+	
+	<script type='text/javascript'>
+		var txt=" .:: <?=$title_page; ?> ::.";
+		var kecepatan=175;var segarkan=null;
+		function bergerak() { 
+			document.title=txt;
+			txt=txt.substring(1,txt.length)+txt.charAt(0);
+			segarkan=setTimeout("bergerak()",kecepatan);
+		}
+		
+		bergerak();
+	</script>
+
+	
 	<?=$include?>
 <link type="text/css" href="<?=base_url()?>public/menu/menu.css" rel="stylesheet" />
 	<script type="text/javascript">var  base_url = "<?php echo base_url(); ?>"</script>

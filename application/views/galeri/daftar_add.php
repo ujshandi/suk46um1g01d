@@ -57,12 +57,12 @@
 					<div>
 						<label style="margin-left:-15px;">Nama Galeri</label>
 						<input type="text" name="nama" id="f1" class="textboxcontact" size="70" /> <span>*</span><br />
-						<label style="margin-left:-15px;">Gambar Thubnail</label>
+						<label style="margin-left:-15px;">Gambar Thumbnail</label>
 						<input type="file" name="gambar" id="f3" class="textboxcontact" />
 						<br /><br />
-						<div align="right">
-                        <a href="javascript:simpan();" class="buttons buttons-orange"><span class="disk"></span>Simpan</a>
-						<a href="<?=base_url()?>galeri/daftar_galeri" class="buttons buttons-orange"><span class="cancel"></span>Batal</a>
+						<div class="boxBtn">
+                        <a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
+						<a href="<?=base_url()?>galeri/daftar_galeri" class="button"><span class="cancel"></span>Batal</a>
 						
 						</div>
 					</div>
