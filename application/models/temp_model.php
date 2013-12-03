@@ -5,13 +5,22 @@ class temp_model extends CI_Model
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->model('settingmodel','',TRUE);
 	}
 	function includeFile()
 	{
 		$data='<meta name="description" content="Pemerintah Kota Sukabumi" />';
 		$data.='<meta name="keywords" content="sukabumi kota" />';
 		$data.='<link href="'.base_url().'favicon.ico" rel="shortcut icon" type="image/x-icon" />';
-		$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/css/style.css" />';
+		$themes = $this->settingmodel->get_by_kategori("themes");
+		
+		switch ($themes->sys_value) {
+			case "red" : $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/css/style_red.css" />';break;
+			case "green" : $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/css/style_green.css" />';break;
+			case "gray" : $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/css/style_gray.css" />';break;
+			default : $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/css/style.css" />';
+		}
+		//$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/css/style_red.css" />';
 		//$data.='<script src="'.base_url().'public/js/jquery.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/jquery-1.6.3.min.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/ui_core.js" type="text/javascript"></script>';
@@ -178,6 +187,7 @@ class temp_model extends CI_Model
 		
 		//-- google analitycs --
 		$data.='<script type="text/javascript">';
+  		$data.="var themes_active = '".$themes->sys_value."';";
   		$data.="var _gaq = _gaq || [];";
   		$data.="_gaq.push(['_setAccount', 'UA-23630325-1']);";
   		$data.="_gaq.push(['_trackPageview']);";

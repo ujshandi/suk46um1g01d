@@ -47,7 +47,7 @@ private $limit = 10;
 		$data['header']		= $this->temp_model->headerMenu('0');
 		$data['sliderTop']	= $this->temp_model->sliderTop();
 		$data['fields']		= $this->faq_model->get_list_data($this->limit,$offset);
-		$data['mainmenu']	= $this->temp_model->mainmenu("13");
+		$data['mainmenu']	= $this->temp_model->mainmenu("12");
 		$data['pengumuman']	= $this->temp_model->pengumuman();
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
@@ -83,7 +83,7 @@ private $limit = 10;
 		$data['jumlah'] 	= $this->faq_model->count_data();
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['fields']		= $this->faq_model->get_list_data($this->limit,$offset);
-		$data['mainmenu']	= $this->backend_model->mainmenu("16");
+		$data['mainmenu']	= $this->backend_model->mainmenu("12");
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','faq/faq_data',$data);
 		$this->template->render();
@@ -92,7 +92,7 @@ private $limit = 10;
 	
 	function detail($id){		
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu('16');		
+		$data['mainmenu']	= $this->backend_model->mainmenu('12');		
 		$field		= $this->db->query("SELECT * FROM faq WHERE id_faq = $id")->result();
 			foreach ($field as $m)
 			{
@@ -120,7 +120,7 @@ private $limit = 10;
 					'css'=>array()
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("16");
+		$data['mainmenu']	= $this->backend_model->mainmenu("12");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 
 		$this->template->set_template("admin");
@@ -154,7 +154,7 @@ private $limit = 10;
 		$aw= $this->input->post('idm');		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['fields']		= $this->faq_model->getbyid($aw)->result();
-		$data['mainmenu']	= $this->backend_model->mainmenu('16');
+		$data['mainmenu']	= $this->backend_model->mainmenu('12');
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 
 		$this->template->set_template("admin");

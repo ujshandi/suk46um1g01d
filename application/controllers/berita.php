@@ -46,12 +46,9 @@ class Berita extends CI_Controller {
 		$data['offset']=$offset;
 		
 		$data['fields'] 	= $this->Berita_model->getAll($this->limit,$offset);
-		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("10");
-		$data['jumlah']		= $this->Berita_model->count_data();
-		
-		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("10");
+		$data['headmenu']	= $this->backend_model->headermenu();		
+		$data['jumlah']		= $this->Berita_model->count_data();	
+		$data['mainmenu']	= $this->backend_model->mainmenu("7");
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','berita/berita_data',$data);
 		$this->template->render();
@@ -145,7 +142,7 @@ class Berita extends CI_Controller {
 		
 		$data['fields'] 	= $this->Berita_model->search2("judul_berita","deskripsi_singkat","isi",$key)->result();
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("10");
+		$data['mainmenu']	= $this->backend_model->mainmenu("7");
 		$data['jumlah']		= $this->Berita_model->count_data();
 		$this->load->view('berita/berita_data',$data);
 	}
@@ -161,7 +158,7 @@ class Berita extends CI_Controller {
 					'css'=>array()
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("10");
+		$data['mainmenu']	= $this->backend_model->mainmenu("7");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
 		//$berita = new object;
 		$berita->id_berita="";
@@ -320,7 +317,7 @@ class Berita extends CI_Controller {
 					'css'=>array()
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("10");
+		$data['mainmenu']	= $this->backend_model->mainmenu("7");
 		$data['berita']		= $this->Berita_model->get_by_id($id);
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
 		//var_dump($data['berita']);

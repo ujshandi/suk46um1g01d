@@ -13,7 +13,7 @@
 		bergerak();
 	</script>
 	<?=$include?>
-<link type="text/css" href="<?=base_url()?>public/menu/menu.css" rel="stylesheet" />
+<!--<link type="text/css" href="<?=base_url()?>public/menu/menu.css" rel="stylesheet" /> -->
 	<script type="text/javascript">var  base_url = "<?php echo base_url(); ?>"</script>
 	<script  type="text/javascript">
 		$(document).ready(function() {

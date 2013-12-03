@@ -69,14 +69,14 @@ class galeri extends CI_Controller {
 		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['galeri']		= $this->galerimodel->get_All($this->limit,$offset);
-		$data['mainmenu']	= $this->backend_model->mainmenu("14");
+		$data['mainmenu']	= $this->backend_model->mainmenu("10");
 		$this->load->view('galeri/daftar_galeri',$data);
 	}
 	function daftar_add()
 	{
 		$this->cekLogin();
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("14");
+		$data['mainmenu']	= $this->backend_model->mainmenu("10");
 		$this->load->view('galeri/daftar_add',$data);
 	}
 	function simpan_daftar()
@@ -104,7 +104,7 @@ class galeri extends CI_Controller {
 		$this->cekLogin();
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['galeri']		= $this->galerimodel->getbyid($id)->result();
-		$data['mainmenu']	= $this->backend_model->mainmenu("14");
+		$data['mainmenu']	= $this->backend_model->mainmenu("10");
 		$this->load->view('galeri/daftar_edit',$data);
 	}
 	function simpandaftaredit()
@@ -151,7 +151,7 @@ class galeri extends CI_Controller {
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['galeri']		= $this->galerimodel->get_All_list($id);
 		$data['namaGaleri']	= $this->galerimodel->getnamaGaleri($id);
-		$data['mainmenu']	= $this->backend_model->mainmenu("14");
+		$data['mainmenu']	= $this->backend_model->mainmenu("10");
 		$this->load->view('galeri/list_galeri',$data);
 	}
 	function simpan_img()

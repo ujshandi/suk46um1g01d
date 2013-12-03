@@ -53,48 +53,25 @@ function publik($offset=0)
 		$data['jumlah'] 	= $this->forumkategori_model->count_data();
 		$data['mainmenu']			= $this->forumtemp_model->mainmenu("0");
 		$data['include']			= $this->forumtemp_model->includeFile();
-
 		$data['header']				= $this->forumtemp_model->headerMenu('2');
-
 		$data['daftar']				= $this->forumtemp_model->daftar();
-
 		$data['memberonline']		= $this->forumtemp_model->memberonline();
-
 		$data['statistik']			= $this->forumtemp_model->statistik();
-
 		$data['login']		= $this->forumtemp_model->login();
-
 		$data['footer']		= $this->forumtemp_model->footer();
-		
-		
-
 		$this->load->view('forum/index',$data);
-
-
 	}
 	
-function subkategori($id,$offset='')
-
-	{
-				
+function subkategori($id,$offset=''){				
 		$uri_segment = 3;
-
 		$offset 				= $this->uri->segment($uri_segment);
-
 		$config['base_url'] 	= site_url('forum/publik/');
-
 		$config['total_rows'] 	= $this->forumsubkategori_model->count_data();
-
-		$config['per_page'] 	= $this->limit;
-		
+		$config['per_page'] 	= $this->limit;		
 		$config['num_links'] 	= 5;
-
 		$this->pagination->initialize($config);
-
 		$data['pagination'] = $this->pagination->create_links();
-
-		$data['offset'] 	= $offset;
-		
+		$data['offset'] 	= $offset;		
 		
 		//$data['field']			= $this->forumkategori_model->get_by_id($id);
 		$field		= $this->db->query("SELECT * FROM forum_kategori WHERE id_kategori = $id")->result();
@@ -110,19 +87,12 @@ function subkategori($id,$offset='')
 		//$data['id_kat']				= $this->uri->segment($uri_segment);
 		//echo $this->uri->segment($uri_segment);		
 		$data['include']			= $this->forumtemp_model->includeFile();
-
 		$data['header']				= $this->forumtemp_model->headerMenu('2');
-
 		$data['daftar']				= $this->forumtemp_model->daftar();
-
 		$data['memberonline']		= $this->forumtemp_model->memberonline();
-
 		$data['statistik']			= $this->forumtemp_model->statistik();
-
 		$data['login']				= $this->forumtemp_model->login();
-
 		$data['footer']				= $this->forumtemp_model->footer();
-		
 		$this->load->view('forum/index_subkategori',$data);
 
 	}
@@ -131,77 +101,45 @@ function daftar_post_byid($id)
 {
 	$uri_segment = 3;
 	//$data['wew'] = $this->uri->segment($uri_segment);
-	
 	$data['fields']				= $this->forumpost_model->get_by_subkategori($id,$this->limit,$offset);
-	
 	$data['include']			= $this->forumtemp_model->includeFile();
 	$data['mainmenu']			= $this->forumtemp_model->mainmenu("0");
 	$data['header']				= $this->forumtemp_model->headerMenu('2');
-
 	$data['daftar']				= $this->forumtemp_model->daftar();
-
 	$data['memberonline']		= $this->forumtemp_model->memberonline();
-
 	$data['statistik']			= $this->forumtemp_model->statistik();
-
 	$data['login']				= $this->forumtemp_model->login();
-
 	$data['footer']				= $this->forumtemp_model->footer();
-			
 	$this->load->view('forum/index_pos',$data);
-	
-
 }
 
 function detail_post_byid($id,$limit,$offset){
-
-$w = $this->forumpost_model->get_by_id($id);
-
-if(count($w) != 0)
-{
-
-	$data['datas']				= $this->forumpost_model->get_by_id($id);
-
-	$data['fields']				= $this->forumpostreply_model->get_by_post($id,$this->limit,$offset);
-	
-	$data['include']			= $this->forumtemp_model->includeFile();
-	
-	$data['mainmenu']			= $this->forumtemp_model->mainmenu("0");
-	
-	$data['includes']	= $this->temp_model->includeFile();
-
-	$data['header']				= $this->forumtemp_model->headerMenu('2');
-
-	$data['daftar']				= $this->forumtemp_model->daftar();
-
-	$data['memberonline']		= $this->forumtemp_model->memberonline();
-
-	$data['statistik']			= $this->forumtemp_model->statistik();
-
-	$data['login']				= $this->forumtemp_model->login();
-
-	$data['footer']				= $this->forumtemp_model->footer();
-			
-	$this->load->view('forum/pos/pos_detail',$data);
-}
-	
-	else 
-	{ 
-		if(count($w) == 0)
-		{
-		redirect('forum/publik','refresh');
+	$w = $this->forumpost_model->get_by_id($id);
+	if(count($w) != 0){
+		$data['datas']				= $this->forumpost_model->get_by_id($id);
+		$data['fields']				= $this->forumpostreply_model->get_by_post($id,$this->limit,$offset);
+		$data['include']			= $this->forumtemp_model->includeFile();
+		$data['mainmenu']			= $this->forumtemp_model->mainmenu("0");
+		$data['includes']	= $this->temp_model->includeFile();
+		$data['header']				= $this->forumtemp_model->headerMenu('2');
+		$data['daftar']				= $this->forumtemp_model->daftar();
+		$data['memberonline']		= $this->forumtemp_model->memberonline();
+		$data['statistik']			= $this->forumtemp_model->statistik();
+		$data['login']				= $this->forumtemp_model->login();
+		$data['footer']				= $this->forumtemp_model->footer();
+		$this->load->view('forum/pos/pos_detail',$data);
+	}	
+	else { 
+		if(count($w) == 0)		{
+			redirect('forum/publik','refresh');
 		}
 	}
-
 }
 
-function user()
-{
+function user(){
 	$id=$this->session->userdata('userid');
-	
 	$data['fields']				= $this->user_model->getbyid($id)->result();
 	$data['datas']				= $this->forumpost_model->get_by_id($id);
-
 	$data['include']			= $this->forumtemp_model->includeFile();	
 	$data['mainmenu']			= $this->forumtemp_model->mainmenu("2");	
 	$data['includes']			= $this->temp_model->includeFile();
@@ -212,7 +150,6 @@ function user()
 	$data['login']				= $this->forumtemp_model->login();
 	$data['footer']				= $this->forumtemp_model->footer();
 	$this->load->view('forum/user',$data);
-
 }
 
 function simpanuser2()
@@ -322,90 +259,50 @@ function simpanposreply()
 
 //============= member =====================
 
-function member($offset='')
-{
+function member($offset=''){
 
 	$uri_segment = 3;
-
 	$offset = $this->uri->segment($uri_segment);
-
 	$config['base_url'] = site_url('forum/member/');
-
 	$config['total_rows'] = $this->user_model->count_data();
-
 	$config['per_page'] = $this->limit;
-
 	$this->pagination->initialize($config);
-
 	$data['pagination'] = $this->pagination->create_links();
-	
 	$data['offset'] = $offset;
-
 	$data['fields']				= $this->user_model->get_list_data($this->limit,$offset);
-	
 	$data['include']			= $this->forumtemp_model->includeFile();
-	
 	$data['header']				= $this->forumtemp_model->headerMenu('3');
-
 	$data['daftar']				= $this->forumtemp_model->daftar();
-
 	$data['memberonline']		= $this->forumtemp_model->memberonline();
-
 	$data['statistik']			= $this->forumtemp_model->statistik();
-
 	$data['login']				= $this->forumtemp_model->login();
-
 	$data['footer']				= $this->forumtemp_model->footer();
-			
 	$this->load->view('forum/index_member',$data);
-
 }
 
-function member_detail($id)
-{
-
+function member_detail($id){
 	$data['fields']				= $this->user_model->getbyid($id)->result();
-	
 	$data['include']			= $this->forumtemp_model->includeFile();
-	
 	$data['header']				= $this->forumtemp_model->headerMenu('3');
-
 	$data['daftar']				= $this->forumtemp_model->daftar();
-
 	$data['memberonline']		= $this->forumtemp_model->memberonline();
-
 	$data['statistik']			= $this->forumtemp_model->statistik();
-
 	$data['login']				= $this->forumtemp_model->login();
-
 	$data['footer']				= $this->forumtemp_model->footer();
-		
 	$this->load->view('forum/member/member_detail',$data);
-
 }
 
-function member_update()
-{
+function member_update(){
 	$wew = $this->input->post('id_user');
-	
 	$data['fields']				= $this->user_model->getbyid($wew)->result();
-	
 	$data['include']			= $this->forumtemp_model->includeFile();
-	
 	$data['header']				= $this->forumtemp_model->headerMenu('3');
-
 	$data['daftar']				= $this->forumtemp_model->daftar();
-
 	$data['memberonline']		= $this->forumtemp_model->memberonline();
-
 	$data['statistik']			= $this->forumtemp_model->statistik();
-
 	$data['login']				= $this->forumtemp_model->login();
-
 	$data['footer']				= $this->forumtemp_model->footer();
-	
 	$this->load->view('forum/member/member_edit',$data);
-
 }
 
 

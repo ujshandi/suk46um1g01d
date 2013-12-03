@@ -14,9 +14,41 @@ function waktu() {
 	setTimeout("waktu()",1000);  
 	document.getElementById("output").innerHTML = teksjam;
 }
+//alert(themes_active);
+var menujs=document.createElement('script');
+var menucss=document.createElement('link');
+
+menujs.setAttribute("type","text/javascript");
+menucss.setAttribute("rel", "stylesheet")
+  menucss.setAttribute("type", "text/css")
+  
+
+switch (themes_active){
+ 	
+  case "green" :
+	menujs.setAttribute("src", "<?=base_url()?>public/menu_green/menu.js");
+	menucss.setAttribute("href", "<?=base_url()?>public/menu_green/menu.css");
+  break;  
+  case "red" :
+	menujs.setAttribute("src", "<?=base_url()?>public/menu_red/menu.js");
+	menucss.setAttribute("href", "<?=base_url()?>public/menu_red/menu.css");
+  break;  
+  case "gray" :
+	menujs.setAttribute("src", "<?=base_url()?>public/menu_gray/menu.js");
+	menucss.setAttribute("href", "<?=base_url()?>public/menu_gray/menu.css");
+  break;  
+  default : 
+	menujs.setAttribute("src", "<?=base_url()?>public/menu/menu.js");
+	menucss.setAttribute("href", "<?=base_url()?>public/menu/menu.css");
+  
+}
+
+document.getElementsByTagName("head")[0].appendChild(menujs);
+document.getElementsByTagName("head")[0].appendChild(menucss);
+
 </script>
-<link type="text/css" href="<?=base_url()?>public/menu/menu.css" rel="stylesheet" />   
-<script type="text/javascript" src="<?=base_url()?>public/menu/menu.js"></script>
+<!--<link type="text/css" href="<?=base_url()?>public/menu_red/menu.css" rel="stylesheet" />   
+<script type="text/javascript" src="<?=base_url()?>public/menu_red/menu.js"></script> -->
 <style type="text/css">
  div#menu {
     margin:33px auto;
