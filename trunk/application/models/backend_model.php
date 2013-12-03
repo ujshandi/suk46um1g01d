@@ -369,34 +369,37 @@ class backend_model extends CI_Model
 								
 							
 							$menu.='<li><a href="'.base_url().'berita">';
-								$menu.='<img src="'.$this->setBg("10","0",$id).'" align="left"/>Berita';
+								$menu.='<img src="'.$this->setBg("7","0",$id).'" align="left"/>Berita';
 							$menu.='</a></li>';
 							$menu.='<li><a href="'.base_url().'pengumuman">';
-								$menu.='<img src="'.$this->setBg("11","0",$id).'" align="left"/>Pengumuman';
+								$menu.='<img src="'.$this->setBg("8","0",$id).'" align="left"/>Pengumuman';
 							$menu.='</a></li>';
 						/* 	$menu.='<li><a href="'.base_url().'polling">';
 								$menu.='<img src="'.$this->setBg("12","0",$id).'" align="left"/>Polling';
 							$menu.='</a></li>'; */
 							$menu.='<li><a href="'.base_url().'agenda/data">';
-								$menu.='<img src="'.$this->setBg("13","0",$id).'" align="left"/>Agenda';
+								$menu.='<img src="'.$this->setBg("9","0",$id).'" align="left"/>Agenda';
 							$menu.='</a></li>';
 							$menu.='<li><a href="'.base_url().'galeri/daftar_galeri">';
-								$menu.='<img src="'.$this->setBg("14","0",$id).'" align="left" />Galeri Foto';
+								$menu.='<img src="'.$this->setBg("10","0",$id).'" align="left" />Galeri Foto';
 							$menu.='</a></li>';
 							$menu.='<li><a href="'.base_url().'pesan">';
-								$menu.='<img src="'.$this->setBg("15","0",$id).'" align="left" />Pesan Pengunjung';
+								$menu.='<img src="'.$this->setBg("11","0",$id).'" align="left" />Pesan Pengunjung';
 							$menu.='</a></li>';
 							$menu.='<li><a href="'.base_url().'faq">';
-								$menu.='<img src="'.$this->setBg("16","0",$id).'" align="left" />FAQ';
+								$menu.='<img src="'.$this->setBg("12","0",$id).'" align="left" />FAQ';
 							$menu.='</a></li>';
 							$menu.='<li><a href="'.base_url().'download/data">';
-								$menu.='<img src="'.$this->setBg("17","0",$id).'" align="left" />Download';
+								$menu.='<img src="'.$this->setBg("13","0",$id).'" align="left" />Download';
 							$menu.='</a></li>';
 							$menu.='<li><a href="'.base_url().'user">';
-								$menu.='<img src="'.$this->setBg("18","0",$id).'" align="left" />User';
+								$menu.='<img src="'.$this->setBg("14","0",$id).'" align="left" />User';
+							$menu.='</a></li>';
+							$menu.='<li><a href="'.base_url().'setting">';
+								$menu.='<img src="'.$this->setBg("15","0",$id).'" align="left" />Setting';
 							$menu.='</a></li>';
 							$menu.='<li class="last"><a href="'.base_url().'forum/publik">';
-								$menu.='<img src="'.$this->setBg("19","0",$id).'" align="left" />Forum';
+								$menu.='<img src="'.$this->setBg("16","0",$id).'" align="left" />Forum';
 							$menu.='</a></li>';
 						$menu.='</ul>';
 					$menu.='</div>';

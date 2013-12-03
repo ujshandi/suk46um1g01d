@@ -57,7 +57,7 @@ class pesan extends CI_Controller {
 		$data['pagination'] = $this->pagination->create_links();
 		$data['headmenu']	= $this->backend_model->headermenu();		
 		$data['fields']	= $this->pesan_model->get_list_data($this->limit,$offset);
-		$data['mainmenu']	= $this->backend_model->mainmenu("15");
+		$data['mainmenu']	= $this->backend_model->mainmenu("11");
 		$this->load->view('pesan/pesan_data',$data);
 	}
 
@@ -71,7 +71,7 @@ class pesan extends CI_Controller {
 					'css'=>array()
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu('15');
+		$data['mainmenu']	= $this->backend_model->mainmenu('11');
 		
 		$field		= $this->db->query("SELECT * FROM pesan p, pesan_tanggapi t,sistem_user s,
 level_user l WHERE p.id_pesan = t.id_pesan AND t.oleh = s.id_user AND s.id_level = l.id_level AND p.id_pesan = $id");
@@ -177,7 +177,7 @@ level_user l WHERE p.id_pesan = t.id_pesan AND t.oleh = s.id_user AND s.id_level
 		$datestring = "%d-%M-%Y | %h:%i %a";
 		$time = time();
 		$data['tgl'] = mdate($datestring, $time);
-		$data['mainmenu']	= $this->backend_model->mainmenu('15');
+		$data['mainmenu']	= $this->backend_model->mainmenu('11');
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$aw= $this->input->post('idm');
 		$field		= $this->db->query("SELECT * FROM pesan WHERE id_pesan = $aw")->result();
@@ -205,7 +205,7 @@ level_user l WHERE p.id_pesan = t.id_pesan AND t.oleh = s.id_user AND s.id_level
 		$datestring = "%d-%M-%Y | %h:%i %a";
 		$time = time();
 		$data['tgl'] = mdate($datestring, $time);
-		$data['mainmenu']	= $this->backend_model->mainmenu('15');
+		$data['mainmenu']	= $this->backend_model->mainmenu('11');
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$aw= $this->input->post('idm');
 		$field		= $this->db->query("SELECT * FROM pesan p, pesan_tanggapi t,sistem_user s,

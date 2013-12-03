@@ -117,7 +117,7 @@
 
 				<?=$statistik?>
 
-				<!-- <?=$testimonial?> -->
+				<!-- <?='';//$testimonial?> -->
                 
           </div><div class="clear"></div>
 

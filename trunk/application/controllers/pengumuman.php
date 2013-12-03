@@ -43,7 +43,7 @@ class pengumuman extends CI_Controller {
 		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['pengumuman']	= $this->pengumumanmodel->get_All($this->limit,$offset);
-		$data['mainmenu']	= $this->backend_model->mainmenu("11");
+		$data['mainmenu']	= $this->backend_model->mainmenu("8");
 		
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','pengumuman/pengumuman_data',$data);
@@ -57,7 +57,7 @@ class pengumuman extends CI_Controller {
 		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['pengumuman']	= $this->pengumumanmodel->search("deskripsi","judul",$key)->result();
-		$data['mainmenu']	= $this->backend_model->mainmenu("11");
+		$data['mainmenu']	= $this->backend_model->mainmenu("8");
 		$this->load->view('pengumuman/pengumuman_data',$data);
 	} 
 	function detail($id)
@@ -85,7 +85,7 @@ class pengumuman extends CI_Controller {
 					'css'=>array('media/jquery/ui.css')
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("11");
+		$data['mainmenu']	= $this->backend_model->mainmenu("8");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
 		$pengumuman->id_pengumuman="";
 		$pengumuman->judul="";		
@@ -127,7 +127,7 @@ class pengumuman extends CI_Controller {
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['pengumuman']	= $this->pengumumanmodel->getbyid($id);
-		$data['mainmenu']	= $this->backend_model->mainmenu("11");
+		$data['mainmenu']	= $this->backend_model->mainmenu("8");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','pengumuman/pengumuman_rec',$data);

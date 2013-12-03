@@ -43,7 +43,7 @@ class download extends CI_Controller {
 		$data['include']	= $this->temp_model->includeFile();
 		$data['header']		= $this->temp_model->headerMenu('0');
 		$data['sliderTop']	= $this->temp_model->sliderTop();
-		$data['mainmenu']	= $this->temp_model->mainmenu("14");
+		$data['mainmenu']	= $this->temp_model->mainmenu("13");
 		$data['pengumuman']	= $this->temp_model->pengumuman();
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
@@ -72,7 +72,7 @@ class download extends CI_Controller {
 		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['download']	= $this->downloadmodel->get_All($this->limit,$offset);
-		$data['mainmenu']	= $this->backend_model->mainmenu("17");
+		$data['mainmenu']	= $this->backend_model->mainmenu("13");
 		//$this->load->view('download/download_data',$data);
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','download/download_data',$data);
@@ -85,7 +85,7 @@ class download extends CI_Controller {
 		$data['include']	= $this->temp_model->includeFile();
 		$data['header']		= $this->temp_model->headerMenu('0');
 		$data['sliderTop']	= $this->temp_model->sliderTop();
-		$data['mainmenu']	= $this->temp_model->mainmenu("14");
+		$data['mainmenu']	= $this->temp_model->mainmenu("13");
 		$data['pengumuman']	= $this->temp_model->pengumuman();
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
@@ -100,7 +100,7 @@ class download extends CI_Controller {
 		$key	= $this->input->post('search');
 		$data['download']	= $this->downloadmodel->search("deskripsi",$key)->result();
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("17");
+		$data['mainmenu']	= $this->backend_model->mainmenu("13");
 		$this->load->view('download/download_data',$data);
 	}
 	function add()
@@ -114,7 +114,7 @@ class download extends CI_Controller {
 					'css'=>array()
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("17");
+		$data['mainmenu']	= $this->backend_model->mainmenu("13");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','download/download_add',$data);
@@ -158,7 +158,7 @@ class download extends CI_Controller {
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['download']	= $this->downloadmodel->getbyid($id)->result();
-		$data['mainmenu']	= $this->backend_model->mainmenu("17");
+		$data['mainmenu']	= $this->backend_model->mainmenu("13");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','download/download_edit',$data);

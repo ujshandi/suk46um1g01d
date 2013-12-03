@@ -41,7 +41,7 @@ class agenda extends CI_Controller {
 		$data['include']	= $this->temp_model->includeFile();
 		$data['header']		= $this->temp_model->headerMenu('0');
 		$data['sliderTop']	= $this->temp_model->sliderTop();
-		$data['mainmenu']	= $this->temp_model->mainmenu("8");
+		$data['mainmenu']	= $this->temp_model->mainmenu("9");
 		$data['pengumuman']	= $this->temp_model->pengumuman();
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
@@ -75,7 +75,7 @@ class agenda extends CI_Controller {
 		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['agenda']		= $this->agendamodel->get_All($this->limit,$offset);
-		$data['mainmenu']	= $this->backend_model->mainmenu("13");
+		$data['mainmenu']	= $this->backend_model->mainmenu("9");
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','agenda/agenda_data',$data);
 		$this->template->render();
@@ -88,7 +88,7 @@ class agenda extends CI_Controller {
 		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['agenda']		= $this->agendamodel->search("kegiatan",$key)->result();
-		$data['mainmenu']	= $this->backend_model->mainmenu("13");
+		$data['mainmenu']	= $this->backend_model->mainmenu("9");
 		$this->load->view('agenda/agenda_data',$data);
 	}
 	function add()
@@ -103,7 +103,7 @@ class agenda extends CI_Controller {
 					'css'=>array('media/jquery/ui.css')
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("13");
+		$data['mainmenu']	= $this->backend_model->mainmenu("9");
 		$agenda->kegiatan = '';
 		$agenda->id_agenda = '';
 		$agenda->tgl = '';
@@ -140,7 +140,7 @@ class agenda extends CI_Controller {
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['agenda']		= $this->agendamodel->getbyid($id);
-		$data['mainmenu']	= $this->backend_model->mainmenu("13");
+		$data['mainmenu']	= $this->backend_model->mainmenu("9");
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','agenda/agenda_rec',$data);
 		$this->template->render();
