@@ -81,9 +81,9 @@ class Berita extends CI_Controller {
 		$this->template->write_view('wrapper','berita/berita_detail',$data);
 		$this->template->render();
 	}
-	function arsip($offset=0)
+	function arsip($kategori="",$offset=0)
 	{
-		$uri_segment = 3;
+		$uri_segment = 4;
 			$data = array(
 					
 					'title_page'=>'Arsip Berita',
@@ -94,14 +94,14 @@ class Berita extends CI_Controller {
 				);
 		$offset = $this->uri->segment($uri_segment);
 		$this->load->library('pagination');
-		$config['base_url'] = site_url('Berita/arsip/');
-		$config['total_rows'] = $this->Berita_model->count_data2();
+		$config['base_url'] = site_url('berita/arsip/'.$kategori.'/'.$offset);
+		$config['total_rows'] = $this->Berita_model->count_data2($kategori);
 		$config['per_page'] = $this->limit;
 		$this->pagination->initialize($config);
 		$data['pagination'] = $this->pagination->create_links();
 		$data['offset']=$offset;
-		
-		$data['data']		= $this->Berita_model->getAll2($this->limit,$offset);
+	
+		$data['data']		= $this->Berita_model->getAll2($this->limit,$offset,$kategori);
 		$data['include']	= $this->temp_model->includeFile();
 		$data['header']		= $this->temp_model->headerMenu('0');
 		$data['sliderTop']	= $this->temp_model->sliderTop();
@@ -186,7 +186,7 @@ class Berita extends CI_Controller {
 		$video		= $this->input->post('video');
 		$kategori		= $this->input->post('cmbKategori');
 		$klasifikasi		= $this->input->post('cmbKlasifikasi');
-		$status		= $this->input->post('publish');
+		$status		= $this->input->post('status');
 		
 		//$upload=$this->upload->do_upload();
 	//	var_dump($this->upload->display_errors());die;

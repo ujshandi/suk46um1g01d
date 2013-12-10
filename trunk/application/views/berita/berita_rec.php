@@ -74,7 +74,7 @@
 				<br /><br />
 				
 			<label>Kategori</label>
-			<select name="cmbKategory">
+			<select name="cmbKategori">
 				<option value="sukabumi" <?=(($berita->kategori=="sukabumi")?"selected=\"selected\"":"")?>>Sukabumi</option>
 				<option value="nasional" <?=(($berita->kategori=="nasional")?"selected=\"selected\"":"")?>>Nasional</option>
 				<option value="internasional" <?=(($berita->kategori=="internasional")?"selected=\"selected\"":"")?>>Internasional</option>
@@ -110,8 +110,14 @@
 			
 			<br /> <br />
 			<label>Publish</label>
-			<input type="radio" name="publish"  value="publish" <?=""; //($record['publish']=='yes'?'checked':'');?> />Yes
-			<input type="radio" name="publish" value="pending"  <?="";//($record['publish']=='no'?'checked':'');?>/> No
+			<?
+				
+				echo '<input type="radio" name="status"  value="publish" id="status1" '.($berita->status=='publish'?'checked="checked"':'').' />Yes';
+				echo '<input type="radio" name="status" value="pending"  id="status2" '.($berita->status=='pending'?'checked="checked"':'').'/> No';
+				
+			?>
+			
+			
 			<div class="boxBtn">
 				<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
 				<a href="<?=base_url()?>berita" class="button"><span class="cancel"></span>Batal</a>

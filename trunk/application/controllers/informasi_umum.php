@@ -130,6 +130,14 @@ class Informasi_umum extends CI_Controller {
 		$data['title_page']	= 'SMA/MA';			
 		$this->loadTemplateFront($data);		
 	}
+	
+	function smk()
+	{	$data = $this->loadDataFront();		
+		$data['informasi_umum']	= $this->informasimodel->get_by_kategori('smk');	
+		$data['title_page']	= 'SMK';			
+		$this->loadTemplateFront($data);		
+	}
+	
 	function pt()
 	{	$data = $this->loadDataFront();		
 		$data['informasi_umum']	= $this->informasimodel->get_by_kategori('pt');	
@@ -160,6 +168,13 @@ class Informasi_umum extends CI_Controller {
 		$data['title_page']	= 'Puskesmas';			
 		$this->loadTemplateFront($data);		
 	}
+	function apotek()
+	{	$data = $this->loadDataFront();		
+		$data['informasi_umum']	= $this->informasimodel->get_by_kategori('apotek');	
+		$data['title_page']	= 'Apotek';			
+		$this->loadTemplateFront($data);		
+	}
+	
 	function klinik()
 	{	$data = $this->loadDataFront();		
 		$data['informasi_umum']	= $this->informasimodel->get_by_kategori('klinik');	
