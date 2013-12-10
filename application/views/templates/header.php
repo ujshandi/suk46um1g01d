@@ -222,9 +222,9 @@ echo strftime("%A, %d %B %Y") ;
 		        <li><a href="#"><span>Berita</span></a>
 					<div>
 						<ul>
-							<li><a href="#"><span>Kota Sukabumi</span></a></li>
-							<li><a href="#"><span>Nasional</span></a></li>
-							<li><a href="#"><span>Internasional</span></a></li>
+							<li><a href="<?=base_url()?>berita/arsip/sukabumi"><span>Kota Sukabumi</span></a></li>
+							<li><a href="<?=base_url()?>berita/arsip/nasional"><span>Nasional</span></a></li>
+							<li><a href="<?=base_url()?>berita/arsip/internasional"><span>Internasional</span></a></li>
 						</ul>
 					</div>
 				</li>

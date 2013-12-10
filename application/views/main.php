@@ -40,10 +40,10 @@
 <!-- Start beritaFoto -->
 	<div style="height:200px;">
 		<h1 class="titlebig">Berita Foto 
-			<div style="float:right;">
+			<!--div style="float:right;">
 				<a href="#" style="color:#fff;">Prev</a>
 				<a href="#" style="color:#fff;">Next</a>
-			</div>
+			</div-->
 		</h1>
 		<!-- Start photoslider-bullets -->
 		<div class="sliderkit photoslider-bullets" style="/* border:1px solid #ff0000; */width:100%;height:100%;">
