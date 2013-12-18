@@ -80,9 +80,9 @@ class Berita_model extends CI_Model
 		return $query->result();
   	}
 	
-	function getBeritaBaru() 
+	function getBeritaBaru($klasifikasi="teks") 
   	{
-  		$query = $this->db->query("SELECT * FROM berita WHERE status = 'publish' ORDER BY id_berita DESC LIMIT 8");
+  		$query = $this->db->query("SELECT * FROM berita WHERE status = 'publish' and klasifikasi='$klasifikasi' ORDER BY id_berita DESC LIMIT 8");
 		return $query->result();
   	}
 	function get_by_id($id){

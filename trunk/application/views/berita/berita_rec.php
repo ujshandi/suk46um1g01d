@@ -64,14 +64,13 @@
 	<div class="boxbigcontent">
 		<div class="boxess">
 		<?= validation_errors(); ?>
-		<form method="post" action="<?= base_url() ?>berita/saveData" id="frmcontact2" enctype="multipart/form-data">
-			
+		<form method="post" action="<?= base_url() ?>berita/saveData" id="frmcontact2" enctype="multipart/form-data">			
 			<input type="hidden" name="author" value="<?=$this->session->userdata('userid')?>" />
-			<input type="hidden" name="id" value="<?=$berita->id_berita?>" />
-			
+			<input type="hidden" name="id" value="<?=$berita->id_berita?>" />			
 			<label>Judul Berita</label>
-			<input type="text" name="txtjudul" class="textboxcontact" id="f1" size="83" value="<?=$berita->judul_berita?>" /> <span class="mand">*</span>
-				<br /><br />
+			<input type="text" name="txtjudul" class="textboxcontact" id="f1" size="80" value="<?=$berita->judul_berita?>" /> <span class="mand">*</span>
+				<br />
+				<br />
 				
 			<label>Kategori</label>
 			<select name="cmbKategori">
@@ -81,17 +80,25 @@
 			</select >
 				<br />
 				<br />
+				
 			<label>Deskripsi Singkat</label>
-			<textarea name="deskripsi" cols="80" id="f2"><?=$berita->deskripsi_singkat?></textarea> <span class="mand">*</span><br /><br />
+			<textarea name="deskripsi" cols="78" id="f2"><?=$berita->deskripsi_singkat?></textarea> <span class="mand">*</span>
+				<br />
+				<br />
 			<label>Author</label>
-			<input type="text" name="txtauthor" class="textboxcontact" value="<?=$berita->author?>" id="f1" size="50" /> <br /><br />
+			<input type="text" name="txtauthor" class="textboxcontact" value="<?=$berita->author?>" id="f1" size="50" />
+				<br />
+				<br />
 			
 			<label>Klasifikasi</label>
-				<select name="cmbKlasifikasi" id="cmbKlasifikasi">
+			<select name="cmbKlasifikasi" id="cmbKlasifikasi">
 				<option value="teks" <?=(($berita->klasifikasi=="teks")?"selected=\"selected\"":"")?>>Teks</option>
 				<option value="gambar" <?=(($berita->klasifikasi=="gambar")?"selected=\"selected\"":"")?>>Gambar</option>
 				<option value="video"<?=(($berita->klasifikasi=="video")?"selected=\"selected\"":"")?>>Video</option>
-			</select ><br /><br />
+			</select>
+				<br />
+				<br />
+			
 			<div id="klasifikasi_teks" style="<?=(($berita->klasifikasi=="teks")?"":"display:none")?>">
 				<label>Isi Berita</label>
 				<div class="ckWow2">
@@ -99,24 +106,24 @@
 					<?php echo display_ckeditor($ckeditor); ?>
 				</div>
 			</div>
+			
 			<div id="klasifikasi_gambar" style="<?=(($berita->klasifikasi=="gambar")?"":"display:none")?>">
 				<label>Upload Gambar</label>
 				<input type="text" name="gambar" id="gambar" onclick="openKCFinder_singleFile(this,'/images/berita','images')" size="20" class="textboxcontact" />
 			</div>
+			
 			<div id="klasifikasi_video" style="<?=(($berita->klasifikasi=="video")?"":"display:none")?>">
 				<label>Upload Video</label>
-					<input type="text" name="video" id="video" onclick="openKCFinder_singleFile(this,'/images/berita','video')" size="20" class="textboxcontact" />
+				<input type="text" name="video" id="video" onclick="openKCFinder_singleFile(this,'/images/berita','video')" size="20" class="textboxcontact" />
 			</div>
+				<br />
+				<br />
 			
-			<br /> <br />
 			<label>Publish</label>
-			<?
-				
+			<?				
 				echo '<input type="radio" name="status"  value="publish" id="status1" '.($berita->status=='publish'?'checked="checked"':'').' />Yes';
-				echo '<input type="radio" name="status" value="pending"  id="status2" '.($berita->status=='pending'?'checked="checked"':'').'/> No';
-				
+				echo '&nbsp;&nbsp;&nbsp;<input type="radio" name="status" value="pending"  id="status2" '.($berita->status=='pending'?'checked="checked"':'').'/> No';
 			?>
-			
 			
 			<div class="boxBtn">
 				<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>

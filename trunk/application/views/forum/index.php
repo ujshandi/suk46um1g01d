@@ -1,42 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-
 <head>
-
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 	<title><?=COMPANY_NAME?></title>
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>style/styles.css" />
 	<?=$include?>
-
 <body>
-
 <div id="container">
-
-
-
 	<?=$header?>
-<br />
-
-		  
-
-		<div id="content">
-			
-            
-                    
-			<div id="maincontent">
-
-				                
-<div class="boxbig">
-
-					
-					<h1 class="titlebig">Kategori Forum &nbsp;(<?= $jumlah ?>)</h1>
-				                  
-					<div class="boxbigcontent">
-					
+<br /><div id="content">
+	<div id="maincontent">
+		<div class="boxbig">				
+					<h1 class="titlebig">Kategori Forum &nbsp;(<?= $jumlah ?>)</h1>				                 
+					<div class="boxbigcontent">					
 					<?php foreach($fields as $row): ?>
-
 				<div class="blog_entry">
             	
                 <!-- inside -->
@@ -100,7 +77,6 @@
 			
 
 			<div id="nav">
-
 				<?php
 					$userid	= $this->session->userdata('userid');
 					if($userid=="")

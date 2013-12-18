@@ -20,7 +20,18 @@ class main extends CI_Controller {
 	}
 	public function index()
 	{
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
+		
 		$data['berita']		= $this->berita_model->getBeritaBaru();
+		$data['beritafoto']		= $this->berita_model->getBeritaBaru("gambar");
+		$data['beritavideo']		= $this->berita_model->getBeritaBaru("video");
 		$data['agenda']		= $this->agendamodel->get_All();
 		$data['layanan']		= $this->layananmodel->get_All2(1);
 		//$data['program']	= $this->programkerjamodel->getProgramBaru();

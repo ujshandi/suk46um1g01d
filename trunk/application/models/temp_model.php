@@ -27,7 +27,7 @@ class temp_model extends CI_Model
 		$data.='<script src="'.base_url().'public/js/ui_tabs.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/lightbox.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/login.js" type="text/javascript"></script>';
-		$data.='<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
+		//$data.='<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
 		
 			//news sticker
 			//$data.='<script src="'.base_url().'public/js/gistfile1.js" type="text/javascript"></script>';
@@ -95,84 +95,22 @@ class temp_model extends CI_Model
 		$data.='<script type="text/javascript" src="'.base_url().'public/jquery.sliderkit.1.9.2/lib/js/sliderkit/addons/sliderkit.delaycaptions.1.1.pack.js"></script>';
 		
 		$data.='<!-- Slider Kit launch -->';
+		
 		$data.='<script type="text/javascript">';
-		$data.='$(window).load(function(){ 
-				$("#js-news").ticker({titleText:"Agenda",controls:false});
-				//$(window).load() must be used instead of $(document).ready() because of Webkit compatibility		
-				// News slider > Vertical
-				$(".newslider-vertical").sliderkit({
-					shownavitems:5,
-					verticalnav:true,
-					navitemshover:true,
-					circular:true
-				});
-				
-				// News slider > Horizontal
-				$(".newslider-horizontal").sliderkit({
-					auto:false,
-					shownavitems:5,
-					panelfx:"sliding",
-					panelfxspeed:1000,
-					panelfxeasing:"easeInOutExpo", //"easeOutExpo", "easeOutCirc", etc.
-					mousewheel:true,
-					keyboard:true,
-					fastchange:false
-				});
-				
-				// News slider > Minimal
-				$(".newslider-minimal").sliderkit({
-					auto:true,
-					circular:true,
-					shownavitems:1,
-					panelfx:"sliding",
-					panelfxspeed:400,
-					panelfxeasing:"easeOutCirc",
-					mousewheel:false,
-					verticalnav:true,
-					verticalslide:true
-				});
-				
-					//pengumuman
-				$(".photoslider-mini2").sliderkit({
-					auto:true,
-					autospeed:3000,
-					panelbtnshover:true,
-					circular:true,
-					fastchange:false
-				});
-				
-				//slideshow
-				$(".transition-demo01").sliderkit({
-					auto:1,
-					autostill:true,
-					timer:true,
-					circular:true,
-					panelfx:"fancy",
-					/* delaycaptions:{
-						delay:00,
-						position:"bottom",
-						transition:"fading",//sliding
-						duration:150
-					//	easing:"easeOutExpo"
-					}, */
-					imagefx:{
-						fxType: "random", // curtain, zipper, wave, fountain, random
-						fxDelay: 150, // delay between strips in ms
-						fxDuration: 800 // delay between strips in ms
-					},
-					debug:1
-					
-				});
-				
-				//link terkait
-				 $("#divLinkTerkait").akordeon();
-	
-			});	
+		$data.="var themes_active = '".$themes->sys_value."';";
+		$data.='  			
+			$("#divLinkTerkait").akordeon();
 		</script>';
 
 		$data.='<!-- Slider Kit styles -->';
 		$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-core.css" media="screen, projection" />';
-		$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-demos.css" media="screen, projection" />';
+
+		switch ($themes->sys_value) {
+			case 'red' : $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-demos-red.css" media="screen, projection" />'; break;
+			case 'green' : $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-demos-green.css" media="screen, projection" />'; break;
+			case 'gray' : $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-demos-gray.css" media="screen, projection" />'; break;
+			default : $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-demos.css" media="screen, projection" />';
+		}
 		
 		$data.='<!-- Slider Kit compatibility -->	';
 		$data.='<!--[if IE 6]><link rel="stylesheet" type="text/css" href="'.base_url().'public/jquery.sliderkit.1.9.2/lib/css/sliderkit-demos-ie6.css" /><![endif]-->';
@@ -186,8 +124,8 @@ class temp_model extends CI_Model
 		
 		
 		//-- google analitycs --
-		$data.='<script type="text/javascript">';
-  		$data.="var themes_active = '".$themes->sys_value."';";
+		/* $data.='<script type="text/javascript">';
+  	
   		$data.="var _gaq = _gaq || [];";
   		$data.="_gaq.push(['_setAccount', 'UA-23630325-1']);";
   		$data.="_gaq.push(['_trackPageview']);";
@@ -197,7 +135,7 @@ class temp_model extends CI_Model
     	$data.="var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);";
   		$data.="})();";
 		$data.="</script>";
-		
+		 */
 		
 		
 		//rss google news
