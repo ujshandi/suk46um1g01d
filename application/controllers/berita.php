@@ -165,6 +165,7 @@ class Berita extends CI_Controller {
 		$berita->judul_berita="";
 		$berita->deskripsi_singkat="";
 		$berita->isi="";
+		$berita->status="";
 		$berita->author="";
 		$berita->klasifikasi="teks";
 		$berita->kategori="sukabumi";

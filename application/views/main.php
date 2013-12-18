@@ -14,7 +14,8 @@
 			<?php foreach($berita as $b){ ?>
 			<div class="sliderkit-panel">
 				<div class="sliderkit-news">
-					<a href="#" title="[Titre de l'article]"><img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/small/sample-03.jpg" alt="[alternative text]" /></a>
+				 <!--<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/small/sample-03.jpg" alt="[alternative text]" /> -->
+					<a href="#" title="<?=$b->judul_berita?>"></a>
 					<h3><a href="#"><?=$b->judul_berita?></a></h3>
 					<?=$b->tanggal?>
 					<p style="width:278px;"><?=$b->deskripsi_singkat?></p>
@@ -48,32 +49,20 @@
 		<!-- Start photoslider-bullets -->
 		<div class="sliderkit photoslider-bullets" style="/* border:1px solid #ff0000; */width:100%;height:100%;">
 			<div class="sliderkit-nav">
-				<div class="sliderkit-nav-clip">
+				<div class="sliderkit-nav-clip">					
 					<ul>
-						<li><a href="#" title="Photo sample 01"></a></li>
-						<li><a href="#" title="Photo sample 02"></a></li>
-						<li><a href="#" title="Photo sample 03"></a></li>
-						<li><a href="#" title="Photo sample 04"></a></li>
-						<li><a href="#" title="Photo sample 05"></a></li>
+						<?php foreach($beritafoto as $b){ ?>
+						<li><a href="#" title="<?=$b->judul_berita?>"></a></li>						
+						<?}?>
 					</ul>
 				</div>
 			</div>
 			<div class="sliderkit-panels">
+					<?php foreach($beritafoto as $b){ ?>
 				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/images/img_1.jpg" alt="[Alternative text]" />
+					<img src="<?=$b->gambar?>" alt="[Alternative text]" />
 				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/images/img_2.jpg" alt="[Alternative text]" />
-				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/images/img_gal.jpg" alt="[Alternative text]" />
-				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/images/slide_1.jpg" alt="[Alternative text]" />
-				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/images/img_1.jpg" alt="[Alternative text]" />
-				</div>
+				<?}?>
 			</div>
 		</div>		
 	</div>
@@ -129,8 +118,79 @@
 
 
 <script type="text/javascript">
-// Photo slider > Bullets nav
-				$(".photoslider-bullets").sliderkit({
+
+$(window).load(function(){ 
+				$("#js-news").ticker({titleText:"Agenda",controls:false});
+				//$(window).load() must be used instead of $(document).ready() because of Webkit compatibility		
+				// News slider > Vertical
+				$(".newslider-vertical").sliderkit({
+					shownavitems:5,
+					verticalnav:true,
+					navitemshover:true,
+					circular:true
+				});
+				
+				// News slider > Horizontal
+				$(".newslider-horizontal").sliderkit({
+					auto:false,
+					shownavitems:5,
+					panelfx:"sliding",
+					panelfxspeed:1000,
+					panelfxeasing:"easeInOutExpo", //"easeOutExpo", "easeOutCirc", etc.
+					mousewheel:true,
+					keyboard:true,
+					fastchange:false
+				});
+				
+				// News slider > Minimal
+				$(".newslider-minimal").sliderkit({
+					auto:true,
+					circular:true,
+					shownavitems:1,
+					panelfx:"sliding",
+					panelfxspeed:400,
+					panelfxeasing:"easeOutCirc",
+					mousewheel:false,
+					verticalnav:true,
+					verticalslide:true
+				});
+				
+					//pengumuman
+				$(".photoslider-mini2").sliderkit({
+					auto:true,
+					autospeed:3000,
+					panelbtnshover:true,
+					circular:true,
+					fastchange:false
+				});
+				
+				//slideshow
+				$(".transition-demo01").sliderkit({
+					auto:1,
+					autostill:true,
+					timer:true,
+					circular:true,
+					panelfx:"fancy",
+					/* delaycaptions:{
+						delay:00,
+						position:"bottom",
+						transition:"fading",//sliding
+						duration:150
+					//	easing:"easeOutExpo"
+					}, */
+					imagefx:{
+						fxType: "random", // curtain, zipper, wave, fountain, random
+						fxDelay: 150, // delay between strips in ms
+						fxDuration: 800 // delay between strips in ms
+					},
+					debug:1
+					
+				});
+				
+				//link terkait
+				
+				 
+				 $(".photoslider-bullets").sliderkit({
 					auto:false,
 					circular:true,
 					mousewheel:true,
@@ -139,4 +199,8 @@
 					panelfxspeed:1000,
 					panelfxeasing:"easeOutExpo" // "easeOutExpo", "easeInOutExpo", etc.
 				});
+	
+			});	
+// Photo slider > Bullets nav
+				
 </script>

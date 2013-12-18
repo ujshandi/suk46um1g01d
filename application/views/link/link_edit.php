@@ -64,11 +64,11 @@
 						<label>Singkatan</label>
 						<?php foreach($link as $dat): ?>
 						<input type="hidden" name="id" value="<?=$dat->id_link?>" />
-						<input type="text" name="singkatan" id="f1" class="textboxcontact" size="50" value="<?=$dat->singkatan?>" /> <span>*</span><br />
+						<input type="text" name="singkatan" id="f1" class="textboxcontact" size="50" value="<?=$dat->singkatan?>" /> <span class="mand">*</span><br />
 						<label>Deskripsi</label>
-						<input type="text" name="deskripsi" id="f2" class="textboxcontact" size="80" value="<?=$dat->deskripsi?>" /> <span>*</span><br />
+						<input type="text" name="deskripsi" id="f2" class="textboxcontact" size="78" value="<?=$dat->deskripsi?>" /> <span class="mand">*</span><br />
 						<label>URL</label>
-						<input type="text" name="url" id="f3" class="textboxcontact" size="80" value="<?=$dat->url?>" /> <span>*</span><br />
+						<input type="text" name="url" id="f3" class="textboxcontact" size="80" value="<?=$dat->url?>" /> <span class="mand">*</span><br />
 						<label></label> <i>http://www.example.com</i><br />
 						<?php endforeach; ?>
 						<div align="right">

@@ -21,7 +21,8 @@ CKEDITOR.editorConfig = function( config ) {
 		'/',
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
 		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-		{ name: 'styles' },
+//		{ name: 'justify', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+		{ name: 'styles',groups:['justify'] },
 		{ name: 'colors' },
 		{ name: 'about' }
 	];
@@ -43,4 +44,10 @@ CKEDITOR.editorConfig = function( config ) {
 	config.filebrowserUploadUrl = '../plugins/kcfinder-2.51/upload.php?type=files';
 	config.filebrowserImageUploadUrl = '../plugins/kcfinder-2.51/upload.php?type=images';
 	config.filebrowserFlashUploadUrl = '../plugins/kcfinder-2.51/upload.php?type=flash';
+	
+	
 };
+
+
+CKEDITOR.config.extraPlugins = 'justify';
+CKEDITOR.config.extraPlugins = 'tabletools';
