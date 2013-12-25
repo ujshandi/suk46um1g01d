@@ -51,34 +51,30 @@
 		<div id="content">
 			<div id="maincontent">
 				<div class="boxbig">
-				<h1 class="titlebig">Edit Daftar Galeri</h1>
+					<h1 class="titlebig">Edit Daftar Galeri</h1>
 					<div class="boxbigcontent">
-					<?php foreach($galeri as $row): ?>
-					<form method="post" action="<?=base_url()?>galeri/simpandaftaredit"  id="frmcontact" enctype="multipart/form-data">
-					<input type="hidden" name="id" value="<?=$row->id_galeri?>" />
-					<input type="hidden" name="namafile" value="<?php echo "$row->img_thubnail"; ?>" />
-					<div>
-						<label style="margin-left:-15px;">Nama</label>
-						<input type="text" name="nama" id="f1" class="textboxcontact" size="70" value="<?=$row->nama_galeri?>" /> <span>*</span><br />
-						<label style="margin-left:-15px;">Ganti Gambar</label>
-						<input type="file" name="gambar" id="f3" class="textboxcontact" />
-						<br /><br />
-						<div align="right">
-                        <a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
-						<a href="<?=base_url()?>galeri/daftar_galeri" class="button"><span class="cancel"></span>Batal</a>
-						
-						</div>
-					</div>
-					</form>
+						<?php foreach($galeri as $row): ?>
+						<form method="post" action="<?=base_url()?>galeri/simpandaftaredit"  id="frmcontact" enctype="multipart/form-data">
+							<input type="hidden" name="id" value="<?=$row->id_galeri?>" />
+							<input type="hidden" name="namafile" value="<?php echo "$row->img_thubnail"; ?>" />
+							<div>
+								<label style="margin-top:1px; margin-left:-15px;">Nama</label>
+								<input type="text" name="nama" id="f1" class="textboxcontact" size="80" value="<?=$row->nama_galeri?>" /> &nbsp;<span class="mand">*</span><br /><br />
+								<label style="margin-top:1px; margin-left:-15px;">Ganti Gambar</label>
+								<input type="file" name="gambar" id="f3" class="textboxcontact" />
+								<br /><br />
+								<div class="boxBtn">
+									<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
+									<a href="<?=base_url()?>galeri/daftar_galeri" class="button"><span class="cancel"></span>Batal</a>
+								</div>
+							</div>
+						</form>
 					<?php endforeach; ?>
 					</div>
 					<div class="boxbigcontentbottom"></div>
 				</div>
-				
 			</div>
-			
-			<?=$mainmenu?>
-			
+			<?=$mainmenu?>			
 			<div class="clear"></div>
 		</div>
 		<div id="footer">

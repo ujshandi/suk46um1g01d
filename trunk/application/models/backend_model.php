@@ -380,7 +380,8 @@ class backend_model extends CI_Model
 							$menu.='<li><a href="'.base_url().'agenda/data">';
 								$menu.='<img src="'.$this->setBg("9","0",$id).'" align="left"/>Agenda';
 							$menu.='</a></li>';
-							$menu.='<li><a href="'.base_url().'galeri/daftar_galeri">';
+							//$menu.='<li><a href="'.base_url().'galeri/daftar_galeri">';
+							$menu.='<li><a href="'.base_url().'galeri/listGaleri">';
 								$menu.='<img src="'.$this->setBg("10","0",$id).'" align="left" />Galeri Foto';
 							$menu.='</a></li>';
 							$menu.='<li><a href="'.base_url().'pesan">';

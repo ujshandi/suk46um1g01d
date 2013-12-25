@@ -11,6 +11,7 @@ class galeri extends CI_Controller {
 		$this->load->library('pagination');
 		$this->load->model('galerimodel','',TRUE);
 	}
+	
 	function cekLogin()
 	{
 		if($this->session->userdata('userid')=="")
@@ -18,6 +19,7 @@ class galeri extends CI_Controller {
 			redirect('backend');
 		}
 	}
+	
 	function index($offset=0)
 	{
 		$uri_segment = 3;
@@ -145,14 +147,25 @@ class galeri extends CI_Controller {
 		$this->galerimodel->delete($id);
 		redirect('galeri/daftar_galeri','refresh');
 	}
-	function listGaleri($id)
+	function listGaleri($id=null)
 	{
 		$this->cekLogin();
+		$data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array('media/jquery/ui.css')
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['galeri']		= $this->galerimodel->get_All_list($id);
 		$data['namaGaleri']	= $this->galerimodel->getnamaGaleri($id);
 		$data['mainmenu']	= $this->backend_model->mainmenu("10");
-		$this->load->view('galeri/list_galeri',$data);
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','galeri/list_galeri',$data);
+		$this->template->render();
+		//$this->load->view('galeri/list_galeri',$data);
 	}
 	function simpan_img()
 	{
@@ -188,6 +201,7 @@ class galeri extends CI_Controller {
 		$this->galerimodel->deleteList($id);
 		redirect("galeri/listGaleri/$idgaleri",'refresh');
 	}
+	
 	public function do_upload() {
 		//konfigurasi limit file gambar yang diupload
         $config['upload_path']	= "./uploads/galeri";
