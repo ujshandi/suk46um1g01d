@@ -27,7 +27,10 @@ class galeriModel extends CI_Model
 	function get_All_list($id, $offset = 0) 
   	{
 		if($offset==""){ $offset=0; }
-  		$query =$this->db->query("select * from galeri WHERE id_galeri = '$id' ORDER BY id_img ASC");
+  		if ($id!=null)
+			$query =$this->db->query("select * from galeri WHERE id_galeri = '$id' ORDER BY id_img ASC");
+		else
+			$query =$this->db->query("select * from galeri WHERE id_galeri is null ORDER BY id_img ASC");
 		return $query->result();
   	}
 	function getnamaGaleri($id)

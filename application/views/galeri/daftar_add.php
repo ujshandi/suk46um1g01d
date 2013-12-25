@@ -42,8 +42,7 @@
 			alert('Harap Isi Semua Field (*) !!');
 		}
 	}
-	</script>
-	
+	</script>	
 </head>
 <body>
 <div id="container">
@@ -51,30 +50,26 @@
 		<div id="content">
 			<div id="maincontent">
 				<div class="boxbig">
-				<h1 class="titlebig">Tambah Galeri</h1>
+					<h1 class="titlebig">Tambah Galeri</h1>
 					<div class="boxbigcontent">
-					<form method="post" action="<?=base_url()?>galeri/simpan_daftar"  id="frmcontact" enctype="multipart/form-data">
-					<div>
-						<label style="margin-left:-15px;">Nama Galeri</label>
-						<input type="text" name="nama" id="f1" class="textboxcontact" size="70" /> <span>*</span><br />
-						<label style="margin-left:-15px;">Gambar Thumbnail</label>
-						<input type="file" name="gambar" id="f3" class="textboxcontact" />
-						<br /><br />
-						<div class="boxBtn">
-                        <a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
-						<a href="<?=base_url()?>galeri/daftar_galeri" class="button"><span class="cancel"></span>Batal</a>
-						
-						</div>
-					</div>
-					</form>
+						<form method="post" action="<?=base_url()?>galeri/simpan_daftar" id="frmcontact" enctype="multipart/form-data">
+							<div>
+								<label style="margin-top:1px; margin-left:-15px;">Nama Galeri</label>
+								<input type="text" name="nama" id="f1" class="textboxcontact" size="80" /> &nbsp;<span class="mand">*</span><br /><br />
+								<label style="margin-top:1px; margin-left:-15px;">Gambar Thumbnail</label>
+								<input type="file" name="gambar" id="f3" class="textboxcontact" />
+								<br /><br />
+								<div class="boxBtn">
+									<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
+									<a href="<?=base_url()?>galeri/daftar_galeri" class="button"><span class="cancel"></span>Batal</a>
+								</div>
+							</div>
+						</form>
 					</div>
 					<div class="boxbigcontentbottom"></div>
 				</div>
-				
 			</div>
-			
 			<?=$mainmenu?>
-			
 			<div class="clear"></div>
 		</div>
 		<div id="footer">

@@ -18,7 +18,7 @@
 					<a href="#" title="<?=$b->judul_berita?>"></a>
 					<h3><a href="#"><?=$b->judul_berita?></a></h3>
 					<?=$b->tanggal?>
-					<p style="width:278px;"><?=$b->deskripsi_singkat?></p>
+					<p style="width:100%;text-align:justify;"><?=$b->deskripsi_singkat?></p>
 					<a class="sliderkit-news-readmore" href="<?=base_url()?>berita/detail/<?=$b->id_berita?>">Read more</a>
 				</div>
 			</div>
@@ -110,8 +110,11 @@
 	<h1 class="titlebig">Sukabumi's Channel</h1>
 		<div class="sliderkit-panels">
 			<!--<iframe width="647" height="375" frameborder="0" src="http://www.youtube.com/embed/HTJXLFdI0rc"> </iframe> -->
-			<iframe width="647" height="375" frameborder="0" src="http://www.youtube.com/embed?listType=search&list=sukabumi"> </iframe>
-			<!--iframe id="fr" src="http://www.youtube.com/subscribe_widget?p=AgnesMonicaENT" style="overflow: hidden; height: 375px; width: 647px; border: 0;" scrolling="no" frameBorder="0"></iframe-->
+			<!--<iframe width="647" height="375" frameborder="0" src="http://www.youtube.com/embed?listType=playlist&list=PemerintahKotaSukabumi"> </iframe> -->
+			<!-- http://www.youtube.com/embed?listType=search&list=sukabumi--> 
+			
+			<!-- AgnesMonicaENT-->
+			<iframe id="fr" src="http://www.youtube.com/subscribe_widget?p=PemerintahKotaSukabumi" style="overflow: hidden; height: 375px; width: 647px; border: 0;" scrolling="no" frameBorder="0"></iframe>
 		</div>
 	<br />
 <!-- endChanel -->
