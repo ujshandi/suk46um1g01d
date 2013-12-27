@@ -25,21 +25,11 @@
 		<?=$header?>		
 		<div class="sliderkit photoslider-mini transition-demo01" style="margin:0 auto;">									
 			<div class="sliderkit-panels">
+			<?php foreach($slideshow as $b){ ?>
 				<div class="sliderkit-panel">
-					<img style="width:990px;" src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-01.jpg" alt="[Alternative text]" />
+					<img style="width:990px;" src="<?=$b->img?>" alt="<?=$b->deskripsi?>" />
 				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-02.jpg" alt="[Alternative text]" />
-				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-03.jpg" alt="[Alternative text]" />
-				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-04.jpg" alt="[Alternative text]" />
-				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/sample-05.jpg" alt="[Alternative text]" />
-				</div>
+			<?}?>	
 			</div>
 			<div class="sliderkit-timer-wrapper">
 				<div class="sliderkit-timer"></div>

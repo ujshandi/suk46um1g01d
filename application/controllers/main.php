@@ -16,6 +16,7 @@ class main extends CI_Controller {
 		$this->load->model('downloadmodel','',TRUE);
 		$this->load->model('agendamodel','',TRUE);
 		$this->load->model('layananmodel','',TRUE);
+		$this->load->model('galerimodel','',TRUE);
 		$this->load->library('form_validation');
 	}
 	public function index()
@@ -33,6 +34,8 @@ class main extends CI_Controller {
 		$data['beritafoto']		= $this->berita_model->getBeritaBaru("gambar");
 		$data['beritavideo']		= $this->berita_model->getBeritaBaru("video");
 		$data['agenda']		= $this->agendamodel->get_All();
+		$data['slideshow']		= $this->galerimodel->get_All_list(0);
+		//var_dump($data['slideshow']);die;
 		$data['layanan']		= $this->layananmodel->get_All2(1);
 		//$data['program']	= $this->programkerjamodel->getProgramBaru();
 		//$data['belajar']	= $this->belajarmodel->getProgramBaru();
