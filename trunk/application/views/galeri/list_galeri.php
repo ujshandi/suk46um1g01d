@@ -1,8 +1,6 @@
 
 	<script type="text/javascript">
-	bkLib.onDomLoaded(function() {
-		new nicEditor().panelInstance('editor');
-	});
+	
 	$(function() {
 		$("#butslide").click(function(){
 				$("#panellogin").slideToggle("fast");
@@ -54,6 +52,8 @@
 			modal: true, 
 		});
 			$( "#formadd" ).dialog( "open" );
+			$("#f1").val("");
+			$("#gambar").val("");
 		});
 	}
 	function simpan()
@@ -74,7 +74,9 @@
 				<h1 class="titlebig"><?=$namaGaleri?></h1>
 					<div class="boxbigcontent">
 					<a href="javascript:tambah();" class="button" >Tambah</a>
-					<a href="<?=base_url()?>galeri/daftar_galeri" class="button" >Kembali</a>
+					<? if ($idGaleri!="0"){?>
+						<a href="<?=base_url()?>galeri/daftar_galeri" class="button" >Kembali</a>
+					<?}?>	
 					
 					<table class="data">
 					<thead>
@@ -95,7 +97,7 @@
 							</td>
 						</tr>
 						<div id="img<?=$i?>" title="<?=$row->deskripsi?>" style="display:none"> 
-							<img src="<?=base_url()?>uploads/galeri/<?=$row->img?>" alt="Photo" width="599px" height="355px" />
+							<img src="<?=$row->img?>" alt="<?=$row->deskripsi?>" width="599px" height="355px" />
 						</div>
 						<?php endforeach;?>
 					</tbody>
@@ -108,9 +110,10 @@
 	<input type="hidden" name="idgaleri" value="<?=$idGaleri?>" />
 	<div>
 		<label style="margin-left:-15px;">Deskripsi Foto</label>
-		<input type="text" name="deskripsi" id="f1" class="textboxcontact" size="70" /> <span>*</span><br />
+		<input type="text" name="deskripsi" id="f1" class="textboxcontact" size="70" /> &nbsp;<span class="mand">*</span><br />
 		<label style="margin-left:-15px;">File</label>
-		<input type="file" name="gambar" id="f3" class="textboxcontact" />
+<!--		<input type="file" name="gambar" id="f3" class="textboxcontact" /> -->
+		<input type="text" name="gambar" id="gambar" onclick="openKCFinder_singleFile(this,'/images/galeri','images')" size="50" class="textboxcontact" />
 		<br /><br />
 		<div>
 		<a href="javascript:simpan();" class="button" >Simpan</a>

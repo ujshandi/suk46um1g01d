@@ -16,7 +16,7 @@ class galeri extends CI_Controller {
 	{
 		if($this->session->userdata('userid')=="")
 		{
-			redirect('backend');
+			redirect(base_url().'backend');
 		}
 	}
 	
@@ -94,7 +94,7 @@ class galeri extends CI_Controller {
 				'img_thubnail'		=>$upload,
 				);
 			$this->galerimodel->save($data);
-			redirect('galeri/daftar_galeri/','refresh');
+			redirect(base_url().'galeri/daftar_galeri/');
 		}
 		else
 		{
@@ -133,7 +133,7 @@ class galeri extends CI_Controller {
 			{
 				$data = array('nama_galeri'=>$nama,'img_thubnail'=>$namaFile);
 				$this->galerimodel->update($id,$data);
-				redirect('galeri/daftar_galeri','refresh');
+				redirect(base_url().'galeri/daftar_galeri');
 			}
 	}
 	function daftar_hapus($id)
@@ -145,9 +145,9 @@ class galeri extends CI_Controller {
 			unlink(realpath("./uploads/galeri/thumbnail/".$row->img_thubnail));
 		}
 		$this->galerimodel->delete($id);
-		redirect('galeri/daftar_galeri','refresh');
+		redirect(base_url().'galeri/daftar_galeri');
 	}
-	function listGaleri($id=null)
+	function listGaleri($id=0)
 	{
 		$this->cekLogin();
 		$data = array(
@@ -161,6 +161,9 @@ class galeri extends CI_Controller {
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['galeri']		= $this->galerimodel->get_All_list($id);
 		$data['namaGaleri']	= $this->galerimodel->getnamaGaleri($id);
+		//if ($id==null){
+			$data['idGaleri'] =$id;
+		//}
 		$data['mainmenu']	= $this->backend_model->mainmenu("10");
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','galeri/list_galeri',$data);
@@ -171,23 +174,23 @@ class galeri extends CI_Controller {
 	{
 		$id		= $this->input->post('idgaleri');
 		$nama	= $this->input->post('deskripsi');
+		$gambar	= $this->input->post('gambar');
 		
-		$upload=$this->do_upload();
-		
-		if($upload!="error")
-		{
+		//$upload=$this->do_upload();
+		if ($id=="") $id=null;
+		//if($upload!="error"){
 			$data = array(
 				'id_galeri'	=>$id,
 				'deskripsi'	=>$nama,
-				'img'		=>$upload,
+				'img'		=>$gambar,
 				);
 			$this->galerimodel->saveGaleri($data);
-			redirect("galeri/listGaleri/$id",'refresh');
-		}
+			redirect(base_url()."galeri/listGaleri/$id");
+		/* }
 		else
 		{
 			echo "Upload file Gagal!!, Ukuran maksimum file adalah 3MB. ";
-		}
+		} */
 	}
 	function hapus_img($id)
 	{
@@ -195,11 +198,11 @@ class galeri extends CI_Controller {
 		foreach($dataFile as $row)
 		{
 			$idgaleri	= $row->id_galeri;
-			unlink(realpath("./uploads/galeri/".$row->img));
-			unlink(realpath("./uploads/galeri/thumbnail/".$row->img));
+			//unlink(realpath("./uploads/galeri/".$row->img));
+			//unlink(realpath("./uploads/galeri/thumbnail/".$row->img));
 		}
 		$this->galerimodel->deleteList($id);
-		redirect("galeri/listGaleri/$idgaleri",'refresh');
+		redirect(base_url()."galeri/listGaleri/$idgaleri");
 	}
 	
 	public function do_upload() {
