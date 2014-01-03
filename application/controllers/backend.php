@@ -105,6 +105,6 @@ class backend extends CI_Controller {
 		$array_items = array('userid' => '', 'nama' => '', 'id_level'=> '');
 		$this->session->unset_userdata($array_items);
 		$this->session->sess_destroy();
-		redirect('main','refresh');
+		redirect(base_url().'main');
 	}
 }
