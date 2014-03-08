@@ -60,10 +60,10 @@
 						<tr>
 							<td width="4%" align="center"><?=$i=$i+1?></td>
 							<td><?=$row->tgl?></td>
-							<td><a href="javascript:info('<?=$i?>');"><?=$row->judul?></a></td>
+							<td><?=$row->judul?></td>
 							<td align="center" width="12%">
 								<a href="<?=base_url()?>pengumuman/edit/<?=$row->id_pengumuman?>" title="Edit"><img src="<?=base_url()?>public/images/icon/edit.png" /></a>
-								<a href="javascript:info('<?=$i?>');" title="Preview"><img src="<?=base_url()?>public/images/icon/info.png" /></a>
+								<!--<a href="javascript:info('<?=$i?>');" title="Preview"><img src="<?=base_url()?>public/images/icon/info.png" /></a> -->
 								<a href="javascript:hapus('<?=$row->id_pengumuman?>');" title="Hapus"><img src="<?=base_url()?>public/images/icon/delete.png" /></a>
 							</td>
 						</tr>

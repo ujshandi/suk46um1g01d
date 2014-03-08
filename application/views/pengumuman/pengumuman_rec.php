@@ -21,7 +21,7 @@
 	function simpan()
 	{
 		var data1	= document.getElementById('f1').value;
-		var data2	= document.getElementById('editor1').value;
+		var data2	= document.getElementById('txtGambar').value;
 		
 		if(data1!="" && data2!="")
 		{
@@ -42,10 +42,15 @@
 				<input type="hidden" name="id_pengumuman" id="id_pengumuman" class="textboxcontact" value="<?=$pengumuman->id_pengumuman?>"/>
 				<br />
 				<br />
-				<label>Isi Pengumuman</label>
+				<!--<label>Isi Pengumuman</label>
 				<div class="ckWow2">
 					<textarea name="deskripsi" id="editor1" class="editor" cols="100" rows="200" ><?=$pengumuman->deskripsi?></textarea>
 					<?php echo display_ckeditor($ckeditor); ?>
+				</div>-->
+				<label>Gambar</label>
+				<div class="ckWow2">
+					<input type="text" readonly="readonly" value="<?=$pengumuman->gambar?>" size="50" name="txtGambar" id="txtGambar"/>
+					<input type="button" onclick="openKCFinder_singleFile('#txtGambar','/images/pengumuman','images')" value="..."/>
 				</div>
 				<br />
 				<br />

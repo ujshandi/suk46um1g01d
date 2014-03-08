@@ -25,6 +25,11 @@
 				</select>
 				<br /><br />
 				</div>
+				<div class="ckWow">				
+				<label>ID Youtube</label>
+					<input type="text" value="<?=$idyoutube->sys_value?>" name="idyoutube" size="30"/>
+				<br /><br />
+				</div>
 				<br />
 				<div class="boxBtn">
 					<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>					

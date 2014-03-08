@@ -91,6 +91,7 @@ class pengumuman extends CI_Controller {
 		$pengumuman->judul="";		
 		$pengumuman->deskripsi="";
 		$pengumuman->tgl="";
+		$pengumuman->gambar="";
 		
 		$data['pengumuman'] = $pengumuman;
 		$this->template->set_template("admin");
@@ -102,9 +103,10 @@ class pengumuman extends CI_Controller {
 	{
 		$judul		= $this->input->post('judul');
 		$deskripsi	= $this->input->post('deskripsi');
-		$id	= $this->input->post('id');
-			$id			= $this->input->post('id');
-			$data = array('tgl'=>date('Y-m-d H:i:s'),'judul'=>$judul,'deskripsi'=>$deskripsi);
+		$gambar	= $this->input->post('txtGambar');
+		$id	= $this->input->post('id_pengumuman');
+			
+			$data = array('tgl'=>date('Y-m-d H:i:s'),'judul'=>$judul,'deskripsi'=>$deskripsi,'gambar'=>$gambar);
 			
 			if ($id==""){
 				$this->pengumumanmodel->save($data);
@@ -136,11 +138,12 @@ class pengumuman extends CI_Controller {
 	}
 	function simpanedit()
 	{
-		$id			= $this->input->post('id');
+		$id			= $this->input->post('id_pengumuman');
 		$judul		= $this->input->post('judul');
 		$deskripsi	= $this->input->post('deskripsi');
+		$gambar	= $this->input->post('txtGambar');
 		
-			$data	= array('judul'=>$judul,'deskripsi'=>$deskripsi);
+			$data	= array('judul'=>$judul,'deskripsi'=>$deskripsi,'gambar'=>$gambar);
 			$this->pengumumanmodel->update($id,$data);
 			
 		redirect(base_url().'pengumuman');

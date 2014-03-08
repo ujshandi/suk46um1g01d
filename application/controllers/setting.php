@@ -24,7 +24,7 @@ class setting extends CI_Controller {
 		$this->cekLogin();
 		$data = array(
 					
-					'title_page'=>'Admin Page',
+					'title_page'=>'Setting',
 					'title'=>'CPanel',
 					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
 					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
@@ -36,6 +36,7 @@ class setting extends CI_Controller {
 	//	$data['setting']	= $this->settingmodel->get_All();
 		$data['mainmenu']	= $this->backend_model->mainmenu("15");
 		$data['themes'] = $this->settingmodel->get_by_kategori("themes");
+		$data['idyoutube'] = $this->settingmodel->get_by_kategori("idyoutube");
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','setting/setting_v',$data);
 		$this->template->render();
@@ -48,12 +49,14 @@ class setting extends CI_Controller {
 	{
 		$sys_key		= $this->input->post('sys_key');
 		$sys_value	= $this->input->post('sys_value');
+		$data = array('sys_key'=>$sys_key,'sys_value'=>$sys_value);
+		$this->settingmodel->update($sys_key,$data);
 		
+		$sys_key		= "idyoutube";
+		$sys_value	= $this->input->post('idyoutube');
+		$data = array('sys_key'=>$sys_key,'sys_value'=>$sys_value);
+		$this->settingmodel->update($sys_key,$data);
 		
-			$data = array('sys_key'=>$sys_key,'sys_value'=>$sys_value);
-			
-			
-				$this->settingmodel->update($sys_key,$data);
 			
 		
 		redirect(base_url().'setting');
