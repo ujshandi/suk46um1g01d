@@ -17,6 +17,7 @@ class main extends CI_Controller {
 		$this->load->model('agendamodel','',TRUE);
 		$this->load->model('layananmodel','',TRUE);
 		$this->load->model('galerimodel','',TRUE);
+		$this->load->model('settingmodel','',TRUE);
 		$this->load->library('form_validation');
 	}
 	public function index()
@@ -52,6 +53,7 @@ class main extends CI_Controller {
 		$data['linkopd']= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['download']= $this->temp_model->download();
+		$data['idyoutube'] = $this->settingmodel->get_by_kategori("idyoutube");
 		//$data['footer']		= $this->temp_model->footer();
 		
 		$data['title_page']		= "Beranda ".COMPANY_NAME;

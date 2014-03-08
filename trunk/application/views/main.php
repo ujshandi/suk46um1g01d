@@ -114,7 +114,7 @@
 			<!-- http://www.youtube.com/embed?listType=search&list=sukabumi--> 
 			
 			<!-- AgnesMonicaENT-->
-			<iframe id="fr" src="http://www.youtube.com/subscribe_widget?p=PemerintahKotaSukabumi" style="overflow: hidden; height: 375px; width: 647px; border: 0;" scrolling="no" frameBorder="0"></iframe>
+			<iframe id="fr" src="http://www.youtube.com/subscribe_widget?p=<?=$idyoutube->sys_value?>" style="overflow: hidden; height: 375px; width: 647px; border: 0;" scrolling="no" frameBorder="0"></iframe>
 		</div>
 	<br />
 <!-- endChanel -->
