@@ -17,6 +17,13 @@ class pengumumanModel extends CI_Model
   		$query =$this->db->query("select * from pengumuman ORDER BY id_pengumuman DESC LIMIT $offset,$limit");
 		return $query->result();
   	}
+  	
+  	function getAll() 
+  	{
+  		$query = $this->db->query("SELECT * FROM pengumuman  ORDER BY id_pengumuman DESC ");
+		return $query->result();
+  	}
+  	
 	function search($tipe,$tipe2,$key)
 	{
 		$this->db->like($tipe,$key);
