@@ -18,6 +18,7 @@ class main extends CI_Controller {
 		$this->load->model('layananmodel','',TRUE);
 		$this->load->model('galerimodel','',TRUE);
 		$this->load->model('settingmodel','',TRUE);
+		$this->load->model('pengumumanmodel','',TRUE);
 		$this->load->library('form_validation');
 	}
 	public function index()
@@ -44,7 +45,7 @@ class main extends CI_Controller {
 		$data['include']	= $this->temp_model->includeFile();
 		$data['header']		= $this->temp_model->headerMenu('1');
 		$data['sliderTop']	= $this->temp_model->sliderTop();
-		$data['pengumuman']	= $this->temp_model->pengumuman('main');
+		$data['pengumuman']	= $this->pengumumanmodel->getAll(); //$this->temp_model->pengumuman('main');
 		$data['mainmenu']	= $this->temp_model->mainmenu("0");
 		//$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();

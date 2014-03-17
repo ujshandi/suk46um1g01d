@@ -38,7 +38,7 @@
 		<div class="boxess">
 			<form method="post" action="<?=base_url()?>pengumuman/simpan" id="frmcontact2">
 				<label>Judul</label>
-				<input type="text" name="judul" id="f1" class="textboxcontact" value="<?=$pengumuman->judul?>" size="80" /> <span class="mand">*</span>
+				<input type="text" name="judul" id="f1" class="textboxcontact" value="<?=$pengumuman->judul?>" size="50" /> <span class="mand">*</span>
 				<input type="hidden" name="id_pengumuman" id="id_pengumuman" class="textboxcontact" value="<?=$pengumuman->id_pengumuman?>"/>
 				<br />
 				<br />

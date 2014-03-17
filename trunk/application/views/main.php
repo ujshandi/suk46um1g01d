@@ -79,21 +79,12 @@
 				<!--<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-prev"><a href="#" title="Previous"><span>Previous</span></a></div>
 				<div class="sliderkit-btn sliderkit-go-btn sliderkit-go-next"><a href="#" title="Next"><span>Next</span></a></div>
 				-->
+				<?php foreach($pengumuman as $b){ ?>
 				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/!sample-01.jpg" alt="[Alternative text]" />
+					<!--<img src="<base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/!sample-01.jpg" alt="[Alternative text]" /> -->
+					<img src="<?=$b->gambar?>" alt="<?=$b->judul?>" />
 				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/!sample-02.jpg" alt="[Alternative text]" />
-				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/!sample-03.jpg" alt="[Alternative text]" />
-				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/!sample-04.jpg" alt="[Alternative text]" />
-				</div>
-				<div class="sliderkit-panel">
-					<img src="<?=base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/!sample-05.jpg" alt="[Alternative text]" />
-				</div>
+				<?}?>
 			</div>
 			
 		</div>
