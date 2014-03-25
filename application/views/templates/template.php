@@ -40,6 +40,21 @@
 							</div>
 						</div>
 						<div id="nav">
+								<!-- sms walkot -->
+							
+						<div class="boxnav">
+							<h3 class="titlenav">SMS WALIKOTA</h3>
+							<div class="boxnavcontent2">	
+							<style type="text/css">
+								@font-face{
+										font-family: 'digi';
+										src: url('<?=base_url()?>/public/css/DS-DIGII.TTF');
+								}
+							</style>							
+								<p style="text-align: center; font-family:digi;font-size:3em;font-weight:bold"><?=$smswalkot->sys_value?></p>
+								<div class="clear"></div>							
+							</div>
+						</div>		
 						<!-- hot list -->
 						<div class="boxnav">
 							<h3 class="titlenav">RSPD FM Kota Sukabumi 99.95</h3>
@@ -123,17 +138,8 @@
 							</div-->
 						<!-- Sukabumi dalam Media -->
 						<!-- Sukabumi download -->
-							<div class="boxnav">
-								<h3 class="titlenav">Kotak Download</h3>
-								<div class="boxnavcontent2">
-									<div style="padding:5px;">
-										<p><a href="#">Kota Sukabumi Selayang Pandang</a></p>
-										<p><a href="#">Kota Sukabumi Bahan Pokok</a></p>
-										<p><a href="#">Kota Sukabumi Berita Kota</a></p>
-										<p><a href="#">Kota Sukabumi Kalender</a></p>
-									</div>
-								</div>
-							</div>
+						<?=$download?>
+							
 						<!-- Sukabumi download -->
 						<!--<=$linkterkait?> -->
 						<!--?=$polling?-->

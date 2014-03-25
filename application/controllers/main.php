@@ -55,6 +55,7 @@ class main extends CI_Controller {
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['download']= $this->temp_model->download();
 		$data['idyoutube'] = $this->settingmodel->get_by_kategori("idyoutube");
+		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
 		//$data['footer']		= $this->temp_model->footer();
 		
 		$data['title_page']		= "Beranda ".COMPANY_NAME;

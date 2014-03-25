@@ -125,9 +125,9 @@ class download extends CI_Controller {
 	{
 		$nama		= $this->input->post('nama');
 		$deskripsi	= $this->input->post('deskripsi');
-		$namafile	= $_FILES['file']['name'];
+		$namafile	=  $this->input->post('file');//$_FILES['file']['name'];
 		
-		$config['upload_path']	= './uploads/file/';
+		/*$config['upload_path']	= './uploads/file/';
 		$config['allowed_types']= 'pdf|doc|ppt|docx|pptx|zip|png|jpg|jpeg|gif|rar|xls|xlsx';
 		$config['max_size']		= '10000';
 		$config['file_name']	= $namafile; 
@@ -139,12 +139,12 @@ class download extends CI_Controller {
 			echo "Upload File gagal!";
 		}
 		else
-		{
+		{*/
 			$dataFile	= $this->upload->data();
-			$data = array('nama'=>$nama,'deskripsi'=>$deskripsi,'file'=>$dataFile['file_name']);
+			$data = array('nama'=>$nama,'deskripsi'=>$deskripsi,'file'=>$namafile);//'file'=>$dataFile['file_name']);
 			$this->downloadmodel->save($data);
 			redirect(base_url().'download/data');
-		}
+		//}
 	}
 	function edit($id)
 	{

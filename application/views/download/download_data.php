@@ -43,7 +43,7 @@
 						<tr>
 							<th width="4%">No</th>
 							<th width="30%">Nama</th>
-							<th>Deskripsi</th>
+							<!--<th>Deskripsi</th> -->
 							<th width="8%"></th>
 						</tr>
 					</thead>
@@ -52,9 +52,9 @@
 						<tr>
 							<td><?=$i=$i+1?></td>
 							<td><?=$row->nama?></td>
-							<td><?=$row->deskripsi?></td>
+							<!--<td><?=$row->deskripsi?></td> -->
 							<td>
-								<a href="<?=base_url()?>download/edit/<?=$row->id_download?>" title="Edit"><img src="<?=base_url()?>public/images/icon/edit.png" /></a>
+								<!--<a href="<?=base_url()?>download/edit/<?=$row->id_download?>" title="Edit"><img src="<?=base_url()?>public/images/icon/edit.png" /></a> -->
 								<a href="javascript:hapus('<?=$row->id_download?>');" title="Hapus"><img src="<?=base_url()?>public/images/icon/delete.png" /></a>
 							</td>
 						</tr>

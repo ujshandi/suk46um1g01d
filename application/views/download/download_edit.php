@@ -44,7 +44,7 @@
 						<label style="margin-left:-15px;">Nama</label>
 						<input type="text" name="nama" id="f1" class="textboxcontact" size="70" value="<?=$row->nama?>" /> <span>*</span><br />
 						<label style="margin-left:-15px;">Deskripsi Singkat</label>
-						<textarea name="deskripsi" id="f2" style="margin-top:10px" cols="78" rows="5"><?=$row->deskripsi?></textarea> <span>*</span><br />
+					<!--	<textarea name="deskripsi" id="f2" style="margin-top:10px" cols="78" rows="5"><?=$row->deskripsi?></textarea> <span>*</span><br /> -->
 						<label style="margin-left:-15px;">Ganti File</label>
 						<input type="file" name="file" id="f3" class="textboxcontact" />
 						<br /><br />

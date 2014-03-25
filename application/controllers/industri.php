@@ -11,6 +11,7 @@ class Industri extends CI_Controller {
 		$this->load->helper('file');
 		$this->load->model('backend_model');
 		$this->load->model('temp_model');
+		$this->load->model('settingmodel');
 		$this->load->model('Industri_model','',TRUE);
 		$this->load->helper('ckeditor');
 		$this->load->library('upload');
@@ -95,6 +96,7 @@ class Industri extends CI_Controller {
 		$data['linkopd']= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
+		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
 		//$data['agenda']		= $this->agendamodel->get_All();
 		$data['download']= $this->temp_model->download();
 		return $data;

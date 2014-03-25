@@ -31,6 +31,12 @@
 				<br /><br />
 				</div>
 				<br />
+				<div class="ckWow">				
+				<label>SMS Walikota</label>
+					<input type="text" value="<?=$smswalkot->sys_value?>" name="smswalkot" size="30"/>
+				<br /><br />
+				</div>
+				<br />
 				<div class="boxBtn">
 					<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>					
 				</div>

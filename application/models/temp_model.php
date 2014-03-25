@@ -27,7 +27,7 @@ class temp_model extends CI_Model
 		$data.='<script src="'.base_url().'public/js/ui_tabs.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/lightbox.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/login.js" type="text/javascript"></script>';
-		//$data.='<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
+		$data.='<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
 		
 			//news sticker
 			//$data.='<script src="'.base_url().'public/js/gistfile1.js" type="text/javascript"></script>';
@@ -141,9 +141,10 @@ class temp_model extends CI_Model
 		//rss google news
 		$data .= '<script type="text/javascript">
 			google.load("elements", "1", {packages : ["newsshow"]});
-
+// alert("kadie");
 			function onLoad() {
 			  // Change the News Show size format
+			 
 			  var options = {
 				"format" : "300x250",
 				"linkTarget" : "google.search.Search.LINK_TARGET_BLANK",
@@ -666,7 +667,7 @@ class temp_model extends CI_Model
 	function download()
 	{
 		$data='<div class="boxnav">';
-			$data.='<h3 class="titlenav">Download</h3>';
+			$data.='<h3 class="titlenav">Kotak Download</h3>';
 			$data.='<div class="boxnavcontent2">';
 				
 				$data.='<ul id="listads">';
@@ -683,6 +684,19 @@ class temp_model extends CI_Model
 			$data.='</div>';
 		$data.='</div>';
 		
+		
+		$data = '<div class="boxnav">
+								<h3 class="titlenav">Kotak Download</h3>
+								<div class="boxnavcontent2">
+									<div style="padding:5px;">';
+							foreach ($query->result() as $row){			
+								$data .= '<p><a href="'.$row->file.'" target="_blank">'.$row->nama.'</a></p>';
+								
+								
+							}			
+							$data .='		</div>
+								</div>
+							</div';
 		return $data;
 	}
 	

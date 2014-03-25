@@ -68,7 +68,7 @@
 			<input type="hidden" name="author" value="<?=$this->session->userdata('userid')?>" />
 			<input type="hidden" name="id" value="<?=$berita->id_berita?>" />			
 			<label>Judul Berita</label>
-			<input type="text" name="txtjudul" class="textboxcontact" id="f1" size="80" value="<?=$berita->judul_berita?>" /> <span class="mand">*</span>
+			<input type="text" name="txtjudul" class="textboxcontact" id="f1" size="60" value="<?=$berita->judul_berita?>" /> <span class="mand">*</span>
 				<br />
 				<br />
 				
@@ -80,9 +80,14 @@
 			</select >
 				<br />
 				<br />
-				
+			<div id="klasifikasi_teks" >
 			<label>Deskripsi Singkat</label>
-			<textarea name="deskripsi" cols="78" id="f2"><?=$berita->deskripsi_singkat?></textarea> <span class="mand">*</span>
+			<div class="ckWow2">
+			<textarea name="deskripsi" cols="80" class="editor" id="f2"><?=$berita->deskripsi_singkat?></textarea>
+			<?php echo display_ckeditor($ckeditor2); ?>
+			 <span class="mand">*</span>
+			 </div>
+			 </div>
 				<br />
 				<br />
 			<label>Author</label>
