@@ -27,7 +27,8 @@ $_CONFIG = array(
 
     'theme' => "oxygen",
 
-   'uploadURL' => "../../uploads",
+   //'uploadURL' => "../../uploads",
+   'uploadURL' => "http://localhost/suk46um1g01d/uploads",
    // 'uploadURL' => "./UPLOADED",
     'uploadDir' => "",
 

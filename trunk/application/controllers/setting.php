@@ -37,6 +37,7 @@ class setting extends CI_Controller {
 		$data['mainmenu']	= $this->backend_model->mainmenu("15");
 		$data['themes'] = $this->settingmodel->get_by_kategori("themes");
 		$data['idyoutube'] = $this->settingmodel->get_by_kategori("idyoutube");
+		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','setting/setting_v',$data);
 		$this->template->render();
@@ -57,7 +58,11 @@ class setting extends CI_Controller {
 		$data = array('sys_key'=>$sys_key,'sys_value'=>$sys_value);
 		$this->settingmodel->update($sys_key,$data);
 		
-			
+		
+		$sys_key		= "smswalkot";
+		$sys_value	= $this->input->post('smswalkot');
+		$data = array('sys_key'=>$sys_key,'sys_value'=>$sys_value);
+		$this->settingmodel->update($sys_key,$data);	
 		
 		redirect(base_url().'setting');
 	}

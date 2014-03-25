@@ -10,6 +10,7 @@ class Berita extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->helper('file');
 		$this->load->model('backend_model');
+		$this->load->model('settingmodel');
 		$this->load->model('temp_model');
 		$this->load->model('Berita_model','',TRUE);
 		$this->load->helper('ckeditor');
@@ -76,6 +77,7 @@ class Berita extends CI_Controller {
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		$data['linkopd']= $this->temp_model->linkopd();
+		
 		//$this->load->view('berita/berita_detail',$data);
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','berita/berita_detail',$data);
@@ -113,6 +115,8 @@ class Berita extends CI_Controller {
 		$data['linkopd']= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
+		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['download']= $this->temp_model->download();
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','berita/arsip',$data);
 		$this->template->render();
@@ -160,6 +164,7 @@ class Berita extends CI_Controller {
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("7");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
+		$data['ckeditor2'] = $this->utility->ckeditor_full("f2");
 		//$berita = new object;
 		$berita->id_berita="";
 		$berita->judul_berita="";
@@ -321,6 +326,7 @@ class Berita extends CI_Controller {
 		$data['mainmenu']	= $this->backend_model->mainmenu("7");
 		$data['berita']		= $this->Berita_model->get_by_id($id);
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1");
+		$data['ckeditor2'] = $this->utility->ckeditor_full("f2");
 		//var_dump($data['berita']);
 		$this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
