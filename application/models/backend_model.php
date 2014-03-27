@@ -402,6 +402,9 @@ class backend_model extends CI_Model
 							$menu.='<li class="last"><a href="'.base_url().'forum/publik">';
 								$menu.='<img src="'.$this->setBg("16","0",$id).'" align="left" />Forum';
 							$menu.='</a></li>';
+							$menu.='<li class="last"><a href="'.base_url().'artikel/data">';
+								$menu.='<img src="'.$this->setBg("17","0",$id).'" align="left" />Artikel';
+							$menu.='</a></li>';
 						$menu.='</ul>';
 					$menu.='</div>';
 				$menu.='</div>';

@@ -106,14 +106,15 @@
 							</div>		
 						</div>		
 						<!-- end hot list -->
+						<?=$artikel?>
 						<!-- hot list -->
-						<div class="boxnav">
-							<h3 class="titlenav">Hot List</h3>
+						<!--<div class="boxnav">
+							<h3 class="titlenav">Artikel</h3>
 							<div class="boxnavcontent2">								
 								<p style="text-align: center;">&nbsp;</p>
 								<div class="clear"></div>							
 							</div>
-						</div>		
+						</div>		-->
 						<!-- end hot list -->						
 						<!-- Sukabumi tautan -->
 						<div class="boxnav">

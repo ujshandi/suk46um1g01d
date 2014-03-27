@@ -48,7 +48,7 @@
 	function simpan()
 	{
 		var data1	= document.getElementById('f1').value;
-		var data2	= document.getElementById('f2').value;
+		var data2	= 'x';//document.getElementById('f2').value;
 		if(data1!="" && data2!="")
 		{
 			document.getElementById('frmcontact2').submit();
@@ -91,7 +91,7 @@
 				<br />
 				<br />
 			<label>Author</label>
-			<input type="text" name="txtauthor" class="textboxcontact" value="<?=$berita->author?>" id="f1" size="50" />
+			<input type="text" name="txtauthor" class="textboxcontact" value="<?=$berita->author?>"  size="50" />
 				<br />
 				<br />
 			

@@ -677,7 +677,7 @@ div#placemainmenu li li:hover ul
 	margin-bottom:1px;
 }
 .boxbigcontent {
-	width: 988px;
+	width: 640px;/*988px;*/
 	/* 
 	border-top: 1px solid #d5d5d5;
 	border-left: 1px solid #d5d5d5;
@@ -1248,8 +1248,8 @@ text-decoration:none;
 	font-size: 1.4em;
 	color: #2f2f2f;
 	height: 24px;
-	border-top: 1px solid #d5d5d5;
-	border-bottom: 1px solid #d5d5d5;
+	border-top: 0px solid #d5d5d5;
+	border-bottom: 0px solid #d5d5d5;
 	padding: 6px 0 0 0;
 }
 #listcomment {

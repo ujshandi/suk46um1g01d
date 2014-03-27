@@ -14,6 +14,7 @@ class main extends CI_Controller {
 		$this->load->model('belajarmodel','',TRUE);
 		$this->load->model('statistikmodel','',TRUE);
 		$this->load->model('downloadmodel','',TRUE);
+		$this->load->model('artikelmodel','',TRUE);
 		$this->load->model('agendamodel','',TRUE);
 		$this->load->model('layananmodel','',TRUE);
 		$this->load->model('galerimodel','',TRUE);
@@ -54,6 +55,7 @@ class main extends CI_Controller {
 		$data['linkopd']= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['download']= $this->temp_model->download();
+		$data['artikel']= $this->temp_model->artikel();
 		$data['idyoutube'] = $this->settingmodel->get_by_kategori("idyoutube");
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
 		//$data['footer']		= $this->temp_model->footer();

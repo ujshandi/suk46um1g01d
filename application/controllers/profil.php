@@ -50,6 +50,7 @@ class profil extends CI_Controller {
 	//	$data['linkterkait']= $this->temp_model->linkterkait();
 		//$data['testimonial']= $this->temp_model->testimonial();
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['artikel']= $this->temp_model->artikel();
 		$data['footer']		= $this->temp_model->footer();
 		
 		$this->template->write_view('header','templates/header',$data);
@@ -89,7 +90,7 @@ class profil extends CI_Controller {
 		//$data['testimonial']= $this->temp_model->testimonial();
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
 		$data['footer']		= $this->temp_model->footer();
-		
+		$data['artikel']= $this->temp_model->artikel();
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','profil/geografis',$data);
 		$this->template->render();
@@ -121,6 +122,7 @@ class profil extends CI_Controller {
 		$data['download']= $this->temp_model->download();
 		$data['polling']	= $this->temp_model->polling();
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['artikel']= $this->temp_model->artikel();
 		//$data['pengumuman']	= $this->temp_model->pengumuman();
 		//$data['polling']	= $this->temp_model->polling();
 	//	$data['login']		= $this->temp_model->login();
@@ -159,6 +161,7 @@ class profil extends CI_Controller {
 		$data['agenda']		= $this->agendamodel->get_All();
 		$data['download']= $this->temp_model->download();
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['artikel']= $this->temp_model->artikel();
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','profil/sejarah',$data);
 		$this->template->render();
@@ -190,6 +193,7 @@ class profil extends CI_Controller {
 		$data['agenda']		= $this->agendamodel->get_All();
 		$data['download']= $this->temp_model->download();
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['artikel']= $this->temp_model->artikel();
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','profil/sosial',$data);
 		$this->template->render();
@@ -221,6 +225,7 @@ class profil extends CI_Controller {
 		$data['download']= $this->temp_model->download();
 		$data['linkopd']	= $this->temp_model->linkopd();	
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['artikel']= $this->temp_model->artikel();
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','profil/angka',$data);
 		$this->template->render();
@@ -240,6 +245,8 @@ class profil extends CI_Controller {
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['download']= $this->temp_model->download();
+		$data['artikel']= $this->temp_model->artikel();
 		$this->load->view('profil/struktur_organisasi',$data);
 	}
 	function sarpras()
@@ -257,6 +264,7 @@ class profil extends CI_Controller {
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['artikel']= $this->temp_model->artikel();
 		$this->load->view('profil/sarpras',$data);
 	}
 	function prestasi()
@@ -274,6 +282,7 @@ class profil extends CI_Controller {
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['artikel']= $this->temp_model->artikel();
 		$this->load->view('profil/prestasi',$data);
 	}
 	function visimisi()

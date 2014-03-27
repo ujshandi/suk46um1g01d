@@ -38,7 +38,7 @@ class download extends CI_Controller {
 		$config['per_page'] = 20;
 		$this->pagination->initialize($config);
 		$data['pagination'] = $this->pagination->create_links();
-		$data['download']	= $this->downloadmodel->get_All('20',$offset);
+		$data['downloadList']	= $this->downloadmodel->get_All('20',$offset);
 		
 		$data['include']	= $this->temp_model->includeFile();
 		$data['header']		= $this->temp_model->headerMenu('0');
@@ -50,7 +50,13 @@ class download extends CI_Controller {
 		$data['linkterkait']= $this->temp_model->linkterkait();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
-		$this->load->view('download/download',$data);
+		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['download']= $this->temp_model->download();
+		$data['artikel']= $this->temp_model->artikel();
+		//$this->load->view('download/download',$data);
+		$this->template->write_view('header','templates/header',$data);
+		$this->template->write_view('wrapper','download/download',$data);
+		$this->template->render();
 	}
 	function data($offset=0)
 	{

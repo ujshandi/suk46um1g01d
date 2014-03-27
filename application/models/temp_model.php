@@ -690,13 +690,59 @@ class temp_model extends CI_Model
 								<div class="boxnavcontent2">
 									<div style="padding:5px;">';
 							foreach ($query->result() as $row){			
-								$data .= '<p><a href="'.$row->file.'" target="_blank">'.$row->nama.'</a></p>';
+								$data .= '<p><h2><a href="'.$row->file.'" target="_blank">'.$row->nama.'</a></h2></p>';
 								
 								
 							}			
+							$data.='<div style="text-align:right"><a href="'.base_url().'download" class="" >Download Lainnya</a></div>';		
 							$data .='		</div>
 								</div>
 							</div';
+									
+		return $data;
+	}
+	
+	function artikel()
+	{
+		$data='<div class="boxnav">';
+			$data.='<h3 class="titlenav">Arikel</h3>';
+			$data.='<div class="boxnavcontent2">';
+				
+				$data.='<ul id="listads">';
+				$query=$this->db->query("SELECT * FROM artikel ORDER BY id_artikel DESC LIMIT 5");
+				foreach ($query->result() as $row)
+				{
+					$data.='<li><a href="#" target="_blank"><p>'.$row->judul.'</p><span>'.$row->penulis.'</span></a></li>';
+				}
+				$data.='</ul>';
+				
+				$data.='<div class="clear"></div>';
+				$data.='<a href="'.base_url().'#" class="linkadv">More Link</a>';
+				$data.='<div class="clear"></div>';
+			$data.='</div>';
+		$data.='</div>';
+		
+		
+		$data = '<div class="boxnav">
+								<h3 class="titlenav">Artikel</h3>
+								<div class="boxnavcontent2">
+									<div style="padding:5px;">';
+							foreach ($query->result() as $row){			
+								$data .= '<p><h2><a href="'.$row->file.'" target="_blank">'.$row->judul.'</a></h2>';
+								$data .= 'Oleh : '.$row->penulis.'</p></br>';
+								
+								
+								
+							}	
+							$data.='<div style="text-align:right"><a href="'.base_url().'artikel" class="" >Artikel Lainnya</a></div>';		
+							$data .='		</div>
+								</div>';
+								
+							$data .='</div';
+							
+		
+				
+		
 		return $data;
 	}
 	
