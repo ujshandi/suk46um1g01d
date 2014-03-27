@@ -92,19 +92,31 @@
 							</div>		
 						</div>		
 						<!-- end hot list -->
-						<!-- hot list -->
-						<div class="boxnav">
-							<h3 class="titlenav">Hot List</h3>
-							<div class="boxnavcontent2">								
-								<p style="text-align: center;">&nbsp;</p>
-								<div class="clear"></div>							
-							</div>
-						</div>		
-						<!-- end hot list -->						
+						<?=$artikel?>
+											
 						<!-- Sukabumi tautan -->
-						
-						<?=$linkopd;?>
-						
+						<div class="boxnav">
+							<h3 class="titlenav">Tautan</h3>
+							<div class="boxnavcontent2">
+								<div style="padding:5px;">
+									<marquee width="300" height="auto" bgcolor="" direction="UP" behavior="SCROLL" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="3" style="font-size:12px;color:#000000;font-family:arial;">
+										<ul>
+											<li><a target="_blank" href="http://bappeda.sukabumikota.go.id">Bappeda Kota Sukabumi</a></li>
+											<li><a target="_blank" href="http://dishub.sukabumikota.go.id">Dinas Perhubungan</a></li>
+											<li><a target="_blank" href="http://kpu-sukabumikota.go.id/">Komisi Pemilihan Umum</a></li>
+											<li><a target="_blank" href="http://kotasukabumi.siap-ppdb.com/">Siap PPDB</a></li>
+											<li><a target="_blank" href="http://dprd-sukabumikota.go.id/">DPRD</a></li>
+											<li><a target="_blank" href="http://rspdkotasukabumi.com/">RSPD</a></li>
+											<li><a target="_blank" href="http://sukabumikota.siap.web.id/">Disdik</a></li>
+											<li><a target="_blank" href="http://pn-sukabumikota.go.id/">Pengadilan Negeri</a></li>
+											<li><a target="_blank" href="http://sukabumikota.kemenag.go.id/">Kementrian Agama RI Kota Sukabumi</a></li>
+											
+										</ul>
+									</marquee>
+								</div>
+							</div>
+						</div>
+					
 						<!-- Sukabumi tautan -->						
 						<!-- Ayat pilihan -->
 							<div class="boxnav">

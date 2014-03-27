@@ -99,6 +99,7 @@ class Informasi_umum extends CI_Controller {
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
 		//$data['agenda']		= $this->agendamodel->get_All();
 		$data['download']= $this->temp_model->download();
+		$data['artikel']= $this->temp_model->artikel();
 		return $data;
 	}
 	
