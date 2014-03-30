@@ -21,6 +21,7 @@ class temp_model extends CI_Model
 			default : $data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/css/style.css" />';
 		}
 		//$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/css/style_red.css" />';
+		$data.='<link rel="stylesheet" type="text/css" href="'.base_url().'public/media/jquery/ui.css" />';
 		//$data.='<script src="'.base_url().'public/js/jquery.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/jquery-1.6.3.min.js" type="text/javascript"></script>';
 		$data.='<script src="'.base_url().'public/js/ui_core.js" type="text/javascript"></script>';
@@ -783,6 +784,24 @@ class temp_model extends CI_Model
 	}
 	
 	
+	
+	function loadMenuSKPD(){
+		$query = $this->db->query("SELECT * FROM skpd ORDER BY nama");
+		$i=0; 
+		$menu = "";
+		foreach ($query->result() as $m) :
+			if ($i==0){
+				$menu.='<div><ul>';	
+			}
+			$menu.='<li><a href="'.base_url().'skpd/detail/'.$m->id_skpd.'"><span>'.$m->nama.'</span></a></li>';
+									
+			$i++;
+		endforeach;
+		if ($i>0){
+			  $menu .='</ul></div>'; 
+			}
+		return $menu;
+	}
 	
 
 }

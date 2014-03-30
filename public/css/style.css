@@ -997,6 +997,12 @@ div#placemainmenu li li:hover ul
 .menunav2 .submenu{
 	padding:0 0 0 10px;
 }
+.menunav2 .submenu2{
+	padding:0 0 0 20px;
+}
+.menunav2 .submenu3{
+	padding:0 0 0 30px;
+}
 .menunav2 li img {
 	width: 16px;
 	height:16px;

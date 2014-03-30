@@ -65,7 +65,7 @@ document.getElementsByTagName("head")[0].appendChild(menucss);
 						<input type="text" name="search" class="textboxsearch" value="Search Site" onblur="if(this.value.length == 0) this.value=\'Search Site\" onclick="if(this.value == \'Cari\') this.value=\'\" /> <input type="submit" name="submitsearch" class="submitsearch" value="Cari" />
 					</form> 
 				</p>
-				<p class="notlogin" style="margin-left:-3px;"><a href="'.base_url().'sitemap">Peta Situs</a></p>
+				<p class="notlogin" style="margin-left:-3px;"><a href="<?=base_url()?>sitemap">Peta Situs</a></p>
 				<p class="notlogin" style="margin-left:-10px;">
 					<span style="margin-right:5px;float:left;">|</span> <a href="javascript:void(0)" class="login arrowup">LOGIN</a>
 				</p>               
@@ -143,7 +143,11 @@ echo strftime("%A, %d %B %Y") ;
 		                        <li><a href="<?=base_url()?>pemerintahan/walikota"><span>Walikota</span></a></li>
 		                        <li><a href="<?=base_url()?>pemerintahan/sekda"><span>Sekretariat Daerah</span></a></li>
 		                        <li><a href="<?=base_url()?>pemerintahan/stafwalikota"><span>Staf Ahli Walikota</span></a></li>
-		                        <li><a href="<?=base_url()?>pemerintahan/skpd"><span>SKPD</span></a></li>
+		                        
+		                        <li><a href="<?=base_url()?>pemerintahan/skpd"><span>SKPD</span></a>
+									<?=$menuskpd?>
+		                        </li>
+		                        
 		                        <li><a href="<?=base_url()?>pemerintahan/kecamatan"><span>Kecamatan</span></a></li>
 		                        <li><a href="<?=base_url()?>pemerintahan/kelurahan"><span>Kelurahan</span></a></li>
 		                        <li><a href="<?=base_url()?>pemerintahan/rtrw"><span>Rekap RW RT</span></a></li>
@@ -238,7 +242,7 @@ echo strftime("%A, %d %B %Y") ;
 					</div>
 				</li>
 		    </ul>
-		</div>
+		</div> <!-- end div menu -->
 	</div>
 	<div class="clear"></div>
 </div>

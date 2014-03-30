@@ -77,7 +77,10 @@ class Berita extends CI_Controller {
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['footer']		= $this->temp_model->footer();
 		$data['linkopd']= $this->temp_model->linkopd();
-		
+		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['download']= $this->temp_model->download();
+		$data['artikel']= $this->temp_model->artikel();
+		$data['menuskpd']= $this->temp_model->loadMenuSKPD();
 		//$this->load->view('berita/berita_detail',$data);
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','berita/berita_detail',$data);
@@ -118,6 +121,7 @@ class Berita extends CI_Controller {
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
 		$data['download']= $this->temp_model->download();
 		$data['artikel']= $this->temp_model->artikel();
+		$data['menuskpd']= $this->temp_model->loadMenuSKPD();
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','berita/arsip',$data);
 		$this->template->render();

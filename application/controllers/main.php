@@ -58,6 +58,7 @@ class main extends CI_Controller {
 		$data['artikel']= $this->temp_model->artikel();
 		$data['idyoutube'] = $this->settingmodel->get_by_kategori("idyoutube");
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['menuskpd']= $this->temp_model->loadMenuSKPD();
 		//$data['footer']		= $this->temp_model->footer();
 		
 		$data['title_page']		= "Beranda ".COMPANY_NAME;

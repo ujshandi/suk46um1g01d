@@ -1,93 +1,114 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Sitemap</title>
-	<?=$include?>
-</head>
-<body>
-	<div id="container">
-	<?=$header?>
-	<?=$sliderTop?>
-		<div id="content">
-			<div id="maincontent">
-				<div class="boxbig">
-					<h1 class="titlebig">Peta Situs</h1>
+			<h1 class="titlebig">Peta Situs</h1>
 					<div class="boxbigcontent">						
-						<!-- AddThis Button BEGIN -->
-						<div class="addthis_toolbox addthis_default_style">
-							<a class="addthis_button_preferred_1"></a>
-							<a class="addthis_button_preferred_2"></a>
-							<a class="addthis_button_preferred_3"></a>
-							<a class="addthis_button_preferred_4"></a>
-							<a class="addthis_button_compact"></a>
-							<a class="addthis_counter addthis_bubble_style"></a>
-						</div>
-						<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
-						<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4ddf457554a5a461"></script>
-						<!-- AddThis Button END -->
 						
 						<ul class="menunav2">
-							<li><a href="<?=base_url()?>"><?=$img1?>Beranda</a></li>
-							<li><a href="<?=base_url()?>index.php/direktori"><?=$img1?>Direktori <?=COMPANY_NAME?></a></li>
-							<li><a href="<?=base_url()?>index.php/nuptk"><?=$img1?>NUPTK</a></li>
-							<li><a href="<?=base_url()?>index.php/sekretariat"><?=$img1?>Sekretariat</a></li>
-							<li><a href="<?=base_url()?>index.php/pppp"><?=$img1?>PPPP</a></li>
-							<li><a href="<?=base_url()?>index.php/pptk"><?=$img1?>PPTK</a></li>
-							<li><a href="<?=base_url()?>index.php/ppmp"><?=$img1?>PPMP</a></li>
-							<li><a href="#"><?=$img1?>Profil</a></li>
-								<ul class="submenu">
-									<li><a href="<?=base_url()?>index.php/profil/visi_misi"><?=$img2?>Visi dan Misi</a></li>
-									<li><a href="<?=base_url()?>index.php/profil/sejarah"><?=$img2?>Sejarah</a></li>
-									<li><a href="<?=base_url()?>index.php/profil/struktur"><?=$img2?>Struktur Organisasi</a></li>
-									<li><a href="<?=base_url()?>index.php/profil/sarpras"><?=$img2?>Sarana / Prasarana</a></li>
-									<li><a href="<?=base_url()?>index.php/profil/prestasi"><?=$img2?>Capaian dan Prestasi</a></li>
-								</ul>
-							<li><a href="<?=base_url()?>index.php/program_kerja"><?=$img1?>Program Kerja</a></li>
-							<li><a href="#"><?=$img1?>Peraturan</a></li>
-								<ul class="submenu">
-									<li><a href="<?=base_url()?>index.php/peraturan/index/1"><?=$img2?>Instruksi Presiden</a></li>
-									<li><a href="<?=base_url()?>index.php/peraturan/index/2"><?=$img2?>Keputusan Menteri</a></li>
-									<li><a href="<?=base_url()?>index.php/peraturan/index/3"><?=$img2?>Peraturan Menteri</a></li>
-									<li><a href="<?=base_url()?>index.php/peraturan/index/4"><?=$img2?>Peraturan Pemerintah</a></li>
-									<li><a href="<?=base_url()?>index.php/peraturan/index/5"><?=$img2?>Peraturan Presiden</a></li>
-									<li><a href="<?=base_url()?>index.php/peraturan/index/6"><?=$img2?>Undang - Undang</a></li>
-								</ul>
-							<li><a href="<?=base_url()?>index.php/panduan"><?=$img1?>Pedoman / Panduan</a></li>
-							<li><a href="<?=base_url()?>index.php/statistik"><?=$img1?>Data dan Statistik</a></li>
-							<li><a href="<?=base_url()?>index.php/belajar"><?=$img1?>Substansi Pembelajaran</a></li>
-							<li><a href="#"><?=$img1?>Layanan</a></li>
-								<ul class="submenu">
-									<li><a href="<?=base_url()?>index.php/layanan/index/1"><?=$img2?>Perijinan</a></li>
-									<li><a href="<?=base_url()?>index.php/layanan/index/2"><?=$img2?>Hibah</a></li>
-									<li><a href="<?=base_url()?>index.php/layanan/index/3"><?=$img2?>Akreditasi</a></li>
-									<li><a href="<?=base_url()?>index.php/layanan/index/4"><?=$img2?>Beasiswa</a></li>
-								</ul>
-							<li><a href="<?=base_url()?>index.php/agenda"><?=$img1?>Agenda</a></li>
-							<li><a href="<?=base_url()?>index.php/berita/arsip"><?=$img1?>Arsip Berita</a></li>
-							<li><a href="<?=base_url()?>index.php/galeri"><?=$img1?>Galeri Foto</a></li>
-							<li><a href="<?=base_url()?>index.php/pesan/publik"><?=$img1?>Pesan Anda</a></li>
-							<li><a href="#"><?=$img1?>Forum</a></li>
-							<li><a href="<?=base_url()?>index.php/faq/publik"><?=$img1?>FAQ</a></li>
-							<li><a href="<?=base_url()?>index.php/download"><?=$img1?>Download</a></li>
-							<li><a href="#"><?=$img1?>Link Terkait</a></li>
-							<li><a href="#"><?=$img1?>Pengumuman</a></li>
-							<li><a href="#"><?=$img1?>Polling</a></li>
+							<li><a href="<?=base_url()?>" class="parent"><span>Home</span></a></li>
+		        <li><a href="#"><span>Kota Sukabumi</span></a></li>
+		            <ul class="submenu">
+		               <!-- <li><a href="#"><span>Profil</span></a></li> -->
+		                <li><a href="<?=base_url()?>profil/sejarah"><span>Sejarah</span></a></li>
+						<li><a href="<?=base_url()?>profil/visi_misi"><span>Visi dan Misi</span></a></li>		                
+		                <li><a href="<?=base_url()?>profil/lambang"><span>Lambang</span></a></li>
+		                <li><a href="<?=base_url()?>profil/geografis"><span>Geografis</span></a></li>
+		                <li><a href="<?=base_url()?>profil/sosial"><span>Sosial Ekonomi</span></a></li>
+		                <li><a href="<?=base_url()?>profil/angka"><span>Sukabumi Dalam Angka</span></a></li>
+		                
+		                
+		            </ul>
+		        
+		        <li><a href="#"><span>Pemerintahan</span></a></li>
+					<ul  class="submenu">
+		                        <li><a href="<?=base_url()?>pemerintahan/dprd"><span>DPRD</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/walikota"><span>Walikota</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/sekda"><span>Sekretariat Daerah</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/stafwalikota"><span>Staf Ahli Walikota</span></a></li>
+		                        
+		                        <li><a href="<?=base_url()?>pemerintahan/skpd"><span>SKPD</span></a>
+									
+		                        </li>
+		                        <?=$menuskpd?>
+		                        <li><a href="<?=base_url()?>pemerintahan/kecamatan"><span>Kecamatan</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/kelurahan"><span>Kelurahan</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/rtrw"><span>Rekap RW RT</span></a></li>
+		                        <li><a href="<?=base_url()?>pemerintahan/kim"><span>Kelompok Informasi Masyarakat (KIM)</span></a></li>
+		                    </ul>
+				
+				<li><a href="#" ><span>Industri</span></a></li>
+					<ul class="submenu">
+		                        <li><a href="<?=base_url()?>industri/rencana_strategis"><span>Perencanaan Strategis</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/daftar_rencana"><span>Daftar Perencanaan</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/komoditi"><span>Industri Per Komoditi</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/perkembangan"><span>Perkembangan Industri</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/iujk"><span>Daftar IUJK</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/koperasi"><span>Daftar Koperasi</span></a></li>
+		                        <li><a href="<?=base_url()?>industri/ukm"><span>Daftar UKM</span></a></li>
+		                        
+		                    </ul>
+				
+				<li><a href="#" class="parent"><span>Informasi Umum</span></a></li>
+					<ul class="submenu">
+							<li ><a href="#"><span>Pendidikan</span></a></li>
+									
+									<ul class="submenu2">
+										<li><a href="<?=base_url()?>informasi_umum/tk"><span>TK/RA</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/sd"><span>SD/MI</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/smp"><span>SMP/MTS</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/sma"><span>SMA/MA</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/smk"><span>SMK</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/pt"><span>Perguruan Tinggi</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/kursus"><span>Kursus</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/bimbel"><span>Bimbingan Belajar</span></a></li>
+									</ul>
+							
+							<li ><a href="#"><span>Kesehatan</span></a></li>
+									
+									<ul class="submenu2">
+										<li><a href="<?=base_url()?>informasi_umum/rs"><span>Rumah Sakit</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/puskesmas"><span>Puskesmas</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/klinik"><span>Klinik</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/apotek"><span>Apotek</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/lab"><span>Laboratorium</span></a></li>
+									</ul>
+							<li ><a href="#"><span>Pariwisata</span></a></li>
+									
+									<ul class="submenu2">
+										<li><a href="<?=base_url()?>informasi_umum/rekreasi"><span>Rekreasi</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/belanja"><span>Belanja</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/olahraga"><span>Olahraga</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/hotel"><span>Hotel</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/restoran"><span>Restoran</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/radio"><span>Radio/Televisi</span></a></li>
+									</ul>
+									
+							<li ><a href="<?=base_url()?>informasi_umum/bumd"><span>BUMD</span></a></li>
+							<li ><a href="#"><span>Lainnya</span></a></li>
+									<ul class="submenu">
+										<li><a href="<?=base_url()?>informasi_umum/ibadah"><span>Sarana Ibadah</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/bank"><span>Perbankan</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/atm"><span>ATM</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/transportasi"><span>Transportasi</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/panti"><span>Panti Asuhan</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/asuransi"><span>Asuransi</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/gedung"><span>Gedung Pertemuan</span></a></li>
+										<li><a href="<?=base_url()?>informasi_umum/terminal"><span>Terminal/Pom Bensin</span></a></li>
+									</ul>
+									
+		                </ul>
+					
+				
+		        <li><a href="#"><span>Berita</span></a></li>
+					<ul class="submenu">
+							<li><a href="<?=base_url()?>berita/arsip/sukabumi"><span>Kota Sukabumi</span></a></li>
+							<li><a href="<?=base_url()?>berita/arsip/nasional"><span>Nasional</span></a></li>
+							<li><a href="<?=base_url()?>berita/arsip/internasional"><span>Internasional</span></a></li>
 						</ul>
+					
+		        <li class="last"><a href="#"><span>Forum</span></a></li>
+					<ul class="submenu">
+							<li><a href="#"><span>Pemerintah Kota Sukabumi</span></a></li>							
+							<li><a href="#"><span>Umum</span></a></li>							
+						</ul>
+				</ul>
 					</div>
 					<div class="boxbigcontentbottom"></div>
-				</div>
-				<?=$pengumuman?>
-				<?=$polling?>
-			</div>
-		</div>
-		<div id="nav">
-			<?=$mainmenu?>
-			<?=$login?>
-			<?=$linkterkait?>
-			<?=$testimonial?>
-			<?=$footer?>
-		</div>
-	</div>
-</body>
-</html>
+			
