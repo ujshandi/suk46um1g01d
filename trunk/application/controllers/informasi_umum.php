@@ -100,6 +100,7 @@ class Informasi_umum extends CI_Controller {
 		//$data['agenda']		= $this->agendamodel->get_All();
 		$data['download']= $this->temp_model->download();
 		$data['artikel']= $this->temp_model->artikel();
+		$data['menuskpd']= $this->temp_model->loadMenuSKPD();
 		return $data;
 	}
 	

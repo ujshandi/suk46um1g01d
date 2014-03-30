@@ -50,6 +50,7 @@ class artikel extends CI_Controller {
 		$data['linkterkait']= $this->temp_model->linkterkait();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		$data['menuskpd']= $this->temp_model->loadMenuSKPD();
 		$data['download']= $this->temp_model->download();
 		$data['artikel']= $this->temp_model->artikel();
 		$data['footer']		= $this->temp_model->footer();
@@ -78,6 +79,7 @@ class artikel extends CI_Controller {
 		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['artikel']	= $this->artikelmodel->get_All($this->limit,$offset);
+		
 		$data['mainmenu']	= $this->backend_model->mainmenu("13");
 		//$this->load->view('artikel/artikel_data',$data);
 		$this->template->set_template("admin");

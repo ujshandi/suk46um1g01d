@@ -53,6 +53,7 @@ class download extends CI_Controller {
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
 		$data['download']= $this->temp_model->download();
 		$data['artikel']= $this->temp_model->artikel();
+		$data['menuskpd']= $this->temp_model->loadMenuSKPD();
 		//$this->load->view('download/download',$data);
 		$this->template->write_view('header','templates/header',$data);
 		$this->template->write_view('wrapper','download/download',$data);

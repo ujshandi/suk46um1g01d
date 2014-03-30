@@ -23,7 +23,15 @@ class sitemap extends CI_Controller {
 		$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
 		$data['testimonial']= $this->temp_model->testimonial();
+		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
+		//$data['agenda']		= $this->agendamodel->get_All();
+		$data['download']= $this->temp_model->download();
+		$data['artikel']= $this->temp_model->artikel();
+		$data['menuskpd']= $this->temp_model->loadMenuSKPD();
 		$data['footer']		= $this->temp_model->footer();
-		$this->load->view('sitemap',$data);
+		$this->template->write_view('header','templates/header',$data);
+		$this->template->write_view('wrapper','sitemap',$data);
+		$this->template->render();
+		//$this->load->view('sitemap',$data);
 	}
 }
