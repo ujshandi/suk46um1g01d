@@ -51,3 +51,5 @@ CKEDITOR.editorConfig = function( config ) {
 
 CKEDITOR.config.extraPlugins = 'justify';
 CKEDITOR.config.extraPlugins = 'tabletools';
+CKEDITOR.config.extraPlugins = 'youtube';
+
