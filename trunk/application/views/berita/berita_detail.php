@@ -21,7 +21,9 @@
 							<ul class="listinfo">
 								<li class="posted">di posting oleh <strong><?=$this->converterModel->getNama($data->author)?></strong> pada <strong><?=$this->converterModel->setTanggal($data->tanggal)?></strong></li>
 							</ul>
-							<p style="font-size:12px"><img src="<?=base_url()?>uploads/img/medium/<?=$data->gambar?>" align="left" style="margin:5px 5px 5px 5px; width:260px; height:140px;" /><?=$data->isi?></p>
+							<p style="font-size:12px">
+								<!-- <img src="<?=base_url()?>uploads/img/medium/<?=$data->gambar?>" align="left" style="margin:5px 5px 5px 5px; width:260px; height:140px;" />-->
+								<?=$data->isi?></p>
 							<div class="clear"></div>
 						</li>
 						</ul>
