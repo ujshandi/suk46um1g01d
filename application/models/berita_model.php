@@ -26,11 +26,12 @@ class Berita_model extends CI_Model
 		}
   		
 	}
-	function count_data2($kategori) 
+	function count_data2($kategori=null) 
 	{   
 		
 		$this->db->where('status', 'publish');
-		$this->db->where('kategori', $kategori);
+		if ($kategori!=null)
+			$this->db->where('kategori', $kategori);
 		$this->db->from($this->tbl);
 		return $this->db->count_all_results();
   		
@@ -72,11 +73,13 @@ class Berita_model extends CI_Model
   		$query = $this->db->query("SELECT * FROM berita $qt  ORDER BY id_berita DESC LIMIT $offset,$limit");
 		return $query->result();
   	}
-	function getAll2($limit = 10, $offset = 0,$kategori='') 
+	function getAll2($limit = 10, $offset = 0,$kategori=null) 
   	{
 		if($offset==""){ $offset=0; }
-	
-  		$query = $this->db->query("SELECT * FROM berita WHERE status = 'publish' and kategori='$kategori' ORDER BY id_berita DESC LIMIT $offset,$limit");
+		if ($kategori!=null)
+			$query = $this->db->query("SELECT * FROM berita WHERE status = 'publish' and kategori='$kategori' ORDER BY id_berita DESC LIMIT $offset,$limit");
+		else
+			$query = $this->db->query("SELECT * FROM berita WHERE status = 'publish'  ORDER BY id_berita DESC LIMIT $offset,$limit");
 		return $query->result();
   	}
 	

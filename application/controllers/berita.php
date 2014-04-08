@@ -86,7 +86,7 @@ class Berita extends CI_Controller {
 		$this->template->write_view('wrapper','berita/berita_detail',$data);
 		$this->template->render();
 	}
-	function arsip($kategori="",$offset=0)
+	function arsip($kategori=null,$offset=0)
 	{
 		$uri_segment = 4;
 			$data = array(

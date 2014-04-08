@@ -10,7 +10,7 @@
 <!-- Start newslider-vertical -->
 	<div class="sliderkit newslider-vertical">
 		<h1 class="titlebig">Berita</h1>
-		<div class="sliderkit-panels">
+		<div class="sliderkit-panels" style="font-size:14px">
 			<?php foreach($berita as $b){ ?>
 			<div class="sliderkit-panel">
 				<div class="sliderkit-news">
