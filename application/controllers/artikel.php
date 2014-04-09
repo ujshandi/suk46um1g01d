@@ -108,7 +108,7 @@ class artikel extends CI_Controller {
 		$key	= $this->input->post('search');
 		$data['artikel']	= $this->artikelmodel->search("deskripsi",$key)->result();
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("13");
+		$data['mainmenu']	= $this->backend_model->mainmenu("17");
 		$this->load->view('artikel/artikel_data',$data);
 	}
 	function add()
@@ -122,7 +122,7 @@ class artikel extends CI_Controller {
 					'css'=>array()
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
-		$data['mainmenu']	= $this->backend_model->mainmenu("13");
+		$data['mainmenu']	= $this->backend_model->mainmenu("17");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','artikel/artikel_add',$data);
@@ -170,7 +170,7 @@ class artikel extends CI_Controller {
 				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['artikel']	= $this->artikelmodel->getbyid($id)->result();
-		$data['mainmenu']	= $this->backend_model->mainmenu("13");
+		$data['mainmenu']	= $this->backend_model->mainmenu("17");
 		$data['ckeditor'] = $this->utility->ckeditor_full("editor1",100,"100%",200);
 		$this->template->set_template("admin");
 		$this->template->write_view('wrapper','artikel/artikel_edit',$data);

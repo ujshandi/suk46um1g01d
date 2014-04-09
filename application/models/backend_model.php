@@ -270,10 +270,10 @@ class backend_model extends CI_Model
 								$menu.='</ul></li>';
 								
 													
-							$menu.='<li><a href="'.base_url().'linkterkait">';
+							/*$menu.='<li><a href="'.base_url().'linkterkait">';
 								$menu.='<img src="'.$this->setBg("4","0",$id).'" align="left"/>Link Terkait';
 							$menu.='</a></li>';	
-							
+							*/
 							$menu.='<li><a href="'.base_url().'linkterkait/opd">';
 								$menu.='<img src="'.$this->setBg("5","0",$id).'" align="left"/>Tautan OPD';
 							$menu.='</a></li>';
@@ -406,7 +406,7 @@ class backend_model extends CI_Model
 								$menu.='<img src="'.$this->setBg("17","0",$id).'" align="left" />Artikel';
 							$menu.='</a></li>';
 							$menu.='<li class="last"><a href="'.base_url().'skpd">';
-								$menu.='<img src="'.$this->setBg("17","0",$id).'" align="left" />SKPD (baru)';
+								$menu.='<img src="'.$this->setBg("18","0",$id).'" align="left" />SKPD (baru)';
 							$menu.='</a></li>';
 						$menu.='</ul>';
 					$menu.='</div>';

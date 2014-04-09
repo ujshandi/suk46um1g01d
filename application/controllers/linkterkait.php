@@ -155,9 +155,11 @@ class linkterkait extends CI_Controller {
 		$singkat	= $this->input->post('singkatan');
 		$deskripsi	= $this->input->post('deskripsi');
 		$url		= $this->input->post('url');
+		$img		= $this->input->post('img');
+		
 		$jenis= $this->input->post('jenis');
 		
-			$data = array('singkatan'=>$singkat,'deskripsi'=>$deskripsi,'url'=>$url,'jenis'=>$jenis);
+			$data = array('singkatan'=>$singkat,'deskripsi'=>$deskripsi,'url'=>$url,'jenis'=>$jenis,'img'=>$img);
 			$this->linkmodel->save($data);
 		
 		redirect(base_url().'linkterkait'.($jenis=='opd'?'/opd':''));
@@ -165,10 +167,29 @@ class linkterkait extends CI_Controller {
 	function edit($id)
 	{
 		$this->cekLogin();
+		$data = $this->loadDataBack('opd','5');
+		
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['link']		= $this->linkmodel->getbyid($id)->result();
 		$data['mainmenu']	= $this->backend_model->mainmenu("9");
-		$this->load->view('link/link_edit',$data);
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','link/link_edit',$data);
+		$this->template->render();
+	//	$this->load->view('link/link_edit',$data);
+	}
+	function edit_opd($id)
+	{
+		$this->cekLogin();
+		$data = $this->loadDataBack('opd','5');
+		$data['title_page'] = 'Link OPD';
+		$data['jenis'] = 'opd';
+		$data['headmenu']	= $this->backend_model->headermenu();
+		$data['link']		= $this->linkmodel->getbyid($id)->result();
+		$data['mainmenu']	= $this->backend_model->mainmenu("5");
+		$this->template->set_template("admin");
+		$this->template->write_view('wrapper','link/link_edit',$data);
+		$this->template->render();
+	//	$this->load->view('link/link_edit',$data);
 	}
 	function simpanedit()
 	{
@@ -176,11 +197,12 @@ class linkterkait extends CI_Controller {
 		$singkat	= $this->input->post('singkatan');
 		$deskripsi	= $this->input->post('deskripsi');
 		$url		= $this->input->post('url');
-		
-			$data	= array('singkatan'=>$singkat,'deskripsi'=>$deskripsi,'url'=>$url);
+		$img		= $this->input->post('img');
+			$jenis= $this->input->post('jenis');
+			$data	= array('singkatan'=>$singkat,'deskripsi'=>$deskripsi,'url'=>$url,'img'=>$img);
 			$this->linkmodel->update($id,$data);
 			
-		redirect(base_url().'linkterkait');
+		redirect(base_url().'linkterkait'.($jenis=='opd'?'/opd':''));
 	}
 	function hapus($id)
 	{

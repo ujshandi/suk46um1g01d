@@ -1,8 +1,6 @@
 
 	<script type="text/javascript">
-	bkLib.onDomLoaded(function() {
-		new nicEditor().panelInstance('editor');
-	});
+	
 	$(function() {
 		$("#butslide").click(function(){
 				$("#panellogin").slideToggle("fast");
@@ -29,7 +27,7 @@
 		
 		if(data1!="" && data2!="" && data3!="")
 		{
-			document.getElementById('frmcontact').submit();
+			document.getElementById('frmcontact2').submit();
 		}
 		else
 		{
@@ -40,15 +38,25 @@
 	
 	<h1 class="titlebig">Tambah <?=$title_page?></h1>
 	<div class="boxbigcontent">
-		<form method="post" action="<?=base_url()?>linkterkait/simpan" id="frmcontact">
+		<div class="boxess">
+		<form method="post" action="<?=base_url()?>linkterkait/simpan" id="frmcontact2">
 			<label>Singkatan</label>
 			<input type="hidden" name="jenis" value="<?=$jenis?>" />
 			<input type="text" name="singkatan" id="f1" class="textboxcontact" size="50" /> <span class="mand">*</span><br />
+			<br />
+				
+				
 			<label>Deskripsi</label>
-			<input type="text" name="deskripsi" id="f2" class="textboxcontact" size="78" /> <span class="mand">*</span><br />
+			<input type="text" name="deskripsi" id="f2" class="textboxcontact" size="50" /> <span class="mand">*</span><br />
+			<br />
 			<label>URL</label>
-			<input type="text" name="url" id="f3" class="textboxcontact" size="78" /> <span class="mand">*</span><br />
+			<input type="text" name="url" id="f3" class="textboxcontact" size="50" /> <span class="mand">*</span><br />
+			<br />
 			<label></label> <i>http://www.example.com</i><br />
+			<br />
+			<label>Upload Icon link</label>
+			<input type="text" name="img" id="img" onclick="openKCFinder_singleFile(this,'/link','images')" size="20" class="textboxcontact" />
+			
 			<div align="right">
 				<a href="javascript:simpan();" class="button"><span class="disk"></span>Simpan</a>
 				<a href="<?=base_url()?>linkterkait/<?=($jenis=='terkait'?'':'opd')?>" class="button">
@@ -57,5 +65,6 @@
 				</a>
 			</div>
 		</form>
+		</div>
 	</div>
 	<div class="boxbigcontentbottom"></div>
