@@ -1,8 +1,6 @@
 
 	<script type="text/javascript">
-	bkLib.onDomLoaded(function() {
-		new nicEditor().panelInstance('editor');
-	});
+	
 	$(function() {
 		$("#butslide").click(function(){
 				$("#panellogin").slideToggle("fast");
@@ -52,7 +50,7 @@
 				<td><?=$row->deskripsi?></td>
 				<td><?=$row->url?></td>
 				<td>
-					<a href="<?=base_url()?>linkterkait/edit/<?=$row->id_link?>" title="Edit"><img src="<?=base_url()?>public/images/icon/edit.png" /></a>
+					<a href="<?=base_url()?>linkterkait/edit_opd/<?=$row->id_link?>" title="Edit"><img src="<?=base_url()?>public/images/icon/edit.png" /></a>
 					<a href="javascript:hapus('<?=$row->id_link?>');" title="Hapus"><img src="<?=base_url()?>public/images/icon/delete.png" /></a>
 				</td>
 			</tr>

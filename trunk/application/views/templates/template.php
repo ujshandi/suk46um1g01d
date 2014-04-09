@@ -101,7 +101,8 @@
 						<?=$artikel?>
 											
 						<!-- Sukabumi tautan -->
-						<div class="boxnav">
+						<?=$linkopd?>
+						<!--<div class="boxnav">
 							<h3 class="titlenav">Tautan</h3>
 							<div class="boxnavcontent2">
 								<div style="padding:5px;">
@@ -121,7 +122,7 @@
 									</marquee>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					
 						<!-- Sukabumi tautan -->						
 						<!-- Ayat pilihan -->

@@ -638,13 +638,13 @@ class temp_model extends CI_Model
 							<h3 class="titlenav">Tautan</h3>
 							<div class="boxnavcontent2">
 								<div style="padding:5px;">
-									<marquee width="300" height="auto" bgcolor="" direction="UP" behavior="SCROLL" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="3" style="font-size:12px;color:#000000;font-family:arial;">
+									<marquee width="300" height="auto" bgcolor="" direction="UP" behavior="SCROLL" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="3" style="font-size:12px;color:#000000;font-family:arial;text-align:center">
 										<ul>';
 							$query2=$this->db->query("SELECT * FROM linkterkait where jenis = 'opd' ORDER BY jenis,id_link DESC");
 					
 					
 					foreach ($query2->result() as $row2){						
-						$data .= '<li><a target="_blank" href="'.$row2->url.'">'.$row2->deskripsi.'</a></li>';
+						$data .= '<li><a target="_blank" href="'.$row2->url.'"><img title="'.$row2->singkatan.'" src="'.$row2->img.'"></a></li>';
 					}				
 										
 											
