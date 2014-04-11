@@ -48,6 +48,7 @@ class artikel extends CI_Controller {
 		$data['polling']	= $this->temp_model->polling();
 		$data['login']		= $this->temp_model->login();
 		$data['linkterkait']= $this->temp_model->linkterkait();
+		$data['linkopd']= $this->temp_model->linkopd();
 		$data['testimonial']= $this->temp_model->testimonial();
 		$data['smswalkot'] = $this->settingmodel->get_by_kategori("smswalkot");
 		$data['menuskpd']= $this->temp_model->loadMenuSKPD();
@@ -218,11 +219,11 @@ class artikel extends CI_Controller {
 	}
 	function hapus($id)
 	{
-		$dataFile	= $this->artikelmodel->getbyid($id)->result();
+		/* $dataFile	= $this->artikelmodel->getbyid($id)->result();
 		foreach($dataFile as $row)
 		{
 			unlink(realpath("./uploads/file/$row->file"));
-		}
+		} */
 		$this->artikelmodel->delete($id);
 		redirect(base_url().'artikel/data');
 	}

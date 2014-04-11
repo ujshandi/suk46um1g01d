@@ -75,7 +75,7 @@
 										<tr>
 											<td>
 												<!-- BEGIN GENERIC ALL BROWSER FRIENDLY HTML FOR NETSHOW V3-->
-												<!--<object id="MediaPlayer" classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=,1,52,701" standby="Loading Microsoft Windows Media Player components..." type="application/x-oleobject" height="35" width="313">
+												<object id="MediaPlayer" classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95" codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=,1,52,701" standby="Loading Microsoft Windows Media Player components..." type="application/x-oleobject" height="35" width="313">
 													<param name="AutoStart" value="False">
 													<param name="ShowControls" value="True">
 													<param name="ShowStatusBar" value="False">
@@ -84,13 +84,13 @@
 													<param name="http://180.250.131.4:8000" value="http://222.124.19.50:8000">
 													<embed wmode="Transparent" type="application/x-mplayer2" pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/" src="http://180.250.131.4:8000" name="RSPD FM KOTA SUKABUMI" height="34" width="313">
 													<param value="true" name="play"><param name="wmode" value="transparent">
-												</object> -->
-												<object width="400" height="270" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+												</object> 
+												<!--<object width="400" height="270" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
 													<param name="flashvars" value="cid=7910456&autoplay=false"/>
 													<param name="allowfullscreen" value="true"/>
 													<param name="allowscriptaccess" value="always"/>
 													<param name="src" value="http://www.ustream.tv/flash/viewer.swf"/>
-													<embed flashvars="cid=7910456&autoplay=false" width="305" height="270" allowfullscreen="true" allowscriptaccess="always" src="http://www.ustream.tv/flash/viewer.swf" type="application/x-shockwave-flash"/>
+													<embed flashvars="cid=7910456&autoplay=false" width="305" height="270" allowfullscreen="true" allowscriptaccess="always" src="http://www.ustream.tv/flash/viewer.swf" type="application/x-shockwave-flash"/>-->
 											</td>
 										</tr>
 									</tbody>
