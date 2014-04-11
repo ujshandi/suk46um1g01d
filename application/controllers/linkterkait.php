@@ -204,9 +204,9 @@ class linkterkait extends CI_Controller {
 			
 		redirect(base_url().'linkterkait'.($jenis=='opd'?'/opd':''));
 	}
-	function hapus($id)
+	function hapus($id,$jenis='opd')
 	{
 		$this->linkmodel->delete($id);
-		redirect(base_url().'linkterkait');
+		redirect(base_url().'linkterkait'.($jenis=='opd'?'/opd':''));
 	}
 }
