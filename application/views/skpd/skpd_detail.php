@@ -18,19 +18,19 @@
 							</div>
 						</div>
 						<div class="sliderkit-panels" style="width:620px">
-							<div class="sliderkit-panel">
+							<div class="sliderkit-panel" style="overflow-x:auto">
 								<div class="sliderkit-news">									
 									<?=$data->profil;?>
 									
 								</div>
 							</div>
-							<div class="sliderkit-panel">
+							<div class="sliderkit-panel" style="overflow-x:auto">
 								<div class="sliderkit-news">
 							
 										<?=$data->produk;?>
 								</div>
 							</div>
-							<div class="sliderkit-panel">
+							<div class="sliderkit-panel" style="overflow-x:auto">
 								<div class="sliderkit-news">
 									<?=$data->berita;?>
 								</div>
