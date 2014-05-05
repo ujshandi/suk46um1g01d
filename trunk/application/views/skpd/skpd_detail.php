@@ -7,6 +7,14 @@
 		<br/><br/>
 		<!-- Start tabs-standard -->
 					<div class="sliderkit tabs-noheight" style="width:648px">
+						<style >
+							img{
+								float:none !important;
+								}
+							p {
+								width:auto !important;
+							}
+						</style>
 						<div class="sliderkit-nav">
 							<div class="sliderkit-nav-clip">
 								<ul>
