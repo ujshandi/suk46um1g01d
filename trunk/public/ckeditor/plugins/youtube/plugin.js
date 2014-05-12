@@ -4,6 +4,7 @@
 * @author Jonnas Fonini <contato@fonini.net>
 * @version 1.0.9
 */
+//alert('kadie');
 ( function() {
 	CKEDITOR.plugins.add( 'youtube',
 	{
