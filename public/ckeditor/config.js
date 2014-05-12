@@ -20,9 +20,9 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'others' },
 		'/',
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+		{ name: 'paragraph' ,   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ]  },
 //		{ name: 'justify', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
-		{ name: 'styles',groups:['justify'] },
+		{ name: 'styles'},
 		{ name: 'colors' },
 		{ name: 'about' }
 	];
@@ -49,7 +49,7 @@ CKEDITOR.editorConfig = function( config ) {
 };
 
 
-CKEDITOR.config.extraPlugins = 'justify';
 CKEDITOR.config.extraPlugins = 'tabletools';
 CKEDITOR.config.extraPlugins = 'youtube';
+CKEDITOR.config.extraPlugins = 'justify';
 
