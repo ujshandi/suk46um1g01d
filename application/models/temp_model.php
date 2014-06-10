@@ -785,23 +785,42 @@ class temp_model extends CI_Model
 	
 	
 	
-	function loadMenuSKPD(){
-		$query = $this->db->query("SELECT * FROM skpd ORDER BY nama");
-		$i=0; 
-		$menu = "";
-		foreach ($query->result() as $m) :
-			if ($i==0){
-				$menu.='<div><ul>';	
-			}
-			$menu.='<li><a href="'.base_url().'skpd/detail/'.$m->id_skpd.'"><span>'.$m->nama.'</span></a></li>';
-									
-			$i++;
-		endforeach;
-		if ($i>0){
-			  $menu .='</ul></div>'; 
-			}
-		return $menu;
-	}
+    function loadMenuSKPD(){
+       $queryKelompok = $this->db->query("SELECT distinct kelompok FROM skpd where kelompok is not null or kelompok <> '' ORDER BY kelompok");
+       $menu = "<div><ul>";
+       foreach ($queryKelompok->result() as $k) :
+             $query = $this->db->query("SELECT * FROM skpd where kelompok=".$k->kelompok." ORDER BY nama");
+            
+            $i=0; 
+            switch ($k->kelompok){
+                case "1":$namaKelompok = 'Sekretariat Daerah';break;
+                case "2":$namaKelompok = 'Setingkat Badan';break;
+                case "3":$namaKelompok = 'Setingkat Dinas';break;
+                case "4":$namaKelompok = 'Setingkat Kantor';break;
+                case "5":$namaKelompok = 'Kecamatan';break;
+                case "6":$namaKelompok = 'BUMD';break;
+                case "7":$namaKelompok = 'Link Lain';break;
+                default : $namaKelompok='';    
+            }
+          //  var_dump("SELECT * FROM skpd where kelompok=".$k->kelompok." ORDER BY nama");die;
+            $menu .= '<li class="parent"><a href="#"><span>'.$namaKelompok.'</span></a>';
+           foreach ($query->result() as $m) :
+                    if ($i==0){
+                            $menu.='<div><ul>';	
+                    }
+                    $menu.='<li><a href="'.base_url().'skpd/detail/'.$m->id_skpd.'"><span>'.$m->nama.'</span></a></li>';
+
+                    $i++;
+            endforeach;
+            if ($i>0){
+                $menu .='</ul></div>'; 
+              }
+              $menu .= '</li>';
+       endforeach;
+
+       $menu .= "</ul></div>"   ;
+       return $menu;
+    }
 	
 
 }

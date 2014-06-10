@@ -100,6 +100,7 @@
 			<tr>
 				<th width="50px">No.</th>
 				<th width="120px">Nama SKPD</th>				
+				<th width="120px">Kelompok SKPD</th>				
 				<th width="50px"></th>
 			</tr>
 		</thead>
@@ -108,7 +109,9 @@
 			<tr>
 				<td width="4%" align="center"><?=$i=$i+1?></td>
 				<td><?= $m->nama ; ?></td>				
-				
+				<td><?= ($m->kelompok=="1"?"Sekretariat Daerah":(($m->kelompok=="2")?"Setingkat Badan":(($m->kelompok=="3")?"Setingkat Dinas":
+                                        (($m->kelompok=="4")?"Setingkat Kantor":(($m->kelompok=="5")?"Kecamatan":
+                                        (($m->kelompok=="6")?"BUMD":(($m->kelompok=="7")?"Link Lain":"")))))))  ?></td>
 				<td align="center" width="12%">
 
 					<a href="<?=base_url()?>skpd/edit/<?= $m->id_skpd; ?>" title="Edit"><img src="<?=base_url()?>public/images/icon/edit.png" /></a>
