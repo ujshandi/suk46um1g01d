@@ -72,7 +72,19 @@
 				<br />
 				<br />
 				
-
+                        <label>Kelompok SKPD</label>
+                        <select name="kelompok">
+                            <option value="1" <?=($skpd->kelompok=="1"?"selected":"")?> >Sekretariat Daerah</option>
+                            <option value="2" <?=($skpd->kelompok=="2"?"selected":"")?> >Setingkat Badan</option>
+                            <option value="3" <?=($skpd->kelompok=="3"?"selected":"")?> >Setingkat Dinas</option>
+                            <option value="4" <?=($skpd->kelompok=="4"?"selected":"")?> >Setingkat Kantor</option>
+                            <option value="5" <?=($skpd->kelompok=="5"?"selected":"")?> >Kecamatan</option>
+                            <option value="6" <?=($skpd->kelompok=="6"?"selected":"")?> >BUMD</option>
+                            <option value="7" <?=($skpd->kelompok=="6"?"selected":"")?> >Link Lain</option>
+                            
+                        </select> <span class="mand">*</span>
+				<br />
+				<br />
 			<div  >
 			<label>Profil</label>
 			<div class="ckWow2">

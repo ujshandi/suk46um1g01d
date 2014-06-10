@@ -146,13 +146,33 @@ class Skpd extends CI_Controller {
 	function search2()
 	{
 		$this->cekLogin();
+                $data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array('media/jquery/ui.css')
+				);
+		$uri_segment = 3;
+		$offset = $this->uri->segment($uri_segment);
 		$key	= $this->input->post('search');
-		
+		$offset = $this->uri->segment($uri_segment);
+		$this->load->library('pagination');
+		$config['base_url'] = site_url('skpd/index/');
+		$config['total_rows'] = $this->Skpd_model->count_data();
+		$config['per_page'] = $this->limit;
+		$this->pagination->initialize($config);
+		$data['pagination'] = $this->pagination->create_links();
+		$data['offset']=$offset;
 		$data['fields'] 	= $this->Skpd_model->search2("nama","profil","produk",$key)->result();
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu("7");
 		$data['jumlah']		= $this->Skpd_model->count_data();
-		$this->load->view('skpd/Skpd_data',$data);
+		//$this->load->view('skpd/skpd_data',$data);
+                $this->template->set_template("admin");
+		$this->template->write_view('wrapper','skpd/skpd_data',$data);
+		$this->template->render();
 	}
 	function addData()
 	{
@@ -176,6 +196,7 @@ class Skpd extends CI_Controller {
 		$skpd->profil="";
 		$skpd->produk="";	
 		$skpd->berita="";		
+		$skpd->kelompok="";		
 		$data['skpd'] = $skpd;
 		$this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
@@ -189,6 +210,7 @@ class Skpd extends CI_Controller {
 		$nama	= $this->input->post('nama');
 		$profil	= $this->input->post('profil');
 		$produk		= $this->input->post('produk');		
+		$kelompok		= $this->input->post('kelompok');		
 		$berita		= $this->input->post('berita');
 		
 		
@@ -197,7 +219,8 @@ class Skpd extends CI_Controller {
 				'nama'	=>$nama,
 				'profil' => $profil,
 				'produk'			=>$produk,				
-				'berita'		=>$berita				
+				'berita'		=>$berita,				
+				'kelompok'		=>$kelompok				
 				);
 			if ($id==""){
 				$this->Skpd_model->save($data);
@@ -246,6 +269,7 @@ class Skpd extends CI_Controller {
 		$author		= $this->input->post('author');
 		$file		= $_FILES['gambar']['name'];
 		$status		= $this->input->post('status');
+		$kelompok		= $this->input->post('kelompok');
 		
 		if($file!="")
 		{
