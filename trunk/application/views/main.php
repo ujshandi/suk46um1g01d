@@ -22,7 +22,7 @@
 					<a class="sliderkit-news-readmore" href="<?=base_url()?>berita/detail/<?=$b->id_berita?>">Read more</a>
 				</div>
 			</div>
-			<?}?> 
+			<?php }?> 
 		</div>
 		<div class="sliderkit-nav">
 			<div class="sliderkit-nav-clip">
@@ -31,7 +31,7 @@
 					<li style="height:70px;">
 						<a href="#" title="[link title]"><?=$b->judul_berita?></a>
 					</li>
-					<? }?>
+					<?php }?>
 				</ul>
 			</div>
 		</div>
@@ -53,7 +53,7 @@
 					<ul>
 						<?php foreach($beritafoto as $b){ ?>
 						<li><a href="#" title="<?=$b->judul_berita?>"></a></li>						
-						<?}?>
+						<?php }?>
 					</ul>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 				<div class="sliderkit-panel">
 					<img src="<?=$b->gambar?>" alt="[Alternative text]" />
 				</div>
-				<?}?>
+				<?php }?>
 			</div>
 		</div>		
 	</div>
@@ -84,7 +84,7 @@
 					<!--<img src="<base_url()?>public/jquery.sliderkit.1.9.2/lib/images/photos/!sample-01.jpg" alt="[Alternative text]" /> -->
 					<img src="<?=$b->gambar?>" alt="<?=$b->judul?>" />
 				</div>
-				<?}?>
+				<?php }?>
 			</div>
 			
 		</div>

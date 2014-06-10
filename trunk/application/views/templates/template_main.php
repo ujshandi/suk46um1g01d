@@ -29,7 +29,7 @@
 				<div class="sliderkit-panel">
 					<img style="width:990px;" src="<?=$b->img?>" alt="<?=$b->deskripsi?>" />
 				</div>
-			<?}?>	
+			<?php } ?>	
 			</div>
 			<div class="sliderkit-timer-wrapper">
 				<div class="sliderkit-timer"></div>
@@ -38,7 +38,7 @@
 		<ul id="js-news" class="js-hidden">
 		<?php foreach($agenda as $b){ ?>
 			<li class="news-item"><?=$b->tgl." : ".$b->kegiatan?></li>
-		<?} ?>
+		<?php } ?>
 		</ul>
 		<br />
 		<div id="content">
@@ -205,8 +205,8 @@
 			<p id="texttwitter"></p>
 			
 			<ul id="menufooter">
-				<li><a href="<?base_url()?>">Beranda</a></li>			
-				<li><a href="<?base_url()?>'faq/publik">FAQ</a></li>			
+				<li><a href="<?=base_url()?>">Beranda</a></li>			
+				<li><a href="<?=base_url()?>'faq/publik">FAQ</a></li>			
 				
 			</ul>
 			

@@ -87,7 +87,7 @@
 				<h1 class="titlebig">Tambah Substansi Pembelajaran</h1>
 					<div class="boxbigcontent">
 					<div style="margin-top:-20px">
-					<form method="post" action="<?=base_url()?belajar/simpan"  id="frmcontact">
+					<form method="post" action="<?=base_url()?>belajar/simpan"  id="frmcontact">
 					<input type="hidden" name="author" value="<?=$this->session->userdata('userid')?>" />
 						<label style="margin-left:-15px;">Judul</label><br />
 						<input type="text" name="nama" id="f1" class="textboxcontact" size="110" /> <span>*</span><br />
@@ -98,7 +98,7 @@
 						<br /><br />
 						<div align="right">
                         <a href="javascript:simpan();" class="buttons buttons-orange" ><span class="disk"></span>Simpan</a>
-						<a href="<?=base_url()?belajar/data" class="buttons buttons-orange" ><span class="cancel"></span>Batal</a>
+						<a href="<?=base_url()?>belajar/data" class="buttons buttons-orange" ><span class="cancel"></span>Batal</a>
 						
 						</div>
 					</form>
