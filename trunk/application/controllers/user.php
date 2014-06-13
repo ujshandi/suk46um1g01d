@@ -34,6 +34,13 @@ class user extends CI_Controller {
 
 	{
 		$this->cekLogin();
+                 $data = array(
+                            'title_page'=>'Admin Page',
+                            'title'=>'CPanel',
+                           'js'=>array('js/ui_core.js','js/ui.dialog.js','js/ui_tabs.js','js/lightbox.js'),//'js/flexigrid.pack.js','js/jqModal.js'),
+                            //'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+                            'css'=>array('media/jquery/ui.css')
+                    );
 		$level=$this->session->userdata('id_level');
 		//echo $level;
 		if($level=="1" || $level=="2")
@@ -58,7 +65,11 @@ class user extends CI_Controller {
 			$data['headmenu']	= $this->backend_model->headermenu();
 			$data['mainmenu']	= $this->backend_model->mainmenu(14);
 	
-			$this->load->view('user/user_data',$data);	
+			//$this->load->view('user/user_data',$data);	
+                        $this->template->set_template("admin");
+        //		$this->template->write_view('header','templates/header_admin',$data);
+                        $this->template->write_view('wrapper','user/user_data',$data);
+                        $this->template->render();
 			
 		}
 		else
@@ -81,12 +92,25 @@ class user extends CI_Controller {
 
 	{
 		$this->cekLogin();
+                $data = array(
+					
+					'title_page'=>'Admin Page',
+					'title'=>'CPanel',
+					'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+					//'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+					'css'=>array()
+				);
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu(14);
 		
 		$data['dlevel'] = $this->user_model->getlevel();
 
-		$this->load->view('user/user_add',$data);
+		$this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','user/user_add',$data);
+		$this->template->render();
+                
+                //$this->load->view('user/user_add',$data);
 
 	}
 
@@ -113,40 +137,79 @@ class user extends CI_Controller {
 
 	}
 
-	function edit($id)
-
-	{
+	function edit($id){
 		$this->cekLogin();
+                 $data = array(
+                            'title_page'=>'Admin Page',
+                            'title'=>'CPanel',
+                            'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+                            //'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+                            'css'=>array()
+                    );
 		$data['fields']		= $this->user_model->getbyid($id)->result();
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu(14);
 		
 		$data['dlevel'] = $this->user_model->getlevel();
+                $this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','user/user_edit',$data);
+		$this->template->render();
+		//$this->load->view('user/user_edit',$data);
 
-		$this->load->view('user/user_edit',$data);
+	}
+        
+        function hakakses($id){
+		$this->cekLogin();
+                 $data = array(
+                            'title_page'=>'Admin Page',
+                            'title'=>'CPanel',
+                            'js'=>array(),//'js/flexigrid.pack.js','js/jqModal.js'),
+                            //'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
+                            'css'=>array()
+                    );
+		$data['fields']		= $this->user_model->getbyid($id)->result();
+		$data['headmenu']	= $this->backend_model->headermenu();
+		$data['mainmenu']	= $this->backend_model->mainmenu(14);
+		$data['akses']	= $this->user_model->get_list_akses($id);
+		$data['dlevel'] = $this->user_model->getlevel();
+                $this->template->set_template("admin");
+//		$this->template->write_view('header','templates/header_admin',$data);
+		$this->template->write_view('wrapper','user/user_akses',$data);
+		$this->template->render();
+		//$this->load->view('user/user_edit',$data);
 
 	}
 
-	function simpanedit()
+    function simpanedit()	{
+        $id			= $this->input->post('id_user');
+        $nama_asli		= $this->input->post('nama_asli');
+        $username		= $this->input->post('username');
+        $password		= $this->input->post('password');
+        $id_level		= $this->input->post('id_level');
+        $data	= array('nama_asli'=>$nama_asli,'username'=>$username,'password'=>$password,'id_level'=>$id_level);
 
-	{
+        $this->user_model->update($id,$data);
+        redirect(base_url().'user');
 
-		$id				= $this->input->post('id_user');
-		$nama_asli		= $this->input->post('nama_asli');
-		$username		= $this->input->post('username');
-		$password		= $this->input->post('password');
-		$id_level		= $this->input->post('id_level');
-		
+    }
+    
+    function simpanakses()	{
+        $id	= $this->input->post('id_user');
+        $count  = $this->input->post('count');
+        $this->user_model->deleteAkses($id);
+        for ($i=0;$i<$count;$i++){
+            $menu_id	= $this->input->post('menu_id'.$i);
+            $akses	= $this->input->post('chk'.$i);
+            //var_dump($akses);
+            $data	= array('id_user'=>$id,'menu_id'=>$menu_id,'akses'=>(!$akses?0:1));
+        
+            $this->user_model->setAkses($data);
+        }
+        
+        redirect(base_url().'user');
 
-			$data	= array('nama_asli'=>$nama_asli,'username'=>$username,'password'=>$password,'id_level'=>$id_level);
-
-			$this->user_model->update($id,$data);
-
-			
-
-		redirect(base_url().'user');
-
-	}
+    }
 
 	function hapus($id)
 
