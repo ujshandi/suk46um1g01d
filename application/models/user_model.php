@@ -42,6 +42,18 @@ class user_model extends CI_Model
 		return $query->result();
   	} 
 	
+	function get_list_akses($id) 
+  	{
+		
+
+  		$query =$this->db->query("select u.*,  coalesce(a.akses ,0) as akses "
+                        . " from menu_backend u left join sistem_user_akses_backend a on u.menu_id = a.menu_id and a.id_user =$id "
+                        . " WHERE u.hide=0 and u.menu_parent is not null "
+                        . " ORDER BY u.menu_id ");
+
+		return $query->result();
+  	} 
+	
 	function search($tipe,$tipe2,$key)
 	{
 		$this->db->like($tipe,$key);
@@ -74,6 +86,17 @@ class user_model extends CI_Model
 		$this->db->where('id_user', $id)->update($this->tbl, $data);
 	}
 	
+	function setAkses( $data){
+               
+                
+                $this->db->insert("sistem_user_akses_backend", $data);
+	}
+	
+	function deleteAkses($id){
+		 $this->db->where('id_user', $id);
+		$this->db->delete("sistem_user_akses_backend");
+		
+	}
 	function delete($id){
 		$this->db->where('id_user', $id);
 		$this->db->delete($this->tbl);
