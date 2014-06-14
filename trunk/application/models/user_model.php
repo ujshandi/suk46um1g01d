@@ -47,7 +47,7 @@ class user_model extends CI_Model
 		
 
   		$query =$this->db->query("select u.*,  coalesce(a.akses ,0) as akses "
-                        . " from menu_backend u left join sistem_user_akses_backend a on u.menu_id = a.menu_id and a.id_user =$id "
+                        . " from menu_backend u left join level_akses_backend a on u.menu_id = a.menu_id and a.id_level =$id "
                         . " WHERE u.hide=0 and u.menu_parent is not null "
                         . " ORDER BY u.menu_id ");
 
@@ -89,12 +89,12 @@ class user_model extends CI_Model
 	function setAkses( $data){
                
                 
-                $this->db->insert("sistem_user_akses_backend", $data);
+                $this->db->insert("level_akses_backend", $data);
 	}
 	
 	function deleteAkses($id){
-		 $this->db->where('id_user', $id);
-		$this->db->delete("sistem_user_akses_backend");
+		 $this->db->where('id_level', $id);
+		$this->db->delete("level_akses_backend");
 		
 	}
 	function delete($id){
