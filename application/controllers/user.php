@@ -159,7 +159,7 @@ class user extends CI_Controller {
 
 	}
         
-        function hakakses($id){
+        function level_akses(){
 		$this->cekLogin();
                  $data = array(
                             'title_page'=>'Admin Page',
@@ -168,10 +168,10 @@ class user extends CI_Controller {
                             //'css'=>array('css/flexigrid.pack.css','css/jqModal.css')
                             'css'=>array()
                     );
-		$data['fields']		= $this->user_model->getbyid($id)->result();
+		//$data['fields']		= $this->user_model->getbyid($id)->result();
 		$data['headmenu']	= $this->backend_model->headermenu();
 		$data['mainmenu']	= $this->backend_model->mainmenu(14);
-		$data['akses']	= $this->user_model->get_list_akses($id);
+		//$data['akses']	= $this->user_model->get_list_akses($id);
 		$data['dlevel'] = $this->user_model->getlevel();
                 $this->template->set_template("admin");
 //		$this->template->write_view('header','templates/header_admin',$data);
@@ -195,19 +195,19 @@ class user extends CI_Controller {
     }
     
     function simpanakses()	{
-        $id	= $this->input->post('id_user');
+        $id	= $this->input->post('id_level');
         $count  = $this->input->post('count');
         $this->user_model->deleteAkses($id);
         for ($i=0;$i<$count;$i++){
             $menu_id	= $this->input->post('menu_id'.$i);
             $akses	= $this->input->post('chk'.$i);
             //var_dump($akses);
-            $data	= array('id_user'=>$id,'menu_id'=>$menu_id,'akses'=>(!$akses?0:1));
+            $data	= array('id_level'=>$id,'menu_id'=>$menu_id,'akses'=>(!$akses?0:1));
         
             $this->user_model->setAkses($data);
         }
         
-        redirect(base_url().'user');
+        redirect(base_url().'user/level_akses');
 
     }
 
@@ -220,5 +220,37 @@ class user extends CI_Controller {
 		redirect(base_url().'user');
 
 	}
+        
+        function loadLevelAkses($level){
+            $akses	= $this->user_model->get_list_akses($level);
+            $rs = ' <table class="data">
+            <thead>
+                <tr>
+                    <th align="center"width="10px">No.</th>
+                    <th align="center">Nama Menu</th>
+                    <th align="center" width="15%">Bisa Akses ?</th>                                        
+                </tr>
+            </thead>
+            <tbody>';
+              $i=0; 
+             foreach($akses as $rowAkses): 
+                    $rs .= ' <tr>
+                            <td align="center">'.($i=$i+1).'</td>                            
+                            <td>'.$rowAkses->menu_name.'</td>
+                            <td align="center">
+                                <input type="hidden" name="url'.($i-1).'" value="'.$rowAkses->url.'"/>
+                                <input type="hidden" name="menu_id'.($i-1).'" value="'.$rowAkses->menu_id.'"/>';
+                              //  if ($rowAkses->url!="#") 
+                                   $rs .= '<input type="checkbox" name="chk'.($i-1).'" '. (($rowAkses->akses=="0")?"":"checked='checked'").'/>';
+                                
+                      $rs .='</td>                            
+                        </tr>'; 
+                 endforeach; 
+                      $rs .='</td>                            
+                        </tr> </tbody>
+             </table>
+             <input type="hidden" name="count" value="'.($i).'"/>'; 
+            echo $rs;
+        }
 
 }
